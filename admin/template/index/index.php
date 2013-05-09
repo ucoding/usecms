@@ -25,12 +25,17 @@
                 <div class="top_nav">
                     <ul>
                         <li><a href="__APP__/menu/index">首页</a></li>
-                        <li><a href="__APP__/menu/category">栏目</a></li>
-                        <li><a href="__APP__/menu/content">内容</a></li>
-                        <li><a href="__APP__/menu/user">用户</a></li>
-                        <li><a href="__APP__/menu/expand">其他</a></li>
-                        <!--                        <li><a href="__APP__/menu/form">表单</a></li>-->
-                        <li><a href="__APP__/menu/plugin">插件</a></li>
+                        <?php if ($user["id"]!=1) { ?>
+                            <!--foreach:{$menu_list $vo}-->
+                            <!--if:{in_array($vo['id'],$model_power)}-->
+                            <li><a href="__APP__/menu/{$vo['module']}?id={$vo['id']}">{$vo['name']}</a></li>
+                            <!--{/if}-->
+                            <!--{/foreach}-->
+                        <?php }else{ ?>
+                            <!--foreach:{$menu_list $vo}-->
+                            <li><a href="__APP__/menu/{$vo['module']}?id={$vo['id']}">{$vo['name']}</a></li>
+                            <!--{/foreach}-->
+                        <?php }?>
 
                     </ul>
                 </div>

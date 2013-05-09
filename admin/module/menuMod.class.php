@@ -10,15 +10,17 @@ class menuMod extends commonMod
     //后台首页菜单
     public function index()
     {
-        $this->list=model('menu')->admin_menu(1);
+        $id=$_GET["id"];
+//        $this->list=model('menu')->admin_menu(1);
         $this->display();
     }
 
 	// 分类菜单
     public function category()
     {
+        $id=$_GET["id"];
 //        $this->model_list=model('model_manage')->model_list();
-        $this->list=model('menu')->admin_menu(30);
+        $this->list=model('menu')->admin_menu($id);
         $this->display();
     }
     
@@ -55,12 +57,14 @@ class menuMod extends commonMod
     //后台首页菜单
     public function expand()
     {
-        $this->list=model('menu')->admin_menu(10);
+        $id=$_GET["id"];
+        $this->list=model('menu')->admin_menu($id);
         $this->display();
     }
 
     //表单管理
     public function form() {
+        $id=$_GET["id"];
         $this->list=model('form')->form_list();
         $this->assign('display',$display);
         $this->display();
@@ -68,14 +72,23 @@ class menuMod extends commonMod
 
     //用户管理
     public function user() {
-        $this->list=model('menu')->admin_menu(20);
+        $id=$_GET["id"];
+        $this->list=model('menu')->admin_menu($id);
         $this->display();
     }
 
     //插件管理
     public function plugin() {
-        $this->list=model('menu')->admin_menu(102);
+        $id=$_GET["id"];
+        $this->list=model('menu')->admin_menu($id);
 //        $this->assign('display',$display);
+        $this->display();
+    }
+
+    //系统设置
+    public function setting() {
+        $id=$_GET["id"];
+        $this->list=model('menu')->admin_menu($id);
         $this->display();
     }
 

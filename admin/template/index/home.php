@@ -1,6 +1,6 @@
 <div class="page_function">
     <div class="info">
-        <h3>管理首页</h3>
+        <h3>系统信息</h3>
     </div>
     <!--[if lt IE 8]>
     <div class="index_tip"><p>您正在使用IE6或IE7为了您更好的体验，请升级浏览器至IE8以上或者更换其他浏览器<a
