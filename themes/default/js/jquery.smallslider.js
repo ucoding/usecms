@@ -8,7 +8,8 @@
  *   Created under Ubuntu 9.10 OS , if you open it with notepad , some black square will appears !
  *
  *   $Version : 0.4$
- */ (function ($) {
+ */
+(function ($) {
 
     $.smallslider = function (elm, options) {
 
@@ -58,8 +59,8 @@
                         position: 'absolute',
                         zIndex: 1
                     }).eq(0).css({
-                        zIndex: 2
-                    });
+                            zIndex: 2
+                        });
                 }
                 if (_this.opts.showButtons) {
                     _this.createButtons(); // 创建按钮。
@@ -272,14 +273,16 @@
                     }, {
                         duration: _this.opts.switchTime,
                         easing: switchEase,
-                        complete: function () {}
+                        complete: function () {
+                        }
                     });
                     else if (chAttr == 'left') _this.$ul.animate({
                         left: iCx
                     }, {
                         duration: _this.opts.switchTime,
                         easing: switchEase,
-                        complete: function () {}
+                        complete: function () {
+                        }
                     });
                     break;
                 case 'none':
@@ -323,17 +326,17 @@
                             duration: 200,
                             easing: 'easeOutQuad'
                         }).animate(t_ani2, {
-                            duration: 200,
-                            easing: 'easeOutQuad'
-                        });
+                                duration: 200,
+                                easing: 'easeOutQuad'
+                            });
                     } else if (_this.opts.textSwitch == 2) {
                         _this.$tex.stop(true, false).animate(t_ani1, {
                             duration: 200,
                             easing: 'easeOutQuad'
                         }).animate(t_ani2, {
-                            duration: 200,
-                            easing: 'easeOutQuad'
-                        });
+                                duration: 200,
+                                easing: 'easeOutQuad'
+                            });
                         // _this.$lay.animate(t_ani1, {duration: 200, easing: 'easeOutQuad'}).animate(t_ani2, {duration: 200, easing: 'easeOutQuad'});
                     }
                 }

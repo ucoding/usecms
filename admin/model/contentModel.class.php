@@ -60,7 +60,7 @@ class contentModel extends commonModel
         //录入数据
         $aid=$this->model->table('content')->data($data)->insert(); //录入基本信息
         model('tags')->content_save($data['keywords'],$aid); //处理TAG
-        model('position')->add_content_save($data['position'],$aid); //保存推荐位
+        model('position')->add_content_save($data['position'],$aid); //保存广告位
         model('expand_model')->add_content_save($data,$aid);  //录入扩展模型数据
         model('upload')->relation('content',$data['file_id'],$aid); //录入附件表
         /*hook*/
@@ -107,7 +107,7 @@ class contentModel extends commonModel
         //录入数据
         $aid=$this->model->table('content')->data($data)->where('aid='.$data['aid'])->update(); //录入基本信息
         model('tags')->content_save($data['keywords'],$data['aid']); //处理TAG
-        model('position')->edit_content_save($data['position'],$data['aid']); //保存推荐位
+        model('position')->edit_content_save($data['position'],$data['aid']); //保存广告位
         if($ext){
         model('expand_model')->edit_content_save($data); //录入扩展模型数据
         }

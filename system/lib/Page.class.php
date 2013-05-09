@@ -4,7 +4,7 @@ class Page
  {		
 	public $pageName="page";//page标签，用来控制url页。比如说xxx.php?page=2中的page
 	public $pageSeparator='-';//页面参数分隔符
-	public $pageSuffix='.html';//页面后缀
+	public $pageSuffix='.php';//页面后缀
 	
 	public $nextPage='下一页';//下一页
 	public $prePage='上一页';//上一页

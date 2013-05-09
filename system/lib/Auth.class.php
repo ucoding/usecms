@@ -10,7 +10,7 @@ class Auth
 		if(!isset($_SESSION))
 			session_start();
 		//登录地址
-		self::$config['AUTH_LOGIN_URL']=isset($config['AUTH_LOGIN_URL'])?$config['AUTH_LOGIN_URL']:__APP__.'/index/login.html';
+		self::$config['AUTH_LOGIN_URL']=isset($config['AUTH_LOGIN_URL'])?$config['AUTH_LOGIN_URL']:__APP__.'/index/php.html';
 		//不需要认证的模块，对后台认证有效
 		self::$config['AUTH_LOGIN_NO']=isset($config['AUTH_LOGIN_NO'])?$config['AUTH_LOGIN_NO']:array('index'=> array('login','verify'),'common'=>'*');
 		//session前缀

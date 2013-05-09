@@ -1,0 +1,41 @@
+<div class="page_function">
+    <div class="info">
+        <h3>{$info.name}添加</h3>
+        <small>使用以下功能进行{$info.name}添加操作</small>
+    </div>
+</div>
+<div class="tab" id="tab"><a class="selected" href="#">添加{$info.name}</a>
+    <!--<a  href="javascript:menuload('__URL__/index/id-{$info.id}')">返回{$info.name}列表</a>-->
+</div>
+<div class="page_form">
+    <form action="__URL__/add_save/time-<?php echo time() ?>-ajax-true" method="post" id="form">
+        <div class="page_table form_table">
+
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td align="right" width="100">
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <!--foreach:{$field_list $vo}-->
+                {$php( echo model('expand_model')->get_field_html($vo))}
+                <!--{/foreach}-->
+
+            </table>
+        </div>
+        <!--普通提交-->
+        <div class="form_submit">
+            <input name="fid" type="hidden" value="{$info.id}"/>
+            <input name="file_id" id="file_id" type="hidden" value=""/>
+            <button type="submit" class="button">保存</button>
+        </div>
+    </form>
+</div>
+</div>
+<script type="text/javascript">
+    //提交表单
+    savelistform("__URL__/add/id-{$info.id}", "__URL__/index/id-{$info.id}");
+</script>

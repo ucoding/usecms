@@ -15,7 +15,7 @@ class cpConfig{
 				'URL_MODULE_DEPR' => '/',//模块分隔符，一般不需要修改
 				'URL_ACTION_DEPR' => '-',//操作分隔符，一般不需要修改
 				'URL_PARAM_DEPR' => '-',//参数分隔符，一般不需要修改
-				'URL_HTML_SUFFIX' => '.html',//伪静态后缀设置，例如 .html ，一般不需要修改
+				'URL_HTML_SUFFIX' => '.php',//伪静态后缀设置，例如 .html ，一般不需要修改
 				'URL_HTTP_HOST' => '', //设置网址域名，cp2.0添加		
 				
 				//模块配置
@@ -96,7 +96,7 @@ class cpConfig{
 		//模板配置			
 		'TPL' => array(
 				'TPL_TEMPLATE_PATH'=>'./template/',//模板目录，一般不需要修改
-				'TPL_TEMPLATE_SUFFIX'=>'.html',//模板后缀，一般不需要修改
+				'TPL_TEMPLATE_SUFFIX'=>'.php',//模板后缀，一般不需要修改
 				'TPL_CACHE_ON'=>false,//是否开启模板缓存，true开启,false不开启
 				'TPL_CACHE_TYPE'=>'',//数据缓存类型，为空或Memcache或SaeMemcache，其中为空为普通文件缓存，cp2.0添加
 				

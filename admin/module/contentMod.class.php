@@ -81,7 +81,7 @@ class contentMod extends commonMod
         //栏目信息
         $this->class_info = model('category')->info($id);
 
-        //推荐位
+        //广告位
         $position=intval($_GET['position']);
         if(!empty($position)){
             $where_url='-position-'.$position;
@@ -95,7 +95,7 @@ class contentMod extends commonMod
         $limit_start = ($cur_page - 1) * $listRows;
         $limit = $limit_start . ',' . $listRows;
 
-        //推荐位
+        //广告位
         if(!empty($position)){
             $where=' AND C.pid='.$position;
             //内容列表

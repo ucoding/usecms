@@ -1,5 +1,5 @@
 <?php
-//推荐位管理
+//广告位管理
 class positionMod extends commonMod {
 
 	public function __construct()
@@ -9,7 +9,7 @@ class positionMod extends commonMod {
 
     //首页
 	public function index() {
-        //获取推荐位列表
+        //获取广告位列表
         $this->list=model('position')->position_list();
 		$this->show();  
 	}
@@ -24,9 +24,9 @@ class positionMod extends commonMod {
         //录入模型处理
         $id=model('position')->add($_POST);
         if(!empty($id)){
-            $this->msg('推荐位添加成功！',1);
+            $this->msg('广告位添加成功！',1);
         }else{
-            $this->msg('推荐位换添加失败',0);
+            $this->msg('广告位换添加失败',0);
         }
     }
 
@@ -50,9 +50,9 @@ class positionMod extends commonMod {
         $_POST['sequence']=intval($_POST['sequence']);        
         //录入模型处理
         if(model('position')->edit($_POST)){
-            $this->msg('推荐位修改成功! ',1);
+            $this->msg('广告位修改成功! ',1);
         }else{
-            $this->msg('推荐位修改失败! ',0);
+            $this->msg('广告位修改失败! ',0);
         }
     }
 
@@ -64,9 +64,9 @@ class positionMod extends commonMod {
         }
         //录入模型处理
         if(model('position')->del($id)){
-            $this->msg('推荐位删除成功！',1);
+            $this->msg('广告位删除成功！',1);
         }else{
-            $this->msg('推荐位删除失败',0);
+            $this->msg('广告位删除失败',0);
         }
     }
 

@@ -4,10 +4,10 @@ require (dirname(__file__) . '/data.php'); //载入附加信息
 //网站信息
 $config['sitename']='DUXCMS 企业网站管理系统';
 $config['seoname']='免费小巧的网站管理系统';
-$config['siteurl']='http://www.duxcms.com';
+$config['siteurl']='http://localhost';
 $config['keywords']='小巧CMS,免费CMS';
 $config['description']='DUXCMS 是一款PHP开发的完全免费，小巧灵活的企业网站系统';
-$config['masteremail']='admin@dxcms.net';
+$config['masteremail']='';
 $config['copyright']='版权信息';
 
 //全局开关
@@ -17,10 +17,10 @@ $config['URL_HTML_MODEL']='2'; //伪静态样式
 
 //模板设置
 $config['TPL_TEMPLATE_PATH']='themes/default/';//模板目录，一般不需要修改
-$config['TPL_INDEX']='index.html';
-$config['TPL_COMMON']='common.html';
-$config['TPL_TAGS']='tags.html';
-$config['TPL_SEARCH']='srarch.html';
+$config['TPL_INDEX']='index.php';
+$config['TPL_COMMON']='common.php';
+$config['TPL_TAGS']='tags.php';
+$config['TPL_SEARCH']='srarch.php';
 
 //上传设置
 $config['ACCESSPRY_SIZE']='500'; //附件大小，单位M
@@ -38,14 +38,14 @@ $config['DEBUG']=false;	//是否开启调试模式，true开启，false关闭
 $config['ERROR_HANDLE']=false;//是否启动CP内置的错误处理，如果开启了xdebug，建议设置为false
 
 //伪静态
-$config['URL_REWRITE_ON']=false;//是否开启重写，true开启重写,false关闭重写
+$config['URL_REWRITE_ON']=true;//是否开启重写，true开启重写,false关闭重写
 $config['URL_MODULE_DEPR']='/';//模块分隔符
 $config['URL_ACTION_DEPR']='/';//操作分隔符
 $config['URL_PARAM_DEPR']='-';//参数分隔符
 $config['URL_HTTP_HOST']='';//设置网址域名特殊
 
 //静态缓存
-$config['HTML_CACHE_ON']=false;//是否开启静态页面缓存，true开启.false关闭
+$config['HTML_CACHE_ON']=true;//是否开启静态页面缓存，true开启.false关闭
 $config['HTML_CACHE_RULE']['index']['index']=1000;//缓存时间,单位：秒
 $config['HTML_CACHE_RULE']['empty']['_empty']=1000;//缓存时间,单位：秒
 
@@ -65,4 +65,4 @@ $config['PLUGIN_PATH']='./plugins/';//插件目录
 $config['PLUGIN_SUFFIX']='Plugin.class.php';//插件模块后缀
 
 //附加
-$config['AUTHO_KEY']='000-000-000';
+$config['AUTHO_KEY']='';

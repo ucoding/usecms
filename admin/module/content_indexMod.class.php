@@ -9,7 +9,7 @@ class content_indexMod extends commonMod
     // 内容列表
     public function index()
     {
-        //推荐位        
+        //广告位
         $position=intval($_GET['position']);
         if(!empty($position)){
             $positionurl='-position-'.$position;
@@ -29,7 +29,7 @@ class content_indexMod extends commonMod
         $limit_start = ($cur_page - 1) * $listRows;
         $limit = $limit_start . ',' . $listRows;
 
-        //推荐位
+        //广告位
         if(!empty($position)){
             $where=' C.pid='.$position;
             //内容列表

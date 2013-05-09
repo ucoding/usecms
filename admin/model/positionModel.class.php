@@ -6,12 +6,12 @@ class positionModel extends commonModel
         parent::__construct();
     }
 
-    //推荐位列表
+    //广告位列表
     public function position_list() {
         return $this->model->table('position')->order('sequence desc')->select();
     }
 
-    //添加推荐位关联
+    //添加广告位关联
     public function add_content_save($list=null,$aid) {
         if(empty($list)){
             return false;
@@ -24,7 +24,7 @@ class positionModel extends commonModel
         }
     }
 
-    //编辑推荐位关联
+    //编辑广告位关联
     public function edit_content_save($list,$aid) {
         $this->del_content($aid);
         $this->add_content_save($list,$aid);
@@ -35,17 +35,17 @@ class positionModel extends commonModel
         return $this->model->table('position_relation')->where('aid='.$aid)->delete();
     }
 
-    //推荐位信息
+    //广告位信息
     public function info($id) {
         return $this->model->table('position')->where('id='.$id)->find();
     }
 
-    //获取指定推荐位列表
+    //获取指定广告位列表
     public function content_list($id) {
         return $this->model->table('position')->where('id in('.$id.')')->order('sequence desc')->select();
     }
 
-    //获取推荐位内容
+    //获取广告位内容
     public function position_content_list($cid,$limit=null,$where=null,$order=null,$all=false) {
         if(!$all){
             if(empty($cid)){
@@ -82,7 +82,7 @@ class positionModel extends commonModel
         return $data;
     }
 
-    //获取推荐位数组
+    //获取广告位数组
     public function relation_array($aid){
         $list=$this->model->table('position_relation')->where('aid='.$aid)->select();
         if(empty($list)){
@@ -94,18 +94,18 @@ class positionModel extends commonModel
         return $position;
     }
 
-    //添加推荐位
+    //添加广告位
     public function add($data)
     {
         return $this->model->table('position')->data($data)->insert();
     }
-    //编辑推荐位
+    //编辑广告位
     public function edit($data)
     {
         $condition['id']=intval($data['id']);
         return $this->model->table('position')->data($data)->where($condition)->update(); 
     }
-    //删除推荐位
+    //删除广告位
     public function del($id)
     {
         return $this->model->table('position')->where('id='.intval($id))->delete(); 
