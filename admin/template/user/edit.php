@@ -12,7 +12,7 @@
         <div class="page_table form_table">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <td width="100" align="right">管理组</td>
+                    <td width="100" align="right">角色</td>
                     <td width="300"><select name="gid" id="gid">
                             <!--foreach:{$user_group $vo}-->
                             <option value="{$vo.id}">{$vo.name}</option>

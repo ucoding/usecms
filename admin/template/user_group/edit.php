@@ -34,22 +34,22 @@
 </script>
 <div class="page_function">
     <div class="info">
-        <h3>管理组设置</h3>
-        <small>使用以下功能进行管理组设置操作</small>
+        <h3>角色设置</h3>
+        <small>使用以下功能进行角色设置操作</small>
     </div>
 </div>
-<div class="tab" id="tab"><a class="selected" href="#">设置管理组</a>
-    <!--<a  href="javascript:menuload('__URL__')">返回管理组列表</a>-->
+<div class="tab" id="tab"><a class="selected" href="#">设置角色</a>
+    <!--<a  href="javascript:menuload('__URL__')">返回角色列表</a>-->
 </div>
 <div class="page_form">
     <form action="__URL__/edit_save/time-<?php echo time() ?>-ajax-true" method="post" id="form">
         <div class="page_table form_table">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <td width="100" align="right">管理组名称</td>
+                    <td width="100" align="right">角色名称</td>
                     <td width="300"><input name="name" type="text" class="text_value" id="name" value="{$info.name}"
-                                           reg="\S" msg="管理组名称不能为空"/></td>
-                    <td><!--if:{$info['keep']==1}-->保留用户组不受权限控制<!--{/if}--></td>
+                                           reg="\S" msg="角色名称不能为空"/></td>
+                    <td><!--if:{$info['keep']==1}-->保留角色不受权限控制<!--{/if}--></td>
                 </tr>
                 <!--if:{$user['grade']==1}-->
                 <tr>
@@ -57,14 +57,14 @@
                     <td width="300">
                         <select name="grade" id="grade">
                             <option value="1"
-                            <!--if:{$info['grade']==1}--> selected="selected" <!--{/if}--> >一级管理组</option>
+                            <!--if:{$info['grade']==1}--> selected="selected" <!--{/if}--> >一级角色</option>
                             <option value="2"
-                            <!--if:{$info['grade']==2}--> selected="selected" <!--{/if}--> >二级管理组</option>
+                            <!--if:{$info['grade']==2}--> selected="selected" <!--{/if}--> >二级角色</option>
                             <option value="3"
-                            <!--if:{$info['grade']==3}--> selected="selected" <!--{/if}--> >三级管理组</option>
+                            <!--if:{$info['grade']==3}--> selected="selected" <!--{/if}--> >三级角色</option>
                         </select>
                     </td>
-                    <td>低级别将看不到高级别的管理组与所属用户(只有级别等于一级的用户才可设置级别，默认三级用户)</td>
+                    <td>低级别将看不到高级别的角色与所属用户(只有级别等于一级的用户才可设置级别，默认三级用户)</td>
                 </tr>
                 <!--{/if}-->
                 <tr>

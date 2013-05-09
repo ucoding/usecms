@@ -8,7 +8,7 @@ $config['siteurl']='http://localhost';
 $config['keywords']='小巧CMS,免费CMS';
 $config['description']='DUXCMS 是一款PHP开发的完全免费，小巧灵活的企业网站系统';
 $config['masteremail']='';
-$config['copyright']='版权信息';
+$config['copyright']='abc';
 
 //全局开关
 $config['IP_STATUS']=false; //IP获取地址状态
@@ -34,18 +34,18 @@ $config['WATERMARK_PLACE']='5'; //水印位置
 $config['WATERMARK_IMAGE']='logo.png'; //水印图片
 
 //调试配置
-$config['DEBUG']=false;	//是否开启调试模式，true开启，false关闭
-$config['ERROR_HANDLE']=false;//是否启动CP内置的错误处理，如果开启了xdebug，建议设置为false
+$config['DEBUG']=true;	//是否开启调试模式，true开启，false关闭
+$config['ERROR_HANDLE']=true;//是否启动CP内置的错误处理，如果开启了xdebug，建议设置为false
 
 //伪静态
-$config['URL_REWRITE_ON']=true;//是否开启重写，true开启重写,false关闭重写
+$config['URL_REWRITE_ON']=false;//是否开启重写，true开启重写,false关闭重写
 $config['URL_MODULE_DEPR']='/';//模块分隔符
 $config['URL_ACTION_DEPR']='/';//操作分隔符
 $config['URL_PARAM_DEPR']='-';//参数分隔符
 $config['URL_HTTP_HOST']='';//设置网址域名特殊
 
 //静态缓存
-$config['HTML_CACHE_ON']=true;//是否开启静态页面缓存，true开启.false关闭
+$config['HTML_CACHE_ON']=false;//是否开启静态页面缓存，true开启.false关闭
 $config['HTML_CACHE_RULE']['index']['index']=1000;//缓存时间,单位：秒
 $config['HTML_CACHE_RULE']['empty']['_empty']=1000;//缓存时间,单位：秒
 

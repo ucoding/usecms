@@ -17,7 +17,7 @@
                 </th>
                 <th width="20%">管理员帐号</th>
                 <th width="20%">管理员名称</th>
-                <th width="20%">管理组</th>
+                <th width="20%">角色</th>
                 <th width="10%">状态</th>
                 <th width="20%">
                     <center>操作</center>

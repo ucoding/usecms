@@ -1,5 +1,5 @@
 <?php
-//用户组管理
+//角色管理
 class user_groupMod extends commonMod {
 
 	public function __construct()
@@ -12,7 +12,7 @@ class user_groupMod extends commonMod {
 		$this->show();  
 	}
 
-	//用户组添加
+	//角色添加
 	public function add() {
         $this->user=model('user')->current_user();
         //获取栏目树
@@ -49,20 +49,20 @@ class user_groupMod extends commonMod {
 
         //录入模型处理
         if(model('user_group')->add($_POST)){
-        	$this->msg('用户组添加成功！',1);
+        	$this->msg('角色添加成功！',1);
         }else{
-        	$this->msg('用户组添加失败',0);
+        	$this->msg('角色添加失败',0);
         }
 	}
 
-    //用户组修改
+    //角色修改
     public function edit() {
         $id=$_GET['id'];
         if(empty($id)){
             $this->msg('参数传递错误！',0);
         }
         
-        //用户组信息
+        //角色信息
         $this->info=model('user_group')->info($id);
         $this->user=model('user')->current_user();
         if($this->info['grade']<$this->user['grade']){
@@ -95,7 +95,7 @@ class user_groupMod extends commonMod {
         $this->show(); 
     }
 
-    //用户组修改
+    //角色修改
     public function edit_save() {
         if(!empty($_POST['class_power'])){
             $_POST['class_power']=substr($_POST['class_power'],0,-1);   
@@ -113,13 +113,13 @@ class user_groupMod extends commonMod {
         //录入模型处理
         $id=model('user_group')->edit($_POST);
         if(!empty($id)){
-            $this->msg('用户组修改成功! ',1);
+            $this->msg('角色修改成功! ',1);
         }else{
-            $this->msg('用户组修改失败! ',0);
+            $this->msg('角色修改失败! ',0);
         }
     }
 
-    //用户组删除
+    //角色删除
     public function del() {
         $id=intval($_POST['id']);
         if(empty($id)){
@@ -127,7 +127,7 @@ class user_groupMod extends commonMod {
         }
         $info=model('user_group')->info($id);
         if($info['keep']==1){
-            $this->msg('内置管理组无法删除！',0);
+            $this->msg('内置角色无法删除！',0);
         }
         $this->user=model('user')->current_user();
         if($info['grade']<$this->user['grade']){
@@ -136,9 +136,9 @@ class user_groupMod extends commonMod {
         //录入模型处理
         $id=model('user_group')->del($id);
         if(!empty($id)){
-            $this->msg('用户组删除成功！',1);
+            $this->msg('角色删除成功！',1);
         }else{
-            $this->msg('用户组删除失败',0);
+            $this->msg('角色删除失败',0);
         }
     }
 	

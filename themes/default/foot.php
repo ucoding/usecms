@@ -6,6 +6,6 @@
             | <a href="{$list.curl}">{$list.name}</a>
             <!--/list-->
         </div>
-        <div id="copyright"> {$my.dibu}</div>
+        <div id="copyright"> {$sys.copyright}{$my.dibu}</div>
     </div>
 </div>

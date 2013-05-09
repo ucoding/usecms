@@ -17,7 +17,7 @@ class menuMod extends commonMod
 	// 分类菜单
     public function category()
     {
-        $this->model_list=model('model_manage')->model_list();
+//        $this->model_list=model('model_manage')->model_list();
         $this->list=model('menu')->admin_menu(30);
         $this->display();
     }
@@ -72,7 +72,13 @@ class menuMod extends commonMod
         $this->display();
     }
 
+    //插件管理
+    public function plugin() {
+        $this->list=model('menu')->admin_menu(102);
+//        $this->assign('display',$display);
+        $this->display();
+    }
+
 
 }
 
-?>

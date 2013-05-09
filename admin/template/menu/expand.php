@@ -1,4 +1,4 @@
-<div class="title"><a href="javascript:void(0)">扩展功能</a></div>
+<div class="title"><a href="javascript:void(0)">其他功能</a></div>
 <ul class="load menu">
     <!--foreach:{$list $vo}-->
     <li><a href="__APP__/{$vo.module}">{$vo.name}</a></li>

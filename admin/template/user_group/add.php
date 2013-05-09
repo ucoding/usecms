@@ -33,21 +33,21 @@
 </script>
 <div class="page_function">
     <div class="info">
-        <h3>管理组添加</h3>
-        <small>使用以下功能进行管理组添加操作</small>
+        <h3>角色添加</h3>
+        <small>使用以下功能进行角色添加操作</small>
     </div>
 </div>
-<div class="tab" id="tab"><a class="selected" href="#">添加管理组</a>
-    <!--<a  href="javascript:menuload('__URL__')">返回管理组列表</a>-->
+<div class="tab" id="tab"><a class="selected" href="#">添加角色</a>
+    <!--<a  href="javascript:menuload('__URL__')">返回角色列表</a>-->
 </div>
 <div class="page_form">
     <form action="__URL__/add_save/time-<?php echo time() ?>-ajax-true" method="post" id="form">
         <div class="page_table form_table">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <td width="100" align="right">管理组名称</td>
+                    <td width="100" align="right">角色名称</td>
                     <td width="300"><input name="name" type="text" class="text_value" id="name" value="" reg="\S"
-                                           msg="管理组名称不能为空"/></td>
+                                           msg="角色名称不能为空"/></td>
                     <td></td>
                 </tr>
                 <!--if:{$user['grade']==1}-->
@@ -55,12 +55,12 @@
                     <td width="100" align="right">管理等级</td>
                     <td width="300">
                         <select name="grade" id="grade">
-                            <option value="1">一级管理组</option>
-                            <option value="2">二级管理组</option>
-                            <option value="3">三级管理组</option>
+                            <option value="1">一级角色</option>
+                            <option value="2">二级角色</option>
+                            <option value="3">三级角色</option>
                         </select>
                     </td>
-                    <td>低级别将看不到高级别的管理组与所属用户(只有级别等于一级的用户才可设置级别，默认三级用户)</td>
+                    <td>低级别将看不到高级别的角色与所属用户(只有级别等于一级的用户才可设置级别，默认三级用户)</td>
                 </tr>
                 <!--{/if}-->
                 <tr>
