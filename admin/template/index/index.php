@@ -24,18 +24,15 @@
                 <div id="logo"><img src="__PUBLICURL__/images/logo.gif" width="180" height="50"/></div>
                 <div class="top_nav">
                     <ul>
-                        <li><a href="__APP__/menu/index">首页</a></li>
-                        <?php if ($user["id"]!=1) { ?>
-                            <!--foreach:{$menu_list $vo}-->
-                            <!--if:{in_array($vo['id'],$model_power)}-->
-                            <li><a href="__APP__/menu/{$vo['module']}?id={$vo['id']}">{$vo['name']}</a></li>
-                            <!--{/if}-->
-                            <!--{/foreach}-->
-                        <?php }else{ ?>
-                            <!--foreach:{$menu_list $vo}-->
-                            <li><a href="__APP__/menu/{$vo['module']}?id={$vo['id']}">{$vo['name']}</a></li>
-                            <!--{/foreach}-->
-                        <?php }?>
+                        <li class="mainmenu"><a href="__APP__/menu/index">首页</a></li>
+                        <!--foreach:{$menu_list $vo}-->
+                        <!--if:{in_array($vo['id'],$model_power)}-->
+                        <li class="mainmenu" style="position: relative">
+                            <a href="__APP__/menu/{$vo['module']}?id={$vo['id']}">{$vo['name']}</a>
+
+                        </li>
+                        <!--{/if}-->
+                        <!--{/foreach}-->
 
                     </ul>
                 </div>
