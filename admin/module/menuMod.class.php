@@ -10,8 +10,6 @@ class menuMod extends commonMod
     //后台首页菜单
     public function index()
     {
-        $id = $_GET["id"];
-//        $this->list=model('menu')->admin_menu(1);
         $this->display();
     }
 
@@ -19,7 +17,14 @@ class menuMod extends commonMod
     public function category()
     {
         $id = $_GET["id"];
-//        $this->model_list=model('model_manage')->model_list();
+        $this->list = model('menu')->admin_menu($id);
+        $this->display();
+    }
+
+
+    public function upload_file()
+    {
+        $id = $_GET["id"];
         $this->list = model('menu')->admin_menu($id);
         $this->display();
     }
@@ -55,20 +60,12 @@ class menuMod extends commonMod
 
     }
 
-    //后台首页菜单
+    //其他
     public function expand()
     {
         $id = $_GET["id"];
         $this->list = model('menu')->admin_menu($id);
-        $this->display();
-    }
-
-    //表单管理
-    public function form()
-    {
-        $id = $_GET["id"];
-        $this->list = model('form')->form_list();
-        $this->assign('display', $display);
+        $this->formlist =  model('form')->form_list();
         $this->display();
     }
 
@@ -80,12 +77,11 @@ class menuMod extends commonMod
         $this->display();
     }
 
-    //插件管理
-    public function plugin()
+    //开发管理
+    public function dev()
     {
         $id = $_GET["id"];
         $this->list = model('menu')->admin_menu($id);
-//        $this->assign('display',$display);
         $this->display();
     }
 

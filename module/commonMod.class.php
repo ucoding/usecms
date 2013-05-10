@@ -13,11 +13,6 @@ class commonMod
         global $config;
         session_start();
 
-        if(!file_exists('data/install.lock'))
-        {
-            $this->redirect(__ROOT__.'/install/');
-        }
-
         $config['PLUGIN_PATH']=__ROOTDIR__.'/plugins/';
         $this->config = $config;
         $this->model = self::initModel( $this->config);

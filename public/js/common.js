@@ -5,8 +5,7 @@ $.ajaxSetup({
 
 //绑定ajax超链接
 function hrftload() {
-    $('.load a,.url').live("click",
-        function () {
+    $('.load a,.url').live("click", function (e) {
             var url = $(this).attr("href");
             if (url) {
                 var len = url.substring(url.length - 1, url.length);
@@ -15,10 +14,17 @@ function hrftload() {
                 }
                 ajaxload(url);
             }
-            return false;
+
+        e.preventDefault();
         });
+
     $('#nav ul a').live("click", function () {
         $("#nav ul a").removeClass('selected');
+        $(this).addClass('selected');
+    });
+
+    $('.top_nav a').live("click", function () {
+        $(".top_nav a").removeClass('selected');
         $(this).addClass('selected');
     });
 }

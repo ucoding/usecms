@@ -13,7 +13,7 @@
         var myLayout;
         var pane;
         var root = '__ROOT__';
-        $(document).ready(function () {
+        $(function () {
 
             //绑定顶级菜单
             navload();
@@ -86,11 +86,9 @@
         function navload() {
             $('.top_nav a').live("click",
                 function () {
-                    url = $(this).attr("href");
+                    var url = $(this).attr("href");
                     if (url !== '' && url !== '#') {
-                        $.get(url, function (result) {
-                            $("#nav").html(result);
-                        });
+                        $("#nav").load(url);
                     }
                     return false;
                 });

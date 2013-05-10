@@ -2,7 +2,11 @@
 html, body {
 	color: #4D4D4D;
 	height: 100%;
-	font-family: "微软雅黑"
+	font-family: "微软雅黑";
+}
+
+body{
+    min-width: 1024px;
 }
 a, a:hover {
 	text-decoration: none
@@ -21,7 +25,7 @@ ul, li {
 	background-image: url(../images/ui-top-bg.jpg);
 	background-repeat: repeat-x;
 	border-bottom: 1px solid #28384f;
-	height: 50px;
+	height: 44px;
 	overflow: hidden;
 }
 #page_nav {
@@ -1020,6 +1024,8 @@ pre {
 	color: #f7f8fa;
 }
 .top_nav ul li a:hover {
+    background-color: #f7f8fa;
+    color: #2D6DA2;
 }
 /*内容菜单*/
 .nav_content {

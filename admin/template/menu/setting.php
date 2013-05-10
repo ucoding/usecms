@@ -1,6 +1,5 @@
 <div class="title"><a href="javascript:void(0)">系统设置</a></div>
 <ul class="load menu">
-<!--    <li><a href="__APP__/index/home">系统设置</a></li>-->
     <!--foreach:{$list $vo}-->
     <li><a href="__APP__/{$vo.module}">{$vo.name}</a></li>
     <!--{/foreach}-->

@@ -4,8 +4,6 @@
         <small>可以添加或者修改表单功能</small>
     </div>
     <div class="exercise">
-        <!--<a href="__APP__/form/index">表单列表</a>-->
-        <a href="__APP__/form/add">表单添加</a>
         <a href="javascript:;" onclick="form_in('__URL__/in')">导入表单</a>
     </div>
 </div>
@@ -37,8 +35,6 @@
                     <center>
                         <a href="__URL__/field_list/id-{$vo.id}">字段管理</a>
                         |
-                        <a href="__URL__/edit/id-{$vo.id}">修改</a>
-                        |
                         <a href="javascript:void(0);" onclick="out('{$vo.id}')">导出</a>
                         |
                         <a href="javascript:void(0);" onclick="del('{$vo.id}',this)">删除</a></center>
@@ -49,18 +45,9 @@
     </div>
 </div>
 <script>
-    loadmenu();
-    function loadmenu() {
-        var doc = window.parent.document;
-        $.get('__APP__/menu/form?load=1', function (result) {
-            $(doc).contents().find("#nav").html(result);
-        });
-    }
     function form_in(url) {
         urldialog('表单导入', url);
-        loadmenu();
     }
-    ;
     function out(id) {
         ajaxpost(
             '导出的文件将在网站目录下的"data/form"中，请自行下载！',
@@ -72,7 +59,6 @@
             }
         );
     }
-    ;
     //删除
     function del(id, obj) {
         var obj;
@@ -83,7 +69,6 @@
             1,
             function () {
                 $(obj).parent().parent().parent().remove();
-                loadmenu();
             }
         );
     }

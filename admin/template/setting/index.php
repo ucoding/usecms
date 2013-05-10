@@ -25,12 +25,6 @@
             <td>{<span>$</span>sys.seoname}</td>
         </tr>
         <tr>
-            <td width="120">网站域名</td>
-            <td width="300"><input name="siteurl" type="text" class="text_value" id="siteurl"
-                                   value="{$config_array.siteurl}"/></td>
-            <td>{<span>$</span>sys.siteurl}</td>
-        </tr>
-        <tr>
             <td width="120">站点关键词</td>
             <td width="300"><input name="keywords" type="text" class="text_value" id="keywords"
                                    value="{$config_array.keywords}"/></td>
@@ -58,36 +52,6 @@
 </div>
 <div class="page_table form_table" id="tab2">
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-            <td width="120">错误信息输出：</td>
-            <td width="300"><?php if ($config_array['DEBUG']) { ?>
-                    <input type="radio" name="DEBUG" id="DEBUG" value="true" checked="checked"/>
-                    开启
-                    <input type="radio" name="DEBUG" value="false"/>
-                    关闭
-                <?php } else { ?>
-                    <input type="radio" name="DEBUG" value="true"/>
-                    开启
-                    <input type="radio" name="DEBUG" id="DEBUG" value="false" checked="checked"/>
-                    关闭
-                <?php } ?></td>
-            <td>开启将会显示详细错误信息</td>
-        </tr>
-        <tr>
-            <td>DEBUG模式：</td>
-            <td><?php if ($config_array['ERROR_HANDLE']) { ?>
-                    <input type="radio" name="ERROR_HANDLE" id="ERROR_HANDLE" value="true" checked="checked"/>
-                    开启
-                    <input type="radio" name="ERROR_HANDLE" value="false"/>
-                    关闭
-                <?php } else { ?>
-                    <input type="radio" name="ERROR_HANDLE" value="true"/>
-                    开启
-                    <input type="radio" name="ERROR_HANDLE" id="ERROR_HANDLE" value="false" checked="checked"/>
-                    关闭
-                <?php } ?></td>
-            <td>开启DEBUG模式将会显示严格的调试信息，非开发者请勿开启。</td>
-        </tr>
         <tr>
             <td>伪静态模式：</td>
             <td><?php if ($config_array['URL_REWRITE_ON']) { ?>
@@ -208,7 +172,7 @@
             <td width="120">上传大小：</td>
             <td width="300"><input class="text_value" type='text' value="{$config_array.ACCESSPRY_SIZE}"
                                    name="ACCESSPRY_SIZE" id="ACCESSPRY_SIZE"/></td>
-            <td>单位:M</td>
+            <td>单位:k</td>
         </tr>
         <tr>
             <td>批量上传数：</td>
