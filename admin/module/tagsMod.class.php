@@ -1,13 +1,15 @@
 <?php
 //tag管理
-class tagsMod extends commonMod {
+class tagsMod extends commonMod
+{
 
-	public function __construct()
+    public function __construct()
     {
         parent::__construct();
     }
 
-	public function index() {
+    public function index()
+    {
 
         //分页处理
         //分页信息
@@ -19,28 +21,27 @@ class tagsMod extends commonMod {
         $limit = $limit_start . ',' . $listRows;
 
         //内容列表
-        $this->list=model('tags')->tag_list($limit);
+        $this->list = model('tags')->tag_list($limit);
         //统计总内容数量
-        $count=model('tags')->count();
+        $count = model('tags')->count();
         $this->assign('page', $this->page($url, $count, $listRows));
-		$this->show();  
-	}
+        $this->show();
+    }
 
     //tag删除
-    public function del() {
-        $id=intval($_POST['id']);
-        if(empty($id)){
-            $this->msg('参数传递错误！',0);
+    public function del()
+    {
+        $id = intval($_POST['id']);
+        if (empty($id)) {
+            $this->msg('参数传递错误！', 0);
         }
         //录入模型处理
-        if(model('tags')->del($id)){
-            $this->msg('tag删除成功！',1);
-        }else{
-            $this->msg('tag删除失败',0);
+        if (model('tags')->del($id)) {
+            $this->msg('tag删除成功！', 1);
+        } else {
+            $this->msg('tag删除失败', 0);
         }
     }
-	
 
-	
 
 }

@@ -1,13 +1,15 @@
 <?php
 //登录记录
-class logMod extends commonMod {
+class logMod extends commonMod
+{
 
-	public function __construct()
+    public function __construct()
     {
         parent::__construct();
     }
 
-	public function index() {
+    public function index()
+    {
 
         //分页处理
         $url = __URL__ . '/index/page-{page}.html'; //分页基准网址
@@ -18,13 +20,13 @@ class logMod extends commonMod {
         $limit = $limit_start . ',' . $listRows;
 
         //内容列表
-        $this->list=model('log')->log_list($limit);
+        $this->list = model('log')->log_list($limit);
         //统计总内容数量
-        $count=model('log')->count();
+        $count = model('log')->count();
         //分页处理
-		$this->assign('page', $this->page($url, $count, $listRows));
-		$this->show();  
-	}
+        $this->assign('page', $this->page($url, $count, $listRows));
+        $this->show();
+    }
 
 
 }

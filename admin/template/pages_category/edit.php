@@ -6,7 +6,6 @@
 </div>
 <div class="tab" id="tab">
     <a class="selected" href="#">编辑单页面</a>
-    <!--<a  href="javascript:menuload('__APP__/category')">返回栏目列表</a>-->
 </div>
 <div class="page_form">
     <form action="__URL__/edit_save/time-<?php echo time(); ?>-ajax-true" method="post" id="form">
@@ -157,14 +156,13 @@
         );
     }
     <?php if($_GET['type']<>'content'){ ?>
-
     //提交表单
     savelistform("__URL__/add", "__APP__/category");
     <?php }else{ ?>
     saveform(function (msg) {
-        $.dialog.tips(msg, 3)
+        $.dialog.tips(msg, 3);
     }, function (msg) {
-        $.dialog.tips(msg, 3)
+        $.dialog.tips(msg, 3);
     });
     <?php } ?>
 
@@ -173,22 +171,22 @@
         $('.advanced').toggle();
     }
 
-    //模板列表
-    function tpl_list(id) {
-        var list = [
-            <!--foreach:{$tpl_list $vo}-->
-            {
-                href: "javascript:;\" onclick=\"tpl_val('" + id + "','{$vo}');\"",
-                text: "{$vo}"
-            },
-            <!--{/foreach}-->
-            {
-                text: "请选择模板"
-            }
-        ];
-        return list;
+<!--    //模板列表-->
+<!--    function tpl_list(id) {-->
+<!--        var list = [-->
+<!--            --><?php //foreach($tpl_list as $vo){ ?>
+<!--            {-->
+<!--                href: "javascript:;\" onclick=\"tpl_val('" + id + "','--><?php //echo $vo['name']; ?><!--');\"",-->
+                text: "<?php echo $vo['name']; ?>"
+<!--            },-->
+<!--            --><?php //}?>
+<!--            {-->
+<!--                text: "请选择模板"-->
+<!--            }-->
+<!--        ];-->
+<!--        return list;-->
+<!--    }-->
 
-    }
     //模板赋值
     function tpl_val(id, val) {
         $('#' + id).val(val);
@@ -196,15 +194,15 @@
         return false;
     }
 
-    //页面执行
-    $(document).ready(function () {
-        //模板选择
-        $("#class_tpl").powerFloat({
-            width: 250,
-            eventType: "click",
-            target: tpl_list('class_tpl'),
-            targetMode: "list"
-        });
-    });
+//    //页面执行
+//    $(document).ready(function () {
+//        //模板选择
+//        $("#class_tpl").powerFloat({
+//            width: 250,
+//            eventType: "click",
+//            target: tpl_list('class_tpl'),
+//            targetMode: "list"
+//        });
+//    });
 
 </script>

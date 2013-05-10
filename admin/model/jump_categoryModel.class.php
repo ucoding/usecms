@@ -14,6 +14,7 @@ class jump_categoryModel extends commonModel
             'category_jump',
         );
     }
+
     //模型文件或文件夹信息
     public function model_ini_file()
     {
@@ -29,27 +30,30 @@ class jump_categoryModel extends commonModel
     }
 
     //保存单页内容
-    public function jump_save($data) {
+    public function jump_save($data)
+    {
         return $this->model->table('category_jump')->data($data)->insert();
     }
 
     //编辑单页内容
-    public function edit_save($data) {
-        $cid=intval($data['cid']);
-        return $this->model->table('category_jump')->data($data)->where('cid='.$cid)->update();
+    public function edit_save($data)
+    {
+        $cid = intval($data['cid']);
+        return $this->model->table('category_jump')->data($data)->where('cid=' . $cid)->update();
     }
 
     //获取单页面内容
-    public function jump_info($cid) {
-        return $this->model->table('category_jump')->where('cid='.$cid)->find();
+    public function jump_info($cid)
+    {
+        return $this->model->table('category_jump')->where('cid=' . $cid)->find();
     }
 
     //删除单页面内容
     //栏目删除
     public function del($cid)
     {
-        
-        return $this->model->table('category_jump')->where('cid='.$cid)->delete(); 
+
+        return $this->model->table('category_jump')->where('cid=' . $cid)->delete();
     }
 
 

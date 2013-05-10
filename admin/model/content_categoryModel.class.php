@@ -9,16 +9,15 @@ class content_categoryModel extends commonModel
     //模型附加表信息
     public function model_ini_data()
     {
-        return array(
-        );
+        return array();
     }
+
     //模型文件或文件夹信息
     public function model_ini_file()
     {
-        return array(
-        );
+        return array();
     }
-    
+
 }
 
 ?>

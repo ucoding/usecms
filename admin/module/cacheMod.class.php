@@ -1,8 +1,9 @@
 <?php
 //缓存处理
-class cacheMod extends commonMod {
+class cacheMod extends commonMod
+{
 
-	public function __construct()
+    public function __construct()
     {
         parent::__construct();
     }
@@ -31,7 +32,7 @@ class cacheMod extends commonMod {
     //删除所有缓存
     public function clear_all()
     {
-    	model('cache')->clear_all();
+        model('cache')->clear_all();
         $this->msg('已经删除所有缓存! ');
     }
 

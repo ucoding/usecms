@@ -1,8 +1,9 @@
 <?php
 //自定义变量数据处理
-class fragmentModel extends commonModel {
+class fragmentModel extends commonModel
+{
 
-	public function __construct()
+    public function __construct()
     {
         parent::__construct();
     }
@@ -16,7 +17,7 @@ class fragmentModel extends commonModel {
     //获取自定义变量内容
     public function info($id)
     {
-        return $this->model->table('fragment')->where('id='.$id)->find();
+        return $this->model->table('fragment')->where('id=' . $id)->find();
     }
 
     //添加自定义变量内容
@@ -28,15 +29,15 @@ class fragmentModel extends commonModel {
     //编辑自定义变量内容
     public function edit($data)
     {
-        $condition['id']=intval($data['id']);
-        return $this->model->table('fragment')->data($data)->where($condition)->update(); 
+        $condition['id'] = intval($data['id']);
+        return $this->model->table('fragment')->data($data)->where($condition)->update();
     }
 
     //删除自定义变量内容
     public function del($id)
     {
-        return $this->model->table('fragment')->where('id='.intval($id))->delete(); 
+        return $this->model->table('fragment')->where('id=' . intval($id))->delete();
     }
-	
+
 
 }

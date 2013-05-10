@@ -8,22 +8,23 @@ class emptyMod extends commonMod
         $plugin_name = $_GET['_module'];
         $action_name = $_GET['_action'];
 
-        $info=model('plugin')->info_table($plugin_name);
-        if(empty($info)){
-        	cpError::show($_GET['_module'] . '模块或插件不存在');
-        }else{
-        	if($info['status']==1){
-        		if (Plugin::run($plugin_name, $action_name) == false) {
-            		cpError::show($_GET['_module'] . '模块或插件不存在');
-        		}
-        	}else{
-        		cpError::show($_GET['_module'] . '模块或插件不存在');
-        	}
+        $info = model('plugin')->info_table($plugin_name);
+        if (empty($info)) {
+            cpError::show($_GET['_module'] . '模块或插件不存在');
+        } else {
+            if ($info['status'] == 1) {
+                if (Plugin::run($plugin_name, $action_name) == false) {
+                    cpError::show($_GET['_module'] . '模块或插件不存在');
+                }
+            } else {
+                cpError::show($_GET['_module'] . '模块或插件不存在');
+            }
 
         }
 
-        
+
     }
 
 }
+
 ?>
