@@ -14,28 +14,26 @@ class jumpMod extends commonMod
             $this->error404();
         }
         //读取栏目信息
-        $info=model('category')->info($cid);
+        $info = model('category')->info($cid);
         if (empty($info)) {
             $this->error404();
         }
 
         //模块自动纠正
-        model('category')->model_jump($info['mid'],'jump');
+        model('category')->model_jump($info['mid'], 'jump');
 
         /*hook*/
-        $this->plus_hook('jump','index',$info);
+        $this->plus_hook('jump', 'index', $info);
         /*hook end*/
 
         //读取附加表
         $jump = model('jump')->info($cid);
 
-        $link=$this->display(html_out($jump['url']),true,false);
+        $link = $this->display(html_out($jump['url']), true, false);
         header("HTTP/1.1 301 Moved Permanently");
-        header("Location: ".$link."");
+        header("Location: " . $link . "");
         exit;
     }
-
-
 
 
 }

@@ -10,9 +10,8 @@ class pagesModel extends commonMod
     //单页内容
     public function content($cid)
     {
-        return $this->model->table('category_page')->where('cid=' . $cid)->find(); 
+        return $this->model->table('category_page')->where('cid=' . $cid)->find();
     }
-
 
 
 }

@@ -9,53 +9,57 @@ class formModel extends commonMod
     //获取内容
     public function info($form)
     {
-        return $this->model->table('form')->where('`table`="'.$form.'"')->find();
+        return $this->model->table('form')->where('`table`="' . $form . '"')->find();
     }
 
     //表单字段
-    public function field_list($id){
-    	return $this->model->table('form_field')->where('fid='.$id)->select();
+    public function field_list($id)
+    {
+        return $this->model->table('form_field')->where('fid=' . $id)->select();
     }
 
     //表单内容列表
-    public function form_list($table,$limit,$order,$where){
-    	return $this->model->table('form_data_'.$table)->limit($limit)->where($where)->order($order)->select();
+    public function form_list($table, $limit, $order, $where)
+    {
+        return $this->model->table('form_data_' . $table)->limit($limit)->where($where)->order($order)->select();
     }
 
     //表单内容统计
-    public function form_count($table){
-    	return $this->model->table('form_data_'.$table)->count();
+    public function form_count($table)
+    {
+        return $this->model->table('form_data_' . $table)->count();
     }
 
     //添加内容
-    public function add($data,$form)
+    public function add($data, $form)
     {
-        $this->model->table('form_data_'.$form)->data($data)->insert();
+        $this->model->table('form_data_' . $form)->data($data)->insert();
     }
 
     //格式化录入字段内容
-    public function field_in($value,$type,$field) {
+    public function field_in($value, $type, $field)
+    {
         switch ($type) {
             case '1':
             case '4':
                 return in($value);
                 break;
-            
+
             case '2':
             case '3':
                 return html_in($value);
                 break;
             case '5':
-                if(is_array($value)){
-                    $str1=$field.'_title';
-                    $str2=$field.'_order';
-                    eval('$title=$_POST[\''.$str1.'\'];');
-                    eval('$order=$_POST[\''.$str2.'\'];');
-                   foreach ($value as $key=>$vo) {
-                        $list[$key]['url']=$vo;
-                        $list[$key]['title']=$title[$key];
-                        $list[$key]['order']=$order[$key];
-                   }
+                if (is_array($value)) {
+                    $str1 = $field . '_title';
+                    $str2 = $field . '_order';
+                    eval('$title=$_POST[\'' . $str1 . '\'];');
+                    eval('$order=$_POST[\'' . $str2 . '\'];');
+                    foreach ($value as $key => $vo) {
+                        $list[$key]['url'] = $vo;
+                        $list[$key]['title'] = $title[$key];
+                        $list[$key]['order'] = $order[$key];
+                    }
                 }
                 return serialize($list);
                 break;
@@ -77,4 +81,5 @@ class formModel extends commonMod
 
 
 }
+
 ?>

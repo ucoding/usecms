@@ -16,48 +16,48 @@ class pagesMod extends commonMod
 
         //读取栏目信息
         $info = model('category')->info($cid);
-        if (!is_array($info)){
+        if (!is_array($info)) {
             $this->error404();
         }
 
         //模块自动纠正
-        model('category')->model_jump($info['mid'],'pages');
+        model('category')->model_jump($info['mid'], 'pages');
 
         /*hook*/
-        $this->plus_hook('category','index',$info);
+        $this->plus_hook('category', 'index', $info);
         /*hook end*/
 
         //位置导航
-        $this->nav=array_reverse(model('category')->nav($info['cid'])); 
+        $this->nav = array_reverse(model('category')->nav($info['cid']));
 
         //查询单页内容
-        $content=model('pages')->content($info['cid']);
-		if(empty($content['content'])){
-			$content['content']='暂无内容';
-		}
-        $info['content']=html_out($content['content']);
+        $content = model('pages')->content($info['cid']);
+        if (empty($content['content'])) {
+            $content['content'] = '暂无内容';
+        }
+        $info['content'] = html_out($content['content']);
 
         //读取内容替换
-        $content=model('content')->format_content($info['content']);
+        $content = model('content')->format_content($info['content']);
 
         //URL路径
         $model_info = model('category')->model_info($info['mid']);
-        $url=model('category')->url_format($model_info['url_category_page'],$cid,$info['urlname']);
+        $url = model('category')->url_format($model_info['url_category_page'], $cid, $info['urlname']);
 
         $page = new Page();
-        $content = $page->contentPage(html_out($content),"<hr class=\"ke-pagebreak\" />",
-        $url, 10, 4); //文章分页
+        $content = $page->contentPage(html_out($content), "<hr class=\"ke-pagebreak\" />",
+            $url, 10, 4); //文章分页
 
-        $info['content']=$content['content'];
-        $this->page=$content['page'];
+        $info['content'] = $content['content'];
+        $this->page = $content['page'];
 
         /*hook*/
-        $hook_replace=$this->plus_hook('category','index_replace',$info,true);
-        if(!empty($hook_replace)){
-            $info=$hook_replace;
+        $hook_replace = $this->plus_hook('category', 'index_replace', $info, true);
+        if (!empty($hook_replace)) {
+            $info = $hook_replace;
         }
         /*hook end*/
-        $this->info=$info;
+        $this->info = $info;
 
 
         //查询上级栏目信息
@@ -71,14 +71,12 @@ class pagesMod extends commonMod
         }
 
         //MEDIA信息
-        $this->common=model('pageinfo')->media($this->info['name'],$this->info['keywords'],$this->info['description']);
+        $this->common = model('pageinfo')->media($this->info['name'], $this->info['keywords'], $this->info['description']);
 
         //获取顶级栏目信息
         $this->top_category = model('category')->info($this->nav[0]['cid']);
         $this->display($info['class_tpl']);
     }
-
-
 
 
 }

@@ -10,9 +10,8 @@ class jumpModel extends commonMod
     //单页内容
     public function info($cid)
     {
-        return $this->model->table('category_jump')->where('cid=' . $cid)->find(); 
+        return $this->model->table('category_jump')->where('cid=' . $cid)->find();
     }
-
 
 
 }

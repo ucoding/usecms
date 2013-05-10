@@ -1,21 +1,23 @@
 <?php
-class indexMod extends commonMod {
+class indexMod extends commonMod
+{
 
-	public function __construct()
+    public function __construct()
     {
         parent::__construct();
     }
 
-	public function index() {
-		/*hook*/
-        $this->plus_hook('index','index');
+    public function index()
+    {
+        /*hook*/
+        $this->plus_hook('index', 'index');
         /*hook end*/
 
         //MEDIA信息
-        $this->common=model('pageinfo')->media();
-        
-		$this->display($this->config['TPL_INDEX']);
-	}
+        $this->common = model('pageinfo')->media();
+
+        $this->display($this->config['TPL_INDEX']);
+    }
 
 
 }
