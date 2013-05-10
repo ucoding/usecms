@@ -2,20 +2,6 @@ $.ajaxSetup({
     cache: false
 });
 
-//绑定顶部ajax菜单
-function navload() {
-    $('.top_nav a').live("click",
-        function () {
-            url = $(this).attr("href");
-            if (url !== '' && url !== '#') {
-                $.get(url, function (result) {
-                    $("#nav").html(result);
-                });
-            }
-            return false;
-        });
-}
-
 
 //绑定ajax超链接
 function hrftload() {

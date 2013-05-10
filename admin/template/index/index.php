@@ -9,6 +9,162 @@
     <link href="__PUBLICURL__/ztree/css/zTreeStyle.css" rel="stylesheet" type="text/css"/>
     <script src="__PUBLICURL__/ztree/jquery.ztree.js"></script>
     <script src="__PUBLICURL__/ztree/jquery.ztree.exhide.js"></script>
+    <script>
+        var myLayout;
+        var pane;
+        var root = '__ROOT__';
+        $(document).ready(function () {
+
+            //绑定顶级菜单
+            navload();
+
+            //绑定超链接
+            hrftload();
+
+            //加载第一页面
+            $.get($(".top_nav a:first").attr("href"), function (result) {
+                $("#nav").html(result);
+            });
+
+            function frameheight() {
+
+                var mainheight = $(window).height() - $("#nav").position().top - parseInt($("#nav").css("padding-bottom")) - parseInt($("#nav").css("padding-top"));
+                $('#nav,#right').height(mainheight);
+            };
+            frameheight();
+            $(window).resize(frameheight);
+
+
+            <?php if($config['LANG_OPEN']){ ?>
+            //语言切换
+            $("#lang").powerFloat({
+                width: 80,
+                eventType: "click",
+                target: [
+                    <!--foreach:{$lang_list $vo}-->
+                    {
+                        href: "__APP__?lang={$vo.lang}",
+                        text: "{$vo.name}"
+                    }
+                    <!--if:{count($lang_list)<>$i}-->
+                    ,
+                    <!--{/if}-->
+
+                    <!--{/foreach}-->
+                ],
+                targetMode: "list"
+            });
+            <?php } ?>
+            //清除缓存
+            $("#cache").powerFloat({
+                width: 100,
+                eventType: "click",
+                target: [
+                    {
+                        href: "javascript:clear('1')",
+                        text: "清除所有缓存"
+                    },
+                    {
+                        href: "javascript:clear('2')",
+                        text: "清除模板缓存"
+                    },
+                    {
+                        href: "javascript:clear('3')",
+                        text: "清除静态缓存"
+                    },
+                    {
+                        href: "javascript:clear('4')",
+                        text: "清除数据缓存"
+                    }
+                ],
+                targetMode: "list"
+            });
+
+        });
+
+        //绑定顶部ajax菜单
+        function navload() {
+            $('.top_nav a').live("click",
+                function () {
+                    url = $(this).attr("href");
+                    if (url !== '' && url !== '#') {
+                        $.get(url, function (result) {
+                            $("#nav").html(result);
+                        });
+                    }
+                    return false;
+                });
+        }
+
+        //AJAX访问
+        function main_load(url) {
+            $('#content_loading').fadeIn(0);
+            $("#main").attr("src", url);
+            $("#main").load(function () {
+
+                $('#content_loading').fadeOut(1);
+            });
+        }
+
+        //退出
+        function logout() {
+            $.dialog({
+                title: '退出确认',
+                content: '是否退出网站管理系统？ ',
+                lock: true,
+                button: [
+                    {
+                        name: '退出',
+                        callback: function () {
+                            $.ajax({
+                                type: 'POST',
+                                url: '__APP__/login/logout',
+                                data: {
+                                    'out': 'true'
+                                },
+                                dataType: 'json',
+                                success: function (json) {
+                                    window.location.reload();
+                                }
+
+                            });
+
+                        }
+                    },
+                    {
+                        name: '取消'
+                    }
+                ]
+            });
+        }
+
+
+        //清除缓存
+        function clear(type) {
+            var url;
+            switch (type) {
+                case '1':
+                    url = "__APP__/cache/clear_all";
+                    break;
+                case '2':
+                    url = "__APP__/cache/clear_tpl";
+                    break;
+                case '3':
+                    url = "__APP__/cache/clear_html";
+                    break;
+                case '4':
+                    url = "__APP__/cache/clear_data";
+                    break;
+            }
+
+
+            $.get(url, function (json) {
+                $.dialog.tips(json.message, 3);
+                $('#floatBox_list').hide();
+            }, 'json');
+        }
+
+    </script>
 </head>
 <body>
 <div id="head">
@@ -37,156 +193,10 @@
 <!--左边-->
 <div id="nav" class="scroll-pane"></div>
 <!--右边-->
-<div style="position:relative; height:100%;margin-left: 180px;">
+<div id="right" style="position:relative; height:100%;margin-left: 180px;">
     <div class="loading" id="content_loading" style="display:none"></div>
     <iframe id="main" name="main" src="" frameborder="0"></iframe>
 </div>
 </body>
-<script>
-    var myLayout;
-    var pane;
-    var root = '__ROOT__';
-    $(document).ready(function () {
 
-        //主框架
-        function frameheight() {
-            var mainheight = $(window).height() - 30;
-            $('.scroll-pane').height(mainheight);
-        };
-        frameheight();
-        $(window).resize(frameheight);
-        //绑定顶级菜单
-        navload();
-
-        //绑定超链接
-        hrftload();
-
-        //加载第一页面
-        $.get($(".top_nav a:first").attr("href"), function (result) {
-            $("#nav").html(result);
-        });
-
-        function frameheight() {
-            var mainheight = $(window).height() - 70;
-            $('#nav').height(mainheight);
-        };
-        frameheight();
-        $(window).resize(frameheight);
-
-
-        <?php if($config['LANG_OPEN']){ ?>
-        //语言切换
-        $("#lang").powerFloat({
-            width: 80,
-            eventType: "click",
-            target: [
-                <!--foreach:{$lang_list $vo}-->
-                {
-                    href: "__APP__?lang={$vo.lang}",
-                    text: "{$vo.name}"
-                }
-                <!--if:{count($lang_list)<>$i}-->
-                ,
-                <!--{/if}-->
-
-                <!--{/foreach}-->
-            ],
-            targetMode: "list"
-        });
-        <?php } ?>
-        //清除缓存
-        $("#cache").powerFloat({
-            width: 100,
-            eventType: "click",
-            target: [
-                {
-                    href: "javascript:clear('1')",
-                    text: "清除所有缓存"
-                },
-                {
-                    href: "javascript:clear('2')",
-                    text: "清除模板缓存"
-                },
-                {
-                    href: "javascript:clear('3')",
-                    text: "清除静态缓存"
-                },
-                {
-                    href: "javascript:clear('4')",
-                    text: "清除数据缓存"
-                }
-            ],
-            targetMode: "list"
-        });
-
-    });
-    //AJAX访问
-    function main_load(url) {
-        $('#content_loading').fadeIn(0);
-        $("#main").attr("src", url);
-        $("#main").load(function () {
-
-            $('#content_loading').fadeOut(1);
-        });
-    }
-
-    //退出
-    function logout() {
-        $.dialog({
-            title: '退出确认',
-            content: '是否退出网站管理系统？ ',
-            lock: true,
-            button: [
-                {
-                    name: '退出',
-                    callback: function () {
-                        $.ajax({
-                            type: 'POST',
-                            url: '__APP__/login/logout',
-                            data: {
-                                'out': 'true'
-                            },
-                            dataType: 'json',
-                            success: function (json) {
-                                window.location.reload();
-                            }
-
-                        });
-
-                    }
-                },
-                {
-                    name: '取消'
-                }
-            ]
-        });
-    }
-
-
-    //清除缓存
-    function clear(type) {
-        var url;
-        switch (type) {
-            case '1':
-                url = "__APP__/cache/clear_all";
-                break;
-            case '2':
-                url = "__APP__/cache/clear_tpl";
-                break;
-            case '3':
-                url = "__APP__/cache/clear_html";
-                break;
-            case '4':
-                url = "__APP__/cache/clear_data";
-                break;
-        }
-
-
-        $.get(url, function (json) {
-            $.dialog.tips(json.message, 3);
-            $('#floatBox_list').hide();
-        }, 'json');
-    }
-
-</script>
 </html>
