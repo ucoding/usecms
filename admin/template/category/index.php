@@ -91,7 +91,7 @@
     <div class="page"></div>
 </div>
 <script>
-    //栏目形象图
+    //栏目缩略图
     $(".class_pic").powerFloat({
         targetMode: "ajax"
     });

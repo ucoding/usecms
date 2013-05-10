@@ -41,7 +41,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td width="100" align="right">栏目形象图</td>
+                    <td width="100" align="right">栏目缩略图</td>
                     <td colspan="2">
                         <?php echo module('editor')->get_image_upload('image1', 'image') ?>
                         <input name="image" type="text" class="text_value" id="image" style="width:200px; float:left"
