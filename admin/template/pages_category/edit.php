@@ -140,7 +140,6 @@
         </div>
     </form>
 </div>
-</div>
 <script type="text/javascript">
     function get_remote_image() {
         ajaxpost_w(
@@ -171,21 +170,21 @@
         $('.advanced').toggle();
     }
 
-<!--    //模板列表-->
-<!--    function tpl_list(id) {-->
-<!--        var list = [-->
-<!--            --><?php //foreach($tpl_list as $vo){ ?>
-<!--            {-->
-<!--                href: "javascript:;\" onclick=\"tpl_val('" + id + "','--><?php //echo $vo['name']; ?><!--');\"",-->
+    //模板列表
+    function tpl_list(id) {
+        var list = [
+            <?php foreach($tpl_list as $vo){ ?>
+            {
+                href: "javascript:;\" onclick=\"tpl_val('" + id + "','<?php echo $vo['name']; ?>');\"",
                 text: "<?php echo $vo['name']; ?>"
-<!--            },-->
-<!--            --><?php //}?>
-<!--            {-->
-<!--                text: "请选择模板"-->
-<!--            }-->
-<!--        ];-->
-<!--        return list;-->
-<!--    }-->
+            },
+            <?php }?>
+            {
+                text: "请选择模板"
+            }
+        ];
+        return list;
+    }
 
     //模板赋值
     function tpl_val(id, val) {
@@ -194,15 +193,15 @@
         return false;
     }
 
-//    //页面执行
-//    $(document).ready(function () {
-//        //模板选择
-//        $("#class_tpl").powerFloat({
-//            width: 250,
-//            eventType: "click",
-//            target: tpl_list('class_tpl'),
-//            targetMode: "list"
-//        });
-//    });
+    //页面执行
+    $(document).ready(function () {
+        //模板选择
+        $("#class_tpl").powerFloat({
+            width: 250,
+            eventType: "click",
+            target: tpl_list('class_tpl'),
+            targetMode: "list"
+        });
+    });
 
 </script>

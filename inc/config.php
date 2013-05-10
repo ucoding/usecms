@@ -1,13 +1,13 @@
 <?php
 require (dirname(__file__) . '/data.php'); //载入附加信息
 //网站信息
-$config['sitename']='企业网站管理系统';
-$config['seoname']='免费小巧的网站管理系统';
+$config['sitename']='site1';
+$config['seoname']='';
 $config['siteurl']='http://localhost';
-$config['keywords']='小巧CMS,免费CMS';
-$config['description']='一款PHP开发的完全免费，小巧灵活的企业网站系统';
+$config['keywords']='';
+$config['description']='';
 $config['masteremail']='';
-$config['copyright']='abc';
+$config['copyright']='';
 
 //全局开关
 $config['IP_STATUS']=false; //IP获取地址状态
@@ -22,7 +22,7 @@ $config['TPL_TAGS']='tags.php';
 $config['TPL_SEARCH']='srarch.php';
 
 //上传设置
-$config['ACCESSPRY_SIZE']='500'; //附件大小，单位M
+$config['ACCESSPRY_SIZE']='500'; //附件大小，单位K
 $config['ACCESSPRY_NUM']='300'; //上传数量
 $config['ACCESSPRY_TYPE']='jpg,bmp,gif,png,flv,mp4,mp3,wma,mp4,7z,zip,rar,ppt,txt,pdf,xls,doc,swf,wmv,avi,rmvb,rm';//上传格式
 $config['THUMBNAIL_SWIHCH']=true; //是否缩图
@@ -33,8 +33,8 @@ $config['WATERMARK_PLACE']='5'; //水印位置
 $config['WATERMARK_IMAGE']='logo.png'; //水印图片
 
 //调试配置
-$config['DEBUG']=true;	//是否开启调试模式，true开启，false关闭
-$config['ERROR_HANDLE']=true;//是否启动CP内置的错误处理，如果开启了xdebug，建议设置为false
+$config['DEBUG']=false;	//是否开启调试模式，true开启，false关闭
+$config['ERROR_HANDLE']=false;//是否启动CP内置的错误处理，如果开启了xdebug，建议设置为false
 
 //伪静态
 $config['URL_REWRITE_ON']=false;//是否开启重写，true开启重写,false关闭重写

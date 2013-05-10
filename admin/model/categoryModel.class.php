@@ -122,7 +122,7 @@ class categoryModel extends commonModel
         }
         $tpl_dir = __ROOTDIR__ . '/' . $config['TPL_TEMPLATE_PATH'] . $lang;
 
-        $list_file = glob($tpl_dir . '*.html');
+        $list_file = glob($tpl_dir . '*.php');
         if (is_array($list_file)) {
             foreach ($list_file as $value) {
                 $array = explode('/', $value);

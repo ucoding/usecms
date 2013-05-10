@@ -37,7 +37,7 @@
 <!--左边-->
 <div id="nav" class="scroll-pane"></div>
 <!--右边-->
-<div style="position:relative; width:100%; height:100%;margin-left: 180px;">
+<div style="position:relative; height:100%;margin-left: 180px;">
     <div class="loading" id="content_loading" style="display:none"></div>
     <iframe id="main" name="main" src="" frameborder="0"></iframe>
 </div>

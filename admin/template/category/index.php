@@ -4,7 +4,6 @@
         <small>使用以下功能进行栏目添加操作</small>
     </div>
     <div class="exercise">
-        <!--<a href="javascript:menuload('__URL__')">栏目列表</a>-->
         <!--foreach:{$model_list $vo}-->
         <a href="javascript:menuload('__APP__/{$vo.model}_category/add')">添加{$vo.name}栏目</a>
         <!--{/foreach}-->

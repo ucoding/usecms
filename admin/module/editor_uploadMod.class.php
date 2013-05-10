@@ -52,7 +52,7 @@ class editor_uploadMod extends commonMod
 
         //上传
         $upload = new UploadFile();
-        $upload->maxSize = 1024 * 1024 * $this->config['ACCESSPRY_SIZE']; //大小
+        $upload->maxSize = 1024 * $this->config['ACCESSPRY_SIZE']; //大小
         $upload->allowExts = explode(',', $this->config['ACCESSPRY_TYPE']); //格式
         $upload->savePath = $file_path . $filetime . '/'; //保存路径
         $upload->saveRule = 'filename'; //重命名
