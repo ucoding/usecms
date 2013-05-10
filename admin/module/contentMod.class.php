@@ -130,14 +130,14 @@ class contentMod extends commonMod
         $this->category_list = model('category')->category_list();
         $this->position_list = model('position')->position_list();
         $this->tpl_list = model('category')->tpl_list();
-        //内容来源
-        if (!empty($this->model_info['befrom'])) {
-            $befrom = explode("\n", $this->model_info['befrom']);
-            foreach ($befrom as $value) {
-                $befrom_list[] = $value;
-            }
-        }
-        $this->befrom_list = $befrom_list;
+//        //内容来源
+//        if (!empty($this->model_info['befrom'])) {
+//            $befrom = explode("\n", $this->model_info['befrom']);
+//            foreach ($befrom as $value) {
+//                $befrom_list[] = $value;
+//            }
+//        }
+//        $this->befrom_list = $befrom_list;
 
         $this->show();
     }
@@ -188,14 +188,14 @@ class contentMod extends commonMod
         $this->tpl_list = model('category')->tpl_list();
         $this->file_id = model('upload')->get_relation('content', $id);
 
-        //内容来源
-        if (!empty($this->model_info['befrom'])) {
-            $befrom = explode("\n", $this->model_info['befrom']);
-            foreach ($befrom as $value) {
-                $befrom_list[] = $value;
-            }
-        }
-        $this->befrom_list = $befrom_list;
+//        //内容来源
+//        if (!empty($this->model_info['befrom'])) {
+//            $befrom = explode("\n", $this->model_info['befrom']);
+//            foreach ($befrom as $value) {
+//                $befrom_list[] = $value;
+//            }
+//        }
+//        $this->befrom_list = $befrom_list;
 
         $this->show();
     }

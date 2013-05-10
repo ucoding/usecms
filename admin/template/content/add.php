@@ -21,7 +21,9 @@
                                 value="{$vo['cid']}" <?php if ($class_info['cid'] == $vo['cid']) { ?> selected="selected" <?php } ?>
                                 <?php if ($vo['type'] == 0 || $vo['mid'] <> $model_info['mid']){ ?>style="background-color:#ccc" disabled="disabled" <?php } ?>
                                 <?php if (!empty($user['class_power'])) {
-                                    if (!in_array($vo['cid'], explode(',', $user['class_power']))) { ?> style="background-color:#ccc"  disabled="disabled" <?php }
+                                    if (!in_array($vo['cid'], explode(',', $user['class_power']))) {
+                                        ?> style="background-color:#ccc"  disabled="disabled" <?php
+                                    }
                                 } ?> >
                                 {$vo['cname']}
                             </option>
@@ -144,13 +146,13 @@
                 </tr>
                 <tbody id="expand">
                 </tbody>
-                <tr class="advanced">
-                    <td width="100" align="right">内容模板</td>
-                    <td width="350">
-                        <input name="tpl" type="text" class="text_value" id="tpl" value=""/>
-                    </td>
-                    <td>留空采用栏目指定模板</td>
-                </tr>
+<!--                <tr class="advanced">-->
+<!--                    <td width="100" align="right">内容模板</td>-->
+<!--                    <td width="350">-->
+<!--                        <input name="tpl" type="text" class="text_value" id="tpl" value=""/>-->
+<!--                    </td>-->
+<!--                    <td>留空采用栏目指定模板</td>-->
+<!--                </tr>-->
                 <!--hook-->
                 <?php module('common')->plus_hook('content', 'add_tpl'); ?>
                 <!--hook end-->
@@ -180,7 +182,7 @@
 </div>
 <script type="text/javascript">
     $(document).ready(function () {
-        　　get_fields();
+       get_fields();
     });
     //TAG
     $('#keywords').tagsInput(
@@ -277,66 +279,36 @@
     savelistform("__URL__/add/cid-{$class_info.cid}", "javascript:history.go(-1)");
 
     //模板列表
-    function tpl_list(id) {
-        var list = [
-            <!--foreach:{$tpl_list $vo}-->
-            {
-                href: "javascript:;\" onclick=\"tpl_val('" + id + "','{$vo}');\"",
-                text: "{$vo}"
-            },
-            <!--{/foreach}-->
-            {
-                text: "请选择模板，支持子目录"
-            }
-        ];
-        return list;
-
-    }
+//    function tpl_list(id) {
+//        var list = [
+//            <!--foreach:{$tpl_list $vo}-->
+//            {
+//                href: "javascript:;\" onclick=\"tpl_val('" + id + "','{$vo}');\"",
+//                text: "{$vo}"
+//            },
+//            <!--{/foreach}-->
+//            {
+//                text: "请选择模板，支持子目录"
+//            }
+//        ];
+//        return list;
+//    }
     //模板赋值
-    function tpl_val(id, val) {
-        $('#' + id).val(val);
-        $('#floatBox_list').hide();
-        return false;
-    }
-
-    //内容来源列表
-    function befrom_list(id) {
-        var list = [
-            <!--foreach:{$befrom_list $vo}-->
-            {
-                href: "javascript:;\" onclick=\"befrom_val('" + id + "','{$vo}');\"",
-                text: "{$vo}"
-            },
-            <!--{/foreach}-->
-            {
-                text: "请选择内容来源"
-            }
-        ];
-        return list;
-
-    }
-    //来源赋值
-    function befrom_val(id, val) {
-        $('#' + id).val(val);
-        $('#floatBox_list').hide();
-        return false;
-    }
+//    function tpl_val(id, val) {
+//        $('#' + id).val(val);
+//        $('#floatBox_list').hide();
+//        return false;
+//    }
 
     //页面执行
     $(document).ready(function () {
-        //模板选择
-        $("#tpl").powerFloat({
-            width: 250,
-            eventType: "click",
-            target: tpl_list('tpl'),
-            targetMode: "list"
-        });
-        //来源选择
-        $("#copyfrom").powerFloat({
-            width: 250,
-            eventType: "click",
-            target: befrom_list('copyfrom'),
-            targetMode: "list"
-        });
+//        //模板选择
+//        $("#tpl").powerFloat({
+//            width: 250,
+//            eventType: "click",
+//            target: tpl_list('tpl'),
+//            targetMode: "list"
+//        });
+
     });
 </script>

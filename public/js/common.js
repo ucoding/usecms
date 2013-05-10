@@ -53,10 +53,6 @@ function livetable() {
 //提交锁屏
 function sub_lock() {
     var txt = '正在处理数据，请稍后...';
-    //IE6位置
-    if (!window.XMLHttpRequest) {
-        $("#targetFixed").css("top", $(document).scrollTop() + 2);
-    }
     //创建半透明遮罩层
     if (!$("#overLay").size()) {
         $('<div id="overLay"></div>').prependTo($("body"));
@@ -174,45 +170,20 @@ function savelistform(addurl, listurl, data) {
         if (typeof data == "function") {
             data(data);
         }
-        setTimeout(function () {
-                $('#form').ajaxSubmit({
-                    dataType: "json",
-                    type: 'post',
-                    success: function (json) {
-                        sub_lock_close();
-                        if (json.status == 0) {
-                            $.dialog.tips(json.message, 3);
-                        } else {
-                            $.dialog({
-                                title: '操作成功！',
-                                content: json.message + ' 3秒后自动返回列表! ',
-                                lock: true,
-                                button: [
-                                    {
-                                        name: '继续添加',
-                                        callback: function () {
-                                            window.location.href = addurl
-                                        },
-                                        focus: true
-                                    },
-                                    {
-                                        name: '返回列表',
-                                        callback: function () {
-                                            window.location.href = listurl
-                                        }
-                                    }
-                                ]
-                            });
-                            setTimeout(function () {
-                                window.location.href = listurl
-                            }, 3000);
 
-                        }
+        $('#form').ajaxSubmit({
+            dataType: "json",
+            type: 'post',
+            success: function (json) {
+                sub_lock_close();
+                if (json.status == 0) {
+                    $.dialog.tips(json.message, 3);
+                } else {
+                    $.dialog.tips(json.message, 3);
+                }
 
-                    }
-                });
-            },
-            1000);
+            }
+        });
         return false;
     });
 }
