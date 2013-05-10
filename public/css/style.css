@@ -524,6 +524,7 @@ h3 {
 	border-right: 1px solid #c1d1dc;
 }
 #nav {
+    float: left;
 	width: 180px;
 	padding-top: 10px;
 	padding-bottom: 10px;

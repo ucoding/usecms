@@ -9,55 +9,38 @@
     <link href="__PUBLICURL__/ztree/css/zTreeStyle.css" rel="stylesheet" type="text/css"/>
     <script src="__PUBLICURL__/ztree/jquery.ztree.js"></script>
     <script src="__PUBLICURL__/ztree/jquery.ztree.exhide.js"></script>
-    <style>
-        html, body {
-            overflow: hidden;
-        }
-    </style>
 </head>
 <body>
-<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-        <td height="50" colspan="2">
-            <div id="head">
-                <div id="logo"><img src="__PUBLICURL__/images/logo.gif" width="180" height="50"/></div>
-                <div class="top_nav">
-                    <ul>
-                        <li class="mainmenu"><a href="__APP__/menu/index">首页</a></li>
-                        <!--foreach:{$menu_list $vo}-->
-                        <!--if:{in_array($vo['id'],$model_power)}-->
-                        <li class="mainmenu" style="position: relative">
-                            <a href="__APP__/menu/{$vo['module']}?id={$vo['id']}">{$vo['name']}</a>
+<div id="head">
+    <div id="logo"><img src="__PUBLICURL__/images/logo.gif" width="180" height="50"/></div>
+    <div class="top_nav">
+        <ul>
+            <li class="mainmenu"><a href="__APP__/menu/index">首页</a></li>
+            <!--foreach:{$menu_list $vo}-->
+            <!--if:{in_array($vo['id'],$model_power)}-->
+            <li class="mainmenu" style="position: relative">
+                <a href="__APP__/menu/{$vo['module']}?id={$vo['id']}">{$vo['name']}</a>
 
-                        </li>
-                        <!--{/if}-->
-                        <!--{/foreach}-->
+            </li>
+            <!--{/if}-->
+            <!--{/foreach}-->
 
-                    </ul>
-                </div>
-                <?php if ($config['LANG_OPEN']) { ?>
-                    <div id="lang_tab"><a id="lang" class="menu" href="#">{$lang.name}</a></div>
-                <?php } ?>
-                <div id="tool"> 欢迎登陆: {$user.user} [{$user.nicename}]&nbsp;&nbsp; <a href="#" onclick="logout()">退出</a>&nbsp;&nbsp;&nbsp;<a
-                        href="#" id="cache" class="menu">清除缓存</a>&nbsp;&nbsp;&nbsp;<a href="__ROOTURL__/"
-                                                                                      target="_blank">网站首页</a></div>
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td width="180" id="page_left" height="100%" align="left" valign="top">
-            <!--左边-->
-            <div id="nav" class="scroll-pane"></div>
-        </td>
-        <td height="100%" style="width:100%\9" align="left" valign="top">
-            <!--右边-->
-            <div style="position:relative; width:100%; height:100%;">
-                <div class="loading" id="content_loading" style="display:none"></div>
-                <iframe id="main" name="main" src="" frameborder="0"></iframe>
-            </div>
-        </td>
-    </tr>
-</table>
+        </ul>
+    </div>
+    <?php if ($config['LANG_OPEN']) { ?>
+        <div id="lang_tab"><a id="lang" class="menu" href="#">{$lang.name}</a></div>
+    <?php } ?>
+    <div id="tool"> 欢迎登陆: {$user.user} [{$user.nicename}]&nbsp;&nbsp; <a href="#" onclick="logout()">退出</a>&nbsp;&nbsp;&nbsp;<a
+            href="#" id="cache" class="menu">清除缓存</a>&nbsp;&nbsp;&nbsp;<a href="__ROOTURL__/"
+                                                                          target="_blank">网站首页</a></div>
+</div>
+<!--左边-->
+<div id="nav" class="scroll-pane"></div>
+<!--右边-->
+<div style="position:relative; width:100%; height:100%;margin-left: 180px;">
+    <div class="loading" id="content_loading" style="display:none"></div>
+    <iframe id="main" name="main" src="" frameborder="0"></iframe>
+</div>
 </body>
 <script>
     var myLayout;
