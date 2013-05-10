@@ -29,7 +29,7 @@
                 <@判断主导航高亮>
                 <@if:{$top_category['cid']==''}>
                 <li class="current">
-                    <@{else}>
+                    <@else>
                 <li>
                     <@{/if}>
                     <div class="title"><a href="__APP__/">网站首页</a></div>
@@ -38,13 +38,13 @@
                 <@判断循环内导航高亮>
                 <@if:{$top_category['cid']==$list['cid']}>
                 <li class="current">
-                    <@{else}>
+                    <@else>
                 <li>
                     <@{/if}>
                     <div class="title"><a href="{$list.curl}">{$list.name}</a></div>
                     <@if:{$top_category['cid']==$list['cid']}>
                     <ul class="nav_menu menucur">
-                        <@{else}>
+                        <@else>
                         <ul class="nav_menu">
                             <@{/if}>
                             <@sublist:{table="category" pid="<$list.cid>" order="cid asc" limit="5"}>

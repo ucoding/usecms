@@ -35,7 +35,7 @@
                 <td align="center">
                     <@if:{$vo['must']==1}>
                     <font color=green><b>√</b></font>
-                    <@{else}>
+                    <@else>
                     <font color=red><b>×</b></font>
                     <@{/if}>
                 </td>
@@ -45,7 +45,7 @@
                         |
                         <@if:{$vo['primary']==0}>
                         <a href="javascript:void(0);" onclick="del('{$vo.fid}',this)">删除</a>
-                        <@{else}>
+                        <@else>
                         <font color="#CCCCCC">删除</font>
                         <@{/if}>
                     </center>

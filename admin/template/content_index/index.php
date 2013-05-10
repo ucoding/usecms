@@ -80,7 +80,7 @@
                     <center>
                         <@if:{$vo['status']<>0}>
                         <font color=green><b>√</b></font>
-                        <@{else}>
+                        <@else>
                         <font color=red><b>×</b></font>
                         <@{/if}>
                     </center>

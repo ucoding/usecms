@@ -57,7 +57,7 @@
                     <center>
                         <@if:{$vo['show']==1}>
                         <font color=green><b>√</b></font>
-                        <@{else}>
+                        <@else>
                         <font color=red><b>×</b></font>
                         <@{/if}>
                     </center>
@@ -66,7 +66,7 @@
                     <center>
                         <@if:{$vo['type']==0}>
                         频道
-                        <@{else}>
+                        <@else>
                         列表
                         <@{/if}>
                     </center>

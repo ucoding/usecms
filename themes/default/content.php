@@ -37,7 +37,7 @@
                     上一篇：
                     <@if:{empty($prev)}>
                     暂无
-                    <@{else}>
+                    <@else>
                     <a href="{$prev.aurl}">{$prev.title}</a>
                     <@/if>
                 </div>
@@ -45,7 +45,7 @@
                     下一篇
                     <@if:{empty($next)}>
                     暂无
-                    <@{else}>
+                    <@else>
                     <a href="{$next.aurl}">{$next.title}</a>
                     <@/if>
                 </div>

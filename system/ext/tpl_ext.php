@@ -65,8 +65,8 @@ function template_ext($template,$config=array())
     $template = preg_replace ('/<@\if:{(.+?)\}>/i', '<?php if($1) { ?>', $template);
     /*<@elseif:{}>替换成 <?php }else if(condition){ ?>*/
     $template = preg_replace ('/<@\elseif:{(.+?)\}>/i', '<?php }else if($1) { ?>', $template);
-    /*<@{else}>替换成 <?php }else{ ?>*/
-    $template = preg_replace ('/<@\{else\}>/i', '<?php }else{ ?>', $template);
+    /*<@else>替换成 <?php }else{ ?>*/
+    $template = preg_replace ('/<@else>/i', '<?php }else{ ?>', $template);
     /*<@{/if}>替换成 <?php } ?>*/
     $template = preg_replace ('/<@\/if>/i', '<?php } ?>', $template);
     $template = preg_replace ('/<@\{\/if\}>/i', '<?php } ?>', $template);

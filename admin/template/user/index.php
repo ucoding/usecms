@@ -33,7 +33,7 @@
                 <td>
                     <@if:{$vo['status']==1}>
                     启用
-                    <@{else}>
+                    <@else>
                     禁用
                     <@{/if}>
                 </td>
