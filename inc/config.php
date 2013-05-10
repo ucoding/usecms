@@ -63,5 +63,3 @@ $config['LANG_PACK_PATH']='./lang/';//语言包目录
 $config['PLUGIN_PATH']='./plugins/';//插件目录         
 $config['PLUGIN_SUFFIX']='Plugin.class.php';//插件模块后缀
 
-//附加
-$config['AUTHO_KEY']='';

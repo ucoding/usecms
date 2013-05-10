@@ -54,12 +54,6 @@
                                    value="{$config_array.copyright}"/></td>
             <td>{<span>$</span>sys.copyright}</td>
         </tr>
-        <tr>
-            <td width="120">授权码</td>
-            <td width="300"><input name="AUTHO_KEY" type="text" class="text_value" id="AUTHO_KEY"
-                                   value="{$config_array.AUTHO_KEY}"/></td>
-            <td>&nbsp;</td>
-        </tr>
     </table>
 </div>
 <div class="page_table form_table" id="tab2">
