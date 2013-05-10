@@ -18,7 +18,7 @@
                             <option value="0">=====顶级栏目=====</option>
                             <@foreach:{$category_list $vo}>
                             <option value="{$vo.cid}">{$vo.cname}</option>
-                            <@{/foreach}>
+                            <@/foreach>
                         </select>
                         &nbsp;&nbsp;<a href="javascript:;" onclick="advanced()">高级设置</a>
                     </td>
@@ -161,7 +161,7 @@
                 href: "javascript:;\" onclick=\"tpl_val('" + id + "','{$vo}');\"",
                 text: "{$vo}"
             },
-            <@{/foreach}>
+            <@/foreach>
             {
                 text: "请选择模板"
             }

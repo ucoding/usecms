@@ -15,7 +15,7 @@
                     <td width="300"><select name="gid" id="gid">
                             <@foreach:{$user_group $vo}>
                             <option value="{$vo.id}">{$vo.name}</option>
-                            <@{/foreach}>
+                            <@/foreach>
                         </select></td>
                     <td></td>
                 </tr>
@@ -44,10 +44,10 @@
                 <tr>
                     <td width="100" align="right">状态</td>
                     <td width="300"><input name="status" type="radio" value="1" <@if:{$info['status']==1}>
-                        checked="checked" <@{/if}> />
+                        checked="checked" <@/if> />
                         正常&nbsp;&nbsp;
                         <input name="status" type="radio" value="0" <@if:{$info['status']==0}> checked="checked"
-                        <@{/if}> />
+                        <@/if> />
                         禁用
                     </td>
                     <td></td>

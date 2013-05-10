@@ -62,7 +62,7 @@
                     </td>
                     <td>低级别将看不到高级别的角色与所属用户(只有级别等于一级的用户才可设置级别，默认三级用户)</td>
                 </tr>
-                <@{/if}>
+                <@/if>
                 <tr>
                     <td width="100" align="right">内容与栏目权限
                         <br/>
@@ -96,7 +96,7 @@
                                 {$val['name']} &nbsp;&nbsp;
                             <?php } ?>
                         </fieldset>
-                        <@{/foreach}>
+                        <@/foreach>
 
                     </td>
                 </tr>

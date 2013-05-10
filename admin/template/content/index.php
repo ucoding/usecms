@@ -66,7 +66,7 @@
                 value="__URL__/index/id-{$class_info.cid}-position-{$vo.id}"  <?php if ($_GET['position'] == $vo['id']) { ?> selected="selected" <?php } ?> >
                 {$vo.name}
             </option>
-            <@{/foreach}>
+            <@/foreach>
         </select>
         &nbsp;&nbsp;
         搜索：
@@ -114,7 +114,7 @@
         <a href="javascript:void(0);" rel="{$vo.image}" class="class_pic"><img align="AbsMiddle"
                                                                                src="__PUBLICURL__/images/ico/pic.png"
                                                                                width="14" height="14" alt=""/></a>
-        <@{/if}>
+        <@/if>
         </span>
                     <?php
                     if (!empty($vo['position'])) {
@@ -133,7 +133,7 @@
                         <font color=green><b>√</b></font>
                         <@else>
                         <font color=red><b>×</b></font>
-                        <@{/if}>
+                        <@/if>
                     </center>
                 </td>
                 <td>
@@ -151,7 +151,7 @@
                         | <a href="javascript:void(0);" onclick="del('{$vo.aid}',this)">删除</a></center>
                 </td>
             </tr>
-            <@{/foreach}>
+            <@/foreach>
         </table>
     </div>
 </div>
@@ -178,7 +178,7 @@
                     } ?> >
                     {$vo['cname']}
                 </option>
-                <@{/foreach}>
+                <@/foreach>
             </select>
             <input type="button" onclick="javascript:audit(4);" class="button_small" value="确认"/>
   </span>

@@ -31,7 +31,7 @@
                 <li class="current">
                     <@else>
                 <li>
-                    <@{/if}>
+                    <@/if>
                     <div class="title"><a href="__APP__/">网站首页</a></div>
                 </li>
                 <@list:{table="category" type="top" order="cid asc" limit="7"}>
@@ -40,13 +40,13 @@
                 <li class="current">
                     <@else>
                 <li>
-                    <@{/if}>
+                    <@/if>
                     <div class="title"><a href="{$list.curl}">{$list.name}</a></div>
                     <@if:{$top_category['cid']==$list['cid']}>
                     <ul class="nav_menu menucur">
                         <@else>
                         <ul class="nav_menu">
-                            <@{/if}>
+                            <@/if>
                             <@sublist:{table="category" pid="<$list.cid>" order="cid asc" limit="5"}>
                             <li><a href="{$sublist.curl}">{$sublist.name}</a></li>
                             <li class="line">|</li>

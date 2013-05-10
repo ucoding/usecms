@@ -2,12 +2,12 @@
 <ul class="load menu">
     <@foreach:{$list $vo}>
     <li><a href="__APP__/{$vo.module}">{$vo.name}</a></li>
-    <@{/foreach}>
+    <@/foreach>
     <@if:{!empty($list)}>
     <@foreach:{$model_list $vo}>
     <li><a href="__APP__/{$vo.admin_category}/add">添加{$vo.name}栏目</a></li>
-    <@{/foreach}>
-    <@{/if}>
+    <@/foreach>
+    <@/if>
 </ul>
 <script>
     url = $(".load li:first a").attr("href");

@@ -38,7 +38,7 @@
                         | <a href="javascript:void(0);" onclick="del('{$vo.mid}',this)">删除</a></center>
                 </td>
             </tr>
-            <@{/foreach}>
+            <@/foreach>
         </table>
     </div>
 </div>

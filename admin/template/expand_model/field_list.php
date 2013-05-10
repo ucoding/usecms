@@ -37,7 +37,7 @@
                     <font color=green><b>√</b></font>
                     <@else>
                     <font color=red><b>×</b></font>
-                    <@{/if}>
+                    <@/if>
                 </td>
                 <td>
                     <center>
@@ -47,11 +47,11 @@
                         <a href="javascript:void(0);" onclick="del('{$vo.fid}',this)">删除</a>
                         <@else>
                         <font color="#CCCCCC">删除</font>
-                        <@{/if}>
+                        <@/if>
                     </center>
                 </td>
             </tr>
-            <@{/foreach}>
+            <@/foreach>
         </table>
     </div>
 </div>

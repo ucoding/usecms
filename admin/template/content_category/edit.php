@@ -17,9 +17,9 @@
                             <option value="0">=====顶级栏目=====</option>
                             <@foreach:{$category_list $vo}>
                             <option
-                            <@if:{$vo['cid']==$info['pid']}>selected="selected"<@{/if}>
+                            <@if:{$vo['cid']==$info['pid']}>selected="selected"<@/if>
                             value="{$vo.cid}">{$vo.cname}</option>
-                            <@{/foreach}>
+                            <@/foreach>
                         </select>
                         &nbsp;&nbsp;<a href="javascript:;" onclick="advanced()">高级设置</a>
                     </td>
@@ -81,11 +81,11 @@
                     <td width="100" align="right">栏目属性</td>
                     <td width="300">
                         <input name="type" type="radio" value="0" <@if:{$info['type']==0}>checked="checked"
-                        <@{/if}> />
+                        <@/if> />
                         频道页
                         &nbsp;&nbsp;
                         <input name="type" type="radio" value="1" <@if:{$info['type']==1}>checked="checked"
-                        <@{/if}> />
+                        <@/if> />
                         列表页
                     </td>
                     <td>频道页无法发布内容，列表页可以发布内容</td>
@@ -94,11 +94,11 @@
                     <td width="100" align="right">栏目显示</td>
                     <td width="300">
                         <input name="show" type="radio" value="1" <@if:{$info['show']==1}>checked="checked"
-                        <@{/if}> />
+                        <@/if> />
                         显示
                         &nbsp;&nbsp;
                         <input name="show" type="radio" value="0" <@if:{$info['show']==0}>checked="checked"
-                        <@{/if}> />
+                        <@/if> />
                         隐藏
                     </td>
                     <td>控制栏目调用的显示与隐藏</td>
@@ -122,22 +122,22 @@
                     <td width="300">
                         <select name="content_order">
                             <option
-                            <@if:{$info['content_order']=='updatetime DESC'}> selected="selected" <@{/if}>
+                            <@if:{$info['content_order']=='updatetime DESC'}> selected="selected" <@/if>
                             value="updatetime DESC">内容更新时间 新-旧</option>
                             <option
-                            <@if:{$info['content_order']=='updatetime ASC'}> selected="selected" <@{/if}>
+                            <@if:{$info['content_order']=='updatetime ASC'}> selected="selected" <@/if>
                             value="updatetime ASC">内容更新时间 旧-新</option>
                             <option
-                            <@if:{$info['content_order']=='inputtime DESC'}> selected="selected" <@{/if}>
+                            <@if:{$info['content_order']=='inputtime DESC'}> selected="selected" <@/if>
                             value="inputtime DESC">内容发布时间 新-旧</option>
                             <option
-                            <@if:{$info['content_order']=='inputtime ASC'}> selected="selected" <@{/if}>
+                            <@if:{$info['content_order']=='inputtime ASC'}> selected="selected" <@/if>
                             value="inputtime ASC">内容发布时间 旧-新</option>
                             <option
-                            <@if:{$info['content_order']=='order DESC'}> selected="selected" <@{/if}>
+                            <@if:{$info['content_order']=='order DESC'}> selected="selected" <@/if>
                             value="order DESC">内容自定义排序 大-小</option>
                             <option
-                            <@if:{$info['content_order']=='order ASC'}> selected="selected" <@{/if}>
+                            <@if:{$info['content_order']=='order ASC'}> selected="selected" <@/if>
                             value="order ASC">内容自定义排序 小-大</option>
                         </select>
                     </td>
@@ -170,7 +170,7 @@
                                 value="{$vo.mid}" <?php if ($vo['mid'] == $info['expand']) { ?> selected="selected" <?php } ?> >
                                 {$vo.name}
                             </option>
-                            <@{/foreach}>
+                            <@/foreach>
                         </select>
                     </td>
                     <td>用于附加内容字段</td>
@@ -200,7 +200,7 @@
                 href: "javascript:;\" onclick=\"tpl_val('" + id + "','{$vo}');\"",
                 text: "{$vo}"
             },
-            <@{/foreach}>
+            <@/foreach>
             {
                 text: "请选择模板"
             }

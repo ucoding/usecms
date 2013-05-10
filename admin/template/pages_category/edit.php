@@ -18,9 +18,9 @@
                             <option value="0">=====顶级栏目=====</option>
                             <@foreach:{$category_list $vo}>
                             <option
-                            <@if:{$vo['cid']==$info['pid']}>selected="selected"<@{/if}>
+                            <@if:{$vo['cid']==$info['pid']}>selected="selected"<@/if>
                             value="{$vo.cid}">{$vo.cname}</option>
-                            <@{/foreach}>
+                            <@/foreach>
                         </select>
                         &nbsp;&nbsp;<a href="javascript:;" onclick="advanced()">高级设置</a>
                     </td>
@@ -101,11 +101,11 @@
                     <td width="100" align="right">页面显示</td>
                     <td width="300">
                         <input name="show" type="radio" value="1" <@if:{$info['show']==1}>checked="checked"
-                        <@{/if}> />
+                        <@/if> />
                         显示
                         &nbsp;&nbsp;
                         <input name="show" type="radio" value="0" <@if:{$info['show']==0}>checked="checked"
-                        <@{/if}> />
+                        <@/if> />
                         隐藏
                     </td>
                     <td>控制页面调用的显示与隐藏</td>

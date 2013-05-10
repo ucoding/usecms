@@ -42,7 +42,7 @@
                     <?php } ?>
                 </td>
             </tr>
-            <@{/foreach}>
+            <@/foreach>
         </table>
     </div>
 </div>

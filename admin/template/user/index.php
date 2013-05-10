@@ -35,7 +35,7 @@
                     启用
                     <@else>
                     禁用
-                    <@{/if}>
+                    <@/if>
                 </td>
                 <td>
                     <center>
@@ -43,7 +43,7 @@
                         | <a href="javascript:void(0);" onclick="del('{$vo.id}',this)">删除</a></center>
                 </td>
             </tr>
-            <@{/foreach}>
+            <@/foreach>
         </table>
     </div>
 </div>

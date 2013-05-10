@@ -26,7 +26,7 @@
                                 } ?> >
                                 {$vo['cname']}
                             </option>
-                            <@{/foreach}>
+                            <@/foreach>
                         </select>
                         &nbsp;&nbsp;<a href="javascript:;" onclick="advanced()">高级设置</a>
                     </td>
@@ -42,7 +42,7 @@
                     <td width="350">
                         <@foreach:{$position_list $vo}>
                         <input name="position[]" type="checkbox" value="{$vo.id}"/> {$vo.name}&nbsp;&nbsp;
-                        <@{/foreach}>
+                        <@/foreach>
                     </td>
                     <td></td>
                 </tr>

@@ -27,11 +27,11 @@
         <span class="select">
         <select name="model">
             <option value="0"
-            <@if:{$info['model']==0}> selected="selected" <@{/if}> >标题</option>
+            <@if:{$info['model']==0}> selected="selected" <@/if> >标题</option>
             <option value="1"
-            <@if:{$info['model']==1}> selected="selected" <@{/if}> >标题和描述</option>
+            <@if:{$info['model']==1}> selected="selected" <@/if> >标题和描述</option>
             <option value="2"
-            <@if:{$info['model']==2}> selected="selected" <@{/if}> >全文</option>
+            <@if:{$info['model']==2}> selected="selected" <@/if> >全文</option>
         </select>
         </span>
                     <input name="keyword" type="text" id="keyword" value="{$info.name}"/>

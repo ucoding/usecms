@@ -48,9 +48,9 @@
                     }
                     <@if:{count($lang_list)<>$i}>
                     ,
-                    <@{/if}>
+                    <@/if>
 
-                    <@{/foreach}>
+                    <@/foreach>
                 ],
                 targetMode: "list"
             });
@@ -176,8 +176,8 @@
                 <a href="__APP__/menu/{$vo['module']}?id={$vo['id']}">{$vo['name']}</a>
 
             </li>
-            <@{/if}>
-            <@{/foreach}>
+            <@/if>
+            <@/foreach>
 
         </ul>
     </div>

@@ -24,7 +24,7 @@
                                 } ?> >
                                 {$vo['cname']}
                             </option>
-                            <@{/foreach}>
+                            <@/foreach>
                         </select>
                         &nbsp;&nbsp;<a href="javascript:;" onclick="advanced()">高级设置</a>
                     </td>
@@ -43,7 +43,7 @@
                         <input name="position[]" type="checkbox" value="{$vo.id}" <?php if (is_array($position_array)) {
                             if (in_array($vo['id'], $position_array)) { ?> checked="checked" <?php }
                         } ?> /> {$vo.name}&nbsp;&nbsp;
-                        <@{/foreach}>
+                        <@/foreach>
                     </td>
                     <td></td>
                 </tr>
@@ -280,7 +280,7 @@
 //                href: "javascript:;\" onclick=\"tpl_val('" + id + "','{$vo}');\"",
 //                text: "{$vo}"
 //            },
-//            <@{/foreach}>
+//            <@/foreach>
 //            {
 //                text: "请选择模板，支持子目录"
 //            }

@@ -6,7 +6,7 @@
     <div class="exercise">
         <@foreach:{$model_list $vo}>
         <a href="javascript:menuload('__APP__/{$vo.model}_category/add')">添加{$vo.name}栏目</a>
-        <@{/foreach}>
+        <@/foreach>
     </div>
 </div>
 <div class="page_main">
@@ -44,7 +44,7 @@
                     <a href="javascript:;" rel="{$vo.image}" class="class_pic"><img align="AbsMiddle"
                                                                                     src="__PUBLICURL__/images/ico/pic.png"
                                                                                     width="14" height="14" alt=""/></a>
-                    <@{/if}>
+                    <@/if>
                 </td>
                 <td>
                     <center>
@@ -59,7 +59,7 @@
                         <font color=green><b>√</b></font>
                         <@else>
                         <font color=red><b>×</b></font>
-                        <@{/if}>
+                        <@/if>
                     </center>
                 </td>
                 <td>
@@ -68,7 +68,7 @@
                         频道
                         <@else>
                         列表
-                        <@{/if}>
+                        <@/if>
                     </center>
                 </td>
                 <td>
@@ -81,7 +81,7 @@
                              onclick="del('__APP__/{$vo.admin_category}/del','{$vo.cid}',this)">删除</a></center>
                 </td>
             </tr>
-            <@{/foreach}>
+            <@/foreach>
         </table>
     </div>
 </div>

@@ -30,11 +30,11 @@
                         <a href="__URL__/edit/id-{$vo.id}">设置</a>
                         <@if:{$vo.id!=1}>
                         | <a href="javascript:void(0);" onclick="del('{$vo.id}',this)">删除</a>
-                        <@{/if}>
+                        <@/if>
                     </center>
                 </td>
             </tr>
-            <@{/foreach}>
+            <@/foreach>
         </table>
     </div>
 </div>

@@ -16,7 +16,7 @@
                         <select name="gid" id="gid">
                             <@foreach:{$user_group $vo}>
                             <option value="{$vo.id}">{$vo.name}</option>
-                            <@{/foreach}>
+                            <@/foreach>
                         </select>
                     </td>
                     <td></td>

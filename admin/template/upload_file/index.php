@@ -36,7 +36,7 @@
                 value="__URL__/index/type-{$vo.type}" <?php if ($_GET['type'] == $vo['type']) { ?> selected="selected" <?php } ?> >
                 {$vo.name}
             </option>
-            <@{/foreach}>
+            <@/foreach>
         </select>
         &nbsp;&nbsp;
         搜索：
@@ -83,7 +83,7 @@
                         <a href="javascript:void(0);" onclick="del('{$vo.id}',this)">删除</a></center>
                 </td>
             </tr>
-            <@{/foreach}>
+            <@/foreach>
         </table>
     </div>
 </div>

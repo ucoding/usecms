@@ -51,7 +51,7 @@
                     <td width="100" align="right">角色名称</td>
                     <td width="300"><input name="name" type="text" class="text_value" id="name" value="{$info.name}"
                                            reg="\S" msg="角色名称不能为空"/></td>
-                    <td><@if:{$info['keep']==1}>保留角色不受权限控制<@{/if}></td>
+                    <td><@if:{$info['keep']==1}>保留角色不受权限控制<@/if></td>
                 </tr>
                 <@if:{$user['grade']==1}>
                 <tr>
@@ -59,16 +59,16 @@
                     <td width="300">
                         <select name="grade" id="grade">
                             <option value="1"
-                            <@if:{$info['grade']==1}> selected="selected" <@{/if}> >一级角色</option>
+                            <@if:{$info['grade']==1}> selected="selected" <@/if> >一级角色</option>
                             <option value="2"
-                            <@if:{$info['grade']==2}> selected="selected" <@{/if}> >二级角色</option>
+                            <@if:{$info['grade']==2}> selected="selected" <@/if> >二级角色</option>
                             <option value="3"
-                            <@if:{$info['grade']==3}> selected="selected" <@{/if}> >三级角色</option>
+                            <@if:{$info['grade']==3}> selected="selected" <@/if> >三级角色</option>
                         </select>
                     </td>
                     <td>低级别将看不到高级别的角色与所属用户(只有级别等于一级的用户才可设置级别，默认三级用户)</td>
                 </tr>
-                <@{/if}>
+                <@/if>
                 <tr>
                     <td width="100" align="right">内容与栏目权限
                         <br/>
@@ -99,15 +99,15 @@
                     <td colspan="2">
                         <@foreach:{$menu_list $vo}>
                         <fieldset class="source">
-                            <input name="model_power[]" type="checkbox" value="{$vo['id']}" <@if:{in_array($vo['id'],$model_power)}> checked="checked" <@{/if}> >
+                            <input name="model_power[]" type="checkbox" value="{$vo['id']}" <@if:{in_array($vo['id'],$model_power)}> checked="checked" <@/if> >
                             <legend>{$vo['name']}</legend>
                             <?php $list = model('menu')->menu_list($vo['id']);
                             if (!empty($list)) foreach ($list as $val) { ?>
-                                <input name="model_power[]" type="checkbox" value="{$val['id']}" <@if:{in_array($val['id'],$model_power)}> checked="checked" <@{/if}> >
+                                <input name="model_power[]" type="checkbox" value="{$val['id']}" <@if:{in_array($val['id'],$model_power)}> checked="checked" <@/if> >
               {$val['name']} &nbsp;&nbsp;
               <?php } ?>
                         </fieldset>
-                        <@{/foreach}>
+                        <@/foreach>
                     </td>
                 </tr>
             </table>

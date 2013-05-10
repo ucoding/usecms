@@ -57,7 +57,7 @@ function template_ext($template,$config=array())
     $template = preg_replace ('/<@foreach:{(\S+)\s+(\S+)}>\s*/i','<?php \$i=0;if(is_array($1)) foreach($1 AS $2) { \$i++;  ?>', $template);
     /*<@foreach:{$arr $key $vo}>替换成 <?php $vo_i=1; if (is_array($arr) foreach($arr as $key => $vo){ ?>*/
     $template = preg_replace ('/<@foreach:{(\S+)\s+(\S+)\s+(\S+)}>\s*/i','<?php \$i=0;if(is_array($1)) foreach($1 AS $2 => $3) { \$i++;  ?>', $template);
-    /*<@{/foreach}>替换成 <?php } ?>*/
+    /*<@/foreach>替换成 <?php } ?>*/
     $template = preg_replace ('/<@\{\/foreach\}>\s*/iU', '<?php }unset(\$i) ?>', $template);
 
     //添加判断标签
@@ -67,9 +67,8 @@ function template_ext($template,$config=array())
     $template = preg_replace ('/<@\elseif:{(.+?)\}>/i', '<?php }else if($1) { ?>', $template);
     /*<@else>替换成 <?php }else{ ?>*/
     $template = preg_replace ('/<@else>/i', '<?php }else{ ?>', $template);
-    /*<@{/if}>替换成 <?php } ?>*/
+    /*<@/if>替换成 <?php } ?>*/
     $template = preg_replace ('/<@\/if>/i', '<?php } ?>', $template);
-    $template = preg_replace ('/<@\{\/if\}>/i', '<?php } ?>', $template);
 
     //添加打印标签
     $template = preg_replace ('/<@dump\{(.+?)\}>/iU', '<?php print_r($1) ?>', $template);

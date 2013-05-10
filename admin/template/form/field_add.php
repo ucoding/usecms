@@ -24,7 +24,7 @@
                         <select name="type" id="type" onchange="fildtype($(this).val())">
                             <@foreach:{$field_type $key $vo}>
                             <option value="{$key}">{$vo.name}</option>
-                            <@{/foreach}>
+                            <@/foreach>
                         </select>
                     </td>
                 </tr>
@@ -34,7 +34,7 @@
                         <select name="property" id="property">
                             <@foreach:{$field_property $key $vo}>
                             <option value="{$key}">{$vo.name}</option>
-                            <@{/foreach}>
+                            <@/foreach>
                         </select>
                         &nbsp;&nbsp;长度 <input name="len" type="text" class="text_value" id="len" value="250" reg="[0-9]"
                                               style="width:45px;"/>

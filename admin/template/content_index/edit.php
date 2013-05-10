@@ -26,7 +26,7 @@
                                 } ?> >
                                 {$vo['cname']}
                             </option>
-                            <@{/foreach}>
+                            <@/foreach>
                         </select>
                     </td>
                     <td></td>
@@ -43,7 +43,7 @@
                         <input name="position[]" type="checkbox" value="{$vo.id}" <?php if (is_array($position_array)) {
                             if (in_array($vo['id'], $position_array)) { ?> checked="checked" <?php }
                         } ?> /> {$vo.name}&nbsp;&nbsp;
-                        <@{/foreach}>
+                        <@/foreach>
                     </td>
                     <td></td>
                 </tr>

@@ -32,7 +32,7 @@
                     <center>{$vo.ip}</center>
                 </td>
             </tr>
-            <@{/foreach}>
+            <@/foreach>
         </table>
     </div>
 </div>

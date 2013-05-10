@@ -27,7 +27,7 @@
                                 value="{$key}" <?php if ($info['type'] == $key) { ?> selected="selected" <?php } ?> >
                                 {$vo.name}
                             </option>
-                            <@{/foreach}>
+                            <@/foreach>
                         </select>
                     </td>
                 </tr>
@@ -40,7 +40,7 @@
                                 value="{$key}" <?php if ($info['property'] == $key) { ?> selected="selected" <?php } ?> >
                                 {$vo.name}
                             </option>
-                            <@{/foreach}>
+                            <@/foreach>
                         </select>
                         &nbsp;&nbsp;长度 <input name="len" type="text" class="text_value" id="len" value="{$info.len}"
                                               reg="[0-9]" style="width:45px;"/>

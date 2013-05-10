@@ -18,7 +18,7 @@
                 <th>
                     <center>{$vo.name}</center>
                 </th>
-                <@{/foreach}>
+                <@/foreach>
                 <th>
                     <center>表单操作</center>
                 </th>
@@ -40,7 +40,7 @@
                         ?>
                     </center>
                 </td>
-                <@{/foreach}>
+                <@/foreach>
                 <td>
                     <center>
                         <a href="__URL__/edit/id-{$vo.id}-fid-{$info.id}">修改</a>
@@ -49,7 +49,7 @@
                     </center>
                 </td>
             </tr>
-            <@{/foreach}>
+            <@/foreach>
         </table>
     </div>
 </div>

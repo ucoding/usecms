@@ -21,7 +21,7 @@
                 </tr>
                 <@foreach:{$field_list $vo}>
                 {$php( echo model('expand_model')->get_field_html($vo))}
-                <@{/foreach}>
+                <@/foreach>
 
             </table>
         </div>
