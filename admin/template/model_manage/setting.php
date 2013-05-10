@@ -52,11 +52,6 @@
                                value="{$info.url_content_page}" reg="\S" msg="栏目URL不能为空"/>
                     </td>
                 </tr>
-                <tr>
-                    <td width="120">内容来源(一行一个)</td>
-                    <td width="300"><textarea name="befrom" class="text_textarea" id="befrom" reg="\S" msg="内容来源不能为空">{$info.befrom}</textarea>
-                    </td>
-                </tr>
             </table>
         </div>
 

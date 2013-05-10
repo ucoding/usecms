@@ -1099,3 +1099,7 @@ pre {
 .tagsinput .not_valid {
 	border: 1px solid #FF9900;
 }
+
+.quickeditor{
+    float: right;
+}

@@ -37,11 +37,6 @@
                     <td width="100" align="right">标题</td>
                     <td colspan="2"><input name="title" type="text" class="text_value" id="title"
                                            style="float:left; width:360px;" value="" reg="\S" msg="标题不能为空"/>
-
-                        <div class="corol_button"></div>
-                        <div onclick="fontbold()" class="bold_button"></div>
-                        <input id="font_color" name="font_color" type="hidden" value=""/>
-                        <input id="font_bold" name="font_bold" type="hidden" value="0"/></td>
                 </tr>
                 <tr>
                     <td width="100" align="right">广告位</td>
@@ -189,14 +184,7 @@
         {
             'defaultText': '关键词会转为tag'
         });
-    //标题属性与颜色
-    $('.corol_button').soColorPacker({
-        textChange: false,
-        callback: function (c) {
-            $('#title').css("color", c.color);
-            $('#font_color').val(c.color);
-        }
-    });
+
     //高级模式
     function advanced() {
         $('.advanced').toggle();

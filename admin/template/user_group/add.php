@@ -29,6 +29,7 @@
     $(document).ready(function () {
         var t = $("#tree");
         t = $.fn.zTree.init(t, setting, zNodes);
+        t.expandAll(true);
     });
 </script>
 <div class="page_function">
@@ -115,6 +116,7 @@
     savelistform("__URL__/add", "__URL__",
         function () {
             var zTree = $.fn.zTree.getZTreeObj("tree");
+            zTree.expandAll(true);
             var nodes = zTree.getCheckedNodes(true);
             var purview = "";
             for (var i = 0; i < nodes.length; i++) {

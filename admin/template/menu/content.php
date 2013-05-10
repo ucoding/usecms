@@ -39,6 +39,7 @@
 
         var t = $("#tree");
         t = $.fn.zTree.init(t, setting, zNodes);
+        t.expandAll(true);
         ajaxload('__APP__/content_index');
     });
 </script>    

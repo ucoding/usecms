@@ -27,9 +27,12 @@
     var zNodes = [
         <?php echo $class_tree; ?>
     ];
+
+
     $(document).ready(function () {
         var t = $("#tree");
         t = $.fn.zTree.init(t, setting, zNodes);
+        t.expandAll(true);
     });
 </script>
 <div class="page_function">

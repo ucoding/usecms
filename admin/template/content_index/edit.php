@@ -113,13 +113,6 @@
         {
             'defaultText': '关键词会转为tag'
         });
-    $('.corol_button').soColorPacker({
-        textChange: false,
-        callback: function (c) {
-            $('#title').css("color", c.color);
-            $('#font_color').val(c.color);
-        }
-    });
     var api = frameElement.api;
     //提交表单
     saveform(function (msg) {
@@ -127,37 +120,4 @@
         api.close();
     });
 
-    //内容来源列表
-    function befrom_list(id) {
-        var list = [
-            <!--foreach:{$befrom_list $vo}-->
-            {
-                href: "javascript:;\" onclick=\"befrom_val('" + id + "','{$vo}');\"",
-                text: "{$vo}"
-            },
-            <!--{/foreach}-->
-            {
-                text: "请选择内容来源"
-            }
-        ];
-        return list;
-
-    }
-    //来源赋值
-    function befrom_val(id, val) {
-        $('#' + id).val(val);
-        $('#floatBox_list').hide();
-        return false;
-    }
-
-    //页面执行
-    $(document).ready(function () {
-        //来源选择
-        $("#copyfrom").powerFloat({
-            width: 250,
-            eventType: "click",
-            target: befrom_list('copyfrom'),
-            targetMode: "list"
-        });
-    });
 </script>
