@@ -1,11 +1,11 @@
 <div class="page_function">
     <div class="info">
-        <h3>单页面编辑</h3>
-        <small>使用以下功能进行单页面编辑操作</small>
+        <h3>页面编辑</h3>
+        <small>使用以下功能进行页面编辑操作</small>
     </div>
 </div>
 <div class="tab" id="tab">
-    <a class="selected" href="#">编辑单页面</a>
+    <a class="selected" href="#">编辑页面</a>
 </div>
 <div class="page_form">
     <form action="__URL__/edit_save/time-<?php echo time(); ?>-ajax-true" method="post" id="form">
@@ -27,10 +27,10 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td width="100" align="right">单页面名称</td>
+                    <td width="100" align="right">页面名称</td>
                     <td width="300">
                         <input name="name" type="text" class="text_value" id="name" value="{$info.name}" reg="\S"
-                               msg="单页面名称不能为空"/>
+                               msg="页面名称不能为空"/>
                     </td>
                     <td></td>
                 </tr>
@@ -42,14 +42,14 @@
                     <td></td>
                 </tr>
                 <tr class="advanced">
-                    <td width="100" align="right">单页面URL名称</td>
+                    <td width="100" align="right">页面URL名称</td>
                     <td width="300">
                         <input name="urlname" type="text" class="text_value" id="urlname" value="{$info.urlname}"/>
                     </td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td width="100" align="right">单页面形象图</td>
+                    <td width="100" align="right">页面形象图</td>
                     <td colspan="2">
                         <?php echo module('editor')->get_image_upload('image1', 'image', false, 'editor_content') ?>
                         <input name="image" type="text" class="text_value" id="image" style="width:205px; float:left"
@@ -88,7 +88,7 @@
                     <td width="100" align="right">描述</td>
                     <td width="300"><textarea name="description" class="text_textarea" id="description">{$info.description}</textarea>
                     </td>
-                    <td>对本单页面的简单介绍</td>
+                    <td>对本页面的简单介绍</td>
                 </tr>
                 <tr class="advanced">
                     <td width="100" align="right">SEO内容</td>
@@ -98,7 +98,7 @@
                     <td>可以填写HTML代码</td>
                 </tr>
                 <tr class="advanced">
-                    <td width="100" align="right">单页面显示</td>
+                    <td width="100" align="right">页面显示</td>
                     <td width="300">
                         <input name="show" type="radio" value="1" <!--if:{$info['show']==1}-->checked="checked"
                         <!--{/if}--> />
@@ -108,7 +108,7 @@
                         <!--{/if}--> />
                         隐藏
                     </td>
-                    <td>控制单页面调用的显示与隐藏</td>
+                    <td>控制页面调用的显示与隐藏</td>
                 </tr>
                 <tr>
                     <td width="100" align="right">栏目顺序</td>
@@ -123,7 +123,7 @@
                 <!--hook end-->
 
                 <tr>
-                    <td width="100" align="right">单页面模板</td>
+                    <td width="100" align="right">页面模板</td>
                     <td width="300">
                         <input name="class_tpl" type="text" class="text_value" id="class_tpl"
                                value="{$info.class_tpl}"/>

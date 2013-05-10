@@ -1,7 +1,7 @@
 <div class="page_function">
     <div class="info">
-        <h3>单页面添加</h3>
-        <small>单页面主要用于公司简介等单个页面展示</small>
+        <h3>页面添加</h3>
+        <small>页面主要用于公司简介等单个页面展示</small>
     </div>
 </div>
 <div class="tab" id="tab">
@@ -26,9 +26,9 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td width="100" align="right">单页面名称</td>
+                    <td width="100" align="right">页面名称</td>
                     <td>
-                        <input name="name" type="text" class="text_value" id="name" value="" reg="\S" msg="单页面名称不能为空"/>
+                        <input name="name" type="text" class="text_value" id="name" value="" reg="\S" msg="页面名称不能为空"/>
                     </td>
                     <td></td>
                 </tr>
@@ -40,14 +40,14 @@
                     <td></td>
                 </tr>
                 <tr class="advanced">
-                    <td width="100" align="right">单页面URL名称</td>
+                    <td width="100" align="right">页面URL名称</td>
                     <td>
                         <input name="urlname" type="text" class="text_value" id="urlname" value=""/>
                     </td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td width="100" align="right">单页面形象图</td>
+                    <td width="100" align="right">页面形象图</td>
                     <td colspan="2">
                         <?php echo module('editor')->get_image_upload('image1', 'image', false, 'editor_content') ?>
                         <input name="image" type="text" class="text_value" id="image" style="width:220px; value=""/>
@@ -84,7 +84,7 @@
                     <td width="100" align="right">描述</td>
                     <td><textarea name="description" class="text_textarea" id="description"></textarea>
                     </td>
-                    <td>对本单页面的简单介绍</td>
+                    <td>对本页面的简单介绍</td>
                 </tr>
                 <tr class="advanced">
                     <td width="100" align="right">SEO内容</td>
@@ -93,7 +93,7 @@
                     <td>可以填写HTML代码</td>
                 </tr>
                 <tr class="advanced">
-                    <td width="100" align="right">单页面显示</td>
+                    <td width="100" align="right">页面显示</td>
                     <td>
                         <input name="show" type="radio" value="1" checked="checked"/>
                         显示
@@ -116,11 +116,11 @@
                 <!--hook end-->
 
                 <tr>
-                    <td width="100" align="right">单页面模板</td>
+                    <td width="100" align="right">页面模板</td>
                     <td>
                         <input name="class_tpl" type="text" class="text_value" id="class_tpl" value="page.php"/>
                     </td>
-                    <td>用于单页面的显示</td>
+                    <td>用于页面的显示</td>
                 </tr>
 
             </table>

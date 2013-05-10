@@ -42,13 +42,13 @@ class jump_categoryModel extends commonModel
         return $this->model->table('category_jump')->data($data)->where('cid=' . $cid)->update();
     }
 
-    //获取单页面内容
+    //获取页面内容
     public function jump_info($cid)
     {
         return $this->model->table('category_jump')->where('cid=' . $cid)->find();
     }
 
-    //删除单页面内容
+    //删除页面内容
     //栏目删除
     public function del($cid)
     {
