@@ -1,11 +1,11 @@
 <div id="head">
     <div class="warp">
-        <!--LOGO-->
+        <@LOGO>
         <div id="logo" class="fn-left">
             <h1><a href="__APP__/">{$sys.sitename}</a></h1>
         </div>
-        <!--END-->
-        <!--搜索-->
+        <@END>
+        <@搜索>
         <div id="search" class="fn-right">
             <form action="__APP__/search" method="get">
         <span class="select">
@@ -19,41 +19,41 @@
                 <button type="submit">搜索</button>
             </form>
         </div>
-        <!--END-->
+        <@END>
         <div class="fn-clear"></div>
     </div>
-    <!--导航条-->
+    <@导航条>
     <div id="nav">
         <div class="warp">
             <ul>
-                <!--判断主导航高亮-->
-                <!--if:{$top_category['cid']==''}-->
+                <@判断主导航高亮>
+                <@if:{$top_category['cid']==''}>
                 <li class="current">
-                    <!--{else}-->
+                    <@{else}>
                 <li>
-                    <!--{/if}-->
+                    <@{/if}>
                     <div class="title"><a href="__APP__/">网站首页</a></div>
                 </li>
-                <!--list:{table="category" type="top" order="cid asc" limit="7"}-->
-                <!--判断循环内导航高亮-->
-                <!--if:{$top_category['cid']==$list['cid']}-->
+                <@list:{table="category" type="top" order="cid asc" limit="7"}>
+                <@判断循环内导航高亮>
+                <@if:{$top_category['cid']==$list['cid']}>
                 <li class="current">
-                    <!--{else}-->
+                    <@{else}>
                 <li>
-                    <!--{/if}-->
+                    <@{/if}>
                     <div class="title"><a href="{$list.curl}">{$list.name}</a></div>
-                    <!--if:{$top_category['cid']==$list['cid']}-->
+                    <@if:{$top_category['cid']==$list['cid']}>
                     <ul class="nav_menu menucur">
-                        <!--{else}-->
+                        <@{else}>
                         <ul class="nav_menu">
-                            <!--{/if}-->
-                            <!--sublist:{table="category" pid="<$list.cid>" order="cid asc" limit="5"}-->
+                            <@{/if}>
+                            <@sublist:{table="category" pid="<$list.cid>" order="cid asc" limit="5"}>
                             <li><a href="{$sublist.curl}">{$sublist.name}</a></li>
                             <li class="line">|</li>
-                            <!--/sublist-->
+                            <@/sublist>
                         </ul>
                 </li>
-                <!--/list-->
+                <@/list>
                 <li>
                     <div class="title"><a href="{$guestbook.form}">留言板</a></div>
                 </li>

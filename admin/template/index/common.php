@@ -9,7 +9,7 @@
     {$js}
 </head>
 <body>
-<!--body-->
+<@body>
 <div class="fn_clear"></div>
 <?php if ($config['DEBUG']) { ?>
     <div id="runtime">

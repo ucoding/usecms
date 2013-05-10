@@ -17,9 +17,9 @@ function template_ext($template,$config=array())
 
 
     //替换载入模板
-    $template = preg_replace('/<!--#include\s*file=\"(.*)\"-->/iU',
+    $template = preg_replace('/<@include\s*file=\"(.*)\">/iU',
                     "<?php \$file=explode('.', \"$1\"); ?>{include file=\"".$lang_tpl."\$file[0]\"}", $template);
-    $template = preg_replace('/<!--#include\s*file=\'(.*)\'-->/iU',
+    $template = preg_replace('/<@include\s*file=\'(.*)\'>/iU',
                     "<?php \$file=explode('.', \"$1\"); ?>{include file=\"".$lang_tpl."\$file[0]\"}", $template);
 
     //替换菜单与内容的反向超链接
@@ -53,26 +53,26 @@ function template_ext($template,$config=array())
     $template = preg_replace("/\{\\$([a-zA-Z_]+)\.\i\}/i", "<?php echo \$$1_i ?>", $template);
 
     //添加循环解析标签
-    /*<!--foreach:{$arr $vo}-->替换成 <?php $vo_i=1; if (is_array($arr) foreach($arr as $vo){ ?>*/
-    $template = preg_replace ('/<!--foreach:{(\S+)\s+(\S+)}-->\s*/i','<?php \$i=0;if(is_array($1)) foreach($1 AS $2) { \$i++;  ?>', $template);
-    /*<!--foreach:{$arr $key $vo}-->替换成 <?php $vo_i=1; if (is_array($arr) foreach($arr as $key => $vo){ ?>*/
-    $template = preg_replace ('/<!--foreach:{(\S+)\s+(\S+)\s+(\S+)}-->\s*/i','<?php \$i=0;if(is_array($1)) foreach($1 AS $2 => $3) { \$i++;  ?>', $template);
-    /*<!--{/foreach}-->替换成 <?php } ?>*/
-    $template = preg_replace ('/<!--\{\/foreach\}-->\s*/iU', '<?php }unset(\$i) ?>', $template);
+    /*<@foreach:{$arr $vo}>替换成 <?php $vo_i=1; if (is_array($arr) foreach($arr as $vo){ ?>*/
+    $template = preg_replace ('/<@foreach:{(\S+)\s+(\S+)}>\s*/i','<?php \$i=0;if(is_array($1)) foreach($1 AS $2) { \$i++;  ?>', $template);
+    /*<@foreach:{$arr $key $vo}>替换成 <?php $vo_i=1; if (is_array($arr) foreach($arr as $key => $vo){ ?>*/
+    $template = preg_replace ('/<@foreach:{(\S+)\s+(\S+)\s+(\S+)}>\s*/i','<?php \$i=0;if(is_array($1)) foreach($1 AS $2 => $3) { \$i++;  ?>', $template);
+    /*<@{/foreach}>替换成 <?php } ?>*/
+    $template = preg_replace ('/<@\{\/foreach\}>\s*/iU', '<?php }unset(\$i) ?>', $template);
 
     //添加判断标签
-    /*<!--if:{}-->替换成 <?php if(condition){ ?>*/
-    $template = preg_replace ('/<!--\if:{(.+?)\}-->/i', '<?php if($1) { ?>', $template);
-    /*<!--elseif:{}-->替换成 <?php }else if(condition){ ?>*/
-    $template = preg_replace ('/<!--\elseif:{(.+?)\}-->/i', '<?php }else if($1) { ?>', $template);
-    /*<!--{else}-->替换成 <?php }else{ ?>*/
-    $template = preg_replace ('/<!--\{else\}-->/i', '<?php }else{ ?>', $template);
-    /*<!--{/if}-->替换成 <?php } ?>*/
-    $template = preg_replace ('/<!--\/if-->/i', '<?php } ?>', $template);
-    $template = preg_replace ('/<!--\{\/if\}-->/i', '<?php } ?>', $template);
+    /*<@if:{}>替换成 <?php if(condition){ ?>*/
+    $template = preg_replace ('/<@\if:{(.+?)\}>/i', '<?php if($1) { ?>', $template);
+    /*<@elseif:{}>替换成 <?php }else if(condition){ ?>*/
+    $template = preg_replace ('/<@\elseif:{(.+?)\}>/i', '<?php }else if($1) { ?>', $template);
+    /*<@{else}>替换成 <?php }else{ ?>*/
+    $template = preg_replace ('/<@\{else\}>/i', '<?php }else{ ?>', $template);
+    /*<@{/if}>替换成 <?php } ?>*/
+    $template = preg_replace ('/<@\/if>/i', '<?php } ?>', $template);
+    $template = preg_replace ('/<@\{\/if\}>/i', '<?php } ?>', $template);
 
     //添加打印标签
-    $template = preg_replace ('/<!--dump\{(.+?)\}-->/iU', '<?php print_r($1) ?>', $template);
+    $template = preg_replace ('/<@dump\{(.+?)\}>/iU', '<?php print_r($1) ?>', $template);
 
     //HTML输出
     $template = preg_replace ( "/\{(\\$[a-z0-9_]+)\.([a-z0-9_]+)\s+html\}/iU", "<?php echo html_out($1['$2']); ?>", $template);
@@ -103,7 +103,7 @@ function template_ext($template,$config=array())
     $template = preg_replace ( "/\{(\\$[a-z0-9_]+)\.([a-z0-9_]+)\.([a-z0-9_]+)\}/i", "<?php echo $1[\'$2\'][\'$3\']; ?>", $template);
 
     //转义循环  
-    $test=preg_match_all('/<!--(\S+):{(.*)}-->/i',$template,$ms);
+    $test=preg_match_all('/<@(\S+):{(.*)}>/i',$template,$ms);
     foreach ($ms[2] as $value) {
         $template=str_replace($value, addslashes($value), $template);
     }
@@ -113,21 +113,21 @@ function template_ext($template,$config=array())
     $template = preg_replace ( "/\<(\\$[a-z0-9_]+)\.([a-z0-9_]+)\.([a-z0-9_]+)>/i", "'.$1['$2']['$3'].'", $template);
 
     //替换万能表单循环
-    $template = preg_replace('/<!--form:{(.*)}-->\s*/i', '<?php $form=module("label")->get_form(\'$1\'); \$form_i=0; if(is_array($form)) foreach($form as $form){  \$form_i++; ?> ',
+    $template = preg_replace('/<@form:{(.*)}>\s*/i', '<?php $form=module("label")->get_form(\'$1\'); \$form_i=0; if(is_array($form)) foreach($form as $form){  \$form_i++; ?> ',
         $template);
 
     //数据统计循环
-    $template = preg_replace('/<!--count:{(.*)}-->/i', '<?php echo module("label")->get_count(\'$1\');  ?> ',
+    $template = preg_replace('/<@count:{(.*)}>/i', '<?php echo module("label")->get_count(\'$1\');  ?> ',
         $template);
 
     //替换通用循环
-    $template = preg_replace('/<!--(\S+):{(.*)}-->\s*/i', '<?php $$1=module("label")->getlist(\'$2\'); \$$1_i=0; if(is_array($$1)) foreach($$1 as $$1){  \$$1_i++; ?> ',
+    $template = preg_replace('/<@(\S+):{(.*)}>\s*/i', '<?php $$1=module("label")->getlist(\'$2\'); \$$1_i=0; if(is_array($$1)) foreach($$1 as $$1){  \$$1_i++; ?> ',
         $template);
 
     //循环结束标识
 
-    $template = preg_replace('/<!--\/([a-zA-Z_]+)-->/i', '<?php }unset($$1) ?>', $template);
-    $template = preg_replace('/<!--\{\/([a-zA-Z_]+)\}-->/i', '<?php }unset($$1) ?>', $template);
+    $template = preg_replace('/<@\/([a-zA-Z_]+)>/i', '<?php }unset($$1) ?>', $template);
+    $template = preg_replace('/<@\{\/([a-zA-Z_]+)\}>/i', '<?php }unset($$1) ?>', $template);
 
     return $template;
 

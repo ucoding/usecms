@@ -28,7 +28,7 @@ class common_pluginMod extends commonMod
         module('common')->view()->assign($this->_data);
         $content = $this->display($tpl . '.html', true, true);
         $body = $this->display($this->config['TPL_COMMON'], false, true);
-        $html = str_replace('<!--body-->', $content, $body);
+        $html = str_replace('<@body>', $content, $body);
         echo $html;
     }
 

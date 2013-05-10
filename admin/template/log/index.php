@@ -19,7 +19,7 @@
                     <center>IP</center>
                 </th>
             </tr>
-            <!--foreach:{$list $vo}-->
+            <@foreach:{$list $vo}>
             <tr>
                 <td>
                     <center>{$vo.id}</center>
@@ -32,7 +32,7 @@
                     <center>{$vo.ip}</center>
                 </td>
             </tr>
-            <!--{/foreach}-->
+            <@{/foreach}>
         </table>
     </div>
 </div>

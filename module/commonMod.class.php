@@ -101,7 +101,7 @@ class commonMod
     {
         $content = $this->display($tpl, true);
         $body = $this->display($this->config['TPL_COMMON'], true);
-        $html = str_replace('<!--body-->', $content, $body);
+        $html = str_replace('<@body>', $content, $body);
         echo $html;
     }
 

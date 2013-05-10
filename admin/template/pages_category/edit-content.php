@@ -16,11 +16,11 @@
                     <td width="300">
                         <select name="pid" id="pid">
                             <option value="0">=====顶级栏目=====</option>
-                            <!--foreach:{$category_list $vo}-->
+                            <@foreach:{$category_list $vo}>
                             <option
-                            <!--if:{$vo['cid']==$info['pid']}-->selected="selected"<!--{/if}-->
+                            <@if:{$vo['cid']==$info['pid']}>selected="selected"<@{/if}>
                             value="{$vo.cid}">{$vo.cname}</option>
-                            <!--{/foreach}-->
+                            <@{/foreach}>
                         </select>
                         &nbsp;&nbsp;<a href="javascript:;" onclick="advanced()">高级设置</a>
                     </td>
@@ -66,9 +66,9 @@
                             html}</textarea>
                         <input type="button" onclick="javascript:get_remote_image()" style="margin-top:10px;"
                                class="button_small" value="远程图片本地化"/>
-                        <!--hook-->
+
                         <?php module('common')->plus_hook('content', 'tools', $info); ?>
-                        <!--hook end-->
+
                     </td>
                 </tr>
                 <tr>
@@ -100,12 +100,12 @@
                 <tr class="advanced">
                     <td width="100" align="right">页面显示</td>
                     <td width="300">
-                        <input name="show" type="radio" value="1" <!--if:{$info['show']==1}-->checked="checked"
-                        <!--{/if}--> />
+                        <input name="show" type="radio" value="1" <@if:{$info['show']==1}>checked="checked"
+                        <@{/if}> />
                         显示
                         &nbsp;&nbsp;
-                        <input name="show" type="radio" value="0" <!--if:{$info['show']==0}-->checked="checked"
-                        <!--{/if}--> />
+                        <input name="show" type="radio" value="0" <@if:{$info['show']==0}>checked="checked"
+                        <@{/if}> />
                         隐藏
                     </td>
                     <td>控制页面调用的显示与隐藏</td>
@@ -118,12 +118,12 @@
                     <td>数字越大越在前面</td>
                 </tr>
 
-                <!--hook-->
+
                 <?php module('common')->plus_hook('category', 'edit_tpl'); ?>
-                <!--hook end-->
+
             </table>
         </div>
-        <!--普通提交-->
+
         <div class="form_submit">
             <input name="cid" type="hidden" value="{$info.cid}"/>
             <input name="file_id" id="file_id" type="hidden" value="{$file_id}"/>

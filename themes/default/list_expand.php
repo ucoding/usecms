@@ -6,17 +6,17 @@
     <title>{$common.title}</title>
     <meta name="keywords" content="{$common.keywords}"/>
     <meta name="description" content="{$common.description}"/>
-    <!--#include file="resources.php"-->
+    <@include file="resources.php">
 </head>
 
 <body>
-<!--头部-->
-<!--#include file="head.php"-->
-<!--END-->
-<!--中部-->
+<@头部>
+<@include file="head.php">
+<@END>
+<@中部>
 <div id="central">
     <div id="main" class="fn-left">
-        <!--#include file="bread.php"-->
+        <@include file="bread.php">
         <div class="sep10"></div>
         <div class="box pageexpand">
             <div class="boxhead">
@@ -24,7 +24,7 @@
             </div>
             <div class="boxlist">
                 <ul>
-                    <!--foreach:{$loop $vo}-->
+                    <@foreach:{$loop $vo}>
                     <li>
                         <div class="pic"><a href="{$vo.aurl}" title="{$vo.title}"><img src="{$vo.image}" width="140"
                                                                                        height="120" alt="{$vo.title}"/></a>
@@ -35,7 +35,7 @@
                             <div class="ext">价格：{$vo.price} &nbsp;&nbsp; 型号：{$vo.pattern}</div>
                         </div>
                     </li>
-                    <!--/loop-->
+                    <@/loop>
                 </ul>
                 <div class="fn-clear"></div>
             </div>
@@ -44,18 +44,18 @@
             {$page}
         </div>
     </div>
-    <!--边栏-->
+    <@边栏>
     <div id="sidebar" class="fn-right">
-        <!--#include file="sidebar.php"-->
+        <@include file="sidebar.php">
     </div>
-    <!--END-->
+    <@END>
     <div class="fn-clear"></div>
 </div>
-<!--END-->
+<@END>
 
-<!--底部-->
-<!--#include file="foot.php"-->
-<!--END-->
+<@底部>
+<@include file="foot.php">
+<@END>
 
 </body>
 </html>

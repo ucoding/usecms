@@ -6,32 +6,32 @@
     <title>{$common.title}</title>
     <meta name="keywords" content="{$common.keywords}"/>
     <meta name="description" content="{$common.description}"/>
-    <!--#include file="resources.php"-->
+    <@include file="resources.php">
 </head>
 
 <body>
-<!--头部-->
-<!--#include file="head.php"-->
-<!--END-->
-<!--中部-->
+<@头部>
+<@include file="head.php">
+<@END>
+<@中部>
 <div id="central">
     <div class="error404">
         <div class="taglist">
             推荐标签：
-            <!--list:{table="tags" rand="true" limit="7"}-->
+            <@list:{table="tags" rand="true" limit="7"}>
             <a href="__APP__/tags-{$list.name}/" title="{$list.name}">{$list.name}</a>
-            <!--/list-->
+            <@/list>
         </div>
         <div class="home">
             <a href="__APP__/">返回{$sys.sitename}首页</a>
         </div>
     </div>
 </div>
-<!--END-->
+<@END>
 
-<!--底部-->
-<!--#include file="foot.php"-->
-<!--END-->
+<@底部>
+<@include file="foot.php">
+<@END>
 
 </body>
 </html>

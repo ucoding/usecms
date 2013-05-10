@@ -4,9 +4,9 @@
         <small>使用以下功能进行栏目添加操作</small>
     </div>
     <div class="exercise">
-        <!--foreach:{$model_list $vo}-->
+        <@foreach:{$model_list $vo}>
         <a href="javascript:menuload('__APP__/{$vo.model}_category/add')">添加{$vo.name}栏目</a>
-        <!--{/foreach}-->
+        <@{/foreach}>
     </div>
 </div>
 <div class="page_main">
@@ -33,18 +33,18 @@
                     <center>栏目操作</center>
                 </th>
             </tr>
-            <!--foreach:{$list $vo}-->
+            <@foreach:{$list $vo}>
             <tr>
                 <td>
                     <center>{$vo.cid}</center>
                 </td>
                 <td><a href="<?php echo ROOTAPP ?>/label/admin_curl/cid-{$vo['cid']}.php"
                        target="_blank">{$vo.cname}</a>
-                    <!--if:{$vo['image']<>''}-->
+                    <@if:{$vo['image']<>''}>
                     <a href="javascript:;" rel="{$vo.image}" class="class_pic"><img align="AbsMiddle"
                                                                                     src="__PUBLICURL__/images/ico/pic.png"
                                                                                     width="14" height="14" alt=""/></a>
-                    <!--{/if}-->
+                    <@{/if}>
                 </td>
                 <td>
                     <center>
@@ -55,20 +55,20 @@
                 </td>
                 <td>
                     <center>
-                        <!--if:{$vo['show']==1}-->
+                        <@if:{$vo['show']==1}>
                         <font color=green><b>√</b></font>
-                        <!--{else}-->
+                        <@{else}>
                         <font color=red><b>×</b></font>
-                        <!--{/if}-->
+                        <@{/if}>
                     </center>
                 </td>
                 <td>
                     <center>
-                        <!--if:{$vo['type']==0}-->
+                        <@if:{$vo['type']==0}>
                         频道
-                        <!--{else}-->
+                        <@{else}>
                         列表
-                        <!--{/if}-->
+                        <@{/if}>
                     </center>
                 </td>
                 <td>
@@ -81,7 +81,7 @@
                              onclick="del('__APP__/{$vo.admin_category}/del','{$vo.cid}',this)">删除</a></center>
                 </td>
             </tr>
-            <!--{/foreach}-->
+            <@{/foreach}>
         </table>
     </div>
 </div>

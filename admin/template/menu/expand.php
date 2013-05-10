@@ -1,12 +1,12 @@
 <div class="title"><a href="javascript:void(0)">其他功能</a></div>
 <ul class="load menu">
-    <!--foreach:{$list $vo}-->
+    <@foreach:{$list $vo}>
     <li><a href="__APP__/{$vo.module}">{$vo.name}</a></li>
-    <!--{/foreach}-->
+    <@{/foreach}>
 
-    <!--foreach:{$formlist $form}-->
+    <@foreach:{$formlist $form}>
     <li><a href="__APP__/form_list/index/id-{$form.id}">{$form.name}</a></li>
-    <!--{/foreach}-->
+    <@{/foreach}>
 </ul>
 
 <script>

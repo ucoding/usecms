@@ -18,12 +18,12 @@
         广告位：
         <select id="position" onchange="javascript:location.href=this.value;">
             <option value="__URL__">默认</option>
-            <!--foreach:{$position_list $vo}-->
+            <@foreach:{$position_list $vo}>
             <option
                 value="__URL__/index/position-{$vo.id}"  <?php if ($_GET['position'] == $vo['id']) { ?> selected="selected" <?php } ?> >
                 {$vo.name}
             </option>
-            <!--{/foreach}-->
+            <@{/foreach}>
         </select>
         &nbsp;&nbsp;
         内容标题：
@@ -53,7 +53,7 @@
                     <center>操作</center>
                 </th>
             </tr>
-            <!--foreach:{$list $vo}-->
+            <@foreach:{$list $vo}>
             <tr id="del_{$vo['aid']}">
                 <td>
                     <center><input name="id[]" type="checkbox" id="id[]" value="{$vo['aid']}">
@@ -78,11 +78,11 @@
                 </td>
                 <td>
                     <center>
-                        <!--if:{$vo['status']<>0}-->
+                        <@if:{$vo['status']<>0}>
                         <font color=green><b>√</b></font>
-                        <!--{else}-->
+                        <@{else}>
                         <font color=red><b>×</b></font>
-                        <!--{/if}-->
+                        <@{/if}>
                     </center>
                 </td>
                 <td>
@@ -98,7 +98,7 @@
                              onclick="del('{$vo.aid}',this,'__APP__/{$vo.admin_content}/del')">删除</a></center>
                 </td>
             </tr>
-            <!--{/foreach}-->
+            <@{/foreach}>
         </table>
     </div>
 </div>
@@ -114,7 +114,7 @@
   <span id="mobile" style="display:none">
   			<select name="cid" id="cid">
                 <option value="">======选择栏目======</option>
-                <!--foreach:{$category_list $vo}-->
+                <@foreach:{$category_list $vo}>
                 <option value="{$vo['cid']}"
                         <?php if ($vo['type'] == 0 || $vo['mid'] <> $model_info['mid']){ ?>style="background-color:#ccc"
                         disabled="disabled" <?php } ?>
@@ -123,7 +123,7 @@
                     } ?> >
                     {$vo['cname']}
                 </option>
-                <!--{/foreach}-->
+                <@{/foreach}>
             </select>
             <input type="button" onclick="javascript:audit(4);" class="button_small" value="确认"/>
   </span>

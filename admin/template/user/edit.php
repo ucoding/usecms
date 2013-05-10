@@ -5,7 +5,6 @@
     </div>
 </div>
 <div class="tab" id="tab"><a class="selected" href="#">编辑管理员</a>
-    <!--<a  href="javascript:menuload('__URL__')">返回管理员列表</a>-->
 </div>
 <div class="page_form">
     <form action="__URL__/edit_save/time-<?php echo time() ?>-ajax-true" method="post" id="form">
@@ -14,9 +13,9 @@
                 <tr>
                     <td width="100" align="right">角色</td>
                     <td width="300"><select name="gid" id="gid">
-                            <!--foreach:{$user_group $vo}-->
+                            <@foreach:{$user_group $vo}>
                             <option value="{$vo.id}">{$vo.name}</option>
-                            <!--{/foreach}-->
+                            <@{/foreach}>
                         </select></td>
                     <td></td>
                 </tr>
@@ -44,18 +43,18 @@
                 </tr>
                 <tr>
                     <td width="100" align="right">状态</td>
-                    <td width="300"><input name="status" type="radio" value="1" <!--if:{$info['status']==1}-->
-                        checked="checked" <!--{/if}--> />
+                    <td width="300"><input name="status" type="radio" value="1" <@if:{$info['status']==1}>
+                        checked="checked" <@{/if}> />
                         正常&nbsp;&nbsp;
-                        <input name="status" type="radio" value="0" <!--if:{$info['status']==0}--> checked="checked"
-                        <!--{/if}--> />
+                        <input name="status" type="radio" value="0" <@if:{$info['status']==0}> checked="checked"
+                        <@{/if}> />
                         禁用
                     </td>
                     <td></td>
                 </tr>
             </table>
         </div>
-        <!--普通提交-->
+
         <div class="form_submit">
             <input name="id" type="hidden" value="{$info.id}"/>
             <button type="submit" class="button">保存</button>

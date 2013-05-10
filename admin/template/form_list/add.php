@@ -5,7 +5,6 @@
     </div>
 </div>
 <div class="tab" id="tab"><a class="selected" href="#">添加{$info.name}</a>
-    <!--<a  href="javascript:menuload('__URL__/index/id-{$info.id}')">返回{$info.name}列表</a>-->
 </div>
 <div class="page_form">
     <form action="__URL__/add_save/time-<?php echo time() ?>-ajax-true" method="post" id="form">
@@ -20,13 +19,13 @@
                     <td>
                     </td>
                 </tr>
-                <!--foreach:{$field_list $vo}-->
+                <@foreach:{$field_list $vo}>
                 {$php( echo model('expand_model')->get_field_html($vo))}
-                <!--{/foreach}-->
+                <@{/foreach}>
 
             </table>
         </div>
-        <!--普通提交-->
+
         <div class="form_submit">
             <input name="fid" type="hidden" value="{$info.id}"/>
             <input name="file_id" id="file_id" type="hidden" value=""/>

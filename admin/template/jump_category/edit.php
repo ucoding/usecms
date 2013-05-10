@@ -6,7 +6,6 @@
 </div>
 <div class="tab" id="tab">
     <a class="selected" href="#">编辑跳转页面</a>
-    <!--<a  href="javascript:menuload('__APP__/category')">返回栏目列表</a>-->
 </div>
 <div class="page_form">
     <form action="__URL__/edit_save/time-<?php echo time(); ?>-ajax-true" method="post" id="form">
@@ -17,11 +16,11 @@
                     <td width="300">
                         <select name="pid" id="pid">
                             <option value="0">=====顶级栏目=====</option>
-                            <!--foreach:{$category_list $vo}-->
+                            <@foreach:{$category_list $vo}>
                             <option
-                            <!--if:{$vo['cid']==$info['pid']}-->selected="selected"<!--{/if}-->
+                            <@if:{$vo['cid']==$info['pid']}>selected="selected"<@{/if}>
                             value="{$vo.cid}">{$vo.cname}</option>
-                            <!--{/foreach}-->
+                            <@{/foreach}>
                         </select>
                         &nbsp;&nbsp;<a href="javascript:;" onclick="advanced()">高级设置</a>
                     </td>
@@ -68,12 +67,12 @@
                 <tr class="advanced">
                     <td width="100" align="right">跳转页面显示</td>
                     <td width="300">
-                        <input name="show" type="radio" value="1" <!--if:{$info['show']==1}-->checked="checked"
-                        <!--{/if}--> />
+                        <input name="show" type="radio" value="1" <@if:{$info['show']==1}>checked="checked"
+                        <@{/if}> />
                         显示
                         &nbsp;&nbsp;
-                        <input name="show" type="radio" value="0" <!--if:{$info['show']==0}-->checked="checked"
-                        <!--{/if}--> />
+                        <input name="show" type="radio" value="0" <@if:{$info['show']==0}>checked="checked"
+                        <@{/if}> />
                         隐藏
                     </td>
                     <td>控制跳转页面调用的显示与隐藏</td>
@@ -85,13 +84,13 @@
                     </td>
                     <td>数字越大越在前面</td>
                 </tr>
-                <!--hook-->
+
                 <?php module('common')->plus_hook('category', 'edit_tpl', $info); ?>
-                <!--hook end-->
+
 
             </table>
         </div>
-        <!--普通提交-->
+
         <div class="form_submit">
             <input name="cid" type="hidden" value="{$info.cid}"/>
             <input name="file_id" id="file_id" type="hidden" value="{$file_id}"/>

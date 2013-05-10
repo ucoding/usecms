@@ -87,7 +87,6 @@
 
             </table>
         </div>
-        <!--普通提交-->
         <div class="form_submit">
             <button type="submit" class="button">保存</button>
         </div>

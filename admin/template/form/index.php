@@ -22,7 +22,7 @@
                     <center>表单操作</center>
                 </th>
             </tr>
-            <!--foreach:{$list $vo}-->
+            <@foreach:{$list $vo}>
             <tr>
                 <td>
                     <center>{$vo.id}</center>
@@ -40,7 +40,7 @@
                         <a href="javascript:void(0);" onclick="del('{$vo.id}',this)">删除</a></center>
                 </td>
             </tr>
-            <!--{/foreach}-->
+            <@{/foreach}>
         </table>
     </div>
 </div>

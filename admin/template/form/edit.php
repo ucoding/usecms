@@ -31,12 +31,12 @@
                 <tr>
                     <td width="100" align="right">前台表单</td>
                     <td>
-                        <input name="display" type="radio" value="1" <!--if:{$info['display']==1}--> checked="checked"
-                        <!--{/if}--> />
+                        <input name="display" type="radio" value="1" <@if:{$info['display']==1}> checked="checked"
+                        <@{/if}> />
                         是
                         &nbsp;&nbsp;
-                        <input name="display" type="radio" value="0" <!--if:{$info['display']==0}--> checked="checked"
-                        <!--{/if}--> />
+                        <input name="display" type="radio" value="0" <@if:{$info['display']==0}> checked="checked"
+                        <@{/if}> />
                         否
                     </td>
                     <td>是否在前台显示此表单的分页列表内容</td>
@@ -70,12 +70,12 @@
                 <tr>
                     <td width="100" align="right">独立模板</td>
                     <td>
-                        <input name="alone_tpl" type="radio" value="1" <!--if:{$info['alone_tpl']==1}-->
-                        checked="checked" <!--{/if}--> />
+                        <input name="alone_tpl" type="radio" value="1" <@if:{$info['alone_tpl']==1}>
+                        checked="checked" <@{/if}> />
                         是
                         &nbsp;&nbsp;
-                        <input name="alone_tpl" type="radio" value="0" <!--if:{$info['alone_tpl']==0}-->
-                        checked="checked" <!--{/if}--> />
+                        <input name="alone_tpl" type="radio" value="0" <@if:{$info['alone_tpl']==0}>
+                        checked="checked" <@{/if}> />
                         否
                     </td>
                     <td>否的话外部调用公共模板(common.html)</td>
@@ -91,7 +91,6 @@
 
             </table>
         </div>
-        <!--普通提交-->
         <div class="form_submit">
             <input name="id" type="hidden" value="{$info.id}"/>
             <button type="submit" class="button">保存</button>

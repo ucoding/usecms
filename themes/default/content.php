@@ -6,18 +6,18 @@
     <title>{$common.title}</title>
     <meta name="keywords" content="{$common.keywords}"/>
     <meta name="description" content="{$common.description}"/>
-    <!--#include file="resources.php"-->
+    <@include file="resources.php">
 </head>
 
 <body>
-<!--头部-->
-<!--#include file="head.php"-->
-<!--END-->
-<!--中部-->
+<@头部>
+<@include file="head.php">
+<@END>
+<@中部>
 <div id="central">
     <div id="main" class="fn-left">
         <div id="pagenav">
-            <!--#include file="bread.php"-->
+            <@include file="bread.php">
         </div>
         <div class="sep10"></div>
         <div class="box  pagecontent">
@@ -35,19 +35,19 @@
             <div class="updown">
                 <div class="previous">
                     上一篇：
-                    <!--if:{empty($prev)}-->
+                    <@if:{empty($prev)}>
                     暂无
-                    <!--{else}-->
+                    <@{else}>
                     <a href="{$prev.aurl}">{$prev.title}</a>
-                    <!--/if-->
+                    <@/if>
                 </div>
                 <div class="next">
                     下一篇
-                    <!--if:{empty($next)}-->
+                    <@if:{empty($next)}>
                     暂无
-                    <!--{else}-->
+                    <@{else}>
                     <a href="{$next.aurl}">{$next.title}</a>
-                    <!--/if-->
+                    <@/if>
                 </div>
             </div>
             <div class="boxhead">
@@ -55,16 +55,16 @@
             </div>
             <div class="boxlist">
                 <ul>
-                    <!--list:{table="content" rand="true" related="<$info.aid>" limit="10"}-->
+                    <@list:{table="content" rand="true" related="<$info.aid>" limit="10"}>
                     <li><span class="line">•</span> <span class="title"><a href="{$list.aurl}" title="{$list.title}">{$list.title
                                 len="25"}</a> </span></li>
-                    <!--/list-->
+                    <@/list>
                 </ul>
             </div>
         </div>
 
     </div>
-    <!--边栏-->
+    <@边栏>
     <div id="sidebar" class="fn-right">
         <div class="box">
             <div class="boxhead">
@@ -72,23 +72,23 @@
             </div>
             <div class="boxlist">
                 <ul>
-                    <!--根据顶级栏目ID调用下级栏目-->
-                    <!--list:{table="category" pid="<$top_category.cid>" order="cid desc" limit="5"}-->
+                    <@根据顶级栏目ID调用下级栏目>
+                    <@list:{table="category" pid="<$top_category.cid>" order="cid desc" limit="5"}>
                     <li><span class="title"><a href="{$list.curl}">{$list.name}</a> </span></li>
-                    <!--/list-->
+                    <@/list>
                 </ul>
             </div>
         </div>
-        <!--#include file="sidebar.php"-->
+        <@include file="sidebar.php">
     </div>
-    <!--END-->
+    <@END>
     <div class="fn-clear"></div>
 </div>
-<!--END-->
+<@END>
 
-<!--底部-->
-<!--#include file="foot.php"-->
-<!--END-->
+<@底部>
+<@include file="foot.php">
+<@END>
 
 </body>
 </html>

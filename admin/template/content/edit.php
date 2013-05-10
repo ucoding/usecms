@@ -6,7 +6,6 @@
 </div>
 <div class="tab" id="tab">
     <a class="selected" href="#">添加{$model_info.name}</a>
-    <!--<a  href="javascript:history.go(-1)">返回列表</a>-->
 </div>
 <div class="page_form">
     <form action="__URL__/edit_save/time-<?php echo time(); ?>-ajax-true" method="post" id="form" autocomplete="off">
@@ -16,7 +15,7 @@
                     <td width="100" align="right">栏目</td>
                     <td width="350"><select name="cid" reg="." id="cid" onChange="get_fields(1)">
                             <option value="">======选择栏目======</option>
-                            <!--foreach:{$category_list $vo}-->
+                            <@foreach:{$category_list $vo}>
                             <option
                                 value="{$vo['cid']}" <?php if ($info['cid'] == $vo['cid']) { ?> selected="selected" <?php } ?>
                                 <?php if ($vo['type'] == 0 || $vo['mid'] <> $model_info['mid']){ ?>style="background-color:#ccc" disabled="disabled" <?php } ?>
@@ -25,7 +24,7 @@
                                 } ?> >
                                 {$vo['cname']}
                             </option>
-                            <!--{/foreach}-->
+                            <@{/foreach}>
                         </select>
                         &nbsp;&nbsp;<a href="javascript:;" onclick="advanced()">高级设置</a>
                     </td>
@@ -40,11 +39,11 @@
                 <tr>
                     <td width="100" align="right">广告位</td>
                     <td width="350">
-                        <!--foreach:{$position_list $vo}-->
+                        <@foreach:{$position_list $vo}>
                         <input name="position[]" type="checkbox" value="{$vo.id}" <?php if (is_array($position_array)) {
                             if (in_array($vo['id'], $position_array)) { ?> checked="checked" <?php }
                         } ?> /> {$vo.name}&nbsp;&nbsp;
-                        <!--{/foreach}-->
+                        <@{/foreach}>
                     </td>
                     <td></td>
                 </tr>
@@ -80,9 +79,7 @@
                             html}</textarea>
                         <input type="button" onclick="javascript:get_remote_image()" style="margin-top:10px;"
                                class="button_small" value="远程图片本地化"/>
-                        <!--hook-->
                         <?php module('common')->plus_hook('content', 'tools', $info); ?>
-                        <!--hook end-->
                     </td>
                 </tr>
                 <td width="100" align="right">附件上传</td>
@@ -152,16 +149,9 @@
                 </tr>
                 <tbody id="expand">
                 </tbody>
-<!--                <tr>-->
-<!--                    <td width="100" align="right">内容模板</td>-->
-<!--                    <td width="350">-->
-<!--                        <input name="tpl" type="text" class="text_value" id="tpl" value="{$info.tpl}"/>-->
-<!--                    </td>-->
-<!--                    <td>留空采用栏目指定模板</td>-->
-<!--                </tr>-->
-                <!--hook-->
+
                 <?php module('common')->plus_hook('content', 'edit_tpl', $info); ?>
-                <!--hook end-->
+
                 <?php if ($user['status_power'] <> 2 || $user['keep'] == 1) { ?>
                     <tr>
                         <td width="100" align="right">状态</td>
@@ -178,7 +168,6 @@
 
             </table>
         </div>
-        <!--普通提交-->
         <div class="form_submit">
             <input name="aid" type="hidden" value="{$info.aid}"/>
             <input name="file_id" id="file_id" type="hidden" value="{$file_id}"/>
@@ -286,12 +275,12 @@
     //模板列表
 //    function tpl_list(id) {
 //        var list = [
-//            <!--foreach:{$tpl_list $vo}-->
+//            <@foreach:{$tpl_list $vo}>
 //            {
 //                href: "javascript:;\" onclick=\"tpl_val('" + id + "','{$vo}');\"",
 //                text: "{$vo}"
 //            },
-//            <!--{/foreach}-->
+//            <@{/foreach}>
 //            {
 //                text: "请选择模板，支持子目录"
 //            }

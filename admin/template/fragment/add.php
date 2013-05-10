@@ -6,7 +6,6 @@
 </div>
 <div class="tab" id="tab">
     <a class="selected" href="#">添加变量</a>
-    <!--<a  href="javascript:menuload('__URL__')">变量列表</a>-->
 </div>
 <div class="page_form">
     <form action="__URL__/add_save/time-<?php echo time(); ?>-ajax-true" method="post" id="form">
@@ -38,7 +37,7 @@
 
             </table>
         </div>
-        <!--普通提交-->
+
         <div class="form_submit">
             <input name="file_id" id="file_id" type="hidden" value=""/>
             <button type="submit" class="button">保存</button>

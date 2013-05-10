@@ -27,7 +27,7 @@
             <button type="button" tabindex="4">重置</button>
         </div>
     </form>
-    <div class="copyright"><!--copyright--></div>
+    <div class="copyright"><@copyright></div>
 </div>
 <script type="text/javascript">
     $("#user").focus();

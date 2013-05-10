@@ -6,7 +6,6 @@
 </div>
 <div class="tab" id="tab">
     <a class="selected" href="#">添加栏目</a>
-    <!--<a  href="javascript:menuload('__APP__/category')">返回栏目列表</a>-->
 </div>
 <div class="page_form">
     <form action="__URL__/add_save/time-<?php echo time(); ?>-ajax-true" method="post" id="form">
@@ -17,9 +16,9 @@
                     <td width="300">
                         <select name="pid" id="pid">
                             <option value="0">=====顶级栏目=====</option>
-                            <!--foreach:{$category_list $vo}-->
+                            <@foreach:{$category_list $vo}>
                             <option value="{$vo.cid}">{$vo.cname}</option>
-                            <!--{/foreach}-->
+                            <@{/foreach}>
                         </select>
                         &nbsp;&nbsp;<a href="javascript:;" onclick="advanced()">高级设置</a>
                     </td>
@@ -62,9 +61,9 @@
                         <textarea name="content" style="width:100%; height:350px;" id="content"></textarea>
                         <input type="button" onclick="javascript:get_remote_image()" style="margin-top:10px;"
                                class="button_small" value="远程图片本地化"/>
-                        <!--hook-->
+
                         <?php module('common')->plus_hook('content', 'tools'); ?>
-                        <!--hook end-->
+
                     </td>
                 </tr>
                 <tr>
@@ -111,9 +110,9 @@
                     <td>数字越大越在前面</td>
                 </tr>
 
-                <!--hook-->
+
                 <?php module('common')->plus_hook('category', 'add_tpl'); ?>
-                <!--hook end-->
+
 
                 <tr>
                     <td width="100" align="right">页面模板</td>
@@ -125,7 +124,7 @@
 
             </table>
         </div>
-        <!--普通提交-->
+
         <div class="form_submit">
             <input name="file_id" id="file_id" type="hidden" value=""/>
             <button type="submit" class="button">保存</button>
@@ -157,12 +156,12 @@
     //模板列表
     function tpl_list(id) {
         var list = [
-            <!--foreach:{$tpl_list $vo}-->
+            <@foreach:{$tpl_list $vo}>
             {
                 href: "javascript:;\" onclick=\"tpl_val('" + id + "','{$vo}');\"",
                 text: "{$vo}"
             },
-            <!--{/foreach}-->
+            <@{/foreach}>
             {
                 text: "请选择模板"
             }

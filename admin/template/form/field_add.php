@@ -22,9 +22,9 @@
                     <td width="100" align="right">字段类型</td>
                     <td width="350">
                         <select name="type" id="type" onchange="fildtype($(this).val())">
-                            <!--foreach:{$field_type $key $vo}-->
+                            <@foreach:{$field_type $key $vo}>
                             <option value="{$key}">{$vo.name}</option>
-                            <!--{/foreach}-->
+                            <@{/foreach}>
                         </select>
                     </td>
                 </tr>
@@ -32,9 +32,9 @@
                     <td width="120" align="right">字段属性</td>
                     <td>
                         <select name="property" id="property">
-                            <!--foreach:{$field_property $key $vo}-->
+                            <@foreach:{$field_property $key $vo}>
                             <option value="{$key}">{$vo.name}</option>
-                            <!--{/foreach}-->
+                            <@{/foreach}>
                         </select>
                         &nbsp;&nbsp;长度 <input name="len" type="text" class="text_value" id="len" value="250" reg="[0-9]"
                                               style="width:45px;"/>
@@ -95,7 +95,7 @@
                 </tr>
             </table>
         </div>
-        <!--普通提交-->
+
         <div class="form_submit">
             <input name="fid" type="hidden" value="{$info.id}">
             <button type="submit" class="button">保存</button>

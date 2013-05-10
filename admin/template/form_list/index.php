@@ -4,7 +4,6 @@
         <small>可以添加或者修改{$info.name}</small>
     </div>
     <div class="exercise">
-        <!--<a href="__URL__/index/id-{$info.id}">{$info.name}列表</a>-->
         <a href="javascript:menuload('__URL__/add/id-{$info.id}')">{$info.name}添加</a>
     </div>
 </div>
@@ -15,21 +14,21 @@
                 <th width="10%">
                     <center>ID</center>
                 </th>
-                <!--foreach:{$field_list $vo}-->
+                <@foreach:{$field_list $vo}>
                 <th>
                     <center>{$vo.name}</center>
                 </th>
-                <!--{/foreach}-->
+                <@{/foreach}>
                 <th>
                     <center>表单操作</center>
                 </th>
             </tr>
-            <!--foreach:{$list $vo}-->
+            <@foreach:{$list $vo}>
             <tr>
                 <td>
                     <center>{$vo.id}</center>
                 </td>
-                <!--foreach:{$field_list $model}-->
+                <@foreach:{$field_list $model}>
                 <td>
                     <center>
                         <?php
@@ -41,7 +40,7 @@
                         ?>
                     </center>
                 </td>
-                <!--{/foreach}-->
+                <@{/foreach}>
                 <td>
                     <center>
                         <a href="__URL__/edit/id-{$vo.id}-fid-{$info.id}">修改</a>
@@ -50,7 +49,7 @@
                     </center>
                 </td>
             </tr>
-            <!--{/foreach}-->
+            <@{/foreach}>
         </table>
     </div>
 </div>

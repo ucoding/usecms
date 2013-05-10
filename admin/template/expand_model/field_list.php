@@ -4,7 +4,6 @@
         <small>使用以下功能进行字段编辑操作</small>
     </div>
     <div class="exercise">
-        <!--<a href="javascript:menuload('__URL__/index')">返回模型列表</a>-->
         <a href="javascript:;" onclick="add()">添加字段</a>
     </div>
 </div>
@@ -25,7 +24,7 @@
                     <center>操作</center>
                 </th>
             </tr>
-            <!--foreach:{$list $vo}-->
+            <@foreach:{$list $vo}>
             <tr>
                 <td align="center">
                     <center>{$vo.sequence}</center>
@@ -34,25 +33,25 @@
                 <td align="left">{$vo.field}</td>
                 <td align="left">{$vo.type} ({$vo.property})</td>
                 <td align="center">
-                    <!--if:{$vo['must']==1}-->
+                    <@if:{$vo['must']==1}>
                     <font color=green><b>√</b></font>
-                    <!--{else}-->
+                    <@{else}>
                     <font color=red><b>×</b></font>
-                    <!--{/if}-->
+                    <@{/if}>
                 </td>
                 <td>
                     <center>
                         <a href="javascript:;" onclick="edit({$vo['fid']})">修改</a>
                         |
-                        <!--if:{$vo['primary']==0}-->
+                        <@if:{$vo['primary']==0}>
                         <a href="javascript:void(0);" onclick="del('{$vo.fid}',this)">删除</a>
-                        <!--{else}-->
+                        <@{else}>
                         <font color="#CCCCCC">删除</font>
-                        <!--{/if}-->
+                        <@{/if}>
                     </center>
                 </td>
             </tr>
-            <!--{/foreach}-->
+            <@{/foreach}>
         </table>
     </div>
 </div>

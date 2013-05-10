@@ -5,7 +5,6 @@
     </div>
 </div>
 <div class="tab" id="tab"><a class="selected" href="#">添加管理员</a>
-    <!--<a  href="javascript:menuload('__URL__')">返回管理员列表</a>-->
 </div>
 <div class="page_form">
     <form action="__URL__/add_save/time-<?php echo time() ?>-ajax-true" method="post" id="form">
@@ -15,9 +14,9 @@
                     <td width="100" align="right">角色</td>
                     <td width="300">
                         <select name="gid" id="gid">
-                            <!--foreach:{$user_group $vo}-->
+                            <@foreach:{$user_group $vo}>
                             <option value="{$vo.id}">{$vo.name}</option>
-                            <!--{/foreach}-->
+                            <@{/foreach}>
                         </select>
                     </td>
                     <td></td>
@@ -57,7 +56,7 @@
 
             </table>
         </div>
-        <!--普通提交-->
+
         <div class="form_submit">
             <button type="submit" class="button">保存</button>
         </div>

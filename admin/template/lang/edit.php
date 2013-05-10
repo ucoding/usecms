@@ -6,7 +6,6 @@
 </div>
 <div class="tab" id="tab">
     <a class="selected" href="#">编辑语言</a>
-    <!--<a  href="javascript:menuload('__URL__')">返回语言列表</a>-->
 </div>
 <div class="page_form">
     <form action="__URL__/edit_save/time-<?php echo time ?>-ajax-true" method="post" id="form">
@@ -31,7 +30,7 @@
                 </tr>
             </table>
         </div>
-        <!--普通提交-->
+
         <div class="form_submit">
             <input name="id" type="hidden" value="{$info.id}"/>
             <button type="submit" class="button">保存</button>

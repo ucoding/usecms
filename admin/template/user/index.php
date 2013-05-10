@@ -4,7 +4,6 @@
         <small>使用以下功能进行管理员添加操作</small>
     </div>
     <div class="exercise">
-        <!--<a href="javascript:menuload('__URL__')">管理员列表</a>-->
         <a href="javascript:menuload('__URL__/add')">添加管理员</a>
     </div>
 </div>
@@ -23,7 +22,7 @@
                     <center>操作</center>
                 </th>
             </tr>
-            <!--foreach:{$list $vo}-->
+            <@foreach:{$list $vo}>
             <tr>
                 <td>
                     <center>{$vo.id}</center>
@@ -32,11 +31,11 @@
                 <td>{$vo.nicename}</td>
                 <td>{$vo.gname}</td>
                 <td>
-                    <!--if:{$vo['status']==1}-->
+                    <@if:{$vo['status']==1}>
                     启用
-                    <!--{else}-->
+                    <@{else}>
                     禁用
-                    <!--{/if}-->
+                    <@{/if}>
                 </td>
                 <td>
                     <center>
@@ -44,7 +43,7 @@
                         | <a href="javascript:void(0);" onclick="del('{$vo.id}',this)">删除</a></center>
                 </td>
             </tr>
-            <!--{/foreach}-->
+            <@{/foreach}>
         </table>
     </div>
 </div>

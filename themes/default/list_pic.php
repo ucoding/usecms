@@ -6,18 +6,18 @@
     <title>{$common.title}</title>
     <meta name="keywords" content="{$common.keywords}"/>
     <meta name="description" content="{$common.description}"/>
-    <!--#include file="resources.php"-->
+    <@include file="resources.php">
 </head>
 
 <body>
-<!--头部-->
-<!--#include file="head.php"-->
-<!--END-->
-<!--中部-->
+<@头部>
+<@include file="head.php">
+<@END>
+<@中部>
 <div id="central">
     <div id="main" class="fn-left">
         <div id="pagenav">
-            <!--#include file="bread.php"-->
+            <@include file="bread.php">
         </div>
 
         <div class="sep10"></div>
@@ -27,12 +27,12 @@
             </div>
             <div class="boxlist">
                 <ul>
-                    <!--foreach:{$loop $vo}-->
+                    <@foreach:{$loop $vo}>
                     <li>
                         <div class="pic"><img src="{$vo.image}" width="140" height="120" alt="{$vo.title}"/></div>
                         <div class="title"><a href="{$vo.aurl}" title="{$vo.title}">{$vo.title len="13"}</a></div>
                     </li>
-                    <!--/loop-->
+                    <@/loop>
                 </ul>
                 <div class="fn-clear"></div>
             </div>
@@ -41,7 +41,7 @@
             {$page}
         </div>
     </div>
-    <!--边栏-->
+    <@边栏>
     <div id="sidebar" class="fn-right">
         <div class="box">
             <div class="boxhead">
@@ -49,23 +49,23 @@
             </div>
             <div class="boxlist">
                 <ul>
-                    <!--根据顶级栏目ID调用下级栏目-->
-                    <!--list:{table="category" pid="<$top_category.cid>" order="cid desc" limit="5"}-->
+                    <@根据顶级栏目ID调用下级栏目>
+                    <@list:{table="category" pid="<$top_category.cid>" order="cid desc" limit="5"}>
                     <li><span class="title"><a href="{$list.curl}">{$list.name}</a> </span></li>
-                    <!--/list-->
+                    <@/list>
                 </ul>
             </div>
         </div>
-        <!--#include file="sidebar.php"-->
+        <@include file="sidebar.php">
     </div>
-    <!--END-->
+    <@END>
     <div class="fn-clear"></div>
 </div>
-<!--END-->
+<@END>
 
-<!--底部-->
-<!--#include file="foot.php"-->
-<!--END-->
+<@底部>
+<@include file="foot.php">
+<@END>
 
 </body>
 </html>

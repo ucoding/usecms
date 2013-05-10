@@ -1,8 +1,8 @@
 <div class="title"><a href="javascript:void(0)">附件管理</a></div>
 <ul class="load menu">
-    <!--foreach:{$list $vo}-->
+    <@foreach:{$list $vo}>
     <li><a href="__APP__/{$vo.module}">{$vo.name}</a></li>
-    <!--{/foreach}-->
+    <@{/foreach}>
 </ul>
 
 <script>

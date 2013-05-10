@@ -6,7 +6,6 @@
         </div>
 </div>
 <div class="tab" id="tab"><a class="selected" href="#tab1">站点设置</a><a href="#tab2">性能设置</a>
-<!--    <a href="#tab3">模板设置</a> -->
     <a
         href="#tab4">上传设置</a></div>
 <div class="page_form">
@@ -116,55 +115,6 @@
     </table>
 </div>
 
-<!--<div class="page_table form_table" id="tab3">-->
-<!--    <table width="100%" border="0" cellspacing="0" cellpadding="0">-->
-<!--        <tr>-->
-<!--            <td width="120">模板路径</td>-->
-<!--            <td width="300"><input name="TPL_TEMPLATE_PATH" type="text" class="text_value" id="TPL_TEMPLATE_PATH"-->
-<!--                                   value="{$config_array.TPL_TEMPLATE_PATH}"/></td>-->
-<!--            <td>针对themes目录下的文件夹</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td width="120">首页模板</td>-->
-<!--            <td width="300"><input name="TPL_INDEX" type="text" class="text_value" id="TPL_INDEX"-->
-<!--                                   value="{$config_array.TPL_INDEX}"/></td>-->
-<!--            <td>定义首页访问的模板</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td width="120">公共模板</td>-->
-<!--            <td width="300"><input name="TPL_COMMON" type="text" class="text_value" id="tpl_common"-->
-<!--                                   value="{$config_array.TPL_COMMON}"/></td>-->
-<!--            <td>公共模板用于tag、搜索、插件等模板的外部模板</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td width="120">搜索模板</td>-->
-<!--            <td width="300"><input name="TPL_SEARCH" type="text" class="text_value" id="TPL_SEARCH"-->
-<!--                                   value="{$config_array.TPL_SEARCH}"/></td>-->
-<!--            <td>定义网站搜索的模板</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td width="120">TAG模板</td>-->
-<!--            <td width="300"><input name="TPL_TAGS" type="text" class="text_value" id="TPL_TAGS"-->
-<!--                                   value="{$config_array.TPL_TAGS}"/></td>-->
-<!--            <td>定义网站TAG的模板</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td>模板缓存：</td>-->
-<!--            <td>--><?php //if ($config_array['TPL_CACHE_ON']) { ?>
-<!--                    <input type="radio" name="TPL_CACHE_ON" id="TPL_CACHE_ON" value="true" checked="checked"/>-->
-<!--                    开启-->
-<!--                    <input type="radio" name="TPL_CACHE_ON" value="false"/>-->
-<!--                    关闭-->
-<!--                --><?php //} else { ?>
-<!--                    <input type="radio" name="TPL_CACHE_ON" value="true"/>-->
-<!--                    开启-->
-<!--                    <input type="radio" name="TPL_CACHE_ON" id="TPL_CACHE_ON" value="false" checked="checked"/>-->
-<!--                    关闭-->
-<!--                --><?php //} ?><!--</td>-->
-<!--            <td>更换修改模板请先清除缓存</td>-->
-<!--        </tr>-->
-<!--    </table>-->
-<!--</div>-->
 
 <div class="page_table form_table" id="tab4">
     <table width="100%" border="0" cellspacing="0" cellpadding="0">

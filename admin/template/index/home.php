@@ -2,7 +2,7 @@
     <div class="info">
         <h3>系统信息</h3>
     </div>
-    <!--[if lt IE 8]>
+    <!--[if lt IE 8]-->
     <div class="index_tip"><p>您正在使用IE6或IE7为了您更好的体验，请升级浏览器至IE8以上或者更换其他浏览器<a
         href="http://www.microsoft.com/china/windows/internet-explorer/" target="_blank">Internet Explorer 8</a>
         其他浏览器:
@@ -10,7 +10,7 @@
             href="http://www.google.com/chrome/?hl=zh-CN">Chrome</a> / <a
             href="http://www.apple.com.cn/safari/">Safari</a>
         / <a href="http://www.operachina.com/">Opera</a></p></div>
-    <![endif]-->
+    <!--[endif]-->
 </div>
 <div class="page_main">
     <h3>基本信息</h3>
@@ -68,10 +68,6 @@
                 <td width="120">附件数:</td>
                 <td>{$upload_count}</td>
             </tr>
-            <!--<tr>-->
-            <!--<td width="120">授权查询:</td>-->
-            <!--<td colspan="3" id="authorize"><a href="javascript:;" onclick="authorize()">如果拥有商业授权可以进行查询授权</a></td>-->
-            <!--</tr>-->
             <tr>
                 <td width="120">实用工具:</td>
                 <td colspan="3">

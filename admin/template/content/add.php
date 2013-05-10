@@ -6,7 +6,6 @@
 </div>
 <div class="tab" id="tab">
     <a class="selected" href="#">添加{$model_info.name}</a>
-    <!--<a  href="javascript:history.go(-1)">返回列表</a>-->
 </div>
 <div class="page_form">
     <form action="__URL__/add_save/time-<?php echo time(); ?>-ajax-true" method="post" id="form" autocomplete="off">
@@ -16,7 +15,7 @@
                     <td width="100" align="right">栏目</td>
                     <td width="350"><select name="cid" reg="." id="cid" onChange="get_fields()">
                             <option value="">======选择栏目======</option>
-                            <!--foreach:{$category_list $vo}-->
+                            <@foreach:{$category_list $vo}>
                             <option
                                 value="{$vo['cid']}" <?php if ($class_info['cid'] == $vo['cid']) { ?> selected="selected" <?php } ?>
                                 <?php if ($vo['type'] == 0 || $vo['mid'] <> $model_info['mid']){ ?>style="background-color:#ccc" disabled="disabled" <?php } ?>
@@ -27,7 +26,7 @@
                                 } ?> >
                                 {$vo['cname']}
                             </option>
-                            <!--{/foreach}-->
+                            <@{/foreach}>
                         </select>
                         &nbsp;&nbsp;<a href="javascript:;" onclick="advanced()">高级设置</a>
                     </td>
@@ -41,9 +40,9 @@
                 <tr>
                     <td width="100" align="right">广告位</td>
                     <td width="350">
-                        <!--foreach:{$position_list $vo}-->
+                        <@foreach:{$position_list $vo}>
                         <input name="position[]" type="checkbox" value="{$vo.id}"/> {$vo.name}&nbsp;&nbsp;
-                        <!--{/foreach}-->
+                        <@{/foreach}>
                     </td>
                     <td></td>
                 </tr>
@@ -74,9 +73,7 @@
                         <textarea name="content" style="width:100%; height:350px;" id="content"></textarea>
                         <input type="button" onclick="javascript:get_remote_image()" style="margin-top:10px;"
                                class="button_small" value="远程图片本地化"/>
-                        <!--hook-->
                         <?php module('common')->plus_hook('content', 'tools'); ?>
-                        <!--hook end-->
                     </td>
                 </tr>
                 <tr>
@@ -141,16 +138,9 @@
                 </tr>
                 <tbody id="expand">
                 </tbody>
-<!--                <tr class="advanced">-->
-<!--                    <td width="100" align="right">内容模板</td>-->
-<!--                    <td width="350">-->
-<!--                        <input name="tpl" type="text" class="text_value" id="tpl" value=""/>-->
-<!--                    </td>-->
-<!--                    <td>留空采用栏目指定模板</td>-->
-<!--                </tr>-->
-                <!--hook-->
+
                 <?php module('common')->plus_hook('content', 'add_tpl'); ?>
-                <!--hook end-->
+
                 <?php if ($user['status_power'] <> 2 || $user['keep'] == 1) { ?>
                     <tr>
                         <td width="100" align="right">状态</td>
@@ -166,7 +156,6 @@
 
             </table>
         </div>
-        <!--普通提交-->
         <div class="form_submit">
             <input name="inputtime" type="hidden" value="{$php(echo time())}"/>
             <input name="file_id" id="file_id" type="hidden" value=""/>
@@ -266,37 +255,4 @@
     //提交表单
     savelistform("__URL__/add/cid-{$class_info.cid}", "javascript:history.go(-1)");
 
-    //模板列表
-//    function tpl_list(id) {
-//        var list = [
-//            <!--foreach:{$tpl_list $vo}-->
-//            {
-//                href: "javascript:;\" onclick=\"tpl_val('" + id + "','{$vo}');\"",
-//                text: "{$vo}"
-//            },
-//            <!--{/foreach}-->
-//            {
-//                text: "请选择模板，支持子目录"
-//            }
-//        ];
-//        return list;
-//    }
-    //模板赋值
-//    function tpl_val(id, val) {
-//        $('#' + id).val(val);
-//        $('#floatBox_list').hide();
-//        return false;
-//    }
-
-    //页面执行
-    $(document).ready(function () {
-//        //模板选择
-//        $("#tpl").powerFloat({
-//            width: 250,
-//            eventType: "click",
-//            target: tpl_list('tpl'),
-//            targetMode: "list"
-//        });
-
-    });
 </script>

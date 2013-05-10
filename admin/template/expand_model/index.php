@@ -4,7 +4,6 @@
         <small>将栏目与扩展模型进行绑定来实现附加字段功能</small>
     </div>
     <div class="exercise">
-        <!--<a href="javascript:menuload('__URL__')">模型列表</a>-->
         <a href="javascript:;" onclick="add()">添加模型</a>
         <a href="javascript:;" onclick="model_in('__URL__/in')">导入模型</a>
     </div>
@@ -24,7 +23,7 @@
                     <center>模型操作</center>
                 </th>
             </tr>
-            <!--foreach:{$list $vo}-->
+            <@foreach:{$list $vo}>
             <tr>
                 <td>
                     <center>{$vo.mid}</center>
@@ -41,7 +40,7 @@
                         | <a href="javascript:void(0);" onclick="del('{$vo.mid}',this)">删除</a></center>
                 </td>
             </tr>
-            <!--{/foreach}-->
+            <@{/foreach}>
         </table>
     </div>
 </div>

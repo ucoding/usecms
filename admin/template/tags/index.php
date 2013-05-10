@@ -4,7 +4,6 @@
         <small>管理内容关键词分离的TAG标签</small>
     </div>
     <div class="exercise">
-        <!--<a href="javascript:menuload('__URL__/index')">TAG列表</a>-->
     </div>
 </div>
 <div class="page_main">
@@ -22,7 +21,7 @@
                     <center>TAG操作</center>
                 </th>
             </tr>
-            <!--foreach:{$list $vo}-->
+            <@foreach:{$list $vo}>
             <tr>
                 <td>
                     <center>{$vo.id}</center>
@@ -38,7 +37,7 @@
                         <a href="javascript:void(0);" onclick="del('{$vo.id}',this)">删除</a></center>
                 </td>
             </tr>
-            <!--{/foreach}-->
+            <@{/foreach}>
         </table>
     </div>
 </div>

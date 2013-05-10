@@ -4,7 +4,6 @@
         <small>用来管理程序的附加功能</small>
     </div>
     <div class="exercise">
-        <!--<a href="javascript:menuload('__URL__/index')">插件列表</a>-->
     </div>
 </div>
 <div class="page_main">
@@ -19,7 +18,7 @@
                 <th width="15%">状态</th>
                 <th width="15%">操作</th>
             </tr>
-            <!--foreach:{$list $vo}-->
+            <@foreach:{$list $vo}>
             <tr>
                 <td>{$vo.name}</td>
                 <td>{$vo.file}</td>
@@ -43,7 +42,7 @@
                     <?php } ?>
                 </td>
             </tr>
-            <!--{/foreach}-->
+            <@{/foreach}>
         </table>
     </div>
 </div>

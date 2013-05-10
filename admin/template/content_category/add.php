@@ -6,7 +6,6 @@
 </div>
 <div class="tab" id="tab">
     <a class="selected" href="#">添加栏目</a>
-    <!--<a  href="javascript:menuload('__APP__/category')">返回栏目列表</a>-->
 </div>
 <div class="page_form">
     <form action="__URL__/add_save/time-<?php echo time(); ?>-ajax-true" method="post" id="form">
@@ -17,9 +16,9 @@
                     <td width="300">
                         <select name="pid" id="pid">
                             <option value="0">=====顶级栏目=====</option>
-                            <!--foreach:{$category_list $vo}-->
+                            <@foreach:{$category_list $vo}>
                             <option value="{$vo.cid}">{$vo.cname}</option>
-                            <!--{/foreach}-->
+                            <@{/foreach}>
                         </select>
                         &nbsp;&nbsp;<a href="javascript:;" onclick="advanced()">高级设置</a>
                     </td>
@@ -118,9 +117,7 @@
                     </td>
                     <td>针对该栏目下内容的排序方式</td>
                 </tr>
-                <!--hook-->
                 <?php module('common')->plus_hook('category', 'add_tpl'); ?>
-                <!--hook end-->
                 <tr>
                     <td width="100" align="right">栏目模板</td>
                     <td>
@@ -140,16 +137,15 @@
                     <td width="300">
                         <select name="expand" id="expand">
                             <option value="0">无</option>
-                            <!--foreach:{$model_list $vo}-->
+                            <@foreach:{$model_list $vo}>
                             <option value="{$vo.mid}">{$vo.name}</option>
-                            <!--{/foreach}-->
+                            <@{/foreach}>
                         </select>
                     </td>
                     <td>用于附加内容字段</td>
                 </tr>
             </table>
         </div>
-        <!--普通提交-->
         <div class="form_submit">
             <input name="file_id" id="file_id" type="hidden" value=""/>
             <button type="submit" class="button">保存</button>
@@ -167,12 +163,12 @@
     }
     function tpl_list(id) {
         var list = [
-            <!--foreach:{$tpl_list $vo}-->
+            <@foreach:{$tpl_list $vo}>
             {
                 href: "javascript:;\" onclick=\"tpl_val('" + id + "','{$vo}');\"",
                 text: "{$vo}"
             },
-            <!--{/foreach}-->
+            <@{/foreach}>
             {
                 text: "请选择模板"
             }
@@ -184,12 +180,12 @@
     //模板列表
     function tpl_list(id) {
         var list = [
-            <!--foreach:{$tpl_list $vo}-->
+            <@foreach:{$tpl_list $vo}>
             {
                 href: "javascript:;\" onclick=\"tpl_val('" + id + "','{$vo}');\"",
                 text: "{$vo}"
             },
-            <!--{/foreach}-->
+            <@{/foreach}>
             {
                 text: "请选择模板"
             }

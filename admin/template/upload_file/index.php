@@ -4,7 +4,6 @@
         <small>管理各个模块的附件</small>
     </div>
     <div class="exercise">
-        <!--<a href="javascript:menuload('__URL__/index')">附件列表</a>-->
     </div>
 </div>
 <div class="page_main">
@@ -32,12 +31,12 @@
                 value="__URL__/index/type-no"  <?php if ($_GET['type'] == 'no') { ?> selected="selected" <?php } ?>  >
                 未关联模块
             </option>
-            <!--foreach:{$module_list $vo}-->
+            <@foreach:{$module_list $vo}>
             <option
                 value="__URL__/index/type-{$vo.type}" <?php if ($_GET['type'] == $vo['type']) { ?> selected="selected" <?php } ?> >
                 {$vo.name}
             </option>
-            <!--{/foreach}-->
+            <@{/foreach}>
         </select>
         &nbsp;&nbsp;
         搜索：
@@ -65,7 +64,7 @@
                     <center>附件操作</center>
                 </th>
             </tr>
-            <!--foreach:{$list $vo}-->
+            <@foreach:{$list $vo}>
             <tr>
                 <td>
                     <center>{$vo.id}</center>
@@ -84,7 +83,7 @@
                         <a href="javascript:void(0);" onclick="del('{$vo.id}',this)">删除</a></center>
                 </td>
             </tr>
-            <!--{/foreach}-->
+            <@{/foreach}>
         </table>
     </div>
 </div>

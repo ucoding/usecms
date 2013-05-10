@@ -17,7 +17,7 @@
                     <td width="100" align="right">栏目</td>
                     <td width="350"><select name="cid" reg="." id="cid" onChange="get_fields(1)">
                             <option value="">======选择栏目======</option>
-                            <!--foreach:{$category_list $vo}-->
+                            <@foreach:{$category_list $vo}>
                             <option
                                 value="{$vo['cid']}" <?php if ($info['cid'] == $vo['cid']) { ?> selected="selected" <?php } ?>
                                 <?php if ($vo['type'] == 0 || $vo['mid'] <> $model_info['mid']){ ?>style="background-color:#ccc" disabled="disabled" <?php } ?>
@@ -26,7 +26,7 @@
                                 } ?> >
                                 {$vo['cname']}
                             </option>
-                            <!--{/foreach}-->
+                            <@{/foreach}>
                         </select>
                     </td>
                     <td></td>
@@ -39,11 +39,11 @@
                 <tr>
                     <td width="100" align="right">广告位</td>
                     <td width="350">
-                        <!--foreach:{$position_list $vo}-->
+                        <@foreach:{$position_list $vo}>
                         <input name="position[]" type="checkbox" value="{$vo.id}" <?php if (is_array($position_array)) {
                             if (in_array($vo['id'], $position_array)) { ?> checked="checked" <?php }
                         } ?> /> {$vo.name}&nbsp;&nbsp;
-                        <!--{/foreach}-->
+                        <@{/foreach}>
                     </td>
                     <td></td>
                 </tr>
@@ -79,9 +79,7 @@
                 </tr>
                 <tbody id="expand">
                 </tbody>
-                <!--hook-->
                 <?php module('common')->plus_hook('content', 'edit_tpl', $info); ?>
-                <!--hook end-->
                 <?php if ($user['status_power'] <> 2 || $user['keep'] == 1) { ?>
                     <tr>
                         <td width="100" align="right">状态</td>
@@ -98,7 +96,6 @@
 
             </table>
         </div>
-        <!--普通提交-->
         <div class="form_submit">
             <input name="aid" type="hidden" value="{$info.aid}"/>
             <input name="file_id" id="file_id" type="hidden" value="{$file_id}"/>

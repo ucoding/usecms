@@ -4,7 +4,6 @@
         <small>使用以下功能进行内容操作</small>
     </div>
     <div class="exercise">
-        <!--<a href="#">内容列表</a>-->
         <a href="__URL__/add/cid-{$class_info.cid}">添加内容</a>
     </div>
 </div>
@@ -62,12 +61,12 @@
         广告位：
         <select id="position" onchange="javascript:location.href=this.value;">
             <option value="__URL__/index/id-{$class_info.cid}">默认</option>
-            <!--foreach:{$position_list $vo}-->
+            <@foreach:{$position_list $vo}>
             <option
                 value="__URL__/index/id-{$class_info.cid}-position-{$vo.id}"  <?php if ($_GET['position'] == $vo['id']) { ?> selected="selected" <?php } ?> >
                 {$vo.name}
             </option>
-            <!--{/foreach}-->
+            <@{/foreach}>
         </select>
         &nbsp;&nbsp;
         搜索：
@@ -102,7 +101,7 @@
                     <center>操作</center>
                 </th>
             </tr>
-            <!--foreach:{$list $vo}-->
+            <@foreach:{$list $vo}>
             <tr id="del_{$vo['aid']}">
                 <td>
                     <center><input name="id[]" type="checkbox" id="id[]" value="{$vo['aid']}">
@@ -111,11 +110,11 @@
                     <center>{$vo.aid}</center>
                 </td>
                 <td><span><a href="<?php echo ROOTAPP ?>/label/admin_aurl/aid-{$vo['aid']}.php" target="_blank">{$vo.title}</a>
-        <!--if:{$vo['image']<>''}-->
+        <@if:{$vo['image']<>''}>
         <a href="javascript:void(0);" rel="{$vo.image}" class="class_pic"><img align="AbsMiddle"
                                                                                src="__PUBLICURL__/images/ico/pic.png"
                                                                                width="14" height="14" alt=""/></a>
-        <!--{/if}-->
+        <@{/if}>
         </span>
                     <?php
                     if (!empty($vo['position'])) {
@@ -130,11 +129,11 @@
                 </td>
                 <td>
                     <center>
-                        <!--if:{$vo['status']<>0}-->
+                        <@if:{$vo['status']<>0}>
                         <font color=green><b>√</b></font>
-                        <!--{else}-->
+                        <@{else}>
                         <font color=red><b>×</b></font>
-                        <!--{/if}-->
+                        <@{/if}>
                     </center>
                 </td>
                 <td>
@@ -152,7 +151,7 @@
                         | <a href="javascript:void(0);" onclick="del('{$vo.aid}',this)">删除</a></center>
                 </td>
             </tr>
-            <!--{/foreach}-->
+            <@{/foreach}>
         </table>
     </div>
 </div>
@@ -170,7 +169,7 @@
   <span id="mobile" style="display:none">
   			<select name="cid" id="cid">
                 <option value="">======选择栏目======</option>
-                <!--foreach:{$category_list $vo}-->
+                <@foreach:{$category_list $vo}>
                 <option value="{$vo['cid']}"
                         <?php if ($vo['type'] == 0 || $vo['mid'] <> $model_info['mid']){ ?>style="background-color:#ccc"
                         disabled="disabled" <?php } ?>
@@ -179,7 +178,7 @@
                     } ?> >
                     {$vo['cname']}
                 </option>
-                <!--{/foreach}-->
+                <@{/foreach}>
             </select>
             <input type="button" onclick="javascript:audit(4);" class="button_small" value="确认"/>
   </span>

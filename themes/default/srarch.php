@@ -6,17 +6,17 @@
     <title>{$common.title}</title>
     <meta name="keywords" content="{$common.keywords}"/>
     <meta name="description" content="{$common.description}"/>
-    <!--#include file="resources.php"-->
+    <@include file="resources.php">
 </head>
 
 <body>
-<!--头部-->
-<!--#include file="head.php"-->
-<!--END-->
-<!--中部-->
+<@头部>
+<@include file="head.php">
+<@END>
+<@中部>
 <div id="central">
     <div id="main" class="fn-left">
-        <!--#include file="bread.php"-->
+        <@include file="bread.php">
         <div class="sep10"></div>
         <div class="box  pagelist">
             <div class="boxhead">
@@ -27,11 +27,11 @@
         <span class="select">
         <select name="model">
             <option value="0"
-            <!--if:{$info['model']==0}--> selected="selected" <!--{/if}--> >标题</option>
+            <@if:{$info['model']==0}> selected="selected" <@{/if}> >标题</option>
             <option value="1"
-            <!--if:{$info['model']==1}--> selected="selected" <!--{/if}--> >标题和描述</option>
+            <@if:{$info['model']==1}> selected="selected" <@{/if}> >标题和描述</option>
             <option value="2"
-            <!--if:{$info['model']==2}--> selected="selected" <!--{/if}--> >全文</option>
+            <@if:{$info['model']==2}> selected="selected" <@{/if}> >全文</option>
         </select>
         </span>
                     <input name="keyword" type="text" id="keyword" value="{$info.name}"/>
@@ -40,10 +40,10 @@
             </div>
             <div class="boxlist">
                 <ul>
-                    <!--foreach:{$loop $vo}-->
+                    <@foreach:{$loop $vo}>
                     <li><span class="line">•</span> <span class="title"><a href="{$vo.aurl}">{$vo.titlex}</a> </span>
                         <span class="time">{$vo.updatetime time="Y-m-d"}</span></li>
-                    <!--/loop-->
+                    <@/loop>
                 </ul>
             </div>
         </div>
@@ -51,19 +51,19 @@
             {$page}
         </div>
     </div>
-    <!--边栏-->
+    <@边栏>
     <div id="sidebar" class="fn-right">
-        <!--#include file="sidebar.php"-->
+        <@include file="sidebar.php">
 
     </div>
-    <!--END-->
+    <@END>
     <div class="fn-clear"></div>
 </div>
-<!--END-->
+<@END>
 
-<!--底部-->
-<!--#include file="foot.php"-->
-<!--END-->
+<@底部>
+<@include file="foot.php">
+<@END>
 
 </body>
 </html>

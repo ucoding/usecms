@@ -4,7 +4,6 @@
         <small>模型包括文章、图片、视频等发布功能</small>
     </div>
     <div class="exercise">
-        <!--<a href="javascript:menuload('__URL__/index')">模型列表</a>-->
         <a href="javascript:;" onclick="model_in('__URL__/in')">导入模型</a>
     </div>
 </div>
@@ -23,7 +22,7 @@
                     <center>模型操作</center>
                 </th>
             </tr>
-            <!--foreach:{$list $vo}-->
+            <@foreach:{$list $vo}>
             <tr>
                 <td>
                     <center>{$vo.mid}</center>
@@ -39,7 +38,7 @@
                         | <a href="javascript:void(0);" onclick="del('{$vo.mid}',this)">删除</a></center>
                 </td>
             </tr>
-            <!--{/foreach}-->
+            <@{/foreach}>
         </table>
     </div>
 </div>

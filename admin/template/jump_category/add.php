@@ -6,7 +6,6 @@
 </div>
 <div class="tab" id="tab">
     <a class="selected" href="#">添加跳转页面</a>
-    <!--<a  href="javascript:menuload('__APP__/category')">返回栏目列表</a>-->
 </div>
 <div class="page_form">
     <form action="__URL__/add_save/time-<?php echo time(); ?>-ajax-true" method="post" id="form">
@@ -17,9 +16,9 @@
                     <td width="300">
                         <select name="pid" id="pid">
                             <option value="0">=====顶级栏目=====</option>
-                            <!--foreach:{$category_list $vo}-->
+                            <@foreach:{$category_list $vo}>
                             <option value="{$vo.cid}">{$vo.cname}</option>
-                            <!--{/foreach}-->
+                            <@{/foreach}>
                         </select>
                         &nbsp;&nbsp;<a href="javascript:;" onclick="advanced()">高级设置</a>
                     </td>
@@ -80,12 +79,12 @@
                     </td>
                     <td>数字越大越在前面</td>
                 </tr>
-                <!--hook-->
+
                 <?php module('common')->plus_hook('category', 'add_tpl'); ?>
-                <!--hook end-->
+
             </table>
         </div>
-        <!--普通提交-->
+
         <div class="form_submit">
             <input name="file_id" id="file_id" type="hidden" value=""/>
             <button type="submit" class="button">保存</button>

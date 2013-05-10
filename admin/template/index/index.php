@@ -41,16 +41,16 @@
                 width: 80,
                 eventType: "click",
                 target: [
-                    <!--foreach:{$lang_list $vo}-->
+                    <@foreach:{$lang_list $vo}>
                     {
                         href: "__APP__?lang={$vo.lang}",
                         text: "{$vo.name}"
                     }
-                    <!--if:{count($lang_list)<>$i}-->
+                    <@if:{count($lang_list)<>$i}>
                     ,
-                    <!--{/if}-->
+                    <@{/if}>
 
-                    <!--{/foreach}-->
+                    <@{/foreach}>
                 ],
                 targetMode: "list"
             });
@@ -170,14 +170,14 @@
     <div class="top_nav">
         <ul>
             <li class="mainmenu"><a href="__APP__/menu/index">首页</a></li>
-            <!--foreach:{$menu_list $vo}-->
-            <!--if:{in_array($vo['id'],$model_power)}-->
+            <@foreach:{$menu_list $vo}>
+            <@if:{in_array($vo['id'],$model_power)}>
             <li class="mainmenu" style="position: relative">
                 <a href="__APP__/menu/{$vo['module']}?id={$vo['id']}">{$vo['name']}</a>
 
             </li>
-            <!--{/if}-->
-            <!--{/foreach}-->
+            <@{/if}>
+            <@{/foreach}>
 
         </ul>
     </div>

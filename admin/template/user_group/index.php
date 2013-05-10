@@ -4,7 +4,6 @@
         <small>使用以下功能进行角色添加操作</small>
     </div>
     <div class="exercise">
-        <!--<a href="javascript:menuload('__URL__')">角色列表</a>-->
         <a href="javascript:menuload('__URL__/add')">添加角色</a>
     </div>
 </div>
@@ -20,7 +19,7 @@
                     <center>操作</center>
                 </th>
             </tr>
-            <!--foreach:{$list $vo}-->
+            <@foreach:{$list $vo}>
             <tr>
                 <td>
                     <center>{$vo.id}</center>
@@ -29,13 +28,13 @@
                 <td>
                     <center>
                         <a href="__URL__/edit/id-{$vo.id}">设置</a>
-                        <!--if:{$vo.id!=1}-->
+                        <@if:{$vo.id!=1}>
                         | <a href="javascript:void(0);" onclick="del('{$vo.id}',this)">删除</a>
-                        <!--{/if}-->
+                        <@{/if}>
                     </center>
                 </td>
             </tr>
-            <!--{/foreach}-->
+            <@{/foreach}>
         </table>
     </div>
 </div>

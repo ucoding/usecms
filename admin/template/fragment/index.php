@@ -4,7 +4,6 @@
         <small>使用以下功能进行自定义变量管理操作</small>
     </div>
     <div class="exercise">
-        <!--<a href="javascript:menuload('__URL__')">自定义变量列表</a>-->
         <a href="javascript:menuload('__URL__/add')">添加自定义变量</a>
     </div>
 </div>
@@ -23,7 +22,7 @@
                     <center>操作</center>
                 </th>
             </tr>
-            <!--foreach:{$list $vo}-->
+            <@foreach:{$list $vo}>
             <tr>
                 <td>
                     <center>{$vo.id}</center>
@@ -38,7 +37,7 @@
                         | <a href="javascript:void(0);" onclick="del('{$vo.id}',this)">删除</a></center>
                 </td>
             </tr>
-            <!--{/foreach}-->
+            <@{/foreach}>
         </table>
     </div>
 </div>

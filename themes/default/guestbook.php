@@ -1,15 +1,15 @@
 <div class="guestbook">
-    <!--foreach:{$loop $list}-->
+    <@foreach:{$loop $list}>
     <div class="list">
         <div class="content"> {$list.content html}
-            <!--if:{!empty($list['reply'])}-->
+            <@if:{!empty($list['reply'])}>
             <div class="reply">管理员回复：{$list.reply}</div>
-            <!--/if-->
+            <@/if>
         </div>
         <div class="info">邮箱:{$list.email} &nbsp;&nbsp;昵称:{$list.name}&nbsp;&nbsp;时间:{$list.time time="Y-m-d H:i:s"}
         </div>
     </div>
-    <!--/loop-->
+    <@/loop>
     <div class="pagenum">
         {$page}
     </div>
