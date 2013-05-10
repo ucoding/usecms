@@ -53,6 +53,7 @@ class pages_categoryMod extends commonMod
     public function edit()
     {
         $id = intval($_GET['id']);
+        $content = $_GET['type'];
         if (empty($id)) {
             $this->alert('无此页面数据！');
         }
@@ -61,7 +62,12 @@ class pages_categoryMod extends commonMod
         $this->page_info = model('pages_category')->page_info($this->info['cid']);
         $this->tpl_list = model('category')->tpl_list();
         $this->file_id = model('upload')->get_relation('category', $id);
-        $this->show();
+        if ($content == 'content') {
+            $this->show("pages_category/edit-content");
+        } else {
+            $this->show();
+        }
+
     }
 
     //栏目保存
@@ -71,9 +77,9 @@ class pages_categoryMod extends commonMod
             $this->msg('无法定位栏目ID！', 0);
         }
 
-        if (empty($_POST['class_tpl'])) {
-            $this->msg('栏目模板未选择！', 0);
-        }
+//        if (empty($_POST['class_tpl'])) {
+//            $this->msg('栏目模板未选择！', 0);
+//        }
 
         // 分类检测
         if ($_POST['pid'] == $_POST['cid']) {
