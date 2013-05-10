@@ -18,12 +18,6 @@
     <div class="page_table">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
-                <td width="120">程序版本:</td>
-                <td width="250">{$config.ver_name} {$config.ver}</td>
-                <td width="120">服务器时间:</td>
-                <td><?php echo date("Y-m-d G:i T", time()); ?></td>
-            </tr>
-            <tr>
                 <td width="120">当前模板:</td>
                 <td width="250">{$config_array['TPL_TEMPLATE_PATH']}</td>
                 <td width="120">伪静态:</td>

@@ -1,12 +1,11 @@
 <?php
-require (dirname(__file__) . '/ver.php'); //载入附加信息
 require (dirname(__file__) . '/data.php'); //载入附加信息
 //网站信息
-$config['sitename']='DUXCMS 企业网站管理系统';
+$config['sitename']='企业网站管理系统';
 $config['seoname']='免费小巧的网站管理系统';
 $config['siteurl']='http://localhost';
 $config['keywords']='小巧CMS,免费CMS';
-$config['description']='DUXCMS 是一款PHP开发的完全免费，小巧灵活的企业网站系统';
+$config['description']='一款PHP开发的完全免费，小巧灵活的企业网站系统';
 $config['masteremail']='';
 $config['copyright']='abc';
 

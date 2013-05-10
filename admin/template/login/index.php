@@ -1,10 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>DUXCMS后台管理系统</title>
+    <title>后台管理系统</title>
     <script type=text/javascript src="__PUBLICURL__/js/jquery.js"></script>
     <script type=text/javascript src="__PUBLICURL__/js/duxui.js"></script>
     <script type=text/javascript src="__PUBLICURL__/js/common.js"></script>
@@ -14,7 +13,7 @@
 </head>
 <body>
 <div class="login">
-    <h1>DUXCMS 管理系统</h1>
+    <h1>管理系统</h1>
 
     <form action="__URL__/check/time-<?php echo time() ?>-ajax-true" method="post" id="form">
         <div class="main">
