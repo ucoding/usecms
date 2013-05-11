@@ -83,9 +83,6 @@
                 <th width="5%">
                     <center>选择</center>
                 </th>
-                <th width="5%">
-                    <center>ID</center>
-                </th>
                 <th width="30%">标题</th>
                 <th width="10%">
                     <center>审核</center>
@@ -105,9 +102,6 @@
             <tr id="del_{$vo['aid']}">
                 <td>
                     <center><input name="id[]" type="checkbox" id="id[]" value="{$vo['aid']}">
-                </td>
-                <td>
-                    <center>{$vo.aid}</center>
                 </td>
                 <td><span><a href="<?php echo ROOTAPP ?>/label/admin_aurl/aid-{$vo['aid']}.php" target="_blank">{$vo.title}</a>
         <@if:{$vo['image']<>''}>

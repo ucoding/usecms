@@ -10,15 +10,10 @@
 </head>
 
 <body>
-<@头部>
 <@include file="head.php">
-<@END>
-<@中部>
 <div id="central">
     <div id="main" class="fn-left">
-        <@主体>
         <div class="mainhead">
-            <@幻灯片>
             <div class="slideshow fn-left">
                 <ul>
                     <@list_pic:{table="content" image="true" position="3" order="updatetime desc" limit="10" }>
@@ -27,8 +22,6 @@
                     <@/list_pic>
                 </ul>
             </div>
-            <@END>
-            <@首页推荐>
             <div class="indexhot">
                 <@list:{table="content" position="1" order="updatetime desc" limit="3"}>
                 <div class="hotbox">
@@ -47,13 +40,10 @@
                     </ul>
                 </div>
             </div>
-            <@END>
             <div class="fn-clear"></div>
         </div>
-        <@END>
-        <@图片列表>
         <div class="headtitle">
-            <h3>图片内容</h3>
+            <h3>产品</h3>
         </div>
         <div class="piclist">
             <ul>
@@ -68,9 +58,7 @@
             </ul>
             <div class="fn-clear"></div>
         </div>
-        <@END>
         <div class="sep10"></div>
-        <@栏目模块>
         <div class="headtitle">
             <h3>栏目列表</h3>
         </div>
@@ -107,9 +95,7 @@
             <@/if>
             <@/list>
         </div>
-        <@END>
     </div>
-    <@边栏>
     <div id="sidebar" class="fn-right">
         <div class="box">
             <div class="boxhead">
@@ -146,13 +132,8 @@
             </div>
         </div>
     </div>
-    <@END>
     <div class="fn-clear"></div>
 </div>
-<@END>
-
-<@底部>
 <@include file="foot.php">
-<@END>
 </body>
 </html>

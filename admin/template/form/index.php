@@ -11,9 +11,6 @@
     <div class="page_table table_list">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
-                <th width="10%">
-                    <center>ID</center>
-                </th>
                 <th width="30%">表单</th>
                 <th width="30%">
                     <center>表单名</center>
@@ -24,9 +21,6 @@
             </tr>
             <@foreach:{$list $vo}>
             <tr>
-                <td>
-                    <center>{$vo.id}</center>
-                </td>
                 <td>{$vo.name}</td>
                 <td>
                     <center>{$vo.table}</center>

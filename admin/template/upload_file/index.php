@@ -50,9 +50,6 @@
     <div class="page_table table_list">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
-                <th width="10%">
-                    <center>ID</center>
-                </th>
                 <th width="35%">
                     文件名称
                 </th>
@@ -66,9 +63,6 @@
             </tr>
             <@foreach:{$list $vo}>
             <tr>
-                <td>
-                    <center>{$vo.id}</center>
-                </td>
                 <td>
                     <?php if ($vo['ext'] == 'jpg' || $vo['ext'] == 'jpeg' || $vo['ext'] == 'gif' || $vo['ext'] == 'bmp' || $vo['ext'] == 'png') { ?>
                         <a href="javascript:;" rel="{$vo.file}" class="class_pic">{$vo.title}</a>

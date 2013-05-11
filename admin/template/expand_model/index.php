@@ -12,9 +12,6 @@
     <div class="page_table table_list">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
-                <th width="10%">
-                    <center>MID</center>
-                </th>
                 <th width="30%">模型名称</th>
                 <th width="30%">
                     <center>模型数据表</center>
@@ -25,9 +22,6 @@
             </tr>
             <@foreach:{$list $vo}>
             <tr>
-                <td>
-                    <center>{$vo.mid}</center>
-                </td>
                 <td>{$vo.name}</td>
                 <td>
                     <center>{$vo.table}</center>

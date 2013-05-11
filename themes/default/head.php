@@ -1,11 +1,8 @@
 <div id="head">
     <div class="warp">
-        <@LOGO>
         <div id="logo" class="fn-left">
             <h1><a href="__APP__/">{$sys.sitename}</a></h1>
         </div>
-        <@END>
-        <@搜索>
         <div id="search" class="fn-right">
             <form action="__APP__/search" method="get">
         <span class="select">
@@ -19,14 +16,11 @@
                 <button type="submit">搜索</button>
             </form>
         </div>
-        <@END>
         <div class="fn-clear"></div>
     </div>
-    <@导航条>
     <div id="nav">
         <div class="warp">
             <ul>
-                <@判断主导航高亮>
                 <@if:{$top_category['cid']==''}>
                 <li class="current">
                     <@else>
@@ -35,7 +29,6 @@
                     <div class="title"><a href="__APP__/">网站首页</a></div>
                 </li>
                 <@list:{table="category" type="top" order="cid asc" limit="7"}>
-                <@判断循环内导航高亮>
                 <@if:{$top_category['cid']==$list['cid']}>
                 <li class="current">
                     <@else>

@@ -10,10 +10,7 @@
 </head>
 
 <body>
-<@头部>
 <@include file="head.php">
-<@END>
-<@中部>
 <div id="central">
     <div id="main" class="fn-left">
         <@include file="bread.php">
@@ -27,7 +24,7 @@
                     <@foreach:{$loop $vo}>
                     <li><span class="line">?</span> <span class="title"><a href="{$vo.aurl}">{$vo.titlex}</a> </span>
                         <span class="time">{$vo.updatetime time="Y-m-d"}</span></li>
-                    <@/loop>
+                    <@/foreach>
                 </ul>
             </div>
         </div>
@@ -35,7 +32,6 @@
             {$page}
         </div>
     </div>
-    <@边栏>
     <div id="sidebar" class="fn-right">
 
         <div class="box">
@@ -44,7 +40,6 @@
             </div>
             <div class="boxlist">
                 <ul>
-                    <@根据顶级栏目ID调用下级栏目>
                     <@list:{table="category" pid="<$top_category.cid>" order="cid desc" limit="5"}>
                     <li><span class="title"><a href="{$list.curl}">{$list.name}</a> </span></li>
                     <@/list>
@@ -54,14 +49,9 @@
         <@include file="sidebar.php">
 
     </div>
-    <@END>
     <div class="fn-clear"></div>
 </div>
-<@END>
-
-<@底部>
 <@include file="foot.php">
-<@END>
 
 </body>
 </html>
