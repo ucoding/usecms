@@ -55,12 +55,12 @@
                 </tr>
                 <tr>
                 <tr>
-                    <td width="100" align="right">描述</td>
+                    <td width="100" align="right">SEO描述</td>
                     <td colspan="2"><textarea name="description" class="text_textarea" id="description">{$info.description}</textarea>
                     </td>
                 </tr>
                 <tr>
-                    <td width="100" align="right">关键词</td>
+                    <td width="100" align="right">SEO关键词</td>
                     <td colspan="2"><input name="keywords" type="text" class="text_value" id="keywords"
                                            value="{$info.keywords}"/>
                     </td>

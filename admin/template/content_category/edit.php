@@ -58,14 +58,14 @@
                     </td>
                 </tr>
                 <tr class="advanced">
-                    <td width="100" align="right">关键词</td>
+                    <td width="100" align="right">SEO关键词</td>
                     <td width="300">
                         <input name="keywords" type="text" class="text_value" id="keywords" value="{$info.keywords}"/>
                     </td>
                     <td>以,号分割</td>
                 </tr>
                 <tr class="advanced">
-                    <td width="100" align="right">描述</td>
+                    <td width="100" align="right">SEO描述</td>
                     <td width="300"><textarea name="description" class="text_textarea" id="description">{$info.description}</textarea>
                     </td>
                     <td>对本栏目的简单介绍</td>

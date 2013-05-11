@@ -21,7 +21,7 @@ $config['TPL_TAGS'] = 'tags.php';
 $config['TPL_SEARCH'] = 'srarch.php';
 
 //上传设置
-$config['ACCESSPRY_SIZE'] = '500'; //附件大小，单位K
+$config['ACCESSPRY_SIZE'] = '1024'; //附件大小，单位K
 $config['ACCESSPRY_NUM'] = '300'; //上传数量
 $config['ACCESSPRY_TYPE'] = 'jpg,bmp,gif,png,flv,mp4,mp3,wma,mp4,7z,zip,rar,ppt,txt,pdf,xls,doc,swf,wmv,avi,rmvb,rm'; //上传格式
 $config['THUMBNAIL_SWIHCH'] = true; //是否缩图

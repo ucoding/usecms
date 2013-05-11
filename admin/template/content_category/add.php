@@ -49,14 +49,14 @@
                     </td>
                 </tr>
                 <tr class="advanced">
-                    <td width="100" align="right">关键词</td>
+                    <td width="100" align="right">SEO关键词</td>
                     <td>
                         <input name="keywords" type="text" class="text_value" id="keywords"/>
                     </td>
                     <td>以,号分割</td>
                 </tr>
                 <tr class="advanced">
-                    <td width="100" align="right">描述</td>
+                    <td width="100" align="right">SEO描述</td>
                     <td colspan="2">
                         <textarea name="description" class="text_textarea" id="description"></textarea>
                     </td>

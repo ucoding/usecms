@@ -13,9 +13,6 @@
     <div class="page_table table_list">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
-                <th width="10%">
-                    <center>ID</center>
-                </th>
                 <th width="25%">栏目名称</th>
                 <th width="10%">
                     <center>顺序</center>
@@ -36,9 +33,7 @@
             <@foreach:{$list $vo}>
             <tr>
                 <td>
-                    <center>{$vo.cid}</center>
-                </td>
-                <td><a href="<?php echo ROOTAPP ?>/label/admin_curl/cid-{$vo['cid']}.php"
+                    <a href="<?php echo ROOTAPP ?>/label/admin_curl/cid-{$vo['cid']}.php"
                        target="_blank">{$vo.cname}</a>
                     <@if:{$vo['image']<>''}>
                     <a href="javascript:;" rel="{$vo.image}" class="class_pic"><img align="AbsMiddle"
