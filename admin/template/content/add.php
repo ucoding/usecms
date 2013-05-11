@@ -38,7 +38,7 @@
                                            style="float:left; width:360px;" value="" reg="\S" msg="标题不能为空"/>
                 </tr>
                 <tr>
-                    <td width="100" align="right">广告位</td>
+                    <td width="100" align="right">推荐位</td>
                     <td width="350">
                         <@foreach:{$position_list $vo}>
                         <input name="position[]" type="checkbox" value="{$vo.id}"/> {$vo.name}&nbsp;&nbsp;

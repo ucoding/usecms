@@ -5,6 +5,7 @@
     </div>
     <div class="exercise">
         <a href="javascript:;" onclick="form_in('__URL__/in')">导入表单</a>
+        <a href="__URL__/add">添加表单</a>
     </div>
 </div>
 <div class="page_main">
@@ -27,6 +28,8 @@
                 </td>
                 <td>
                     <center>
+                        <a href="__URL__/edit/id-{$vo.id}">编辑</a>
+                        |
                         <a href="__URL__/field_list/id-{$vo.id}">字段管理</a>
                         |
                         <a href="javascript:void(0);" onclick="out('{$vo.id}')">导出</a>

@@ -58,7 +58,7 @@
             </option>
         </select>
         &nbsp;&nbsp;
-        广告位：
+        推荐位：
         <select id="position" onchange="javascript:location.href=this.value;">
             <option value="__URL__/index/id-{$class_info.cid}">默认</option>
             <@foreach:{$position_list $vo}>

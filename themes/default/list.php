@@ -50,6 +50,7 @@
 
     </div>
     <div class="fn-clear"></div>
+
 </div>
 <@include file="foot.php">
 

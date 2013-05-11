@@ -1,4 +1,4 @@
-<div class="guestbook">
+<div class="guestbook">     5656
     <@foreach:{$loop $list}>
     <div class="list">
         <div class="content"> {$list.content html}
@@ -9,7 +9,7 @@
         <div class="info">邮箱:{$list.email} &nbsp;&nbsp;昵称:{$list.name}&nbsp;&nbsp;时间:{$list.time time="Y-m-d H:i:s"}
         </div>
     </div>
-    <@/loop>
+    <@/foreach>
     <div class="pagenum">
         {$page}
     </div>

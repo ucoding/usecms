@@ -37,7 +37,7 @@
                                            reg="\S" msg="标题不能为空"/></td>
                 </tr>
                 <tr>
-                    <td width="100" align="right">广告位</td>
+                    <td width="100" align="right">推荐位</td>
                     <td width="350">
                         <@foreach:{$position_list $vo}>
                         <input name="position[]" type="checkbox" value="{$vo.id}" <?php if (is_array($position_array)) {

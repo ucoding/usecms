@@ -15,7 +15,7 @@
                 echo '筛选内容';
             } ?></font>
         &nbsp;&nbsp;
-        广告位：
+        推荐位：
         <select id="position" onchange="javascript:location.href=this.value;">
             <option value="__URL__">默认</option>
             <@foreach:{$position_list $vo}>

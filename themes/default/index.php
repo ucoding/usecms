@@ -133,6 +133,7 @@
         </div>
     </div>
     <div class="fn-clear"></div>
+    <@include file="link_list.php">
 </div>
 <@include file="foot.php">
 </body>
