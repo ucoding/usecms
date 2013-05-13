@@ -132,10 +132,6 @@ class contentModel extends commonMod
         $patterns = array(
             "{EXT}",
             "{CDIR}",
-            "{YY}",
-            "{YYYY}",
-            "{M}",
-            "{D}",
             "{AID}",
             "{URLTITLE}",
             "{P}",
@@ -143,10 +139,6 @@ class contentModel extends commonMod
         $replacements = array(
             '.html',
             $cname,
-            date('y', $info['inputtime']),
-            date('Y', $info['inputtime']),
-            date('m', $info['inputtime']),
-            date('d', $info['inputtime']),
             $info['aid'],
             $info['urltitle'],
             '{page}',

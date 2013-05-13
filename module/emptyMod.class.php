@@ -130,8 +130,8 @@ class emptyMod extends commonMod
             $url_content = $value['url_content'];
             $url_content_page = $value['url_content_page'];
             //内容替换
-            $patterns2 = array(".", "/", "{EXT}", "{CDIR}", "{P}", "{YY}", "{YYYY}", "{M}", "{D}", "{AID}", "{URLTITLE}",);
-            $replacements2 = array("\.", "\/", str_replace('.', '\.', '.html'), "\w+", "(\d+)", "\d{2}", "\d{4}", "\d{2}", "\d{2}", "(\d+)", "(\w+)",);
+            $patterns2 = array(".", "/", "{EXT}", "{CDIR}", "{P}",  "{AID}", "{URLTITLE}",);
+            $replacements2 = array("\.", "\/", str_replace('.', '\.', '.html'), "\w+", "(\d+)", "(\d+)", "(\w+)",);
             //处理内容URL规则
             $url_content = str_replace($patterns2, $replacements2, $url_content);
             $url_content_page = str_replace($patterns2, $replacements2, $url_content_page);

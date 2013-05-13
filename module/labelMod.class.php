@@ -257,20 +257,12 @@ class labelMod extends commonMod
         $patterns = array(
             "/{EXT}/",
             "/{CDIR}/",
-            "/{YY}/",
-            "/{YYYY}/",
-            "/{M}/",
-            "/{D}/",
             "/{AID}/",
             "/{URLTITLE}/",
         );
         $replacements = array(
             '.html',
             $channel_info['urlname'],
-            date('y', $info['updatetime']),
-            date('Y', $info['updatetime']),
-            date('m', $info['updatetime']),
-            date('d', $info['updatetime']),
             $info['aid'],
             $info['urltitle'],
         );
