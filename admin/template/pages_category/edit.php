@@ -5,11 +5,12 @@
     </div>
 </div>
 <div class="tab" id="tab">
-    <a class="selected" href="#">编辑页面</a>
+    <a class="selected" href="#tab1">基本属性</a>
+    <a href="#tab2">高级设置</a>
 </div>
 <div class="page_form">
     <form action="__URL__/edit_save/time-<?php echo time(); ?>-ajax-true" method="post" id="form">
-        <div class="page_table form_table">
+        <div class="page_table form_table" id="#tab1">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                     <td width="100" align="right">上级栏目</td>
@@ -22,7 +23,6 @@
                             value="{$vo.cid}">{$vo.cname}</option>
                             <@/foreach>
                         </select>
-                        &nbsp;&nbsp;<a href="javascript:;" onclick="advanced()">高级设置</a>
                     </td>
                     <td></td>
                 </tr>
@@ -31,13 +31,6 @@
                     <td width="300">
                         <input name="name" type="text" class="text_value" id="name" value="{$info.name}" reg="\S"
                                msg="页面名称不能为空"/>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr class="advanced">
-                    <td width="100" align="right">页面URL名称</td>
-                    <td width="300">
-                        <input name="urlname" type="text" class="text_value" id="urlname" value="{$info.urlname}"/>
                     </td>
                     <td></td>
                 </tr>
@@ -50,7 +43,6 @@
                         &nbsp;&nbsp;<input type="button" id="image1" class="button_small" value="选择图片"/>
                     </td>
                 </tr>
-
                 <tr>
                     <td width="100" align="right">内容</td>
                     <td colspan="2">
@@ -70,27 +62,56 @@
                         <?php echo module('editor')->sapload('editor_content'); ?>
                     </td>
                 </tr>
-                <tr class="advanced">
+                <tr>
+                    <td width="100" align="right">栏目顺序</td>
+                    <td width="300">
+                        <input name="sequence" type="text" class="text_value" id="sequence" value="{$info.sequence}"/>
+                    </td>
+                    <td>数字越大越在前面</td>
+                </tr>
+
+                <?php module('common')->plus_hook('category', 'edit_tpl'); ?>
+                <tr>
+                    <td width="100" align="right">页面模板</td>
+                    <td width="300">
+                        <input name="class_tpl" type="text" class="text_value" id="class_tpl"
+                               value="{$info.class_tpl}"/>
+                    </td>
+                    <td>用于频道或列表的显示</td>
+                </tr>
+            </table>
+        </div>
+        <div class="page_table form_table" id="#tab2">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="100" align="right">页面URL名称</td>
+                    <td width="300">
+                        <input name="urlname" type="text" class="text_value" id="urlname" value="{$info.urlname}"/>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
                     <td width="100" align="right">SEO关键词</td>
                     <td width="300">
                         <input name="keywords" type="text" class="text_value" id="keywords" value="{$info.keywords}"/>
                     </td>
                     <td>以,号分割</td>
                 </tr>
-                <tr class="advanced">
+                <tr>
                     <td width="100" align="right">SEO描述</td>
-                    <td width="300"><textarea name="description" class="text_textarea" id="description">{$info.description}</textarea>
+                    <td width="300"><textarea name="description" class="text_textarea"
+                                              id="description">{$info.description}</textarea>
                     </td>
                     <td>对本页面的简单介绍</td>
                 </tr>
-                <tr class="advanced">
+                <tr>
                     <td width="100" align="right">SEO内容</td>
                     <td><textarea name="seo_content" class="text_textarea" id="seo_content">{$info.seo_content
                             html}</textarea>
                     </td>
                     <td>可以填写HTML代码</td>
                 </tr>
-                <tr class="advanced">
+                <tr>
                     <td width="100" align="right">页面显示</td>
                     <td width="300">
                         <input name="show" type="radio" value="1" <@if:{$info['show']==1}>checked="checked"
@@ -103,29 +124,8 @@
                     </td>
                     <td>控制页面调用的显示与隐藏</td>
                 </tr>
-                <tr>
-                    <td width="100" align="right">栏目顺序</td>
-                    <td width="300">
-                        <input name="sequence" type="text" class="text_value" id="sequence" value="{$info.sequence}"/>
-                    </td>
-                    <td>数字越大越在前面</td>
-                </tr>
-
-
-                <?php module('common')->plus_hook('category', 'edit_tpl'); ?>
-
-
-                <tr>
-                    <td width="100" align="right">页面模板</td>
-                    <td width="300">
-                        <input name="class_tpl" type="text" class="text_value" id="class_tpl"
-                               value="{$info.class_tpl}"/>
-                    </td>
-                    <td>用于频道或列表的显示</td>
-                </tr>
             </table>
         </div>
-
         <div class="form_submit">
             <input name="cid" type="hidden" value="{$info.cid}"/>
             <input name="file_id" id="file_id" type="hidden" value="{$file_id}"/>
@@ -147,26 +147,19 @@
             '远程抓图执行完毕'
         );
     }
-    <?php if($_GET['type']<>'content'){ ?>
-    //提交表单
-    savelistform("__URL__/add", "__APP__/category");
-    <?php }else{ ?>
+
     saveform(function (msg) {
         $.dialog.tips(msg, 3);
     }, function (msg) {
         $.dialog.tips(msg, 3);
     });
-    <?php } ?>
-
-    //高级模式
-    function advanced() {
-        $('.advanced').toggle();
-    }
-
 
     //页面执行
-    $(document).ready(function () {
+    $(function () {
 
+        console.log(22)
+        //tab菜单
+        $("#tab").idTabs();
     });
 
 </script>

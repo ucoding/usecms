@@ -5,11 +5,12 @@
     </div>
 </div>
 <div class="tab" id="tab">
-    <a class="selected" href="#">添加栏目</a>
+    <a class="selected" href="#tab1">基本属性</a>
+    <a href="#tab2">高级设置</a>
 </div>
 <div class="page_form">
     <form action="__URL__/add_save/time-<?php echo time(); ?>-ajax-true" method="post" id="form">
-        <div class="page_table form_table">
+        <div class="page_table form_table" id="tab1">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                     <td width="100" align="right">上级栏目</td>
@@ -20,7 +21,6 @@
                             <option value="{$vo.cid}">{$vo.cname}</option>
                             <@/foreach>
                         </select>
-                        &nbsp;&nbsp;<a href="javascript:;" onclick="advanced()">高级设置</a>
                     </td>
                     <td></td>
                 </tr>
@@ -28,13 +28,6 @@
                     <td width="100" align="right">页面名称</td>
                     <td>
                         <input name="name" type="text" class="text_value" id="name" value="" reg="\S" msg="页面名称不能为空"/>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr class="advanced">
-                    <td width="100" align="right">页面URL名称</td>
-                    <td>
-                        <input name="urlname" type="text" class="text_value" id="urlname" value=""/>
                     </td>
                     <td></td>
                 </tr>
@@ -65,36 +58,6 @@
                         <?php echo module('editor')->sapload('editor_content'); ?>
                     </td>
                 </tr>
-                <tr class="advanced">
-                    <td width="100" align="right">SEO关键词</td>
-                    <td>
-                        <input name="keywords" type="text" class="text_value" id="keywords"/>
-                    </td>
-                    <td>以,号分割</td>
-                </tr>
-                <tr class="advanced">
-                    <td width="100" align="right">SEO描述</td>
-                    <td><textarea name="description" class="text_textarea" id="description"></textarea>
-                    </td>
-                    <td>对本页面的简单介绍</td>
-                </tr>
-                <tr class="advanced">
-                    <td width="100" align="right">SEO内容</td>
-                    <td><textarea name="seo_content" class="text_textarea" id="seo_content"></textarea>
-                    </td>
-                    <td>可以填写HTML代码</td>
-                </tr>
-                <tr class="advanced">
-                    <td width="100" align="right">页面显示</td>
-                    <td>
-                        <input name="show" type="radio" value="1" checked="checked"/>
-                        显示
-                        &nbsp;&nbsp;
-                        <input name="show" type="radio" value="0"/>
-                        隐藏
-                    </td>
-                    <td>控制栏目调用的显示与隐藏</td>
-                </tr>
                 <tr>
                     <td width="100" align="right">栏目顺序</td>
                     <td>
@@ -103,10 +66,7 @@
                     <td>数字越大越在前面</td>
                 </tr>
 
-
                 <?php module('common')->plus_hook('category', 'add_tpl'); ?>
-
-
                 <tr>
                     <td width="100" align="right">页面模板</td>
                     <td>
@@ -117,13 +77,53 @@
 
             </table>
         </div>
+        <div class="page_table form_table" id="tab2">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="100" align="right">页面URL名称</td>
+                    <td>
+                        <input name="urlname" type="text" class="text_value" id="urlname" value=""/>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td width="100" align="right">SEO关键词</td>
+                    <td>
+                        <input name="keywords" type="text" class="text_value" id="keywords"/>
+                    </td>
+                    <td>以,号分割</td>
+                </tr>
+                <tr>
+                    <td width="100" align="right">SEO描述</td>
+                    <td><textarea name="description" class="text_textarea" id="description"></textarea>
+                    </td>
+                    <td>对本页面的简单介绍</td>
+                </tr>
+                <tr>
+                    <td width="100" align="right">SEO内容</td>
+                    <td><textarea name="seo_content" class="text_textarea" id="seo_content"></textarea>
+                    </td>
+                    <td>可以填写HTML代码</td>
+                </tr>
+                <tr>
+                    <td width="100" align="right">页面显示</td>
+                    <td>
+                        <input name="show" type="radio" value="1" checked="checked"/>
+                        显示
+                        &nbsp;&nbsp;
+                        <input name="show" type="radio" value="0"/>
+                        隐藏
+                    </td>
+                    <td>控制栏目调用的显示与隐藏</td>
+                </tr>
+            </table>
+        </div>
 
         <div class="form_submit">
             <input name="file_id" id="file_id" type="hidden" value=""/>
             <button type="submit" class="button">保存</button>
         </div>
     </form>
-</div>
 </div>
 <script type="text/javascript">
     //远程抓图
@@ -142,14 +142,10 @@
     }
     //提交表单
     savelistform("__URL__/add", "__APP__/category");
-    //高级模式
-    function advanced() {
-        $('.advanced').toggle();
-    }
-
 
     //页面执行
-    $(document).ready(function () {
-
+    $(function () {
+        //tab菜单
+        $("#tab").idTabs();
     });
 </script>
