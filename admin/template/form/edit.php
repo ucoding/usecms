@@ -78,7 +78,7 @@
                         checked="checked" <@/if> />
                         否
                     </td>
-                    <td>否的话外部调用公共模板(common.html)</td>
+                    <td>否的话外部调用公共模板(common.php)</td>
                 </tr>
 
                 <tr>

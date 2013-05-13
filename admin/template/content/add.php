@@ -166,7 +166,7 @@
 </div>
 <script type="text/javascript">
     $(document).ready(function () {
-       get_fields();
+        get_fields();
     });
     //TAG
     $('#keywords').tagsInput(

@@ -175,8 +175,8 @@
         var list = [
             <?php foreach($tpl_list as $vo){ ?>
             {
-                href: "javascript:;\" onclick=\"tpl_val('" + id + "','<?php echo $vo['name']; ?>');\"",
-                text: "<?php echo $vo['name']; ?>"
+                href: "javascript:;\" onclick=\"tpl_val('" + id + "','<?php echo $vo; ?>');\"",
+                text: "<?php echo $vo; ?>"
             },
             <?php }?>
             {

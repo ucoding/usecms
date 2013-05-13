@@ -22,7 +22,9 @@
                                 value="{$vo['cid']}" <?php if ($info['cid'] == $vo['cid']) { ?> selected="selected" <?php } ?>
                                 <?php if ($vo['type'] == 0 || $vo['mid'] <> $model_info['mid']){ ?>style="background-color:#ccc" disabled="disabled" <?php } ?>
                                 <?php if (!empty($user['class_power'])) {
-                                    if (!in_array($vo['cid'], explode(',', $user['class_power']))) { ?> style="background-color:#ccc"  disabled="disabled" <?php }
+                                    if (!in_array($vo['cid'], explode(',', $user['class_power']))) {
+                                        ?> style="background-color:#ccc"  disabled="disabled" <?php
+                                    }
                                 } ?> >
                                 {$vo['cname']}
                             </option>
@@ -41,7 +43,9 @@
                     <td width="350">
                         <@foreach:{$position_list $vo}>
                         <input name="position[]" type="checkbox" value="{$vo.id}" <?php if (is_array($position_array)) {
-                            if (in_array($vo['id'], $position_array)) { ?> checked="checked" <?php }
+                            if (in_array($vo['id'], $position_array)) {
+                                ?> checked="checked" <?php
+                            }
                         } ?> /> {$vo.name}&nbsp;&nbsp;
                         <@/foreach>
                     </td>

@@ -20,7 +20,9 @@
                                 value="{$vo['cid']}" <?php if ($info['cid'] == $vo['cid']) { ?> selected="selected" <?php } ?>
                                 <?php if ($vo['type'] == 0 || $vo['mid'] <> $model_info['mid']){ ?>style="background-color:#ccc" disabled="disabled" <?php } ?>
                                 <?php if (!empty($user['class_power'])) {
-                                    if (!in_array($vo['cid'], explode(',', $user['class_power']))) { ?> style="background-color:#ccc"  disabled="disabled" <?php }
+                                    if (!in_array($vo['cid'], explode(',', $user['class_power']))) {
+                                        ?> style="background-color:#ccc"  disabled="disabled" <?php
+                                    }
                                 } ?> >
                                 {$vo['cname']}
                             </option>
@@ -41,7 +43,9 @@
                     <td width="350">
                         <@foreach:{$position_list $vo}>
                         <input name="position[]" type="checkbox" value="{$vo.id}" <?php if (is_array($position_array)) {
-                            if (in_array($vo['id'], $position_array)) { ?> checked="checked" <?php }
+                            if (in_array($vo['id'], $position_array)) {
+                                ?> checked="checked" <?php
+                            }
                         } ?> /> {$vo.name}&nbsp;&nbsp;
                         <@/foreach>
                     </td>
@@ -178,7 +182,7 @@
 </div>
 <script type="text/javascript">
     $(document).ready(function () {
-       get_fields();
+        get_fields();
     });
     //TAG
     $('#keywords').tagsInput(
@@ -273,28 +277,28 @@
     savelistform("__URL__/add/cid-{$class_info.cid}", "javascript:history.go(-1)");
 
     //模板列表
-//    function tpl_list(id) {
-//        var list = [
-//            <@foreach:{$tpl_list $vo}>
-//            {
-//                href: "javascript:;\" onclick=\"tpl_val('" + id + "','{$vo}');\"",
-//                text: "{$vo}"
-//            },
-//            <@/foreach>
-//            {
-//                text: "请选择模板，支持子目录"
-//            }
-//        ];
-//        return list;
-//
-//    }
+    //    function tpl_list(id) {
+    //        var list = [
+    //            <@foreach:{$tpl_list $vo}>
+    //            {
+    //                href: "javascript:;\" onclick=\"tpl_val('" + id + "','{$vo}');\"",
+    //                text: "{$vo}"
+    //            },
+    //            <@/foreach>
+    //            {
+    //                text: "请选择模板，支持子目录"
+    //            }
+    //        ];
+    //        return list;
+    //
+    //    }
 
     //模板赋值
-//    function tpl_val(id, val) {
-//        $('#' + id).val(val);
-//        $('#floatBox_list').hide();
-//        return false;
-//    }
+    //    function tpl_val(id, val) {
+    //        $('#' + id).val(val);
+    //        $('#floatBox_list').hide();
+    //        return false;
+    //    }
 
     //页面执行
     $(document).ready(function () {

@@ -92,7 +92,7 @@ class commonMod
         header('HTTP/1.1 404 Not Found');
         header('Status: 404 Not Found');
         $this->common = model('pageinfo')->media('您要查找的页面不存在');
-        $this->display('404.html');
+        $this->display('404.php');
         exit;
     }
 

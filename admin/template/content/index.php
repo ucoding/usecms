@@ -168,7 +168,9 @@
                         <?php if ($vo['type'] == 0 || $vo['mid'] <> $model_info['mid']){ ?>style="background-color:#ccc"
                         disabled="disabled" <?php } ?>
                     <?php if (!empty($user['class_power']) && $user['keep'] <> 1) {
-                        if (!in_array($vo['cid'], explode(',', $user['class_power']))) { ?> style="background-color:#ccc"  disabled="disabled" <?php }
+                        if (!in_array($vo['cid'], explode(',', $user['class_power']))) {
+                            ?> style="background-color:#ccc"  disabled="disabled" <?php
+                        }
                     } ?> >
                     {$vo['cname']}
                 </option>

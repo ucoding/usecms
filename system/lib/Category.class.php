@@ -35,7 +35,7 @@ class Category
     //格式化后的分类
     private $formatList = array();
     //格式化的字符
-    private $icon = array('  ', '  ', '  ');
+    private $icon = array('&nbsp;&nbsp;&nbsp;&nbsp;', '&nbsp;&nbsp;&nbsp;&nbsp;', '&nbsp;&nbsp;&nbsp;&nbsp;');
     //字段映射，分类id，上级分类pid,分类名称title,格式化后分类名称fulltitle
     private $field = array();
 

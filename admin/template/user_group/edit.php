@@ -99,10 +99,12 @@
                     <td colspan="2">
                         <@foreach:{$menu_list $vo}>
                         <fieldset class="source">
-                            <input name="model_power[]" type="checkbox" value="{$vo['id']}" <@if:{in_array($vo['id'],$model_power)}> checked="checked" <@/if> >
+                            <input name="model_power[]" type="checkbox" value="{$vo['id']}"
+                            <@if:{in_array($vo['id'],$model_power)}> checked="checked" <@/if> >
                             <legend>{$vo['name']}</legend>
                             <?php $list = model('menu')->menu_list($vo['id']);
-                            if (!empty($list)) foreach ($list as $val) { ?>
+                            if (!empty($list)) foreach ($list as $val) {
+                                ?>
                                 <input name="model_power[]" type="checkbox" value="{$val['id']}" <@if:{in_array($val['id'],$model_power)}> checked="checked" <@/if> >
               {$val['name']} &nbsp;&nbsp;
               <?php } ?>

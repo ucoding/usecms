@@ -5,7 +5,7 @@
     </div>
     <div class="exercise">
         <@foreach:{$model_list $vo}>
-        <a href="javascript:menuload('__APP__/{$vo.model}_category/add')">添加{$vo.name}栏目</a>
+        <a href="javascript:menuload('__APP__/{$vo.model}_category/add')">添加{$vo.name}</a>
         <@/foreach>
     </div>
 </div>
@@ -24,15 +24,13 @@
                     <center>栏目属性</center>
                 </th>
                 <th width="15%">
-                    <center>栏目类型</center>
-                </th>
-                <th width="15%">
                     <center>栏目操作</center>
                 </th>
             </tr>
             <@foreach:{$list $vo}>
             <tr>
                 <td>
+                    <!--                    [{$vo.mname}]-->
                     <a href="<?php echo ROOTAPP ?>/label/admin_curl/cid-{$vo['cid']}.php"
                        target="_blank">{$vo.cname}</a>
                     <@if:{$vo['image']<>''}>
@@ -59,15 +57,16 @@
                 </td>
                 <td>
                     <center>
+                        <@if:{$vo['mname']=='内容'}>
                         <@if:{$vo['type']==0}>
                         频道
                         <@else>
                         列表
                         <@/if>
+                        <@else>
+                        -
+                        <@/if>
                     </center>
-                </td>
-                <td>
-                    <center>{$vo.mname}</center>
                 </td>
                 <td>
                     <center>
@@ -91,7 +90,6 @@
     });
     //栏目删除
     function del(url, cid, obj) {
-        var obj;
         ajaxpost(
             '删除此栏目会删除栏目下的内容!',
             url,

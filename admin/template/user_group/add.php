@@ -91,7 +91,8 @@
                         <fieldset class="source">
                             <legend>{$vo['name']}</legend>
                             <?php $list = model('menu')->menu_list($vo['id']);
-                            if (!empty($list)) foreach ($list as $val) { ?>
+                            if (!empty($list)) foreach ($list as $val) {
+                                ?>
                                 <input name="model_power[]" type="checkbox" value="{$val['id']}">
                                 {$val['name']} &nbsp;&nbsp;
                             <?php } ?>

@@ -4,11 +4,13 @@
         <small>使用以下功能进行栏目编辑操作</small>
     </div>
 </div>
-<div class="tab" id="tab"><a class="selected" href="#">编辑栏目</a>
+<div class="tab" id="tab">
+    <a class="selected" href="#tab1">基本属性</a>
+    <a href="#tab2">高级设置</a>
 </div>
 <div class="page_form">
     <form action="__URL__/edit_save/time-<?php echo time(); ?>-ajax-true" method="post" id="form">
-        <div class="page_table form_table">
+        <div class="page_table form_table" id="tab1">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                     <td width="100" align="right">上级栏目</td>
@@ -21,7 +23,6 @@
                             value="{$vo.cid}">{$vo.cname}</option>
                             <@/foreach>
                         </select>
-                        &nbsp;&nbsp;<a href="javascript:;" onclick="advanced()">高级设置</a>
                     </td>
                     <td></td>
                 </tr>
@@ -30,20 +31,6 @@
                     <td width="300">
                         <input name="name" type="text" class="text_value" id="name" value="{$info.name}" reg="\S"
                                msg="栏目名称不能为空"/>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr class="advanced">
-                    <td width="100" align="right">副栏目名称</td>
-                    <td width="300">
-                        <input name="subname" type="text" class="text_value" id="subname" value="{$info.subname}"/>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr class="advanced">
-                    <td width="100" align="right">栏目URL优化</td>
-                    <td width="300">
-                        <input name="urlname" type="text" class="text_value" id="urlname" value="{$info.urlname}"/>
                     </td>
                     <td></td>
                 </tr>
@@ -57,26 +44,6 @@
 
                     </td>
                 </tr>
-                <tr class="advanced">
-                    <td width="100" align="right">SEO关键词</td>
-                    <td width="300">
-                        <input name="keywords" type="text" class="text_value" id="keywords" value="{$info.keywords}"/>
-                    </td>
-                    <td>以,号分割</td>
-                </tr>
-                <tr class="advanced">
-                    <td width="100" align="right">SEO描述</td>
-                    <td width="300"><textarea name="description" class="text_textarea" id="description">{$info.description}</textarea>
-                    </td>
-                    <td>对本栏目的简单介绍</td>
-                </tr>
-                <tr class="advanced">
-                    <td width="100" align="right">SEO内容</td>
-                    <td><textarea name="seo_content" class="text_textarea" id="seo_content">{$info.seo_content
-                            html}</textarea>
-                    </td>
-                    <td>可以填写HTML代码</td>
-                </tr>
                 <tr>
                     <td width="100" align="right">栏目属性</td>
                     <td width="300">
@@ -89,19 +56,6 @@
                         列表页
                     </td>
                     <td>频道页无法发布内容，列表页可以发布内容</td>
-                </tr>
-                <tr class="advanced">
-                    <td width="100" align="right">栏目显示</td>
-                    <td width="300">
-                        <input name="show" type="radio" value="1" <@if:{$info['show']==1}>checked="checked"
-                        <@/if> />
-                        显示
-                        &nbsp;&nbsp;
-                        <input name="show" type="radio" value="0" <@if:{$info['show']==0}>checked="checked"
-                        <@/if> />
-                        隐藏
-                    </td>
-                    <td>控制栏目调用的显示与隐藏</td>
                 </tr>
                 <tr>
                     <td width="100" align="right">内容分页数</td>
@@ -117,7 +71,90 @@
                     </td>
                     <td>数字越大越在前面</td>
                 </tr>
-                <tr class="advanced">
+                <?php module('common')->plus_hook('category', 'edit_tpl', $info); ?>
+                <tr>
+                    <td width="100" align="right">栏目模板</td>
+                    <td width="300">
+                        <input name="class_tpl" type="text" class="text_value" id="class_tpl"
+                               value="{$info.class_tpl}"/>
+                    </td>
+                    <td>用于频道或列表的显示</td>
+                </tr>
+                <tr>
+                    <td width="100" align="right">内容模板</td>
+                    <td width="300">
+                        <input name="content_tpl" type="text" class="text_value" id="content_tpl"
+                               value="{$info.content_tpl}"/>
+                    </td>
+                    <td>用于该栏目下的内容显示</td>
+                </tr>
+                <tr>
+                    <td width="100" align="right">扩展模型</td>
+                    <td width="300">
+                        <select name="expand" id="expand">
+                            <option value="0">无</option>
+                            <@foreach:{$model_list $vo}>
+                            <option
+                                value="{$vo.mid}" <?php if ($vo['mid'] == $info['expand']) { ?> selected="selected" <?php } ?> >
+                                {$vo.name}
+                            </option>
+                            <@/foreach>
+                        </select>
+                    </td>
+                    <td>用于附加内容字段</td>
+                </tr>
+            </table>
+        </div>
+        <div class="page_table form_table"  id="tab2">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="100" align="right">副栏目名称</td>
+                    <td width="300">
+                        <input name="subname" type="text" class="text_value" id="subname" value="{$info.subname}"/>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td width="100" align="right">栏目URL优化</td>
+                    <td width="300">
+                        <input name="urlname" type="text" class="text_value" id="urlname" value="{$info.urlname}"/>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td width="100" align="right">SEO关键词</td>
+                    <td width="300">
+                        <input name="keywords" type="text" class="text_value" id="keywords" value="{$info.keywords}"/>
+                    </td>
+                    <td>以,号分割</td>
+                </tr>
+                <tr>
+                    <td width="100" align="right">SEO描述</td>
+                    <td width="300"><textarea name="description" class="text_textarea" id="description">{$info.description}</textarea>
+                    </td>
+                    <td>对本栏目的简单介绍</td>
+                </tr>
+                <tr>
+                    <td width="100" align="right">SEO内容</td>
+                    <td><textarea name="seo_content" class="text_textarea" id="seo_content">{$info.seo_content
+                            html}</textarea>
+                    </td>
+                    <td>可以填写HTML代码</td>
+                </tr>
+                <tr>
+                    <td width="100" align="right">栏目显示</td>
+                    <td width="300">
+                        <input name="show" type="radio" value="1" <@if:{$info['show']==1}>checked="checked"
+                        <@/if> />
+                        显示
+                        &nbsp;&nbsp;
+                        <input name="show" type="radio" value="0" <@if:{$info['show']==0}>checked="checked"
+                        <@/if> />
+                        隐藏
+                    </td>
+                    <td>控制栏目调用的显示与隐藏</td>
+                </tr>
+                <tr>
                     <td width="100" align="right">内容排序</td>
                     <td width="300">
                         <select name="content_order">
@@ -143,24 +180,7 @@
                     </td>
                     <td>针对该栏目下内容的排序方式</td>
                 </tr>
-                <?php module('common')->plus_hook('category', 'edit_tpl', $info); ?>
                 <tr>
-                    <td width="100" align="right">栏目模板</td>
-                    <td width="300">
-                        <input name="class_tpl" type="text" class="text_value" id="class_tpl"
-                               value="{$info.class_tpl}"/>
-                    </td>
-                    <td>用于频道或列表的显示</td>
-                </tr>
-                <tr>
-                    <td width="100" align="right">内容模板</td>
-                    <td width="300">
-                        <input name="content_tpl" type="text" class="text_value" id="content_tpl"
-                               value="{$info.content_tpl}"/>
-                    </td>
-                    <td>用于该栏目下的内容显示</td>
-                </tr>
-                <tr class="advanced">
                     <td width="100" align="right">扩展模型</td>
                     <td width="300">
                         <select name="expand" id="expand">
@@ -184,27 +204,26 @@
         </div>
     </form>
 </div>
-</div>
 <script type="text/javascript">
     //提交表单
     savelistform("__URL__/add", "__APP__/category");
-    //高级模式
-    function advanced() {
-        $('.advanced').toggle();
-    }
     //模板列表
     function tpl_list(id) {
         var list = [
             <@foreach:{$tpl_list $vo}>
-            {
-                href: "javascript:;\" onclick=\"tpl_val('" + id + "','{$vo}');\"",
-                text: "{$vo}"
-            },
-            <@/foreach>
-            {
-                text: "请选择模板"
-            }
-        ];
+        {
+            href: "javascript:;\" onclick=\"tpl_val('" + id + "','{$vo}');\"",
+                text
+        :
+            "{$vo}"
+        }
+    ,
+    <@/foreach>
+        {
+            text: "请选择模板"
+        }
+    ]
+        ;
         return list;
 
     }
@@ -215,7 +234,7 @@
         return false;
     }
     //页面执行
-    $(document).ready(function () {
+    $(function () {
         //模板选择
         $("#class_tpl").powerFloat({
             width: 250,
@@ -229,6 +248,8 @@
             target: tpl_list('content_tpl'),
             targetMode: "list"
         });
+        //tab菜单
+        $("#tab").idTabs();
     });
 
 
