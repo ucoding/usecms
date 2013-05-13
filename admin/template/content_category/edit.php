@@ -207,47 +207,7 @@
 <script type="text/javascript">
     //提交表单
     savelistform("__URL__/add", "__APP__/category");
-    //模板列表
-    function tpl_list(id) {
-        var list = [
-            <@foreach:{$tpl_list $vo}>
-        {
-            href: "javascript:;\" onclick=\"tpl_val('" + id + "','{$vo}');\"",
-                text
-        :
-            "{$vo}"
-        }
-    ,
-    <@/foreach>
-        {
-            text: "请选择模板"
-        }
-    ]
-        ;
-        return list;
-
-    }
-    //模板赋值
-    function tpl_val(id, val) {
-        $('#' + id).val(val);
-        $('#floatBox_list').hide();
-        return false;
-    }
-    //页面执行
     $(function () {
-        //模板选择
-        $("#class_tpl").powerFloat({
-            width: 250,
-            eventType: "click",
-            target: tpl_list('class_tpl'),
-            targetMode: "list"
-        });
-        $("#content_tpl").powerFloat({
-            width: 250,
-            eventType: "click",
-            target: tpl_list('content_tpl'),
-            targetMode: "list"
-        });
         //tab菜单
         $("#tab").idTabs();
     });

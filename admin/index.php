@@ -6,7 +6,7 @@ $GLOBALS['_startTime'] = microtime(true);
 require 'define_Path.php'; //载入路径优化
 require __ROOTDIR__ . '/inc/config.php';
 define('CP_PATH', __ROOTDIR__ . '/system/');
-require CP_PATH . 'core/cpApp.class.php'; 
+require CP_PATH . 'core/cpApp.class.php';
 
 if($config['URL_REWRITE_ON']){
 define('ROOTAPP', $root);

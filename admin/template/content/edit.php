@@ -276,39 +276,4 @@
     //提交表单
     savelistform("__URL__/add/cid-{$class_info.cid}", "javascript:history.go(-1)");
 
-    //模板列表
-    //    function tpl_list(id) {
-    //        var list = [
-    //            <@foreach:{$tpl_list $vo}>
-    //            {
-    //                href: "javascript:;\" onclick=\"tpl_val('" + id + "','{$vo}');\"",
-    //                text: "{$vo}"
-    //            },
-    //            <@/foreach>
-    //            {
-    //                text: "请选择模板，支持子目录"
-    //            }
-    //        ];
-    //        return list;
-    //
-    //    }
-
-    //模板赋值
-    //    function tpl_val(id, val) {
-    //        $('#' + id).val(val);
-    //        $('#floatBox_list').hide();
-    //        return false;
-    //    }
-
-    //页面执行
-    $(document).ready(function () {
-        //模板选择
-//        $("#tpl").powerFloat({
-//            width: 250,
-//            eventType: "click",
-//            target: tpl_list('tpl'),
-//            targetMode: "list"
-//        });
-
-    });
 </script>

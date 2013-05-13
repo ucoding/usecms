@@ -30,7 +30,6 @@
             <@foreach:{$list $vo}>
             <tr>
                 <td>
-                    <!--                    [{$vo.mname}]-->
                     <a href="<?php echo ROOTAPP ?>/label/admin_curl/cid-{$vo['cid']}.php"
                        target="_blank">{$vo.cname}</a>
                     <@if:{$vo['image']<>''}>

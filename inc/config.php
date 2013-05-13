@@ -32,7 +32,7 @@ $config['WATERMARK_PLACE']='5'; //水印位置
 $config['WATERMARK_IMAGE']='logo.png'; //水印图片
 
 //调试配置
-$config['DEBUG']=true; //是否开启调试模式，true开启，false关闭
+$config['DEBUG']=falsee; //是否开启调试模式，true开启，false关闭
 $config['ERROR_HANDLE']=false; //是否启动CP内置的错误处理，如果开启了xdebug，建议设置为false
 
 //伪静态
