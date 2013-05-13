@@ -38,7 +38,7 @@ class searchMod extends commonMod
         //分页处理
         $url = __APP__ . '/search/index/model-' . $model . '-keyword-' . urlencode($keyword) . '-page-{page}.html';
 
-        $listrows = 1;
+        $listrows = 20;
         $page = new Page();
         $cur_page = $page->getCurPage($url);
         $limit_start = ($cur_page - 1) * $listrows;
