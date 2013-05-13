@@ -87,15 +87,6 @@ class contentModel extends commonMod
     //替换后内容
     public function format_content($content)
     {
-
-        $replace = $this->model->table('replace')->select();
-        if (is_array($replace)) {
-            $content = html_out($content);
-            foreach ($replace as $export) {
-                $content = preg_replace("/<a .*?>(.*" . $export['key'] . ".*)<\/a>/i", "\${1}", $content, $export['num']);
-                $content = preg_replace('/' . $export['key'] . '/isu', $export['content'], $content, $export['num']);
-            }
-        }
         return $content;
     }
 
