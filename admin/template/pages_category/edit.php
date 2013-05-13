@@ -35,13 +35,6 @@
                     <td></td>
                 </tr>
                 <tr class="advanced">
-                    <td width="100" align="right">副名称</td>
-                    <td width="300">
-                        <input name="subname" type="text" class="text_value" id="subname" value="{$info.subname}"/>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr class="advanced">
                     <td width="100" align="right">页面URL名称</td>
                     <td width="300">
                         <input name="urlname" type="text" class="text_value" id="urlname" value="{$info.urlname}"/>

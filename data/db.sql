@@ -33,7 +33,7 @@ CREATE TABLE `dc_admin` (
 
 /*Data for the table `dc_admin` */
 
-insert  into `dc_admin`(`id`,`gid`,`user`,`password`,`nicename`,`regtime`,`logintime`,`ip`,`status`,`loginnum`,`keep`) values (1,1,'admin','21232f297a57a5a743894a0e4a801fc3','admin',1350138971,1368184937,'127.0.0.1',1,100,1),(2,2,'user','e10adc3949ba59abbe56e057f20f883e','user',1368092341,1368173391,'127.0.0.1',1,12,0);
+insert  into `dc_admin`(`id`,`gid`,`user`,`password`,`nicename`,`regtime`,`logintime`,`ip`,`status`,`loginnum`,`keep`) values (1,1,'admin','21232f297a57a5a743894a0e4a801fc3','admin',1350138971,1368439785,'127.0.0.1',1,102,1),(2,2,'user','e10adc3949ba59abbe56e057f20f883e','user',1368092341,1368173391,'127.0.0.1',1,12,0);
 
 /*Table structure for table `dc_admin_group` */
 
@@ -54,22 +54,6 @@ CREATE TABLE `dc_admin_group` (
 /*Data for the table `dc_admin_group` */
 
 insert  into `dc_admin_group`(`id`,`name`,`model_power`,`class_power`,`status_power`,`grade`,`keep`) values (1,'超级管理员','1,4,2,3,21,22,23,6,12,14,15,234,9,5,26,29,16,30,11,24,27,28,236','',0,1,1),(2,'普通用户','2,3,22,6,12,14,15,234,9,5,29,16','',0,3,0);
-
-/*Table structure for table `dc_admin_log` */
-
-DROP TABLE IF EXISTS `dc_admin_log`;
-
-CREATE TABLE `dc_admin_log` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `uid` int(10) DEFAULT NULL,
-  `time` int(10) DEFAULT NULL,
-  `ip` varchar(250) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
-/*Data for the table `dc_admin_log` */
-
-insert  into `dc_admin_log`(`id`,`uid`,`time`,`ip`) values (1,2,1368173391,'127.0.0.1'),(2,1,1368184937,'127.0.0.1');
 
 /*Table structure for table `dc_admin_menu` */
 
@@ -102,7 +86,6 @@ CREATE TABLE `dc_category` (
   `type` int(11) NOT NULL DEFAULT '1',
   `name` varchar(250) DEFAULT NULL,
   `urlname` varchar(250) DEFAULT NULL,
-  `subname` varchar(250) DEFAULT NULL,
   `image` varchar(250) DEFAULT NULL,
   `class_tpl` varchar(250) DEFAULT NULL,
   `content_tpl` varchar(250) DEFAULT NULL,
@@ -115,11 +98,11 @@ CREATE TABLE `dc_category` (
   `expand` int(10) DEFAULT NULL,
   PRIMARY KEY (`cid`),
   UNIQUE KEY `urlname` (`urlname`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 /*Data for the table `dc_category` */
 
-insert  into `dc_category`(`cid`,`pid`,`mid`,`sequence`,`show`,`type`,`name`,`urlname`,`subname`,`image`,`class_tpl`,`content_tpl`,`page`,`keywords`,`description`,`seo_content`,`content_order`,`lang`,`expand`) values (1,0,2,2,1,0,'关于我们','danyemianyanshi','','','page.php',NULL,NULL,'','','',NULL,1,NULL),(2,0,1,0,1,0,'公司新闻','wenzhangliebiaoyanshi','','','list_index.php','content.php',15,'','','','updatetime DESC',1,0),(3,2,1,0,1,1,'研发部','wenzhangerjiliebiaoyanshi','','','list.php','content.php',15,'','','','updatetime DESC',1,0),(4,2,1,0,1,1,'销售部','tupianliebiaoyanshi','','','list.php','content.php',15,'','','','updatetime DESC',1,0),(5,0,1,0,1,1,'产品','chanpin','','','list_expand.php','content_expand.php',15,'','','','updatetime DESC',1,1),(6,1,2,0,1,0,'公司简介','guanyu','','','page.php',NULL,NULL,'4545,65656','','',NULL,1,NULL),(7,1,2,0,1,0,'团体介绍','erjidanyeyanshi2','','','page.php',NULL,NULL,'','','',NULL,1,NULL);
+insert  into `dc_category`(`cid`,`pid`,`mid`,`sequence`,`show`,`type`,`name`,`urlname`,`image`,`class_tpl`,`content_tpl`,`page`,`keywords`,`description`,`seo_content`,`content_order`,`lang`,`expand`) values (1,0,2,2,1,0,'关于我们2','aboutus','','page.php',NULL,NULL,'','','',NULL,1,NULL),(2,0,1,0,1,0,'公司新闻','wenzhangliebiaoyanshi','','list_index.php','content.php',15,'','','','updatetime DESC',1,0),(3,2,1,0,1,1,'研发部','wenzhangerjiliebiaoyanshi','','list.php','content.php',15,'','','','updatetime DESC',1,0),(4,2,1,0,1,1,'销售部','tupianliebiaoyanshi','','list.php','content.php',15,'','','','updatetime DESC',1,0),(5,0,1,0,0,1,'产品','chanpin','','list_expand.php','content_expand.php',15,'','','','updatetime DESC',1,1),(6,1,2,0,1,0,'公司简介','guanyu','','page.php',NULL,NULL,'4545,65656','','',NULL,1,NULL),(7,1,2,0,1,0,'团体介绍','erjidanyeyanshi2','','page.php',NULL,NULL,'','','',NULL,1,NULL);
 
 /*Table structure for table `dc_category_jump` */
 
@@ -131,7 +114,7 @@ CREATE TABLE `dc_category_jump` (
   `url` varchar(250) DEFAULT NULL COMMENT '内容',
   PRIMARY KEY (`id`),
   KEY `cid` (`cid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='文章栏目分类';
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='文章栏目分类';
 
 /*Data for the table `dc_category_jump` */
 
@@ -145,7 +128,7 @@ CREATE TABLE `dc_category_page` (
   `content` mediumtext COMMENT '内容',
   PRIMARY KEY (`id`),
   KEY `cid` (`cid`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='文章栏目分类';
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='文章栏目分类';
 
 /*Data for the table `dc_category_page` */
 
@@ -160,7 +143,6 @@ CREATE TABLE `dc_content` (
   `cid` int(10) DEFAULT NULL COMMENT '栏目ID',
   `title` varchar(250) DEFAULT NULL COMMENT '标题',
   `urltitle` varchar(250) DEFAULT NULL COMMENT 'URL路径',
-  `subtitle` varchar(250) DEFAULT NULL COMMENT '短标题',
   `keywords` varchar(250) DEFAULT NULL COMMENT '关键词',
   `description` varchar(250) DEFAULT NULL COMMENT '描述',
   `updatetime` int(10) DEFAULT NULL COMMENT '更新时间',
@@ -182,7 +164,7 @@ CREATE TABLE `dc_content` (
 
 /*Data for the table `dc_content` */
 
-insert  into `dc_content`(`aid`,`cid`,`title`,`urltitle`,`subtitle`,`keywords`,`description`,`updatetime`,`inputtime`,`image`,`url`,`sequence`,`tpl`,`status`,`copyfrom`,`views`,`position`,`taglink`) values (1,3,'20万台小米2S瞬间售罄 电信版4月16日可购','20wantaixiaomi2Sshunjianshoudi',NULL,'小米,用户','昨晚8点20分，20万台小米2S（【上手评测】【开箱图】）首次开放购买，大概过了2分钟，即显示已售罄，相比之前小米2一机难求的情况，本次开放购买时的网络情况要好很多，但奇怪的是并没有提供版本选择(16GB或32GB)，而是系统直接为你选择版本(笔者被选中的是16GB版本)。需要注意的是：购机成功用户要在当晚10点前下单，下单后2小时内支付;4月16日小米2S将二次开放购买，现在已经可以通过开放购买页面进行预约，但只有16GB/800万像素版本(或许32GB版本供货不多)。此外，昨晚8点30分小米',1365775948,1365775948,NULL,NULL,NULL,NULL,1,'DUXCMS',0,'0',0),(2,3,'手机固话上网卡都将实名 网站泄露信息最高罚3万','shoujiguhuashangwangkadujiangs','','','',1365776029,1365776029,'','',NULL,'',1,'DUXCMS',0,'1',0),(3,3,'10日：三星S4到货5400元 4S售3200元返2300元','10risanxingS4daohuo5400yuan4Ss','','三星,行货报价,分辨率,代言人','三星这几年在安卓智能手机上的发展是最迅猛的，似乎三星就成了安卓系统的代言人，每年都推出一部经典手机来几近完美的诠释安卓系统。这款三星I9500（GALAXYSIV/16GB）手机的行货报价为5399元，喜欢的朋友可以详细了解一下。三星GALAXYS4机身正面配备了4.99英寸HDSuperAMOLED屏幕，拥有1920×1080像素分辨率，441ppi。该屏幕也是世界首款FullHDSuperAMOLED显示屏。屏幕设计最大的特色应该就是首次采用的超窄边设计模式，所以这也让屏幕看起来会更“大”一',1365776050,1365776050,'','',NULL,'',1,'DUXCMS',0,'1',0),(4,3,'史玉柱辞去巨人CEO职务 留任董事会主席','shiyuzhuciqujurenCEOzhiwuliure','','巨人网络,资料图片,史玉柱,新京报','昨日，史玉柱宣布辞去巨人网络CEO一职。资料图片/CFP新京报讯（记者刘夏）昨日晚间，知名游戏运营商巨人网络CEO史玉柱宣布，因个人原因辞去CEO一职，今后将精力用于慈善方面。这一变化，将从2013年4月19日生效，其继任者也将在当日宣布。不过，史玉柱仍将留任董事会主席。昨日，巨人网络发布了其游戏新品《仙侠世界》。在发布现场，史玉柱意外透露，仙侠世界登场，自己就该退场了。史玉柱说：“网游行业是属于年轻人的。现在我很高兴能够继续担任公司董事会主席一职，并承诺对公司管理团队和研发人才给予全力的支持。',1365776089,1365776089,'','',NULL,'',1,'DUXCMS',0,'1',0),(5,3,'适合入手机型推荐 iPhone5价格再次暴跌','shiherushoujixingtuijianiPhone','','价格波动,iPhone4,iPhone5','温度时高时低的首都北京着实是让生活在这个城市的人饱受煎熬，昨天穿衬衫明天就有可能再把羽绒服找出来。近期的手机市场也有这样的状况出现，很多机型的价格浮动很不稳定，搞的人们拿不准时机准确的入手。所以静观其变才是上上策，然而小编深知大家的痛苦，在本期就为大家精心的去准备了一些目前价格合适，而且近些日子也不会再出现大幅度价格波动的机型供大家当作购买参考。正如标题所示，大家一定会不相信自己的眼睛，但这就是事实iPhone5的确是跌破了4000元，曾几何时iPhone4久久居高不下的价格搞的人们硬着头皮充面',1365776125,1365776125,'','',NULL,'',1,'DUXCMS',0,'4',0),(6,3,'周鸿祎：微信已经从精神上把运营商干掉了','zhouhongdaiweixinyijingcongjin','','','奇虎360董事长周鸿祎导读：福布斯中文网发表了《福布斯》（中文版）副主编尹生今年2月跟奇虎360董事长周鸿祎之间的一次对话节选，主要内容关于微信以及颠覆。今年2月，我和奇虎360董事长周鸿祎之间有过一次对话，其中的很大一部分篇幅，谈的是微信。一方面，他认为微信已经成为一个无所不在的BigBrother，成为移动互联网的单极世界主导者，另一方面，他也不得不承认，腾讯通过微信一扫过去被视为抄袭者的耻辱，微信的成功已经不仅仅是抄袭者的成功。和最近的风向巧合的是，我们也谈到了微信和运营商的关系，以及运营',1365776161,1365776161,'','',NULL,'',1,'DUXCMS',0,'1',0),(7,3,'史玉柱谈辞任：巨人数亿美元 我想支100元总裁都不让','shiyuzhutancirenjurenshuyimeiy',NULL,'巨人网络,史玉柱,董事长,年轻人','北京商报讯（记者张绪旺）效仿好友马云，巨人网络CEO史玉柱昨日晚间宣布辞去CEO职位，将继续保留其巨人网络公司董事会主席的职务，目前新CEO人选尚未公布，史玉柱同时表示“网游行业是属于年轻人的”。史玉柱是在其定位为“屌丝网游”的《仙侠世界》内测发布会上宣布这一决定的，而正式辞职时间定在该游戏上线的4月19日。史玉柱表示，“很早就想辞去CEO职务”，但“心里一直没底”，并称其递交辞呈的时间甚至早于马云，“但董事会直到昨日才同意”。据悉，史玉柱保留巨人网络董事长职位，由于美股上市公司监管政策，CEO',1365776210,1365776210,NULL,NULL,NULL,NULL,1,'DUXCMS',0,'0',0),(8,3,'老外街头救晕倒中国小伙 奇怪他人只拍照不施救','laowaijietoujiuyundaozhongguox','','留学生,地,巴基斯坦,外国人,小伙子','巴基斯坦留学生哈马德讲述救人经过。记者杨涛摄原标题：小伙子晕倒引来路人围观有的拍照有的拍视频巴基斯坦留学生“闯镜头”救人前天下午，武昌地铁2号线光谷站出口发生感人一幕：一名小伙不幸晕倒在地，正好路过的巴基斯坦来华留学生哈马德见状，毫不犹豫地上前施救，让小伙在现场苏醒过来。小伙晕倒被外国人救醒前天下午3点50分，光谷地铁站C出口，一名年轻小伙突然晕倒在地。目击者马同学说，倒地小伙看起来二十出头，身体十分虚弱。小伙倒地后，周围站满了围观的路人，就在大家犹豫要不要将其扶起时，人群中突然走进来一个皮肤黝',1365776276,1365776276,'http://y0.ifengimg.com/644db11e181e00f8/2013/0412/re_51673177a7ac3.jpg','',NULL,'',1,'DUXCMS',0,'1',0),(21,3,'232323222','232323','','','rrrr',1368171206,1368171206,'','',0,NULL,1,'323frrr',3,'',0),(11,4,'原浙江省长吕祖善退休后在博物馆当义务讲解员','yuanzhejiangshengchanglvzushan',NULL,'博物馆,浙江省长,浙江诸暨,吕祖善','吕祖善在浙江省博物馆当义务讲解员原题：吕祖善：当志愿者的老省长为官，吕祖善担任经济大省浙江省长达13年，见证并推动了浙江的经济发展、尤其是民营经济的兴旺发达；为民，他在业余时间担任博物馆义务讲解员，服务乡邻，且自娱自乐2013年春天，常去浙江省博物馆的人经常会看到，一位身板厚实的长者，穿着显然比他的个子小一号的大红色志愿者马甲，给大家当义务讲解员。他不是一般的义务讲解员，而是浙江省前省长、现任全国人大财政经济委员会副主任委员吕祖善。吕祖善祖籍浙江诸暨，是一位“老浙江”。早年从南京航空学院发动机设',1365776692,1365776692,'http://y2.ifengimg.com/1a49d0cd0cb3eb9b/2013/0412/rdn_5167d07dee0d8.jpg',NULL,NULL,NULL,1,'DUXCMS',0,'3',0),(12,4,'菲律宾海域发生5.4级地震 震源深度103公里','feilvbinhaiyufasheng54jidizhen',NULL,'菲律宾,地震,地质勘探局','图片来自美国地质勘探局网站。中新网4月12日电据美国地质勘探局网站消息，北京时间4月12日18点34分，菲律宾南部海域发生里氏5.4级地震，震源深度103.2公里。',1365776756,1365776756,'http://img1.cache.netease.com/catchpic/5/55/551D645D57D394F7269393D9DCA338A1.jpg',NULL,NULL,NULL,1,'DUXCMS',1,'0',0),(13,4,'奥地利科学家称海平面上升将导致大量生物灭绝','aodilikexuejiachenghaipingmian',NULL,'奥地利,太平洋地区,研究报告,生物灭绝','海平面上升（资料图）奥地利科研人员近日公布研究报告表示，海平面不断上升将吞噬多种生物的存活空间，导致大量生物灭绝。奥地利维也纳兽医大学和美国耶鲁大学的科研人员通过模型计算预测，到本世纪末，东南亚及太平洋地区的海平面将升高约1米。到2500年，这些地区的海平面将升高5.5米。根据模型计算结果，海平面升高1米，东南亚及太平洋地区就将失去约1%的陆地面积，加上潮汐作用的影响，这些地区14.7%的岛屿将被淹没，约三分之一的太平洋地区环礁也将消失。研究人员表示，动物栖息地的减少将严重威胁到当地特有物种和珍',1365777029,1365777029,'http://img1.cache.netease.com/catchpic/0/02/0227F22210FA9AEE19CD086D5867A122.jpg',NULL,NULL,NULL,1,'DUXCMS',1,'3',0),(14,4,'婴儿游泳馆受家长热捧 卫生及人员配备令人担忧','yingeryouyongguanshoujiachangr','','婴儿游泳馆,天河区','近年来，婴儿游泳备受家长青睐。然而，近日有家长对婴儿游泳馆的卫生状况、人员配备等问题表示担忧。昨日，记者走访了市内数家婴儿游泳馆，了解到目前婴儿游泳馆卫生监督尚处在灰色地带。家住天河区的李小姐反映，宝宝自去年9月出生后，在医院那几天一直坚持游泳。回到家后，她特意从淘宝上买了充气婴儿游泳池，让宝宝享受游泳的乐趣。“实在是很麻烦。”最让她头疼的是，宝宝游完后，剩下的水成了难题。“直接倒掉实在可惜，但洗衣服、冲马桶，两天都用不完。”无奈之下，李小姐想到了去市面上的婴儿游泳馆消费。“我办了一张500多元',1365777178,1365777178,'http://img2.cache.netease.com/lady/2013/4/11/20130411100209891f0.jpg','',NULL,'',1,'DUXCMS',3,'1',0),(15,4,'《北京遇上西雅图》孕产知识靠谱吗？专家来纠错','beijingyushangxiyatuyunchanzhi',NULL,'电影,辽宁省,知识,主演','《北京遇上西雅图》是近期电影市场上正火的一部电影。电影中，众主演扮演的孕妇可谓是赚足了人们的眼球。很多准妈妈在看完电影后也对其中一些孕产知识颇感兴趣。记者整理了其中的几个剧情，并咨询了相关方面的专家。【剧情一】海清饰演的孕妇在临产前突然羊水破了，而她吓得站在沙发上一动不敢动。辽宁省人民医院妇产科主任医师郑荦说，孕妇羊水破了第一时间一定要平躺下来，同时放松心情。平躺后将枕头放在臀下，尽量保持头低臀高位，防止脐带脱垂，尤其是胎儿臀位和双胎产妇更应该注意。羊水早破意味着分娩的到来，最好马上去医院待产。',1365777286,1365777286,'http://img6.cache.netease.com/lady/2013/4/11/20130411093417d76d0.jpg',NULL,NULL,NULL,1,'DUXCMS',1,'0',0),(16,4,'范冰冰华鼎奖封后 AngelaBaby火了美乳裙','fanbingbinghuadingjiangfenghou',NULL,'AngelaBaby,蔡卓妍','杨颖McqueenAB身着mcqueen2013春夏系列长裙亮相。经典的抹胸长蓬裙款式优雅，搭配古典式编发很有公主范儿；挖空的抹胸成功展现丰乳。但这款裙子不适合搭配钻石配饰，与皮革宽腰带不搭。蔡卓妍AO阿sa身着aliceolivia2013春夏系列长裙亮相。印花蜂腰抹胸长裙款式增加了时尚元素，不至于过于正式，印花也增添活力；夸张的颈饰同样起到减轻厚重感的作用；发型清爽也不失活力。<imgalt=\"范冰冰华鼎奖封后AngelaBaby火了美乳裙\"src=\"http://img2.ca',1365777317,1365777317,'http://img2.cache.netease.com/lady/2013/4/11/20130411153002c1404.jpg',NULL,NULL,NULL,1,'DUXCMS',5,'3',0),(17,4,'最高降幅达千元 网购空调热销机型大揭秘','zuigaojiangfudaqianyuanwanggou',NULL,'空调,消费者','五月将至，空调销售旺季也随之而来。很多商家都会在旺季时节推出不同的促销活动来吸引消费者的眼球，提高关注度，不少朋友也借此次时节精挑细选，为自己选配一款夏季的防暑利器，而身边家装的朋友更是纷纷向笔者咨询究竟要买什么样的空调才物有所值。值得关注的是，在众多询问者中，大多为80后的新婚一组。他们喜欢上网，成天泡在网络上，他们更喜欢在网上购物，显然，网购已然成为这代人的标志，所以，在网络上如果能入手更低价、更超值的家电，自然是不会放过。那么在旺季启动之际，哪些空调在网上火爆销售？又有哪些产品深受消费者喜',1365777373,1365777373,'http://img1.cache.netease.com/catchpic/F/FD/FDF539E6482815E5D795930F407A477B.jpg',NULL,NULL,NULL,1,'DUXCMS',2,'3',0),(18,4,'让操作更简单 本周最受关注智能电视盘点','rangcaozuogengjiandanbenzhouzu','','智能电视,消费者,频道,如何','经过几年的发展，智能电视已经被越来越多的消费者所熟悉，全新的操作流程，炫酷的智能体验，以及更多的人机交互功能，让智能电视走进了更多消费者的家庭。那么，什么样的电视能称之为智能电视呢？我们又该如何选择智能电视呢？接下来，笔者就为大家盘点一下本周网购途径最受欢迎的智能电视，希望能对大家选购智能电视起到一些帮助。让操作更简单本周最受关注智能电视盘点TOP1：海信LED42K520DX3D智能电视海信K520系列智能电视，打破频道界限，同类节目合并呈现。通过直播聚合技术，把同一时段的同类节目汇集在一起，',1365777442,1365777442,'/duxcms/upload/2013-05/10/10113724_0.jpg','',0,NULL,1,'DUXCMS',5,'1,3',0),(19,5,' 佳能SX240 HS','jianengSX240HS','','佳能,处理器,感光度,照片','佳能SX240HS机身厚约为32.7毫米，光学变焦从广角端到远摄端可覆盖约25-500mm的视角。佳能SX240HS图像感应器有效像素约1210万，并采用了新的DIGIC5数字影像处理器，由此HSSYSTEM得到进化，在昏暗场所使用高ISO感光度也能拍摄出美丽照片，实现了更高画质。',1365831389,1365831389,'/upload/2013-04/13/xcxzcxc1.jpg','',0,'',1,'DUXCMS',56,'',0),(20,3,'1223','1','','','111',1368156472,1368156472,'','',0,NULL,1,'1113333',15657,'',0),(22,3,'3232323','3232323','','','',1368171807,1368171807,'','http://www.baidu.com',0,NULL,1,'',0,'',0);
+insert  into `dc_content`(`aid`,`cid`,`title`,`urltitle`,`keywords`,`description`,`updatetime`,`inputtime`,`image`,`url`,`sequence`,`tpl`,`status`,`copyfrom`,`views`,`position`,`taglink`) values (1,3,'20万台小米2S瞬间售罄 电信版4月16日可购','20wantaixiaomi2Sshunjianshoudi','小米,用户','昨晚8点20分，20万台小米2S（【上手评测】【开箱图】）首次开放购买，大概过了2分钟，即显示已售罄，相比之前小米2一机难求的情况，本次开放购买时的网络情况要好很多，但奇怪的是并没有提供版本选择(16GB或32GB)，而是系统直接为你选择版本(笔者被选中的是16GB版本)。需要注意的是：购机成功用户要在当晚10点前下单，下单后2小时内支付;4月16日小米2S将二次开放购买，现在已经可以通过开放购买页面进行预约，但只有16GB/800万像素版本(或许32GB版本供货不多)。此外，昨晚8点30分小米',1365775948,1365775948,NULL,NULL,NULL,NULL,1,'DUXCMS',0,'0',0),(2,3,'手机固话上网卡都将实名 网站泄露信息最高罚3万','shoujiguhuashangwangkadujiangs','','',1365776029,1365776029,'','',NULL,'',1,'DUXCMS',0,'1',0),(3,3,'10日：三星S4到货5400元 4S售3200元返2300元','10risanxingS4daohuo5400yuan4Ss','三星,行货报价,分辨率,代言人','三星这几年在安卓智能手机上的发展是最迅猛的，似乎三星就成了安卓系统的代言人，每年都推出一部经典手机来几近完美的诠释安卓系统。这款三星I9500（GALAXYSIV/16GB）手机的行货报价为5399元，喜欢的朋友可以详细了解一下。三星GALAXYS4机身正面配备了4.99英寸HDSuperAMOLED屏幕，拥有1920×1080像素分辨率，441ppi。该屏幕也是世界首款FullHDSuperAMOLED显示屏。屏幕设计最大的特色应该就是首次采用的超窄边设计模式，所以这也让屏幕看起来会更“大”一',1365776050,1365776050,'','',NULL,'',1,'DUXCMS',0,'1',0),(4,3,'史玉柱辞去巨人CEO职务 留任董事会主席','shiyuzhuciqujurenCEOzhiwuliure','巨人网络,资料图片,史玉柱,新京报','昨日，史玉柱宣布辞去巨人网络CEO一职。资料图片/CFP新京报讯（记者刘夏）昨日晚间，知名游戏运营商巨人网络CEO史玉柱宣布，因个人原因辞去CEO一职，今后将精力用于慈善方面。这一变化，将从2013年4月19日生效，其继任者也将在当日宣布。不过，史玉柱仍将留任董事会主席。昨日，巨人网络发布了其游戏新品《仙侠世界》。在发布现场，史玉柱意外透露，仙侠世界登场，自己就该退场了。史玉柱说：“网游行业是属于年轻人的。现在我很高兴能够继续担任公司董事会主席一职，并承诺对公司管理团队和研发人才给予全力的支持。',1365776089,1365776089,'','',NULL,'',1,'DUXCMS',0,'1',0),(5,3,'适合入手机型推荐 iPhone5价格再次暴跌','shiherushoujixingtuijianiPhone','价格波动,iPhone4,iPhone5','温度时高时低的首都北京着实是让生活在这个城市的人饱受煎熬，昨天穿衬衫明天就有可能再把羽绒服找出来。近期的手机市场也有这样的状况出现，很多机型的价格浮动很不稳定，搞的人们拿不准时机准确的入手。所以静观其变才是上上策，然而小编深知大家的痛苦，在本期就为大家精心的去准备了一些目前价格合适，而且近些日子也不会再出现大幅度价格波动的机型供大家当作购买参考。正如标题所示，大家一定会不相信自己的眼睛，但这就是事实iPhone5的确是跌破了4000元，曾几何时iPhone4久久居高不下的价格搞的人们硬着头皮充面',1365776125,1365776125,'','',NULL,'',1,'DUXCMS',0,'4',0),(6,3,'周鸿祎：微信已经从精神上把运营商干掉了','zhouhongdaiweixinyijingcongjin','','奇虎360董事长周鸿祎导读：福布斯中文网发表了《福布斯》（中文版）副主编尹生今年2月跟奇虎360董事长周鸿祎之间的一次对话节选，主要内容关于微信以及颠覆。今年2月，我和奇虎360董事长周鸿祎之间有过一次对话，其中的很大一部分篇幅，谈的是微信。一方面，他认为微信已经成为一个无所不在的BigBrother，成为移动互联网的单极世界主导者，另一方面，他也不得不承认，腾讯通过微信一扫过去被视为抄袭者的耻辱，微信的成功已经不仅仅是抄袭者的成功。和最近的风向巧合的是，我们也谈到了微信和运营商的关系，以及运营',1365776161,1365776161,'','',NULL,'',1,'DUXCMS',0,'1',0),(7,3,'史玉柱谈辞任：巨人数亿美元 我想支100元总裁都不让','shiyuzhutancirenjurenshuyimeiy','巨人网络,史玉柱,董事长,年轻人','北京商报讯（记者张绪旺）效仿好友马云，巨人网络CEO史玉柱昨日晚间宣布辞去CEO职位，将继续保留其巨人网络公司董事会主席的职务，目前新CEO人选尚未公布，史玉柱同时表示“网游行业是属于年轻人的”。史玉柱是在其定位为“屌丝网游”的《仙侠世界》内测发布会上宣布这一决定的，而正式辞职时间定在该游戏上线的4月19日。史玉柱表示，“很早就想辞去CEO职务”，但“心里一直没底”，并称其递交辞呈的时间甚至早于马云，“但董事会直到昨日才同意”。据悉，史玉柱保留巨人网络董事长职位，由于美股上市公司监管政策，CEO',1365776210,1365776210,NULL,NULL,NULL,NULL,1,'DUXCMS',0,'0',0),(8,3,'老外街头救晕倒中国小伙 奇怪他人只拍照不施救','laowaijietoujiuyundaozhongguox','留学生,地,巴基斯坦,外国人,小伙子','巴基斯坦留学生哈马德讲述救人经过。记者杨涛摄原标题：小伙子晕倒引来路人围观有的拍照有的拍视频巴基斯坦留学生“闯镜头”救人前天下午，武昌地铁2号线光谷站出口发生感人一幕：一名小伙不幸晕倒在地，正好路过的巴基斯坦来华留学生哈马德见状，毫不犹豫地上前施救，让小伙在现场苏醒过来。小伙晕倒被外国人救醒前天下午3点50分，光谷地铁站C出口，一名年轻小伙突然晕倒在地。目击者马同学说，倒地小伙看起来二十出头，身体十分虚弱。小伙倒地后，周围站满了围观的路人，就在大家犹豫要不要将其扶起时，人群中突然走进来一个皮肤黝',1365776276,1365776276,'http://y0.ifengimg.com/644db11e181e00f8/2013/0412/re_51673177a7ac3.jpg','',NULL,'',1,'DUXCMS',0,'1',0),(21,3,'232323222','232323','','rrrr',1368171206,1368171206,'','',0,NULL,1,'323frrr',3,'',0),(11,4,'原浙江省长吕祖善退休后在博物馆当义务讲解员','yuanzhejiangshengchanglvzushan','博物馆,浙江省长,浙江诸暨,吕祖善','吕祖善在浙江省博物馆当义务讲解员原题：吕祖善：当志愿者的老省长为官，吕祖善担任经济大省浙江省长达13年，见证并推动了浙江的经济发展、尤其是民营经济的兴旺发达；为民，他在业余时间担任博物馆义务讲解员，服务乡邻，且自娱自乐2013年春天，常去浙江省博物馆的人经常会看到，一位身板厚实的长者，穿着显然比他的个子小一号的大红色志愿者马甲，给大家当义务讲解员。他不是一般的义务讲解员，而是浙江省前省长、现任全国人大财政经济委员会副主任委员吕祖善。吕祖善祖籍浙江诸暨，是一位“老浙江”。早年从南京航空学院发动机设',1365776692,1365776692,'http://y2.ifengimg.com/1a49d0cd0cb3eb9b/2013/0412/rdn_5167d07dee0d8.jpg',NULL,NULL,NULL,1,'DUXCMS',0,'3',0),(12,4,'菲律宾海域发生5.4级地震 震源深度103公里','feilvbinhaiyufasheng54jidizhen','菲律宾,地震,地质勘探局','图片来自美国地质勘探局网站。中新网4月12日电据美国地质勘探局网站消息，北京时间4月12日18点34分，菲律宾南部海域发生里氏5.4级地震，震源深度103.2公里。',1365776756,1365776756,'http://img1.cache.netease.com/catchpic/5/55/551D645D57D394F7269393D9DCA338A1.jpg',NULL,NULL,NULL,1,'DUXCMS',1,'0',0),(13,4,'奥地利科学家称海平面上升将导致大量生物灭绝','aodilikexuejiachenghaipingmian','奥地利,太平洋地区,研究报告,生物灭绝','海平面上升（资料图）奥地利科研人员近日公布研究报告表示，海平面不断上升将吞噬多种生物的存活空间，导致大量生物灭绝。奥地利维也纳兽医大学和美国耶鲁大学的科研人员通过模型计算预测，到本世纪末，东南亚及太平洋地区的海平面将升高约1米。到2500年，这些地区的海平面将升高5.5米。根据模型计算结果，海平面升高1米，东南亚及太平洋地区就将失去约1%的陆地面积，加上潮汐作用的影响，这些地区14.7%的岛屿将被淹没，约三分之一的太平洋地区环礁也将消失。研究人员表示，动物栖息地的减少将严重威胁到当地特有物种和珍',1365777029,1365777029,'http://img1.cache.netease.com/catchpic/0/02/0227F22210FA9AEE19CD086D5867A122.jpg',NULL,NULL,NULL,1,'DUXCMS',1,'3',0),(14,4,'婴儿游泳馆受家长热捧 卫生及人员配备令人担忧','yingeryouyongguanshoujiachangr','婴儿游泳馆,天河区','近年来，婴儿游泳备受家长青睐。然而，近日有家长对婴儿游泳馆的卫生状况、人员配备等问题表示担忧。昨日，记者走访了市内数家婴儿游泳馆，了解到目前婴儿游泳馆卫生监督尚处在灰色地带。家住天河区的李小姐反映，宝宝自去年9月出生后，在医院那几天一直坚持游泳。回到家后，她特意从淘宝上买了充气婴儿游泳池，让宝宝享受游泳的乐趣。“实在是很麻烦。”最让她头疼的是，宝宝游完后，剩下的水成了难题。“直接倒掉实在可惜，但洗衣服、冲马桶，两天都用不完。”无奈之下，李小姐想到了去市面上的婴儿游泳馆消费。“我办了一张500多元',1365777178,1365777178,'http://img2.cache.netease.com/lady/2013/4/11/20130411100209891f0.jpg','',NULL,'',1,'DUXCMS',3,'1',0),(15,4,'《北京遇上西雅图》孕产知识靠谱吗？专家来纠错','beijingyushangxiyatuyunchanzhi','电影,辽宁省,知识,主演','《北京遇上西雅图》是近期电影市场上正火的一部电影。电影中，众主演扮演的孕妇可谓是赚足了人们的眼球。很多准妈妈在看完电影后也对其中一些孕产知识颇感兴趣。记者整理了其中的几个剧情，并咨询了相关方面的专家。【剧情一】海清饰演的孕妇在临产前突然羊水破了，而她吓得站在沙发上一动不敢动。辽宁省人民医院妇产科主任医师郑荦说，孕妇羊水破了第一时间一定要平躺下来，同时放松心情。平躺后将枕头放在臀下，尽量保持头低臀高位，防止脐带脱垂，尤其是胎儿臀位和双胎产妇更应该注意。羊水早破意味着分娩的到来，最好马上去医院待产。',1365777286,1365777286,'http://img6.cache.netease.com/lady/2013/4/11/20130411093417d76d0.jpg',NULL,NULL,NULL,1,'DUXCMS',1,'0',0),(16,4,'范冰冰华鼎奖封后 AngelaBaby火了美乳裙','fanbingbinghuadingjiangfenghou','AngelaBaby,蔡卓妍','杨颖McqueenAB身着mcqueen2013春夏系列长裙亮相。经典的抹胸长蓬裙款式优雅，搭配古典式编发很有公主范儿；挖空的抹胸成功展现丰乳。但这款裙子不适合搭配钻石配饰，与皮革宽腰带不搭。蔡卓妍AO阿sa身着aliceolivia2013春夏系列长裙亮相。印花蜂腰抹胸长裙款式增加了时尚元素，不至于过于正式，印花也增添活力；夸张的颈饰同样起到减轻厚重感的作用；发型清爽也不失活力。<imgalt=\"范冰冰华鼎奖封后AngelaBaby火了美乳裙\"src=\"http://img2.ca',1365777317,1365777317,'http://img2.cache.netease.com/lady/2013/4/11/20130411153002c1404.jpg',NULL,NULL,NULL,1,'DUXCMS',5,'3',0),(17,4,'最高降幅达千元 网购空调热销机型大揭秘','zuigaojiangfudaqianyuanwanggou','空调,消费者','五月将至，空调销售旺季也随之而来。很多商家都会在旺季时节推出不同的促销活动来吸引消费者的眼球，提高关注度，不少朋友也借此次时节精挑细选，为自己选配一款夏季的防暑利器，而身边家装的朋友更是纷纷向笔者咨询究竟要买什么样的空调才物有所值。值得关注的是，在众多询问者中，大多为80后的新婚一组。他们喜欢上网，成天泡在网络上，他们更喜欢在网上购物，显然，网购已然成为这代人的标志，所以，在网络上如果能入手更低价、更超值的家电，自然是不会放过。那么在旺季启动之际，哪些空调在网上火爆销售？又有哪些产品深受消费者喜',1365777373,1365777373,'http://img1.cache.netease.com/catchpic/F/FD/FDF539E6482815E5D795930F407A477B.jpg',NULL,NULL,NULL,1,'DUXCMS',2,'3',0),(18,4,'让操作更简单 本周最受关注智能电视盘点','rangcaozuogengjiandanbenzhouzu','智能电视,消费者,频道,如何','经过几年的发展，智能电视已经被越来越多的消费者所熟悉，全新的操作流程，炫酷的智能体验，以及更多的人机交互功能，让智能电视走进了更多消费者的家庭。那么，什么样的电视能称之为智能电视呢？我们又该如何选择智能电视呢？接下来，笔者就为大家盘点一下本周网购途径最受欢迎的智能电视，希望能对大家选购智能电视起到一些帮助。让操作更简单本周最受关注智能电视盘点TOP1：海信LED42K520DX3D智能电视海信K520系列智能电视，打破频道界限，同类节目合并呈现。通过直播聚合技术，把同一时段的同类节目汇集在一起，',1365777442,1365777442,'/duxcms/upload/2013-05/10/10113724_0.jpg','',0,NULL,1,'DUXCMS',5,'1,3',0),(19,5,' 佳能SX240 HS','jianengSX240HS','佳能,处理器,感光度,照片','佳能SX240HS机身厚约为32.7毫米，光学变焦从广角端到远摄端可覆盖约25-500mm的视角。佳能SX240HS图像感应器有效像素约1210万，并采用了新的DIGIC5数字影像处理器，由此HSSYSTEM得到进化，在昏暗场所使用高ISO感光度也能拍摄出美丽照片，实现了更高画质。',1365831389,1365831389,'/upload/2013-04/13/xcxzcxc1.jpg','',0,'',1,'DUXCMS',56,'',0),(20,3,'1223','1','','111',1368156472,1368156472,'','',0,NULL,1,'1113333',15657,'',0),(22,3,'3232323','3232323','','',1368171807,1368171807,'','http://www.baidu.com',0,NULL,1,'',0,'',0);
 
 /*Table structure for table `dc_content_data` */
 
@@ -231,6 +213,18 @@ CREATE TABLE `dc_expand_content_images` (
 
 insert  into `dc_expand_content_images`(`id`,`aid`,`zutu`) values (26,45,'a:3:{i:0;a:3:{s:3:\"url\";s:55:\"/upload/2013-03-13/7209391df51cbedd0f0be0b36fcec06e.jpg\";s:5:\"title\";s:0:\"\";s:5:\"order\";s:1:\"0\";}i:1;a:3:{s:3:\"url\";s:55:\"/upload/2013-03-13/80c0701cad908aa7c40be0ea08d4d7f7.jpg\";s:5:\"title\";s:0:\"\";s:5:\"order\";s:1:\"0\";}i:2;a:3:{s:3:\"url\";s:55:\"/upload/2013-03-13/f9a85c173021cfb323eacc7388d9dec8.jpg\";s:5:\"title\";s:0:\"\";s:5:\"order\";s:1:\"0\";}}'),(27,66,'N;'),(28,67,'N;');
 
+/*Table structure for table `dc_expand_content_movie` */
+
+DROP TABLE IF EXISTS `dc_expand_content_movie`;
+
+CREATE TABLE `dc_expand_content_movie` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `aid` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+/*Data for the table `dc_expand_content_movie` */
+
 /*Table structure for table `dc_expand_model` */
 
 DROP TABLE IF EXISTS `dc_expand_model`;
@@ -240,11 +234,11 @@ CREATE TABLE `dc_expand_model` (
   `table` varchar(250) DEFAULT NULL,
   `name` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`mid`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 /*Data for the table `dc_expand_model` */
 
-insert  into `dc_expand_model`(`mid`,`table`,`name`) values (1,'chanpin','产品');
+insert  into `dc_expand_model`(`mid`,`table`,`name`) values (1,'chanpin','产品'),(3,'movie','视频');
 
 /*Table structure for table `dc_expand_model_field` */
 
@@ -398,7 +392,7 @@ CREATE TABLE `dc_model` (
 
 /*Data for the table `dc_model` */
 
-insert  into `dc_model`(`mid`,`model`,`name`,`admin_category`,`admin_content`,`module_category`,`module_content`,`url_category`,`url_category_page`,`url_content`,`url_content_page`,`table`,`file`,`config`) values (1,'content','内容','content_category','content','category','content','{CDIR}/','{CDIR}/index-{P}{EXT}','{CDIR}/{YYYY}/{M}-{D}/{AID}{EXT}','{CDIR}/{YYYY}/{M}-{D}/{AID}-{P}{EXT}',NULL,NULL,NULL),(3,'jump','跳转','jump_category',NULL,'jump',NULL,'{CDIR}/','{CDIR}/index-{P}{EXT}','{CDIR}/{YYYY}/{M}-{D}/{AID}{EXT}','{CDIR}/{YYYY}/{M}-{D}/{AID}{EXT}',NULL,NULL,NULL),(2,'pages','页面','pages_category',NULL,'pages',NULL,'{CDIR}/','{CDIR}/index-{P}{EXT}','{CDIR}/{YYYY}/{M}-{D}/{AID}{EXT}','{CDIR}/{YYYY}/{M}-{D}/{AID}{EXT}',NULL,NULL,NULL);
+insert  into `dc_model`(`mid`,`model`,`name`,`admin_category`,`admin_content`,`module_category`,`module_content`,`url_category`,`url_category_page`,`url_content`,`url_content_page`,`table`,`file`,`config`) values (1,'content','栏目','content_category','content','category','content','{CDIR}/','{CDIR}/index-{P}{EXT}','{CDIR}/{YYYY}/{M}-{D}/{AID}{EXT}','{CDIR}/{YYYY}/{M}-{D}/{AID}-{P}{EXT}',NULL,NULL,NULL),(3,'jump','跳转','jump_category',NULL,'jump',NULL,'{CDIR}/','{CDIR}/index-{P}{EXT}','{CDIR}/{YYYY}/{M}-{D}/{AID}{EXT}','{CDIR}/{YYYY}/{M}-{D}/{AID}{EXT}',NULL,NULL,NULL),(2,'pages','页面','pages_category',NULL,'pages',NULL,'{CDIR}/','{CDIR}/index-{P}{EXT}','{CDIR}/{YYYY}/{M}-{D}/{AID}{EXT}','{CDIR}/{YYYY}/{M}-{D}/{AID}{EXT}',NULL,NULL,NULL);
 
 /*Table structure for table `dc_plugin` */
 
@@ -528,8 +522,6 @@ CREATE TABLE `dc_upload` (
 
 /*Data for the table `dc_upload` */
 
-insert  into `dc_upload`(`id`,`file`,`title`,`folder`,`ext`,`size`,`type`,`time`) values (13,'/duxcms/upload/2013-05/10/QQjietu20130508143420.png','QQ截图20130508143420','2013-05-10','png',68252,NULL,1368155107),(12,'/duxcms/upload/2013-05/10/QQjietu20130428154435.png','QQ截图20130428154435','2013-05-10','png',25052,NULL,1368155107),(11,'/duxcms/upload/2013-05/10/QQjietu20130423115523.png','QQ截图20130423115523','2013-05-10','png',28833,NULL,1368155107),(10,'/duxcms/upload/2013-05/10/IAATshouye.jpg','IAAT首页','2013-05-10','jpg',450020,NULL,1368155106),(9,'/duxcms/upload/2013-05/10/fucking.png','fucking','2013-05-10','png',132588,'category',1368155022),(14,'/duxcms/upload/2013-05/10/QQjietu20130508143420-a8a45.png','QQ截图20130508143420','2013-05-10','png',68252,NULL,1368155156),(15,'/duxcms/upload/2013-05/10/logo.gif','logo','2013-05-10','gif',3290,'plus',1368170478),(16,'/duxcms/upload/2013-05/10/logo-0f774.gif','logo','2013-05-10','gif',3290,'plus',1368170552);
-
 /*Table structure for table `dc_upload_category` */
 
 DROP TABLE IF EXISTS `dc_upload_category`;
@@ -542,8 +534,6 @@ CREATE TABLE `dc_upload_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 /*Data for the table `dc_upload_category` */
-
-insert  into `dc_upload_category`(`id`,`file_id`) values (1,9);
 
 /*Table structure for table `dc_upload_content` */
 
@@ -583,8 +573,6 @@ CREATE TABLE `dc_upload_plus` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 /*Data for the table `dc_upload_plus` */
-
-insert  into `dc_upload_plus`(`id`,`file_id`) values (3,16),(3,15);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

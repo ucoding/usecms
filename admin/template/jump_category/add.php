@@ -32,13 +32,6 @@
                     <td></td>
                 </tr>
                 <tr class="advanced">
-                    <td width="100" align="right">副名称</td>
-                    <td>
-                        <input name="subname" type="text" class="text_value" id="subname" value=""/>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr class="advanced">
                     <td width="100" align="right">跳转页面URL名称</td>
                     <td>
                         <input name="urlname" type="text" class="text_value" id="urlname" value=""/>

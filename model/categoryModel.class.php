@@ -46,7 +46,7 @@ class categoryModel extends commonMod
             $expand_field = "C.*,";
         }
         $loop = "
-            SELECT {$expand_field}A.*,B.name as cname,B.subname as csubname,B.mid
+            SELECT {$expand_field}A.*,B.name as cname,B.mid
              FROM {$this->model->pre}content A 
              LEFT JOIN {$this->model->pre}category B ON A.cid = B.cid
              {$expand}

@@ -86,13 +86,6 @@
         <div class="page_table form_table" id="tab2">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <td width="100" align="right">副栏目名称</td>
-                    <td>
-                        <input name="subname" type="text" class="text_value" id="subname" value=""/>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
                     <td width="100" align="right">SEO关键词</td>
                     <td>
                         <input name="keywords" type="text" class="text_value" id="keywords"/>

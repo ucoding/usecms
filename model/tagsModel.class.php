@@ -31,7 +31,7 @@ class tagsModel extends commonMod
             return;
         }
         return $this->model
-            ->field('A.*,B.name as cname,B.subname as csubname,B.mid')
+            ->field('A.*,B.name as cname,B.mid')
             ->table('content', 'A')
             ->add_table('category', 'B', 'A.cid=B.cid')
             ->add_table('tags_relation', 'C', 'A.aid=C.aid')

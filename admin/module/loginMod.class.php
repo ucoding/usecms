@@ -35,8 +35,6 @@ class loginMod extends commonMod
         $data['ip'] = get_client_ip();
         $data['loginnum'] = intval($info['loginnum']) + 1;
         model('login')->edit($data, intval($info['id']));
-        //更新登录记录
-        model('log')->login_log($info);
         //设置登录信息
         $_SESSION[$this->config['SPOT'] . '_user'] = cp_encode($info['id'], $this->config['DB_PREFIX']);
         $this->msg('登录成功!', 1);

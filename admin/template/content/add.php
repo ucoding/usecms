@@ -47,11 +47,6 @@
                     <td></td>
                 </tr>
                 <tr class="advanced">
-                    <td width="100" align="right">副标题</td>
-                    <td width="350"><input name="subtitle" type="text" class="text_value" id="subtitle" value=""/></td>
-                    <td></td>
-                </tr>
-                <tr class="advanced">
                     <td width="100" align="right">英文URL名称</td>
                     <td width="350"><input name="urltitle" type="text" class="text_value" id="urltitle" value=""/></td>
                     <td></td>

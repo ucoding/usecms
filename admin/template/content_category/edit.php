@@ -108,13 +108,6 @@
         <div class="page_table form_table"  id="tab2">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <td width="100" align="right">副栏目名称</td>
-                    <td width="300">
-                        <input name="subname" type="text" class="text_value" id="subname" value="{$info.subname}"/>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
                     <td width="100" align="right">栏目URL优化</td>
                     <td width="300">
                         <input name="urlname" type="text" class="text_value" id="urlname" value="{$info.urlname}"/>
