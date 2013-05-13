@@ -10,7 +10,7 @@
 </div>
 <div class="page_form">
     <form action="__URL__/edit_save/time-<?php echo time(); ?>-ajax-true" method="post" id="form">
-        <div class="page_table form_table" id="#tab1">
+        <div class="page_table form_table" id="tab1">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                     <td width="100" align="right">上级栏目</td>
@@ -69,7 +69,6 @@
                     </td>
                     <td>数字越大越在前面</td>
                 </tr>
-
                 <?php module('common')->plus_hook('category', 'edit_tpl'); ?>
                 <tr>
                     <td width="100" align="right">页面模板</td>
@@ -81,7 +80,7 @@
                 </tr>
             </table>
         </div>
-        <div class="page_table form_table" id="#tab2">
+        <div class="page_table form_table" id="tab2">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                     <td width="100" align="right">页面URL名称</td>
@@ -99,8 +98,7 @@
                 </tr>
                 <tr>
                     <td width="100" align="right">SEO描述</td>
-                    <td width="300"><textarea name="description" class="text_textarea"
-                                              id="description">{$info.description}</textarea>
+                    <td width="300"><textarea name="description" class="text_textarea" id="description">{$info.description}</textarea>
                     </td>
                     <td>对本页面的简单介绍</td>
                 </tr>
@@ -126,6 +124,7 @@
                 </tr>
             </table>
         </div>
+
         <div class="form_submit">
             <input name="cid" type="hidden" value="{$info.cid}"/>
             <input name="file_id" id="file_id" type="hidden" value="{$file_id}"/>
@@ -147,7 +146,6 @@
             '远程抓图执行完毕'
         );
     }
-
     saveform(function (msg) {
         $.dialog.tips(msg, 3);
     }, function (msg) {
@@ -156,10 +154,7 @@
 
     //页面执行
     $(function () {
-
-        console.log(22)
         //tab菜单
         $("#tab").idTabs();
     });
-
 </script>
