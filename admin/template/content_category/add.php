@@ -53,13 +53,6 @@
                     <td>频道页无法发布内容，列表页可以发布内容</td>
                 </tr>
                 <tr>
-                    <td width="100" align="right">内容分页数</td>
-                    <td width="300">
-                        <input name="page" type="text" class="text_value" id="page" value="15"/>
-                    </td>
-                    <td>栏目下内容每页多少条</td>
-                </tr>
-                <tr>
                     <td width="100" align="right">栏目顺序</td>
                     <td>
                         <input name="sequence" type="text" class="text_value" id="sequence" value="0"/>
@@ -114,20 +107,6 @@
                         隐藏
                     </td>
                     <td>控制栏目调用的显示与隐藏</td>
-                </tr>
-                <tr>
-                    <td width="100" align="right">内容排序</td>
-                    <td>
-                        <select name="content_order">
-                            <option value="updatetime DESC">内容更新时间 新-旧</option>
-                            <option value="updatetime ASC">内容更新时间 旧-新</option>
-                            <option value="inputtime DESC">内容发布时间 新-旧</option>
-                            <option value="inputtime ASC">内容发布时间 旧-新</option>
-                            <option value="order DESC">内容自定义排序 大-小</option>
-                            <option value="order ASC">内容自定义排序 小-大</option>
-                        </select>
-                    </td>
-                    <td>针对该栏目下内容的排序方式</td>
                 </tr>
                 <tr>
                     <td width="100" align="right">扩展模型</td>

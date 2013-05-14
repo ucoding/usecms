@@ -58,13 +58,6 @@
                     <td>频道页无法发布内容，列表页可以发布内容</td>
                 </tr>
                 <tr>
-                    <td width="100" align="right">内容分页数</td>
-                    <td width="300">
-                        <input name="page" type="text" class="text_value" id="page" value="{$info.page}"/>
-                    </td>
-                    <td>栏目下内容每页多少条</td>
-                </tr>
-                <tr>
                     <td width="100" align="right">栏目顺序</td>
                     <td width="300">
                         <input name="sequence" type="text" class="text_value" id="sequence" value="{$info.sequence}"/>
@@ -87,21 +80,6 @@
                                value="{$info.content_tpl}"/>
                     </td>
                     <td>用于该栏目下的内容显示</td>
-                </tr>
-                <tr>
-                    <td width="100" align="right">扩展模型</td>
-                    <td width="300">
-                        <select name="expand" id="expand">
-                            <option value="0">无</option>
-                            <@foreach:{$model_list $vo}>
-                            <option
-                                value="{$vo.mid}" <?php if ($vo['mid'] == $info['expand']) { ?> selected="selected" <?php } ?> >
-                                {$vo.name}
-                            </option>
-                            <@/foreach>
-                        </select>
-                    </td>
-                    <td>用于附加内容字段</td>
                 </tr>
             </table>
         </div>
@@ -146,32 +124,6 @@
                         隐藏
                     </td>
                     <td>控制栏目调用的显示与隐藏</td>
-                </tr>
-                <tr>
-                    <td width="100" align="right">内容排序</td>
-                    <td width="300">
-                        <select name="content_order">
-                            <option
-                            <@if:{$info['content_order']=='updatetime DESC'}> selected="selected" <@/if>
-                            value="updatetime DESC">内容更新时间 新-旧</option>
-                            <option
-                            <@if:{$info['content_order']=='updatetime ASC'}> selected="selected" <@/if>
-                            value="updatetime ASC">内容更新时间 旧-新</option>
-                            <option
-                            <@if:{$info['content_order']=='inputtime DESC'}> selected="selected" <@/if>
-                            value="inputtime DESC">内容发布时间 新-旧</option>
-                            <option
-                            <@if:{$info['content_order']=='inputtime ASC'}> selected="selected" <@/if>
-                            value="inputtime ASC">内容发布时间 旧-新</option>
-                            <option
-                            <@if:{$info['content_order']=='order DESC'}> selected="selected" <@/if>
-                            value="order DESC">内容自定义排序 大-小</option>
-                            <option
-                            <@if:{$info['content_order']=='order ASC'}> selected="selected" <@/if>
-                            value="order ASC">内容自定义排序 小-大</option>
-                        </select>
-                    </td>
-                    <td>针对该栏目下内容的排序方式</td>
                 </tr>
                 <tr>
                     <td width="100" align="right">扩展模型</td>

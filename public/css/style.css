@@ -637,7 +637,6 @@ h3 {
 	border: none;
 }
 .page_main {
-	padding: 20px;
 	padding-top: 10px;
 }
 .page_main h3 {
@@ -664,8 +663,6 @@ h3 {
 }
 .page_table table td {
 	padding: 10px;
-	border-bottom-width: 1px;
-	border-bottom-style: dotted;
 	border-bottom-color: #C6D8E6;
 }
 .table_list {
@@ -677,10 +674,7 @@ h3 {
 }
 .table_list th {
 	padding: 10px;
-	padding-top: 5px;
-	padding-bottom: 5px;
 	background-color: #f5f6f8;
-	border-bottom: 1px solid #A2C1E6;
 	font-weight: bold;
 }
 .table_list .odd {
@@ -690,8 +684,7 @@ h3 {
 }
 /*分页*/
 .page_tool {
-	height: 35px;
-	padding-bottom: 20px;
+   margin:20px 0;
 }
 /*排序样式*/
 .sequence {

@@ -5,33 +5,14 @@
     </div>
 </div>
 <div class="tab" id="tab">
-    <a class="selected" href="#">添加{$model_info.name}</a>
+    <a class="selected" href="#tab1">基本属性</a>
+    <a href="#tab2">高级设置</a>
 </div>
 <div class="page_form">
     <form action="__URL__/add_save/time-<?php echo time(); ?>-ajax-true" method="post" id="form" autocomplete="off">
-        <div class="page_table form_table">
+        <div class="page_table form_table" id="tab1">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tr>
-                    <td width="100" align="right">栏目</td>
-                    <td width="350"><select name="cid" reg="." id="cid" onChange="get_fields()">
-                            <option value="">======选择栏目======</option>
-                            <@foreach:{$category_list $vo}>
-                            <option
-                                value="{$vo['cid']}" <?php if ($class_info['cid'] == $vo['cid']) { ?> selected="selected" <?php } ?>
-                                <?php if ($vo['type'] == 0 || $vo['mid'] <> $model_info['mid']){ ?>style="background-color:#ccc" disabled="disabled" <?php } ?>
-                                <?php if (!empty($user['class_power'])) {
-                                    if (!in_array($vo['cid'], explode(',', $user['class_power']))) {
-                                        ?> style="background-color:#ccc"  disabled="disabled" <?php
-                                    }
-                                } ?> >
-                                {$vo['cname']}
-                            </option>
-                            <@/foreach>
-                        </select>
-                        &nbsp;&nbsp;<a href="javascript:;" onclick="advanced()">高级设置</a>
-                    </td>
-                    <td></td>
-                </tr>
+
                 <tr>
                     <td width="100" align="right">标题</td>
                     <td colspan="2"><input name="title" type="text" class="text_value" id="title"
@@ -46,11 +27,6 @@
                     </td>
                     <td></td>
                 </tr>
-                <tr class="advanced">
-                    <td width="100" align="right">英文URL名称</td>
-                    <td width="350"><input name="urltitle" type="text" class="text_value" id="urltitle" value=""/></td>
-                    <td></td>
-                </tr>
                 <tr>
                     <td width="100" align="right">内容缩略图</td>
                     <td colspan="2">
@@ -60,7 +36,6 @@
                         <input type="button" class="button_small" onclick="get_one_pic()" value="提取第一张图"/>
                     </td>
                 </tr>
-
                 <tr>
                     <td width="100" align="right">内容</td>
                     <td colspan="2">
@@ -98,39 +73,6 @@
                         &nbsp;&nbsp;<input name="taglink" type="checkbox" value="1"/> 内容自动链接
                     </td>
                 </tr>
-                <tr class="advanced">
-                    <td width="100" align="right">访问量</td>
-                    <td width="350">
-                        <input name="views" type="text" class="text_value" id="views" value=""/>
-                    </td>
-                    <td>内容浏览量</td>
-                </tr>
-                <tr class="advanced">
-                    <td width="100" align="right">顺序</td>
-                    <td width="350">
-                        <input name="sequence" type="text" class="text_value" id="sequence" value=""/>
-                    </td>
-                    <td>(自定义顺序)</td>
-                </tr>
-                <tr class="advanced">
-                    <td width="100" align="right">跳转到</td>
-                    <td width="350">
-                        <input name="url" type="text" class="text_value" id="url" value=""/>
-                    </td>
-                    <td>URL链接，支持标签</td>
-                </tr>
-                <tr class="advanced">
-                    <td width="100" align="right">更新时间</td>
-                    <td width="350">
-                        <input name="updatetime" id="updatetime" type="text" class="text_value"
-                               style="width:260px; float:left" value="<?php echo date('Y-m-d H:i:s') ?>" reg="\S"
-                               msg="更新时间不能为空"/>
-
-                        <div id="updatetime_button" class="time"></div>
-                        <script>$('#updatetime_button').calendar({ id: '#updatetime', format: 'yyyy-MM-dd HH:mm:ss'});</script>
-                    </td>
-                    <td></td>
-                </tr>
                 <tbody id="expand">
                 </tbody>
 
@@ -151,6 +93,68 @@
 
             </table>
         </div>
+        <div class="page_table form_table" id="tab2">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="100" align="right">英文URL名称</td>
+                    <td width="350"><input name="urltitle" type="text" class="text_value" id="urltitle" value=""/></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td width="100" align="right">访问量</td>
+                    <td width="350">
+                        <input name="views" type="text" class="text_value" id="views" value=""/>
+                    </td>
+                    <td>内容浏览量</td>
+                </tr>
+                <tr>
+                    <td width="100" align="right">顺序</td>
+                    <td width="350">
+                        <input name="sequence" type="text" class="text_value" id="sequence" value=""/>
+                    </td>
+                    <td>(自定义顺序)</td>
+                </tr>
+                <tr>
+                    <td width="100" align="right">跳转到</td>
+                    <td width="350">
+                        <input name="url" type="text" class="text_value" id="url" value=""/>
+                    </td>
+                    <td>URL链接，支持标签</td>
+                </tr>
+                <tr>
+                    <td width="100" align="right">更新时间</td>
+                    <td width="350">
+                        <input name="updatetime" id="updatetime" type="text" class="text_value"
+                               style="width:260px; float:left" value="<?php echo date('Y-m-d H:i:s') ?>" reg="\S"
+                               msg="更新时间不能为空"/>
+
+                        <div id="updatetime_button" class="time"></div>
+                        <script>$('#updatetime_button').calendar({ id: '#updatetime', format: 'yyyy-MM-dd HH:mm:ss'});</script>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td width="100" align="right">栏目</td>
+                    <td width="350"><select name="cid" reg="." id="cid" onChange="get_fields()">
+                            <option value="">======选择栏目======</option>
+                            <@foreach:{$category_list $vo}>
+                            <option
+                                value="{$vo['cid']}" <?php if ($class_info['cid'] == $vo['cid']) { ?> selected="selected" <?php } ?>
+                                <?php if ($vo['type'] == 0 || $vo['mid'] <> $model_info['mid']){ ?>style="background-color:#ccc" disabled="disabled" <?php } ?>
+                                <?php if (!empty($user['class_power'])) {
+                                    if (!in_array($vo['cid'], explode(',', $user['class_power']))) {
+                                        ?> style="background-color:#ccc"  disabled="disabled" <?php
+                                    }
+                                } ?> >
+                                {$vo['cname']}
+                            </option>
+                            <@/foreach>
+                        </select>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
         <div class="form_submit">
             <input name="inputtime" type="hidden" value="{$php(echo time())}"/>
             <input name="file_id" id="file_id" type="hidden" value=""/>
@@ -158,9 +162,11 @@
         </div>
     </form>
 </div>
-</div>
 <script type="text/javascript">
-    $(document).ready(function () {
+    $(function () {
+
+        //tab菜单
+        $("#tab").idTabs();
         get_fields();
     });
     //TAG
