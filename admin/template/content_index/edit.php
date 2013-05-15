@@ -83,7 +83,6 @@
                 </tr>
                 <tbody id="expand">
                 </tbody>
-                <?php module('common')->plus_hook('content', 'edit_tpl', $info); ?>
                 <?php if ($user['status_power'] <> 2 || $user['keep'] == 1) { ?>
                     <tr>
                         <td width="100" align="right">状态</td>

@@ -8,15 +8,6 @@ class emptyMod extends commonMod
 
         //执行插件部分
         $module_name = in($_GET['_module']);
-        $action_name = in($_GET['_action']);
-        $plugin_info = $this->model->table('plugin')->where('file="' . $module_name . '"')->find();
-        if (!empty($plugin_info)) {
-            if ($plugin_info['status'] == 1) {
-                if (Plugin::run($module_name, $action_name)) {
-                    return;
-                }
-            }
-        }
 
         //处理根目录
         $root = substr(str_replace('/', '\/', __ROOT__), 1);

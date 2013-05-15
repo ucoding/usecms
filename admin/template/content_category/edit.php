@@ -64,7 +64,6 @@
                     </td>
                     <td>数字越大越在前面</td>
                 </tr>
-                <?php module('common')->plus_hook('category', 'edit_tpl', $info); ?>
                 <tr>
                     <td width="100" align="right">栏目模板</td>
                     <td width="300">

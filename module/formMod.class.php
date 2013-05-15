@@ -19,10 +19,6 @@ class formMod extends commonMod
             $this->error404();
         }
 
-        /*hook*/
-        $this->plus_hook('form', 'index', $info);
-        /*hook end*/
-
         $this->field_list = model('form')->field_list($info['id']);
 
         //分页处理

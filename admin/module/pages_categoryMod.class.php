@@ -30,19 +30,12 @@ class pages_categoryMod extends commonMod
         $model = $this->get_model();
         $_POST['mid'] = $model['mid'];
         $_POST['type'] = 0;
-        /*hook*/
-        $hook_replace = $this->plus_hook('category', 'add_replace', $_POST, true);
-        if (!empty($hook_replace)) {
-            $_POST = $hook_replace;
-        }
-        /*hook end*/
+
         $cid = model('category')->add_save($_POST);
         if ($cid) {
             $_POST['cid'] = $cid;
             model('pages_category')->page_save($_POST);
-            /*hook*/
-            $this->plus_hook('category', 'add');
-            /*hook end*/
+
             $this->msg('页面添加成功！', 1);
         } else {
             $this->msg('页面添加失败！', 0);
@@ -99,17 +92,9 @@ class pages_categoryMod extends commonMod
         $model = $this->get_model();
         $_POST['mid'] = $model['mid'];
 
-        /*hook*/
-        $hook_replace = $this->plus_hook('category', 'edit_replace', $_POST, true);
-        if (!empty($hook_replace)) {
-            $_POST = $hook_replace;
-        }
-        /*hook end*/
         if (model('category')->edit_save($_POST)) {
             model('pages_category')->edit_save($_POST);
-            /*hook*/
-            $this->plus_hook('category', 'edit');
-            /*hook end*/
+
             $this->msg('页面编辑成功！', 1);
         } else {
             $this->msg('页面编辑失败！', 0);
@@ -125,10 +110,6 @@ class pages_categoryMod extends commonMod
         if (model('category')->list_count($_POST['cid'])) {
             $this->msg('请先删除子栏目！', 0);
         }
-        /*hook*/
-        $this->plus_hook('category', 'del');
-        /*hook end*/
-
         $class_status = model('category')->del($_POST['cid']);
         model('pages_category')->del($_POST['cid']);
 

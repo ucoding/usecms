@@ -60,9 +60,6 @@
                     </td>
                     <td>数字越大越在前面</td>
                 </tr>
-
-
-                <?php module('common')->plus_hook('category', 'add_tpl'); ?>
                 <tr>
                     <td width="100" align="right">上级栏目</td>
                     <td width="300">

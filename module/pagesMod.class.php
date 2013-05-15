@@ -23,10 +23,6 @@ class pagesMod extends commonMod
         //模块自动纠正
         model('category')->model_jump($info['mid'], 'pages');
 
-        /*hook*/
-        $this->plus_hook('category', 'index', $info);
-        /*hook end*/
-
         //位置导航
         $this->nav = array_reverse(model('category')->nav($info['cid']));
 
@@ -51,14 +47,7 @@ class pagesMod extends commonMod
         $info['content'] = $content['content'];
         $this->page = $content['page'];
 
-        /*hook*/
-        $hook_replace = $this->plus_hook('category', 'index_replace', $info, true);
-        if (!empty($hook_replace)) {
-            $info = $hook_replace;
-        }
-        /*hook end*/
         $this->info = $info;
-
 
         //查询上级栏目信息
         $this->parent_category = model('category')->info($this->info['pid']);

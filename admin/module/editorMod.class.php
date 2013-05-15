@@ -64,7 +64,6 @@ class editorMod extends commonMod
                 }else{
                     var ext = json.url.split('.')[1];
                     switch (ext) {
-                        " . $this->plus_hook('editor', 'sapload') . "
                         default:
                             html='内容附件: <a href=\"' + json.url + '\">' + json.title + '</a></div>';
                         break;

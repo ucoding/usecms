@@ -83,17 +83,9 @@ class content_indexMod extends commonMod
     public function edit_save()
     {
 
-        /*hook*/
-        $hook_replace = $this->plus_hook('content', 'edit_replace', $_POST, true);
-        if (!empty($hook_replace)) {
-            $_POST = $hook_replace;
-        }
-        /*hook end*/
         //保存内容信息
         $status = model('content')->edit_save($_POST, false);
-        /*hook*/
-        $this->plus_hook('content', 'edit');
-        /*hook end*/
+
         if ($status) {
             $this->msg('内容编辑成功！', 1);
         } else {

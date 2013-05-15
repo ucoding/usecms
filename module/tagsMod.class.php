@@ -26,10 +26,6 @@ class tagsMod extends commonMod
         //更新点击计数
         model('tags')->views_content($info['id'], $info['click']);
 
-        /*hook*/
-        $this->plus_hook('tags', 'index', $info);
-        /*hook end*/
-
         //分页处理
         $url = __APP__ . '/tags-' . $tag . '/pages-{page}.html';
 

@@ -15,12 +15,10 @@ class commonMod
     {
         global $config;
         session_start();
-        $config['PLUGIN_PATH'] = __ROOTDIR__ . '/plugins/';
         $this->config = $config;
         $this->model = self::initModel($this->config);
         $this->init();
         $this->check_login();
-        Plugin::init('Admin', $config);
     }
 
 
@@ -226,27 +224,4 @@ class commonMod
         $page = new Page();
         return $page->show($url, $totalRows, $listRows, $rollPage);
     }
-
-    //插件钩子
-    public function plus_hook($module, $action, $data = NULL, $return = false)
-    {
-        $action_name = 'hook_' . $module . '_' . $action;
-        $list = $this->model->table('plugin')->where('status=1')->select();
-        $plugin_list = Plugin::get();
-        if (!empty($list)) {
-            foreach ($list as $value) {
-                $action_array = $plugin_list[$value['file']];
-                if (!empty($action_array)) {
-                    if (in_array($action_name, $action_array)) {
-                        if ($return) {
-                            return Plugin::run($value['file'], $action_name, $data, $return);
-                        } else {
-                            Plugin::run($value['file'], $action_name, $data);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
 }

@@ -65,9 +65,7 @@ class contentModel extends commonModel
         model('position')->add_content_save($data['position'], $aid); //保存广告位
         model('expand_model')->add_content_save($data, $aid); //录入扩展模型数据
         model('upload')->relation('content', $data['file_id'], $aid); //录入附件表
-        /*hook*/
-        $this->plus_hook('content', 'add_data', $data);
-        /*hook end*/
+
         return $aid;
     }
 
@@ -114,9 +112,7 @@ class contentModel extends commonModel
             model('expand_model')->edit_content_save($data); //录入扩展模型数据
         }
         model('upload')->relation('content', $data['file_id'], $data['aid']); //录入附件表
-        /*hook*/
-        $this->plus_hook('content', 'edit_data', $data);
-        /*hook end*/
+
         return $aid;
     }
 
@@ -136,10 +132,6 @@ class contentModel extends commonModel
     //内容删除
     public function del($aid)
     {
-        /*hook*/
-        $this->plus_hook('content', 'del_data', $aid);
-        /*hook end*/
-
         //删除内容基本信息
         model('expand_model')->del_content($aid);
         $status = $this->model->table('content')->where('aid=' . $aid)->delete();

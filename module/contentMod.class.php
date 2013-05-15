@@ -86,15 +86,6 @@ class contentMod extends commonMod
         $info['content'] = $content['content'];
         $this->page = $content['page'];
 
-        /*hook*/
-        $this->plus_hook('content', 'index', $info);
-
-        $hook_replace = $this->plus_hook('content', 'index_replace', $info, true);
-        if (!empty($hook_replace)) {
-            $info = $hook_replace;
-        }
-        /*hook end*/
-
         $this->info = $info;
 
         //上下篇

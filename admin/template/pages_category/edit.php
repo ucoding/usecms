@@ -37,9 +37,6 @@
                             html}</textarea>
                         <input type="button" onclick="javascript:get_remote_image()" style="margin-top:10px;"
                                class="button_small" value="远程图片本地化"/>
-
-                        <?php module('common')->plus_hook('content', 'tools', $info); ?>
-
                     </td>
                 </tr>
                 <tr>
@@ -55,7 +52,6 @@
                     </td>
                     <td>数字越大越在前面</td>
                 </tr>
-                <?php module('common')->plus_hook('category', 'edit_tpl'); ?>
                 <tr>
                     <td width="100" align="right">页面模板</td>
                     <td width="300">

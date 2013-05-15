@@ -28,7 +28,6 @@ class indexMod extends commonMod
         $this->user = model('user')->current_user();
         $this->content_count = model('content')->count('', '', true);
         $this->category_count = model('category')->category_count();
-        $this->plugin_count = model('plugin')->plugin_count();
         $this->tags_count = model('tags')->count();
         $this->upload_count = model('upload')->count();
         $this->show();

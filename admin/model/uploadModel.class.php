@@ -99,9 +99,7 @@ class uploadModel extends commonModel
         if (!empty($list)) {
             foreach ($list as $value) {
                 $info = $this->model->table('upload')->where('id=' . $value['file_id'])->find();
-                /*hook*/
-                $this->plus_hook('upload_file', 'del_data', $info);
-                /*hook end*/
+
                 $this->model->table('upload')->where('id=' . $value['file_id'])->delete();
                 @unlink(__ROOTDIR__ . $info['file']);
 
@@ -127,9 +125,7 @@ class uploadModel extends commonModel
         }
         $info = $this->model->table('upload')->where('id=' . $id)->find();
         @unlink(__ROOTDIR__ . $info['file']);
-        /*hook*/
-        $this->plus_hook('upload_file', 'del_data', $info);
-        /*hook end*/
+
         return $this->model->table('upload')->where('id=' . $id)->delete();
     }
 

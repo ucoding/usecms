@@ -21,14 +21,6 @@ class categoryMod extends commonMod
         //模块自动纠正
         model('category')->model_jump($this->info['mid'], 'category');
 
-        /*hook*/
-        $this->plus_hook('category', 'index', $this->info);
-        $hook_replace = $this->plus_hook('content', 'index_replace', $this->info, true);
-        if (!empty($hook_replace)) {
-            $this->info = $hook_replace;
-        }
-        /*hook end*/
-
         //位置导航
         $this->nav = array_reverse(model('category')->nav($this->info['cid']));
 

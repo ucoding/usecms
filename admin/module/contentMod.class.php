@@ -137,12 +137,6 @@ class contentMod extends commonMod
     //内容保存
     public function add_save()
     {
-        /*hook*/
-        $hook_replace = $this->plus_hook('content', 'add_replace', $_POST, true);
-        if (!empty($hook_replace)) {
-            $_POST = $hook_replace;
-        }
-        /*hook end*/
 
         //检测扩展字段是否为空
         model('expand_model')->content_check($_POST);
@@ -150,10 +144,6 @@ class contentMod extends commonMod
         //保存内容信息
         $_POST['aid'] = model('content')->add_save($_POST);
         model('content')->add_content_save($_POST);
-
-        /*hook*/
-        $this->plus_hook('content', 'add');
-        /*hook end*/
 
         if (!empty($_POST['aid'])) {
             $this->msg('内容添加成功！', 1);
@@ -187,23 +177,12 @@ class contentMod extends commonMod
     public function edit_save()
     {
 
-        /*hook*/
-        $hook_replace = $this->plus_hook('content', 'edit_replace', $_POST, true);
-        if (!empty($hook_replace)) {
-            $_POST = $hook_replace;
-        }
-        /*hook end*/
-
         //检测扩展字段是否为空
         model('expand_model')->content_check($_POST);
 
         //保存内容信息
         $status = model('content')->edit_save($_POST);
         model('content')->edit_content_save($_POST);
-
-        /*hook*/
-        $this->plus_hook('content', 'edit');
-        /*hook end*/
 
         if ($status) {
             $this->msg('内容编辑成功！', 1);
@@ -219,9 +198,6 @@ class contentMod extends commonMod
         if (empty($_POST['aid'])) {
             $this->msg('无法定位内容ID！', 0);
         }
-        /*hook*/
-        $this->plus_hook('content', 'del', $_POST['aid']);
-        /*hook end*/
 
         $status = model('content')->del($_POST['aid']);
         model('content')->del_content($_POST['aid']);
@@ -257,9 +233,6 @@ class contentMod extends commonMod
             case '3':
                 //删除
                 foreach ($id_array as $value) {
-                    /*hook*/
-                    $this->plus_hook('content', 'del', $value);
-                    /*hook end*/
 
                     model('content')->del($value);
                     model('content')->del_content($value);

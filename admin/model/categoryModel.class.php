@@ -52,9 +52,6 @@ class categoryModel extends commonModel
         //录入附件表
         model('upload')->relation('category', $data['file_id'], $cid);
 
-        /*hook*/
-        $this->plus_hook('category', 'add_data', $data);
-        /*hook end*/
         return $cid;
     }
 
@@ -68,18 +65,13 @@ class categoryModel extends commonModel
         $status = $this->model->table('category')->data($data)->where('cid=' . $cid)->update();
         //录入附件表
         model('upload')->relation('category', $data['file_id'], $cid);
-        /*hook*/
-        $this->plus_hook('category', 'edit_data', $data);
-        /*hook end*/
+
         return $status;
     }
 
     //栏目删除
     public function del($cid)
     {
-        /*hook*/
-        $this->plus_hook('category', 'del_data', $cid);
-        /*hook end*/
         $status = $this->model->table('category')->where('cid=' . $cid)->delete();
         model('upload')->del_file('category', $cid);
         return $status;

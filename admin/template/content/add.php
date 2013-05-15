@@ -42,7 +42,6 @@
                         <textarea name="content" style="width:100%; height:350px;" id="content"></textarea>
                         <input type="button" onclick="javascript:get_remote_image()" style="margin-top:10px;"
                                class="button_small" value="远程图片本地化"/>
-                        <?php module('common')->plus_hook('content', 'tools'); ?>
                     </td>
                 </tr>
                 <tr>
@@ -74,8 +73,6 @@
                 </tr>
                 <tbody id="expand">
                 </tbody>
-
-                <?php module('common')->plus_hook('content', 'add_tpl'); ?>
 
                 <?php if ($user['status_power'] <> 2 || $user['keep'] == 1) { ?>
                     <tr>

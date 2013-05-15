@@ -20,10 +20,6 @@ class searchMod extends commonMod
             $this->alert('没有关键词！');
         }
 
-        /*hook*/
-        $this->plus_hook('search', 'index', $keywords);
-        /*hook end*/
-
         //获取栏目
         $cid = model('category')->getcat(intval($_GET['cid']));
         if ($cid) {

@@ -92,13 +92,6 @@ class editor_uploadMod extends commonMod
             $title = str_replace('.' . $info['extension'], '', $info['name']);
             $json = array('error' => 0, 'url' => $file, 'original' => $file_url . $filetime . '/' . $info['savename'], 'file' => $file, 'title' => $title, 'msg' => '成功');
 
-            /*hook*/
-            $hookdata = $this->plus_hook('upload', 'index', $json, true);
-            if (!empty($hookdata)) {
-                $json = $hookdata;
-            }
-            /*hook end*/
-
             //录入数据库
             $data['file'] = $json['file'];
             $data['title'] = $json['title'];

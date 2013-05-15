@@ -55,7 +55,3 @@ $config['TPL_CACHE_TYPE'] = ''; //数据缓存类型，为空或Memcache或SaeMe
 //多国语言
 $config['LANG_PACK_PATH'] = './lang/'; //语言包目录
 
-//插件配置         
-$config['PLUGIN_PATH'] = './plugins/'; //插件目录
-$config['PLUGIN_SUFFIX'] = 'Plugin.class.php';//插件模块后缀
-

@@ -79,9 +79,7 @@ class upload_fileMod extends commonMod
         if (empty($id)) {
             $this->msg('参数传递错误！', 0);
         }
-        /*hook*/
-        $this->plus_hook('upload_file', 'del', $id);
-        /*hook end*/
+
         //录入模型处理
         $status = model('upload')->del($id);
         if ($status) {

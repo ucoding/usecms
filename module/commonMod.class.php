@@ -16,11 +16,9 @@ class commonMod
         global $config;
         session_start();
 
-        $config['PLUGIN_PATH'] = __ROOTDIR__ . '/plugins/';
         $this->config = $config;
         $this->model = self::initModel($this->config);
         $this->init();
-        Plugin::init();
     }
 
     public function _empty()
@@ -175,26 +173,6 @@ class commonMod
             return $page->nextPage('', 0);
         }
     }
-
-    //插件钩子
-    public function plus_hook($module, $action, $data = NULL)
-    {
-        $action_name = 'hook_' . $module . '_' . $action;
-        $list = $this->model->table('plugin')->select();
-        $plugin_list = Plugin::get();
-        if (!empty($list)) {
-            foreach ($list as $value) {
-                if ($value['status'] == 1) {
-                    foreach ($plugin_list as $plugin_name => $action_array) {
-                        if (in_array($action_name, $action_array)) {
-                            Plugin::run($plugin_name, $action_name, $data);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
 }
 
 ?>

@@ -53,8 +53,6 @@
                         '<font title="未开启" color=red>静态</font>';
                     } ?>
                 </td>
-                <td width="120">插件数量:</td>
-                <td>{$plugin_count}</td>
             </tr>
             <tr>
                 <td width="120">栏目数:</td>

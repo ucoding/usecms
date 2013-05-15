@@ -9,10 +9,6 @@ class indexMod extends commonMod
 
     public function index()
     {
-        /*hook*/
-        $this->plus_hook('index', 'index');
-        /*hook end*/
-
         //MEDIA信息
         $this->common = model('pageinfo')->media();
 
