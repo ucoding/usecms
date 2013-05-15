@@ -29,8 +29,8 @@ $config['THUMBNAIL_MAXWIDTH']='200'; //缩图最大宽度
 $config['THUMBNAIL_MAXHIGHT']='140'; //最大高度
 
 //调试配置
-$config['DEBUG']=true; //是否开启调试模式，true开启，false关闭
-$config['ERROR_HANDLE']=true; //是否启动CP内置的错误处理，如果开启了xdebug，建议设置为false
+$config['DEBUG']=false; //是否开启调试模式，true开启，false关闭
+$config['ERROR_HANDLE']=false; //是否启动CP内置的错误处理，如果开启了xdebug，建议设置为false
 
 //伪静态
 $config['URL_REWRITE_ON']=true; //是否开启重写，true开启重写,false关闭重写
