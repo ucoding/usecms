@@ -66,18 +66,6 @@ class editor_uploadMod extends commonMod
             //返回信息 Array ( [0] => Array ( [name] => 未命名.jpg [type] => image/pjpeg [size] => 53241 [key] => Filedata [extension] => jpg [savepath] => ../../../upload/2011-12-17/ [savename] => 1112170727041127335395.jpg ) )
             $ext = $info['extension'];
 
-            if ($_POST['wateradd']) {
-                $waterfile = __ROOTDIR__ . '/public/watermark/' . $this->config['WATERMARK_IMAGE'];
-                if ($_POST['waterpor'] == 0) {
-                    $por = $this->config['WATERMARK_PLACE'];
-                } else {
-                    $por = $_POST['waterpor'];
-                }
-                if ($ext == 'jpg' || $ext == 'jpeg' || $ext == 'png' || $ext == 'gif') {
-                    Image::water($file_path . $filetime . '/' . $info['savename'], $waterfile, $por);
-                }
-            }
-
             if ($_POST['thumb']) {
                 //设置高度和宽度
                 $thumbwidth = intval($_POST['thumbwidth']);

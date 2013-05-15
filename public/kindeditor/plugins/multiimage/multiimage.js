@@ -34,23 +34,6 @@ K.extend(KSWFUpload, {
 			'</span>',
 			'</div>',
 			'<div class="ke-dialog-row">',
-			'&nbsp;<select name="wateradd" id="wateradd"> ',
-			'<option value="0" >无水印</option>',
-			'<option value="1" >打水印</option>',
-			
-			'</select>',
-			'&nbsp;<select name="waterpor" id="waterpor"> ',
-			'<option value="0" >系统水印位置</option>',
-			'<option value="1" >左上</option>',
-			'<option value="2" >中上</option>',
-			'<option value="3" >右上</option>',
-			'<option value="4" >左中</option>',
-			'<option value="5" >正中</option>',
-			'<option value="6" >右中</option>',
-			'<option value="7" >左下</option>',
-			'<option value="8" >中下</option>',
-			'<option value="9" >右下</option>',
-			'</select>',
 			'&nbsp;<select name="thumb" id="thumb"> ',
 			'<option value="0" >不缩图</option>',
 			'<option value="1" >缩图</option>',
@@ -150,8 +133,6 @@ K.extend(KSWFUpload, {
 		self.swfu = new SWFUpload(settings);
 
 		K('.ke-swfupload-startupload input', self.div).click(function() {
-			self.swfu.addPostParam('wateradd',K('#wateradd', self.div).val());
-			self.swfu.addPostParam('waterpor',K('#waterpor', self.div).val());
 			self.swfu.addPostParam('thumb',K('#thumb', self.div).val());
 			self.swfu.addPostParam('thumbwidth',K('#thumbwidth', self.div).val());
 			self.swfu.addPostParam('thumbheight',K('#thumbheight', self.div).val());

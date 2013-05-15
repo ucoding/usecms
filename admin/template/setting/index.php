@@ -172,58 +172,6 @@
                            name="THUMBNAIL_MAXHIGHT" id="THUMBNAIL_MAXHIGHT"/></td>
                 <td>单位:px</td>
             </tr>
-            <tr>
-                <td>默认水印位置：</td>
-                <td><select name="WATERMARK_PLACE" id="WATERMARK_PLACE">
-                        <option
-                            value="0" <?php if ($config_array['WATERMARK_PLACE'] == 0) { ?> selected="selected" <?php } ?>>
-                            随机
-                        </option>
-                        <option
-                            value="1" <?php if ($config_array['WATERMARK_PLACE'] == 1) { ?> selected="selected" <?php } ?> >
-                            左上
-                        </option>
-                        <option
-                            value="2" <?php if ($config_array['WATERMARK_PLACE'] == 2) { ?> selected="selected" <?php } ?> >
-                            中上
-                        </option>
-                        <option
-                            value="3" <?php if ($config_array['WATERMARK_PLACE'] == 3) { ?> selected="selected" <?php } ?>>
-                            右上
-                        </option>
-                        <option
-                            value="4" <?php if ($config_array['WATERMARK_PLACE'] == 4) { ?> selected="selected" <?php } ?>>
-                            左中
-                        </option>
-                        <option
-                            value="5" <?php if ($config_array['WATERMARK_PLACE'] == 5) { ?> selected="selected" <?php } ?>>
-                            正中
-                        </option>
-                        <option
-                            value="6" <?php if ($config_array['WATERMARK_PLACE'] == 6) { ?> selected="selected" <?php } ?>>
-                            右中
-                        </option>
-                        <option
-                            value="7" <?php if ($config_array['WATERMARK_PLACE'] == 7) { ?> selected="selected" <?php } ?>>
-                            左下
-                        </option>
-                        <option
-                            value="8" <?php if ($config_array['WATERMARK_PLACE'] == 8) { ?> selected="selected" <?php } ?>>
-                            中下
-                        </option>
-                        <option
-                            value="9" <?php if ($config_array['WATERMARK_PLACE'] == 9) { ?> selected="selected" <?php } ?>>
-                            右下
-                        </option>
-                    </select></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>水印图片：</td>
-                <td><input class="text_value" type='text' value="{$config_array.WATERMARK_IMAGE}" name="WATERMARK_IMAGE"
-                           id="WATERMARK_IMAGE"/></td>
-                <td></td>
-            </tr>
         </table>
     </div>
 </div>

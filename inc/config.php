@@ -27,9 +27,6 @@ $config['ACCESSPRY_TYPE']='jpg,bmp,gif,png,flv,mp4,mp3,wma,mp4,7z,zip,rar,ppt,tx
 $config['THUMBNAIL_SWIHCH'] = true; //是否缩图
 $config['THUMBNAIL_MAXWIDTH']='200'; //缩图最大宽度
 $config['THUMBNAIL_MAXHIGHT']='140'; //最大高度
-$config['WATERMARK_SWITCH'] = false; //是否打水印
-$config['WATERMARK_PLACE']='5'; //水印位置
-$config['WATERMARK_IMAGE']='logo.png'; //水印图片
 
 //调试配置
 $config['DEBUG']=true; //是否开启调试模式，true开启，false关闭

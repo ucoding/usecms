@@ -88,8 +88,8 @@ function template_ext($template, $config = array())
     $template = preg_replace("/\{(\\$[a-z0-9_]+)\.titlex\}/iU", "<?php \$titlex=$1['title']; if(!empty($1['font_color'])){ \$titlex='<font color=\"'.$1['font_color'].'\">'.\$titlex.'</font>'; } if($1['font_bold']==1){ \$titlex='<strong>'.\$titlex.'</strong>'; }  echo \$titlex;  unset(\$titlex); ?>",
         $template);
 
-    //样式+字数
-    $template = preg_replace("/\{(\\$[a-z0-9_]+)\.titlex\s+len\=\"(.*)\"\}/iU", "<?php \$titlex=msubstr($1['title'],0,$2); if(!empty($1['font_color'])){ \$titlex='<font color=\"'.$1['font_color'].'\">'.\$titlex.'</font>'; } if($1['font_bold']==1){ \$titlex='<strong>'.\$titlex.'</strong>'; }  echo \$titlex; unset(\$titlex); ?>",
+    //字数
+    $template = preg_replace("/\{(\\$[a-z0-9_]+)\.titlex\s+len\=\"(.*)\"\}/iU", "<?php \$titlex=msubstr($1['title'],0,$2); echo \$titlex; unset(\$titlex); ?>",
         $template);
 
     //字符截取
