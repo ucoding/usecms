@@ -55,30 +55,6 @@
                 targetMode: "list"
             });
             <?php } ?>
-            //清除缓存
-            $("#cache").powerFloat({
-                width: 100,
-                eventType: "click",
-                target: [
-                    {
-                        href: "javascript:clear('1')",
-                        text: "清除所有缓存"
-                    },
-                    {
-                        href: "javascript:clear('2')",
-                        text: "清除模板缓存"
-                    },
-                    {
-                        href: "javascript:clear('3')",
-                        text: "清除静态缓存"
-                    },
-                    {
-                        href: "javascript:clear('4')",
-                        text: "清除数据缓存"
-                    }
-                ],
-                targetMode: "list"
-            });
 
         });
 
@@ -136,32 +112,6 @@
             });
         }
 
-
-        //清除缓存
-        function clear(type) {
-            var url;
-            switch (type) {
-                case '1':
-                    url = "__APP__/cache/clear_all";
-                    break;
-                case '2':
-                    url = "__APP__/cache/clear_tpl";
-                    break;
-                case '3':
-                    url = "__APP__/cache/clear_html";
-                    break;
-                case '4':
-                    url = "__APP__/cache/clear_data";
-                    break;
-            }
-
-
-            $.get(url, function (json) {
-                $.dialog.tips(json.message, 3);
-                $('#floatBox_list').hide();
-            }, 'json');
-        }
-
     </script>
 </head>
 <body>
@@ -184,9 +134,12 @@
     <?php if ($config['LANG_OPEN']) { ?>
         <div id="lang_tab"><a id="lang" class="menu" href="#">{$lang.name}</a></div>
     <?php } ?>
-    <div id="tool"> 欢迎登陆: {$user.user} [{$user.nicename}]&nbsp;&nbsp; <a href="#" onclick="logout()">退出</a>&nbsp;&nbsp;&nbsp;<a
-            href="#" id="cache" class="menu">清除缓存</a>&nbsp;&nbsp;&nbsp;<a href="__ROOTURL__/"
-                                                                          target="_blank">网站首页</a></div>
+    <div id="tool">
+        欢迎登陆: {$user.user} [{$user.nicename}]&nbsp;&nbsp;
+        <a href="__ROOTURL__/" target="_blank">网站首页</a> &nbsp;&nbsp;
+        <a href="#" onclick="logout()">退出</a>
+
+    </div>
 </div>
 <!--左边-->
 <div id="nav" class="scroll-pane"></div>

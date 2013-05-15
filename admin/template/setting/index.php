@@ -7,7 +7,8 @@
 </div>
 <div class="tab" id="tab">
     <a class="selected" href="#tab1">站点设置</a>
-    <a href="#tab2">性能设置</a>
+    <a href="#tab2">缓存设置</a>
+    <a href="#tab3">模板设置</a>
     <a href="#tab4">上传设置</a>
 </div>
 <div class="page_form">
@@ -99,6 +100,31 @@
                 <td>建议网站上线后开启</td>
             </tr>
             <tr>
+                <td>清除全部缓存：</td>
+                <td><a href="javascript:clear('1')" class="float_list_a">清除所有缓存</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>清除模板缓存：</td>
+                <td><a href="javascript:clear('2')" class="float_list_a">清除模板缓存</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>清除静态缓存：</td>
+                <td><a href="javascript:clear('3')" class="float_list_a">清除静态缓存</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>清除数据缓存：</td>
+                <td><a href="javascript:clear('4')" class="float_list_a">清除数据缓存</a></td>
+                <td></td>
+            </tr>
+
+        </table>
+    </div>
+    <div class="page_table form_table" id="tab3">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
                 <td>多国语言：</td>
                 <td>
                     <?php if ($config_array['LANG_OPEN']) { ?>
@@ -116,8 +142,6 @@
             </tr>
         </table>
     </div>
-
-
     <div class="page_table form_table" id="tab4">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
@@ -207,6 +231,31 @@
     <button type="submit" class="button">保存</button>
 </div>
 <script type="text/javascript">
+    //清除缓存
+    function clear(type) {
+        var url;
+        switch (type) {
+            case '1':
+                url = "__APP__/cache/clear_all";
+                break;
+            case '2':
+                url = "__APP__/cache/clear_tpl";
+                break;
+            case '3':
+                url = "__APP__/cache/clear_html";
+                break;
+            case '4':
+                url = "__APP__/cache/clear_data";
+                break;
+        }
+
+
+        $.get(url, function (json) {
+            $.dialog.tips(json.message, 3);
+            $('#floatBox_list').hide();
+        }, 'json');
+    }
+
     //提交表单
     saveform(function (msg) {
         $.dialog.tips(msg, 3)
