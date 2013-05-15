@@ -75,7 +75,12 @@ class pagesMod extends commonMod
 
         //获取顶级栏目信息
         $this->top_category = model('category')->info($this->nav[0]['cid']);
-        $this->display($info['class_tpl']);
+
+        $tpl = $this->info['class_tpl'];
+        if (empty($tpl)) {
+            $tpl = "page.php";
+        }
+        $this->display($tpl);
     }
 
 

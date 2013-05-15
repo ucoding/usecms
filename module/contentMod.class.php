@@ -104,11 +104,15 @@ class contentMod extends commonMod
         $next = model('content')->next_content($aid, $this->category['cid'], $this->category['expand']);
         $this->assign('next', $next);
 
-        if (empty($info['tpl'])) {
-            $this->display($this->category['content_tpl']);
-        } else {
-            $this->display($info['tpl']);
+        $tpl = $info['tpl'];
+        if (empty($tpl)) {
+            $tpl = $this->category['content_tpl'];
+            if (empty($tpl)) {
+                $tpl = 'content.php';
+            }
         }
+
+        $this->display($tpl);
     }
 
 }
