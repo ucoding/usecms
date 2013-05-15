@@ -11,19 +11,7 @@
     <form action="__URL__/add_save/time-<?php echo time(); ?>-ajax-true" method="post" id="form">
         <div class="page_table form_table">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tr>
-                    <td width="100" align="right">上级栏目</td>
-                    <td width="300">
-                        <select name="pid" id="pid">
-                            <option value="0">=====顶级栏目=====</option>
-                            <@foreach:{$category_list $vo}>
-                            <option value="{$vo.cid}">{$vo.cname}</option>
-                            <@/foreach>
-                        </select>
-                        &nbsp;&nbsp;<a href="javascript:;" onclick="advanced()">高级设置</a>
-                    </td>
-                    <td></td>
-                </tr>
+
                 <tr>
                     <td width="100" align="right">跳转页面名称</td>
                     <td>
@@ -73,7 +61,21 @@
                     <td>数字越大越在前面</td>
                 </tr>
 
+
                 <?php module('common')->plus_hook('category', 'add_tpl'); ?>
+                <tr>
+                    <td width="100" align="right">上级栏目</td>
+                    <td width="300">
+                        <select name="pid" id="pid">
+                            <option value="0">=====顶级栏目=====</option>
+                            <@foreach:{$category_list $vo}>
+                            <option value="{$vo.cid}">{$vo.cname}</option>
+                            <@/foreach>
+                        </select>
+                        &nbsp;&nbsp;<a href="javascript:;" onclick="advanced()">高级设置</a>
+                    </td>
+                    <td></td>
+                </tr>
 
             </table>
         </div>

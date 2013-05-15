@@ -12,18 +12,7 @@
     <form action="__URL__/add_save/time-<?php echo time(); ?>-ajax-true" method="post" id="form">
         <div class="page_table form_table" id="tab1">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tr>
-                    <td width="100" align="right">上级栏目</td>
-                    <td width="300">
-                        <select name="pid" id="pid">
-                            <option value="0">=====顶级栏目=====</option>
-                            <@foreach:{$category_list $vo}>
-                            <option value="{$vo.cid}">{$vo.cname}</option>
-                            <@/foreach>
-                        </select>
-                    </td>
-                    <td></td>
-                </tr>
+
                 <tr>
                     <td width="100" align="right">页面名称</td>
                     <td>
@@ -115,6 +104,18 @@
                         隐藏
                     </td>
                     <td>控制栏目调用的显示与隐藏</td>
+                </tr>
+                <tr>
+                    <td width="100" align="right">上级栏目</td>
+                    <td width="300">
+                        <select name="pid" id="pid">
+                            <option value="0">=====顶级栏目=====</option>
+                            <@foreach:{$category_list $vo}>
+                            <option value="{$vo.cid}">{$vo.cname}</option>
+                            <@/foreach>
+                        </select>
+                    </td>
+                    <td></td>
                 </tr>
             </table>
         </div>

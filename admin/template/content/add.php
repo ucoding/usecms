@@ -12,7 +12,6 @@
     <form action="__URL__/add_save/time-<?php echo time(); ?>-ajax-true" method="post" id="form" autocomplete="off">
         <div class="page_table form_table" id="tab1">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
-
                 <tr>
                     <td width="100" align="right">标题</td>
                     <td colspan="2"><input name="title" type="text" class="text_value" id="title"
