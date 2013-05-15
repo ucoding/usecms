@@ -10,10 +10,7 @@
 </head>
 
 <body>
-<@头部>
 <@include file="head.php">
-<@END>
-<@中部>
 <div id="central">
     <div class="error404">
         <div class="taglist">
@@ -27,11 +24,7 @@
         </div>
     </div>
 </div>
-<@END>
-
-<@底部>
 <@include file="foot.php">
-<@END>
 
 </body>
 </html>

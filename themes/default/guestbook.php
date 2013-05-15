@@ -1,4 +1,4 @@
-<div class="guestbook">     5656
+<div class="guestbook">
     <@foreach:{$loop $list}>
     <div class="list">
         <div class="content"> {$list.content html}

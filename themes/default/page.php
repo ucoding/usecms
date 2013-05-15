@@ -10,10 +10,7 @@
 </head>
 
 <body>
-<@头部>
 <@include file="head.php">
-<@END>
-<@中部>
 <div id="central">
     <div id="main" class="fn-left">
         <div id="pagenav">
@@ -32,7 +29,6 @@
         </div>
 
     </div>
-    <@边栏>
     <div id="sidebar" class="fn-right">
         <div class="box">
             <div class="boxhead">
@@ -65,14 +61,9 @@
         </div>
 
     </div>
-    <@END>
     <div class="fn-clear"></div>
 </div>
-<@END>
-
-<@底部>
 <@include file="foot.php">
-<@END>
 
 </body>
 </html>
