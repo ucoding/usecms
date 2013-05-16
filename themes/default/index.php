@@ -13,51 +13,51 @@
 <@include file="head.php">
 <div id="central">
     <div id="main" class="fn-left">
-        <div class="mainhead">
-            <div class="slideshow fn-left">
-                <ul>
-                    <@list_pic:{table="content" image="true" position="3" order="updatetime desc" limit="10" }>
-                    <li><a href="{$list_pic.aurl}" title="{$list_pic.title}" target="_blank"><img
-                                src="{$list_pic.image}" width="300" height="300" alt="{$list_pic.title}"/></a></li>
-                    <@/list_pic>
-                </ul>
-            </div>
-            <div class="indexhot">
-                <@list:{table="content" position="1" order="updatetime desc" limit="3"}>
-                <div class="hotbox">
-                    <h2><a href="{$list.aurl}" target="_blank" title="{$list.title}">{$list.title len="20"}</a></h2>
-
-                    <p>{$list.description len="60"}</p>
-                </div>
-                <div class="sep10"></div>
-                <@/list>
-                <div class="hotlist">
-                    <ul>
-                        <@list:{table="content" position="1" order="updatetime desc" limit="3,4"}>
-                        <li><span>•</span> <a href="{$list.aurl}" target="_blank" title="{$list.title}">{$list.title
-                                len="13"}</a></li>
-                        <@/list>
-                    </ul>
-                </div>
-            </div>
-            <div class="fn-clear"></div>
-        </div>
-        <div class="headtitle">
-            <h3>产品</h3>
-        </div>
-        <div class="piclist">
-            <ul>
-                <@list:{table="content" image="true" order="updatetime desc" limit="4"}>
-                <li>
-                    <div class="pic"><a href="{$list.aurl}" target="_blank" title="{$list.title}"><img
-                                src="{$list.image}" width="130" height="120" alt="{$list.title}"/></a></div>
-                    <div class="title"><a href="{$list.aurl}" target="_blank" title="{$list.title}">{$list.title
-                            len="12"}</a></div>
-                </li>
-                <@/list>
-            </ul>
-            <div class="fn-clear"></div>
-        </div>
+<!--        <div class="mainhead">-->
+<!--            <div class="slideshow fn-left">-->
+<!--                <ul>-->
+<!--                    <@list_pic:{table="content" image="true" position="3" order="updatetime desc" limit="10" }>-->
+<!--                    <li><a href="{$list_pic.aurl}" title="{$list_pic.title}" target="_blank"><img-->
+<!--                                src="{$list_pic.image}" width="300" height="300" alt="{$list_pic.title}"/></a></li>-->
+<!--                    <@/list_pic>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--            <div class="indexhot">-->
+<!--                <@list:{table="content" position="1" order="updatetime desc" limit="3"}>-->
+<!--                <div class="hotbox">-->
+<!--                    <h2><a href="{$list.aurl}" target="_blank" title="{$list.title}">{$list.title len="20"}</a></h2>-->
+<!---->
+<!--                    <p>{$list.description len="60"}</p>-->
+<!--                </div>-->
+<!--                <div class="sep10"></div>-->
+<!--                <@/list>-->
+<!--                <div class="hotlist">-->
+<!--                    <ul>-->
+<!--                        <@list:{table="content" position="1" order="updatetime desc" limit="3,4"}>-->
+<!--                        <li><span>?</span> <a href="{$list.aurl}" target="_blank" title="{$list.title}">{$list.title-->
+<!--                                len="13"}</a></li>-->
+<!--                        <@/list>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="fn-clear"></div>-->
+<!--        </div>-->
+<!--        <div class="headtitle">-->
+<!--            <h3>图片</h3>-->
+<!--        </div>-->
+<!--        <div class="piclist">-->
+<!--            <ul>-->
+<!--                <@list:{table="content" image="true" order="updatetime desc" limit="4"}>-->
+<!--                <li>-->
+<!--                    <div class="pic"><a href="{$list.aurl}" target="_blank" title="{$list.title}"><img-->
+<!--                                src="{$list.image}" width="130" height="120" alt="{$list.title}"/></a></div>-->
+<!--                    <div class="title"><a href="{$list.aurl}" target="_blank" title="{$list.title}">{$list.title-->
+<!--                            len="12"}</a></div>-->
+<!--                </li>-->
+<!--                <@/list>-->
+<!--            </ul>-->
+<!--            <div class="fn-clear"></div>-->
+<!--        </div>-->
         <div class="sep10"></div>
         <div class="headtitle">
             <h3>栏目列表</h3>
@@ -133,7 +133,6 @@
         </div>
     </div>
     <div class="fn-clear"></div>
-    <@include file="link_list.php">
 </div>
 <@include file="foot.php">
 </body>

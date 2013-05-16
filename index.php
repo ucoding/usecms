@@ -18,5 +18,4 @@ define('__UPL__', __ROOT__ . '/upload/');
 $app = new cpApp($config);
 Lang::init($config);
 $app->run();
-echo $_SERVER["SCRIPT_NAME"];
 ?>
