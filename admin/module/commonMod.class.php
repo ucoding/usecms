@@ -199,12 +199,12 @@ class commonMod
     public function load_js()
     {
         $js = '';
-        $js .= '<script type=text/javascript src="' . __PUBLICURL__ . '/js/jquery.js"></script>' . PHP_EOL;
-        $js .= '<script type=text/javascript src="' . __PUBLICURL__ . '/js/duxui.js"></script>' . PHP_EOL;
-        $js .= '<script type=text/javascript src="' . __PUBLICURL__ . '/js/dialog/lhgdialog.min.js?skin=default"></script>' . PHP_EOL;
-        $js .= '<script type=text/javascript src="' . __PUBLICURL__ . '/kindeditor/kindeditor-min.js"></script>' . PHP_EOL;
-        $js .= '<script type=text/javascript src="' . __PUBLICURL__ . '/kindeditor/lang/zh_CN.js"></script>' . PHP_EOL;
-        $js .= '<script type=text/javascript src="' . __PUBLICURL__ . '/js/common.js"></script>' . PHP_EOL;
+        $js .= '<script type=text/javascript src="' . __ADMINRES__ . '/js/jquery.js"></script>' . PHP_EOL;
+        $js .= '<script type=text/javascript src="' . __ADMINRES__ . '/js/duxui.js"></script>' . PHP_EOL;
+        $js .= '<script type=text/javascript src="' . __ADMINRES__ . '/js/dialog/lhgdialog.min.js?skin=default"></script>' . PHP_EOL;
+        $js .= '<script type=text/javascript src="' . __ADMINRES__ . '/kindeditor/kindeditor-min.js"></script>' . PHP_EOL;
+        $js .= '<script type=text/javascript src="' . __ADMINRES__ . '/kindeditor/lang/zh_CN.js"></script>' . PHP_EOL;
+        $js .= '<script type=text/javascript src="' . __ADMINRES__ . '/js/common.js"></script>' . PHP_EOL;
         return $js;
     }
 
@@ -212,9 +212,9 @@ class commonMod
     public function load_css()
     {
         $css = '';
-        $css .= '<link href="' . __PUBLICURL__ . '/css/base.css" rel="stylesheet" type="text/css" />' . PHP_EOL;
-        $css .= '<link href="' . __PUBLICURL__ . '/css/style.css" rel="stylesheet" type="text/css" />' . PHP_EOL;
-        $css .= '<link href="' . __PUBLICURL__ . '/kindeditor/themes/default/default.css" rel="stylesheet" type="text/css" />' . PHP_EOL;
+        $css .= '<link href="' . __ADMINRES__ . '/css/base.css" rel="stylesheet" type="text/css" />' . PHP_EOL;
+        $css .= '<link href="' . __ADMINRES__ . '/css/style.css" rel="stylesheet" type="text/css" />' . PHP_EOL;
+        $css .= '<link href="' . __ADMINRES__ . '/kindeditor/themes/default/default.css" rel="stylesheet" type="text/css" />' . PHP_EOL;
         return $css;
     }
 

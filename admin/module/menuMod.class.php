@@ -38,12 +38,12 @@ class menuMod extends commonMod
         if (!empty($tree)) {
             foreach ($tree as $value) {
                 if (empty($value['admin_content'])) {
-                    $url = ' , url:"' . __APP__ . '/' . $value['admin_category'] . '/edit/id-' . $value['cid'] . '-type-content", target:"main" , icon:"' . __PUBLICURL__ . '/ztree/css/img/ico2.gif" ';
+                    $url = ' , url:"' . __APP__ . '/' . $value['admin_category'] . '/edit/id-' . $value['cid'] . '-type-content", target:"main" , icon:"' . __ADMINRES__ . '/ztree/css/img/ico2.gif" ';
                 } else {
                     if ($value['type'] == 1) {
-                        $url = ' , url:"' . __APP__ . '/' . $value['admin_content'] . '/index/id-' . $value['cid'] . '", target:"main" , icon:"' . __PUBLICURL__ . '/ztree/css/img/ico3.gif" ';
+                        $url = ' , url:"' . __APP__ . '/' . $value['admin_content'] . '/index/id-' . $value['cid'] . '", target:"main" , icon:"' . __ADMINRES__ . '/ztree/css/img/ico3.gif" ';
                     } else {
-                        $url = ' , icon:"' . __PUBLICURL__ . '/ztree/css/img/ico1.gif" ';
+                        $url = ' , icon:"' . __ADMINRES__ . '/ztree/css/img/ico1.gif" ';
                     }
                 }
                 if ($value['pw'] == 1) {

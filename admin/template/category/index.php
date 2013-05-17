@@ -36,7 +36,7 @@
                        target="_blank">{$vo.cname}</a>
                     <@if:{$vo['image']<>''}>
                     <a href="javascript:;" rel="{$vo.image}" class="class_pic"><img align="AbsMiddle"
-                                                                                    src="__PUBLICURL__/images/ico/pic.png"
+                                                                                    src="__ADMINRES__/images/ico/pic.png"
                                                                                     width="14" height="14" alt=""/></a>
                     <@/if>
                 </td>

@@ -6,9 +6,9 @@
     <title>{$config.sitename} - 网站管理系统</title>
     {$css}
     {$js}
-    <link href="__PUBLICURL__/ztree/css/zTreeStyle.css" rel="stylesheet" type="text/css"/>
-    <script src="__PUBLICURL__/ztree/jquery.ztree.js"></script>
-    <script src="__PUBLICURL__/ztree/jquery.ztree.exhide.js"></script>
+    <link href="__ADMINRES__/ztree/css/zTreeStyle.css" rel="stylesheet" type="text/css"/>
+    <script src="__ADMINRES__/ztree/jquery.ztree.js"></script>
+    <script src="__ADMINRES__/ztree/jquery.ztree.exhide.js"></script>
     <script>
         var myLayout;
         var pane;
@@ -115,7 +115,7 @@
 </head>
 <body>
 <div id="head">
-    <div id="logo"><img src="__PUBLICURL__/images/logo.gif" width="180" height="50"/></div>
+    <div id="logo"><img src="__ADMINRES__/images/logo.gif" width="180" height="50"/></div>
     <div class="top_nav">
         <ul>
             <li class="mainmenu"><a href="__APP__/menu/index">首页</a></li>

@@ -9,7 +9,7 @@ class editorMod extends commonMod
     //获取编辑器
     public function get_editor($id, $ajax = false)
     {
-        $ext_str = 'cssPath : \'' . __PUBLICURL__ . '/kindeditor/plugins/code/prettify.css\',';
+        $ext_str = 'cssPath : \'' . __ADMINRES__ . '/kindeditor/plugins/code/prettify.css\',';
         $ext_str .= 'fileManagerJson:\'' . __APP__ . '/editor_file_manage/index.html' . '\',';
         $ext_str .= 'uploadJson:\'' . __APP__ . '/editor_upload/index.html?key=' . urlencode($this->config['SPOT'] . $this->config['DB_NAME']) . '\',';
 
@@ -41,7 +41,7 @@ class editorMod extends commonMod
         $html = '';
         $html .= '<span id="sapload"></span>';
         $html .= "
-        <script type=text/javascript src=\"" . __PUBLICURL__ . "/sapload/swfobject.js\"></script>
+        <script type=text/javascript src=\"" . __ADMINRES__ . "/sapload/swfobject.js\"></script>
         <script type=\"text/javascript\">
             var flashvars = {};
             flashvars.types = '*';
@@ -56,7 +56,7 @@ class editorMod extends commonMod
             var params = {};
             params.wmode = 'opaque';
             var attributes = {};
-            swfobject.embedSWF('" . __PUBLICURL__ . "/sapload/sapload.swf', 'sapload', '450', '25', '9.0.0', '', flashvars, params, attributes);
+            swfobject.embedSWF('" . __ADMINRES__ . "/sapload/sapload.swf', 'sapload', '450', '25', '9.0.0', '', flashvars, params, attributes);
             function sapLoadMsg(t){
                 json=eval('(' + t + ')');
                 if(json.error==1){

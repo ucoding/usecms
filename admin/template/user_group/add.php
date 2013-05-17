@@ -1,7 +1,7 @@
-<link href="__PUBLICURL__/ztree/css/zTreeStyle.css" rel="stylesheet" type="text/css"/>
-<script src="__PUBLICURL__/ztree/jquery.ztree.js"></script>
-<script src="__PUBLICURL__/ztree/jquery.ztree.exhide.js"></script>
-<script src="__PUBLICURL__/ztree/jquery.ztree.excheck.js"></script>
+<link href="__ADMINRES__/ztree/css/zTreeStyle.css" rel="stylesheet" type="text/css"/>
+<script src="__ADMINRES__/ztree/jquery.ztree.js"></script>
+<script src="__ADMINRES__/ztree/jquery.ztree.exhide.js"></script>
+<script src="__ADMINRES__/ztree/jquery.ztree.excheck.js"></script>
 <script>
     var zTree;
     var setting = {

@@ -106,7 +106,7 @@
                 <td><span><a href="<?php echo ROOTAPP ?>/label/admin_aurl/aid-{$vo['aid']}.php" target="_blank">{$vo.title}</a>
         <@if:{$vo['image']<>''}>
         <a href="javascript:void(0);" rel="{$vo.image}" class="class_pic"><img align="AbsMiddle"
-                                                                               src="__PUBLICURL__/images/ico/pic.png"
+                                                                               src="__ADMINRES__/images/ico/pic.png"
                                                                                width="14" height="14" alt=""/></a>
         <@/if>
         </span>

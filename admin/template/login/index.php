@@ -4,12 +4,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>后台管理系统</title>
-    <script type=text/javascript src="__PUBLICURL__/js/jquery.js"></script>
-    <script type=text/javascript src="__PUBLICURL__/js/duxui.js"></script>
-    <script type=text/javascript src="__PUBLICURL__/js/common.js"></script>
-    <script type=text/javascript src="__PUBLICURL__/js/dialog/lhgdialog.min.js?skin=default"></script>
-    <link href="__PUBLICURL__/css/base.css" rel="stylesheet" type="text/css"/>
-    <link href="__PUBLICURL__/css/login.css" rel="stylesheet" type="text/css"/>
+    <script type=text/javascript src="__ADMINRES__/js/jquery.js"></script>
+    <script type=text/javascript src="__ADMINRES__/js/duxui.js"></script>
+    <script type=text/javascript src="__ADMINRES__/js/common.js"></script>
+    <script type=text/javascript src="__ADMINRES__/js/dialog/lhgdialog.min.js?skin=default"></script>
+    <link href="__ADMINRES__/css/base.css" rel="stylesheet" type="text/css"/>
+    <link href="__ADMINRES__/css/login.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div class="login">

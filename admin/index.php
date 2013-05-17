@@ -11,7 +11,7 @@ $adminfile = '/' . (end($admindir));
 $root = substr($root, 0, -1);
 $root = str_replace($adminfile, '', $root);
 define('__ROOTURL__', $root); //根URL
-define('__PUBLICURL__', $root . '/res'); //根公共URL
+define('__ADMINRES__', $root . '/admin/res'); //根公共URL
 define('__UPDURL__', $root . '/upload'); //根上传目录
 define('__ROOTUPD__', $root . '/public/upload'); //根公共上传
 define('__UPDDIR__', __ROOTDIR__ . '/upload'); //根上传目录
