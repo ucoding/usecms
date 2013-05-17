@@ -1,3 +1,4 @@
+
 <div class="page_function">
     <div class="info">
         <h3>{$class_info.name} - 内容管理</h3>
@@ -20,8 +21,7 @@
                 value="__URL__/index/id-{$class_info.cid}-sequence-2" <?php if ($_GET['sequence'] == 2) { ?> selected="selected" <?php } ?> >
                 更新时间 旧->新
             </option>
-            <option
-                value="__URL__/index/id-{$class_info.cid}-sequence-3" <?php if ($_GET['sequence'] == 3) { ?> selected="selected" <?php } ?> >
+            <option value="__URL__/index/id-{$class_info.cid}-sequence-3" <?php if ($_GET['sequence'] == 3) { ?> selected="selected" <?php } ?> >
                 内容ID 大->小
             </option>
             <option
@@ -248,4 +248,5 @@
     )
     ;
     }
+
 </script>

@@ -12,7 +12,7 @@ function hrftload() {
                 if (len == "" || len == '#') {
                     return false;
                 }
-                ajaxload(url);
+                top.main_load(url);
             }
 
         e.preventDefault();
@@ -29,12 +29,9 @@ function hrftload() {
     });
 }
 
-function ajaxload(url) {
-    main_load(url);
-}
 //菜单超链接跳转
 function menuload(url) {
-    window.top.main_load(url);
+    top.main_load(url);
 }
 //绑定表格隔行变色
 function livetable() {

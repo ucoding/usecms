@@ -161,18 +161,6 @@ class commonMod
         exit;
     }
 
-    //操作成功之后跳转,默认三秒钟跳转
-    protected function success($msg, $url = null, $waitSecond = 3)
-    {
-        if ($url == null)
-            $url = __URL__;
-        $this->assign('message', $this->getlang($msg));
-        $this->assign('url', $url);
-        $this->assign('waitSecond', $waitSecond);
-        $this->display('success');
-        exit;
-    }
-
     //弹出信息
     protected function alert($msg, $url = NULL)
     {
@@ -205,6 +193,8 @@ class commonMod
         $js .= '<script type=text/javascript src="' . __ADMINRES__ . '/kindeditor/kindeditor-min.js"></script>' . PHP_EOL;
         $js .= '<script type=text/javascript src="' . __ADMINRES__ . '/kindeditor/lang/zh_CN.js"></script>' . PHP_EOL;
         $js .= '<script type=text/javascript src="' . __ADMINRES__ . '/js/common.js"></script>' . PHP_EOL;
+        $js .= '<script type=text/javascript src="' . __ADMINRES__ . '/ztree/jquery.ztree.js"></script>' . PHP_EOL;
+        $js .= '<script type=text/javascript src="' . __ADMINRES__ . '/ztree/jquery.ztree.exhide.js"></script>' . PHP_EOL;
         return $js;
     }
 
@@ -215,6 +205,7 @@ class commonMod
         $css .= '<link href="' . __ADMINRES__ . '/css/base.css" rel="stylesheet" type="text/css" />' . PHP_EOL;
         $css .= '<link href="' . __ADMINRES__ . '/css/style.css" rel="stylesheet" type="text/css" />' . PHP_EOL;
         $css .= '<link href="' . __ADMINRES__ . '/kindeditor/themes/default/default.css" rel="stylesheet" type="text/css" />' . PHP_EOL;
+        $css .= '<link href="' . __ADMINRES__ . '/ztree/css/zTreeStyle.css" rel="stylesheet" type="text/css"/>' . PHP_EOL;
         return $css;
     }
 

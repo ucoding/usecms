@@ -1,3 +1,8 @@
+<!--左边-->
+<div id="nav">
+    <ul id="tree" class="ztree load">
+    </ul>
+</div>
 <div class="page_function">
     <div class="info">
         <h3>内容首页</h3>
@@ -191,5 +196,45 @@
             }
         );
     }
+
+
+    var zTree;
+    var setting = {
+        view: {
+            showLine: true,
+            selectedMulti: false
+        },
+        data: {
+            simpleData: {
+                enable: true,
+                idKey: "cid",
+                pIdKey: "pid",
+                rootPId: ""
+            }
+        },
+        callback: {
+            onClick: onClick
+        }
+    };
+    var zNodes = [
+        <?php echo $class_tree; ?>
+    ];
+
+    function onClick(e, treeId, treeNode) {
+        var zTree = $.fn.zTree.getZTreeObj("tree");
+        if (treeNode.url == null) {
+            zTree.expandNode(treeNode);
+        }
+
+    }
+    function filter(node) {
+        return (node.url != null);
+    }
+    $(function(){
+        var t = $("#tree");
+        t = $.fn.zTree.init(t, setting, zNodes);
+        t.expandAll(true);
+
+    });
 </script>
 

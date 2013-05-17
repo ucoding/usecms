@@ -6,9 +6,7 @@
     <title>{$config.sitename} - 网站管理系统</title>
     {$css}
     {$js}
-    <link href="__ADMINRES__/ztree/css/zTreeStyle.css" rel="stylesheet" type="text/css"/>
-    <script src="__ADMINRES__/ztree/jquery.ztree.js"></script>
-    <script src="__ADMINRES__/ztree/jquery.ztree.exhide.js"></script>
+
     <script>
         var myLayout;
         var pane;
@@ -22,9 +20,7 @@
             hrftload();
 
             //加载第一页面
-            $.get($(".top_nav a:first").attr("href"), function (result) {
-                $("#nav").html(result);
-            });
+            main_load($(".top_nav a:first").attr("href"));
 
             function frameheight() {
                 var mainheight = $(window).height();
@@ -58,23 +54,23 @@
         });
 
         //绑定顶部ajax菜单
-//        function navload() {
-//            $('.top_nav a').live("click",
-//                function () {
-//                    var url = $(this).attr("href");
-//                    if (url !== '' && url !== '#') {
-//                        $("#nav").load(url);
-//                    }
-//                    return false;
-//                });
-//        }
+        function navload() {
+            $('.top_nav a').live("click",
+                function () {
+                    var url = $(this).attr("href");
+                    if (url !== '' && url !== '#') {
+                        main_load(url);
+                    }
+                    return false;
+                });
+        }
 
         //AJAX访问
         function main_load(url) {
-            $('#content_loading').fadeIn(0);
+            $('#content_loading').show();
             $("#main").attr("src", url);
             $("#main").load(function () {
-                $('#content_loading').fadeOut(1);
+                $('#content_loading').hide();
             });
         }
 
@@ -117,11 +113,11 @@
     <div id="logo"><img src="__ADMINRES__/images/logo.gif" width="180" height="50"/></div>
     <div class="top_nav">
         <ul>
-            <li class="mainmenu"><a href="__APP__/menu/index">首页</a></li>
+            <li class="mainmenu"><a href="__APP__/index/home">首页</a></li>
             <@foreach:{$menu_list $vo}>
             <@if:{in_array($vo['id'],$model_power)}>
             <li class="mainmenu" style="position: relative">
-                <a target="main" href="__APP__/menu/{$vo['module']}?id={$vo['id']}">{$vo['name']}</a>
+                <a target="main" href="__APP__/{$vo.module}">{$vo['name']}</a>
                 <ul>
                 <?php
                 $sublist=model('menu')->menu_list($vo['id']);
