@@ -27,8 +27,7 @@ ul, li {
 
 /*主体框架*/
 #head {
-    background-image: url(../images/ui-top-bg.jpg);
-    background-repeat: repeat-x;
+    background-color: #40516d;
     border-bottom: 1px solid #28384f;
     height: 44px;
     overflow: hidden;
@@ -647,6 +646,7 @@ h3 {
 }
 
 #nav .menu {
+
     height: 30px;
 }
 
