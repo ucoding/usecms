@@ -26,12 +26,12 @@
                 $("#nav").html(result);
             });
 
-//            function frameheight() {
-//                var mainheight = $(window).height() - $("#nav").position().top - parseInt($("#nav").css("padding-bottom")) - parseInt($("#nav").css("padding-top"));
-//                $('#nav,#right').height(mainheight);
-//            };
-//            frameheight();
-//            $(window).resize(frameheight);
+            function frameheight() {
+                var mainheight = $(window).height();
+                $('#right').height(mainheight);
+            };
+            frameheight();
+            $(window).resize(frameheight);
 
 
             <?php if($config['LANG_OPEN']){ ?>
@@ -58,23 +58,22 @@
         });
 
         //绑定顶部ajax菜单
-        function navload() {
-            $('.top_nav a').live("click",
-                function () {
-                    var url = $(this).attr("href");
-                    if (url !== '' && url !== '#') {
-                        $("#nav").load(url);
-                    }
-                    return false;
-                });
-        }
+//        function navload() {
+//            $('.top_nav a').live("click",
+//                function () {
+//                    var url = $(this).attr("href");
+//                    if (url !== '' && url !== '#') {
+//                        $("#nav").load(url);
+//                    }
+//                    return false;
+//                });
+//        }
 
         //AJAX访问
         function main_load(url) {
             $('#content_loading').fadeIn(0);
             $("#main").attr("src", url);
             $("#main").load(function () {
-
                 $('#content_loading').fadeOut(1);
             });
         }
@@ -122,8 +121,23 @@
             <@foreach:{$menu_list $vo}>
             <@if:{in_array($vo['id'],$model_power)}>
             <li class="mainmenu" style="position: relative">
-                <a href="__APP__/menu/{$vo['module']}?id={$vo['id']}">{$vo['name']}</a>
+                <a target="main" href="__APP__/menu/{$vo['module']}?id={$vo['id']}">{$vo['name']}</a>
+                <ul>
+                <?php
+                $sublist=model('menu')->menu_list($vo['id']);
+                foreach($sublist as $subitem)
+                {
+                    if (in_array($vo['id'],$model_power))
+                    {
 
+                ?>
+            <li  class="menuitem" style="display: block">
+                <a target="main" href="__APP__/{$subitem.module}">{$subitem.name}</a>
+            </li>
+                <?php }}?>
+
+
+                </ul>
             </li>
             <@/if>
             <@/foreach>
@@ -140,12 +154,8 @@
 
     </div>
 </div>
-<!--左边-->
-<div id="nav">
-
-</div>
 <!--右边-->
-<div id="right" style="position:relative; height:100%;">
+<div id="right" style="height:100%;">
     <div class="loading" id="content_loading" style="display:none"></div>
     <iframe id="main" name="main" src="" frameborder="0"></iframe>
 </div>

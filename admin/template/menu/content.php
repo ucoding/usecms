@@ -1,6 +1,9 @@
+<!--左边-->
+<div id="nav">
 <ul id="tree" class="ztree load">
 
 </ul>
+</div>
 <script>
     var zTree;
     var setting = {

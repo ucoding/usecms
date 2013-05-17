@@ -22,7 +22,7 @@ insert  into `dc_admin_group`(`id`,`name`,`model_power`,`class_power`,`status_po
 
 /*Data for the table `dc_admin_menu` */
 
-insert  into `dc_admin_menu`(`id`,`pid`,`name`,`module`,`status`) values (2,0,'内容','content',1),(5,1,'站点基本信息','setting',1),(11,1,'栏目类型管理','model_manage',1),(6,0,'模块','expand',1),(27,30,'扩展模型','expand_model',1),(12,1,'片段','fragment',1),(236,30,'设置','dev_setting',1),(14,1,'TAG管理','tags',1),(15,1,'推荐位管理','position',1),(16,29,'附件管理','upload_file',1),(21,31,'角色管理','user_group',1),(22,31,'管理员管理','user',1),(26,1,'语言管理','lang',1),(1,0,'网站','category',1),(4,1,'栏目管理','category',1),(28,30,'表单管理','form',1),(31,0,'用户','user',1),(29,-1,'附件','upload_file',1),(234,6,'站点地图','sitemap',0),(30,0,'扩展','dev',1);
+insert  into `dc_admin_menu`(`id`,`pid`,`name`,`module`,`status`) values (2,0,'内容','content',1),(5,1,'站点基本信息','setting',1),(6,0,'模块','expand',1),(27,30,'扩展模型','expand_model',1),(12,1,'片段','fragment',1),(236,30,'设置','dev_setting',1),(14,1,'TAG管理','tags',1),(15,1,'推荐位管理','position',1),(16,29,'附件管理','upload_file',1),(21,31,'角色管理','user_group',1),(22,31,'管理员管理','user',1),(26,1,'语言管理','lang',1),(1,0,'网站','category',1),(4,1,'栏目管理','category',1),(28,30,'表单管理','form',1),(31,0,'用户','user',1),(29,-1,'附件','upload_file',1),(30,0,'扩展','dev',1);
 
 /*Data for the table `dc_category` */
 

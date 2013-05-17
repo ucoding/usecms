@@ -1,14 +1,9 @@
-<ul class="load menu">
-    <li><a href="__APP__/index/home">系统信息</a></li>
-    <@foreach:{$list $vo}>
-    <li><a href="__APP__/{$vo.module}">{$vo.name}</a></li>
-    <@/foreach>
-</ul>
-
 <script>
-    url = $(".load li:first a").attr("href");
-    if (url == '' || url == '#') {
-    } else {
-        ajaxload(url);
-    }
+    var menu = [];
+    menu.push({
+        title: "系统信息",
+        url: "__APP__/index/home"
+    });
+    var url = menu[0].url;
+    top.main_load(url);
 </script>

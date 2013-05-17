@@ -1,14 +1,14 @@
-<ul class="load menu">
-    <@foreach:{$list $vo}>
-    <li><a href="__APP__/{$vo.module}">{$vo.name}</a></li>
-    <@/foreach>
-
-</ul>
-
 <script>
-    url = $(".load li:first a").attr("href");
+    var menu=[];
+    <@foreach:{$list $vo}>
+    menu.push({
+        title:"{$vo.name}",
+        url:"__APP__/{$vo.module}"
+    });
+    <@/foreach>
+   var url = menu[0].url;
     if (url == '' || url == '#') {
     } else {
-        ajaxload(url);
+        top.main_load(url);
     }
 </script>

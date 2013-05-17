@@ -66,12 +66,6 @@
                 <td width="120">附件数:</td>
                 <td>{$upload_count}</td>
             </tr>
-            <tr>
-                <td width="120">实用工具:</td>
-                <td colspan="3">
-                    <a href="javascript:;" onclick="bom()">BOM清除</a>
-                </td>
-            </tr>
 
         </table>
     </div>
@@ -131,15 +125,3 @@
         </table>
     </div>
 </div>
-<script>
-
-    function bom() {
-        ajaxpost(
-            '本操作可能需要一些时间，请确认清除BOM！',
-            "__URL__/tool_bom",
-            '',
-            1
-        );
-    }
-    ;
-</script>
