@@ -1154,6 +1154,7 @@ pre {
 }
 
 .top_nav ul li.mainmenu ul{
+    display: none;
     background-color: #40516d;
 }
 

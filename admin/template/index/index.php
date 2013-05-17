@@ -13,6 +13,12 @@
         var root = '__ROOT__';
         $(function () {
 
+            $(".mainmenu:has(ul:not(:empty))").hover(function(){
+                $(this).find("ul").show();
+            },function(){
+                $(this).find("ul").hide();
+            });
+
             //绑定顶级菜单
             navload();
 

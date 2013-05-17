@@ -1,15 +1,19 @@
 <!--左边-->
-<div id="nav">
+<div id="nav" style="float: left;">
     <ul id="tree" class="ztree load">
     </ul>
 </div>
-<div class="page_function">
-    <div class="info">
-        <h3>内容首页</h3>
-        <small>请使用左边菜单对内容进行管理，本功能用于管理条件内容</small>
+
+
+<div id="content_main" style="margin-left: 300px">
+    <div class="page_function">
+        <div class="info">
+            <h3>内容首页</h3>
+            <small>请使用左边菜单对内容进行管理，本功能用于管理条件内容</small>
+        </div>
+        <div class="tip">栏目总数：{$category_count}个，内容总数：{$content_count}条，未审核内容{$audit_count}条</div>
     </div>
-    <div class="tip">栏目总数：{$category_count}个，内容总数：{$content_count}条，未审核内容{$audit_count}条</div>
-</div>
+
 <div class="page_main">
     <div class="page_menu">
         &nbsp;&nbsp;
@@ -131,7 +135,7 @@
     </div>
     <div class="page">{$page}</div>
 </div>
-
+</div>
 <script>
     //快速编辑
     $('tr').hover(
@@ -222,8 +226,8 @@
 
     function onClick(e, treeId, treeNode) {
         var zTree = $.fn.zTree.getZTreeObj("tree");
-        if (treeNode.url == null) {
-            zTree.expandNode(treeNode);
+        if (treeNode && treeNode.url != null) {
+            $("#content_main").load(treeNode.url);
         }
 
     }
@@ -234,6 +238,10 @@
         var t = $("#tree");
         t = $.fn.zTree.init(t, setting, zNodes);
         t.expandAll(true);
+
+        $(".ztree a").click(function(e){
+            e.preventDefault();
+        })
 
     });
 </script>
