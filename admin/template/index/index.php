@@ -26,13 +26,12 @@
                 $("#nav").html(result);
             });
 
-            function frameheight() {
-
-                var mainheight = $(window).height() - $("#nav").position().top - parseInt($("#nav").css("padding-bottom")) - parseInt($("#nav").css("padding-top"));
-                $('#nav,#right').height(mainheight);
-            };
-            frameheight();
-            $(window).resize(frameheight);
+//            function frameheight() {
+//                var mainheight = $(window).height() - $("#nav").position().top - parseInt($("#nav").css("padding-bottom")) - parseInt($("#nav").css("padding-top"));
+//                $('#nav,#right').height(mainheight);
+//            };
+//            frameheight();
+//            $(window).resize(frameheight);
 
 
             <?php if($config['LANG_OPEN']){ ?>
@@ -142,9 +141,11 @@
     </div>
 </div>
 <!--左边-->
-<div id="nav" class="scroll-pane"></div>
+<div id="nav">
+
+</div>
 <!--右边-->
-<div id="right" style="position:relative; height:100%;margin-left: 180px;">
+<div id="right" style="position:relative; height:100%;">
     <div class="loading" id="content_loading" style="display:none"></div>
     <iframe id="main" name="main" src="" frameborder="0"></iframe>
 </div>

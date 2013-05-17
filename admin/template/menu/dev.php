@@ -1,4 +1,3 @@
-<div class="title"><a href="javascript:void(0)">开发</a></div>
 <ul class="load menu">
     <@foreach:{$list $vo}>
     <li><a href="__APP__/{$vo.module}">{$vo.name}</a></li>

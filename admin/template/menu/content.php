@@ -1,4 +1,3 @@
-<div class="title"><a href="javascript:void(0)">内容管理</a></div>
 <ul id="tree" class="ztree load">
 
 </ul>
