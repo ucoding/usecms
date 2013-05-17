@@ -18,7 +18,8 @@ class model_manageMod extends commonMod
     {
         $id = intval($_GET['id']);
         $this->info = model('model_manage')->info($id);
-        $this->display();
+        $this->display('/model_manage/setting_'.$id);
+//        $this->display();
     }
 
     public function setting_save()
