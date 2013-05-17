@@ -127,17 +127,25 @@
                     {
 
                 ?>
-            <li  class="menuitem" style="display: block">
-                <a target="main" href="__APP__/{$subitem.module}">{$subitem.name}</a>
-            </li>
+                    <li  class="menuitem" style="display: block">
+                        <a target="main" href="__APP__/{$subitem.module}">{$subitem.name}</a>
+                    </li>
                 <?php }}?>
-
 
                 </ul>
             </li>
             <@/if>
             <@/foreach>
-
+            <li class="mainmenu" style="position: relative">
+                <a target="main" href="__APP__/index/home">模块</a>
+                <ul>
+                    <@foreach:{$formlist $form}>
+                    <li class="menuitem" style="display: block">
+                        <a target="main" href="__APP__/form_list/index/id-{$form.id}">{$form.name}</a>
+                    </li>
+                    <@/foreach>
+                </ul>
+            </li>
         </ul>
     </div>
     <?php if ($config['LANG_OPEN']) { ?>
