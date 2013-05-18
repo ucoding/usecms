@@ -59,7 +59,7 @@ CREATE TABLE `dc_admin_menu` (
   `status` int(10) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `module` (`module`)
-) ENGINE=MyISAM AUTO_INCREMENT=237 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=238 DEFAULT CHARSET=utf8;
 
 /*Table structure for table `dc_category` */
 
@@ -109,7 +109,7 @@ CREATE TABLE `dc_category_page` (
   `content` mediumtext COMMENT '内容',
   PRIMARY KEY (`id`),
   KEY `cid` (`cid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='文章栏目分类';
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='文章栏目分类';
 
 /*Table structure for table `dc_content` */
 
@@ -125,7 +125,6 @@ CREATE TABLE `dc_content` (
   `updatetime` int(10) DEFAULT NULL COMMENT '更新时间',
   `inputtime` int(10) NOT NULL COMMENT '发布时间',
   `image` varchar(250) DEFAULT NULL COMMENT '封面图',
-  `url` varchar(250) DEFAULT NULL COMMENT '跳转',
   `sequence` int(10) DEFAULT NULL COMMENT '排序',
   `tpl` varchar(250) DEFAULT NULL COMMENT '模板',
   `status` int(10) DEFAULT NULL COMMENT '状态',
@@ -137,7 +136,7 @@ CREATE TABLE `dc_content` (
   UNIQUE KEY `urltitle` (`urltitle`) USING BTREE,
   KEY `title` (`title`) USING BTREE,
   KEY `description` (`copyfrom`)
-) ENGINE=MyISAM AUTO_INCREMENT=10196 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10198 DEFAULT CHARSET=utf8;
 
 /*Table structure for table `dc_content_data` */
 
@@ -148,7 +147,7 @@ CREATE TABLE `dc_content_data` (
   `aid` int(10) NOT NULL,
   `content` text,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10196 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10197 DEFAULT CHARSET=utf8;
 
 /*Table structure for table `dc_expand_content_chanpin` */
 
@@ -427,27 +426,6 @@ CREATE TABLE `dc_upload_plus` (
   KEY `id` (`id`),
   KEY `file_id` (`file_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
-/* Procedure structure for procedure `ff` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `ff` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `ff`()
-BEGIN
-    
-    
-    DECLARE i INTEGER;
-SET i=1;
-WHILE i<=10192 DO
-BEGIN
-update dc_content set urltitle =""+i+"" where  aid=i;
-SET i=i+1;
-END;
-END WHILE;
-    END */$$
-DELIMITER ;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
