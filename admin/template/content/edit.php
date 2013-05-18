@@ -125,13 +125,6 @@
             <td>(自定义顺序)</td>
         </tr>
         <tr>
-            <td width="100" align="right">跳转到</td>
-            <td width="350">
-                <input name="url" type="text" class="text_value" id="url" value="{$info.url}"/>
-            </td>
-            <td>URL链接，支持标签</td>
-        </tr>
-        <tr>
             <td width="100" align="right">更新时间</td>
             <td width="350">
                 <input name="updatetime" id="updatetime" type="text" class="text_value"
