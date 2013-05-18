@@ -55,7 +55,7 @@
                 <@/piclist>
                 <div class="boxlist">
                     <ul>
-                        <@content:{table="content" cid="<$list.cid>" order="updatetime desc" limit="8"}>
+                        <@content:{table="content" cid="<$channel.cid>" order="updatetime desc" limit="8"}>
                         <li><span class="line">•</span>
                             <span class="title">
                                 <a href="{$content.aurl}" target="_blank"
