@@ -17,7 +17,6 @@ $config['URL_HTML_MODEL'] = '2'; //伪静态样式
 $config['TPL_TEMPLATE_PATH'] = 'themes/default/'; //模板目录，一般不需要修改
 $config['TPL_INDEX'] = 'index.php';
 $config['TPL_COMMON'] = 'common.php';
-$config['TPL_TAGS'] = 'tags.php';
 $config['TPL_SEARCH'] = 'search.php';
 
 //上传设置

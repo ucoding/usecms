@@ -60,12 +60,6 @@
                 <td width="120">内容数:</td>
                 <td>{$content_count}</td>
             </tr>
-            <tr>
-                <td width="120">TAG数:</td>
-                <td width="250">{$tags_count}</td>
-                <td width="120">附件数:</td>
-                <td>{$upload_count}</td>
-            </tr>
 
         </table>
     </div>
