@@ -99,12 +99,6 @@
     <div id="sidebar" class="fn-right">
         <div class="box">
             <div class="boxhead">
-                <h3>自定义变量</h3>
-            </div>
-            <div class="boxcontent"> {$my.info}</div>
-        </div>
-        <div class="box">
-            <div class="boxhead">
                 <h3>热门内容</h3>
             </div>
             <div class="boxlist">
