@@ -38,18 +38,14 @@ $config['URL_ACTION_DEPR'] = '/'; //操作分隔符
 $config['URL_PARAM_DEPR'] = '-'; //参数分隔符
 $config['URL_HTTP_HOST'] = ''; //设置网址域名
 
-//静态缓存
-$config['HTML_CACHE_ON']=false; //是否开启静态页面缓存，true开启.false关闭
-$config['HTML_CACHE_RULE']['index']['index'] = 1000; //缓存时间,单位：秒
-$config['HTML_CACHE_RULE']['empty']['_empty'] = 1000; //缓存时间,单位：秒
 
 //数据库设置
-$config['DB_CACHE_ON']=false; //是否开启数据库缓存，true开启，false不开启
-$config['DB_CACHE_TYPE'] = 'FileCache'; ///缓存类型，FileCache或Memcache或SaeMemcache
+//$config['DB_CACHE_ON']=false; //是否开启数据库缓存，true开启，false不开启
+//$config['DB_CACHE_TYPE'] = 'FileCache'; ///缓存类型，FileCache或Memcache或SaeMemcache
 
 //模板缓存
-$config['TPL_CACHE_ON'] = false; //是否开启模板缓存，true开启,false不开启
-$config['TPL_CACHE_TYPE'] = ''; //数据缓存类型，为空或Memcache或SaeMemcache，其中为空为普通文件缓存
+//$config['TPL_CACHE_ON'] = false; //是否开启模板缓存，true开启,false不开启
+//$config['TPL_CACHE_TYPE'] = ''; //数据缓存类型，为空或Memcache或SaeMemcache，其中为空为普通文件缓存
 
 //多国语言
 $config['LANG_PACK_PATH'] = './lang/'; //语言包目录
