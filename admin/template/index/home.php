@@ -103,7 +103,7 @@
             <tr>
                 <td>脚本运行内存:</td>
                 <td><?php echo get_cfg_var("memory_limit") ? get_cfg_var("memory_limit") : "无"; ?></td>
-                <td>上传大小限制:</td>
+                <td>附件大小限制:</td>
                 <td><?php echo get_cfg_var("upload_max_filesize") ? get_cfg_var("upload_max_filesize") : "不允许上传文件"; ?></td>
             </tr>
             <tr>

@@ -9,7 +9,7 @@
     <a class="selected" href="#tab1">站点设置</a>
     <a href="#tab2">缓存设置</a>
     <a href="#tab3">模板设置</a>
-    <a href="#tab4">上传设置</a>
+    <a href="#tab4">附件设置</a>
 </div>
 <div class="page_form">
     <div class="page_table form_table" id="tab1">
@@ -145,7 +145,7 @@
     <div class="page_table form_table" id="tab4">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
-                <td width="120">上传大小：</td>
+                <td width="120">附件大小：</td>
                 <td width="300"><input class="text_value" type='text' value="{$config_array.ACCESSPRY_SIZE}"
                                        name="ACCESSPRY_SIZE" id="ACCESSPRY_SIZE"/></td>
                 <td>单位:k</td>
@@ -157,7 +157,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td>上传格式：</td>
+                <td>附件格式：</td>
                 <td><input name="ACCESSPRY_TYPE" type='text' class="text_value" value="{$config_array.ACCESSPRY_TYPE}"
                            id="ACCESSPRY_TYPE"/></td>
                 <td></td>

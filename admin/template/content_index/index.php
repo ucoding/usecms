@@ -12,6 +12,9 @@
 
         </div>
         <div class="tip">栏目总数：{$category_count}个，内容总数：{$content_count}条，未审核内容{$audit_count}条</div>
+        <div class="exercise">
+            <a href="javascript:menuload('__APP__/position')" style="float: right;">推荐位管理</a>
+        </div>
     </div>
 
 <div class="page_main">

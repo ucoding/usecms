@@ -5,6 +5,7 @@
     </div>
     <div class="exercise">
         <a href="javascript:menuload('__URL__/add')">添加管理员</a>
+        <a href="__APP__/user_group">角色管理</a>
     </div>
 </div>
 <div class="page_main">
