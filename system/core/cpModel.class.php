@@ -206,10 +206,6 @@ class cpModel
     {
         if (is_object($this->cache)) {
             return true;
-        } else if ($this->config['DB_CACHE_ON']) {
-            require_once(dirname(__FILE__) . '/cpCache.class.php');
-            $this->cache = new cpCache($this->config, $this->config['DB_CACHE_TYPE']);
-            return true;
         } else {
             return false;
         }

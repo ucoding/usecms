@@ -70,19 +70,6 @@ class cpTemplate
                 }
                 include($cacheFile); //加载编译后的模板缓存
 
-            } else {
-                //支持memcache等缓存
-                $tpl_key = md5(realpath($tplFile));
-                $tpl_time_key = $tpl_key . '_time';
-                static $cache = NULL;
-                $cache = is_object($cache) ? $cache : new cpCache($this->config, $this->config['TPL_CACHE_TYPE']);
-                $compile_content = $cache->get($tpl_key);
-                if (empty($compile_content) || (filemtime($tplFile) > $cache->get($tpl_time_key))) {
-                    $compile_content = $this->compile($tpl);
-                    $cache->set($tpl_key, $compile_content, 3600 * 24 * 365); //缓存编译内容
-                    $cache->set($tpl_time_key, time(), 3600 * 24 * 365); //缓存编译内容
-                }
-                eval('?>' . $compile_content);
             }
         } else {
             eval('?>' . $this->compile($tpl, $is_tpl, $diy_tpl)); //直接执行编译后的模板
