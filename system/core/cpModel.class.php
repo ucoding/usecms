@@ -192,15 +192,6 @@ class cpModel
         return $this->sql;
     }
 
-    //删除数据库缓存
-    public function clear()
-    {
-        if ($this->initCache()) {
-            return $this->cache->clear();
-        }
-        return false;
-    }
-
     //初始化缓存类，如果开启缓存，则加载缓存类并实例化
     public function initCache()
     {
