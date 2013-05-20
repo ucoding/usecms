@@ -1,5 +1,5 @@
 /*
-SQLyog Ultimate v9.10 
+SQLyog Trial v10.12 
 MySQL - 5.5.24-log : Database - duxcms
 *********************************************************************
 */
@@ -180,6 +180,7 @@ DROP TABLE IF EXISTS `dc_expand_content_movie`;
 CREATE TABLE `dc_expand_content_movie` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `aid` int(10) DEFAULT NULL,
+  `topic` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -213,7 +214,7 @@ CREATE TABLE `dc_expand_model_field` (
   `must` int(10) DEFAULT '0',
   `config` text,
   PRIMARY KEY (`fid`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 /*Table structure for table `dc_form` */
 
@@ -281,7 +282,7 @@ CREATE TABLE `dc_fragment` (
   `sign` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `sign` (`sign`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='文章信息表';
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='文章信息表';
 
 /*Table structure for table `dc_lang` */
 
@@ -317,7 +318,7 @@ CREATE TABLE `dc_model` (
   `config` text,
   PRIMARY KEY (`mid`),
   KEY `model` (`model`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 /*Table structure for table `dc_position` */
 
@@ -340,6 +341,18 @@ CREATE TABLE `dc_position_relation` (
   `pid` int(10) NOT NULL,
   KEY `aid` (`aid`),
   KEY `pid` (`pid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+/*Table structure for table `dc_replace` */
+
+DROP TABLE IF EXISTS `dc_replace`;
+
+CREATE TABLE `dc_replace` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `key` varchar(250) DEFAULT NULL,
+  `content` varchar(250) DEFAULT NULL,
+  `num` int(5) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 /*Table structure for table `dc_tags` */
