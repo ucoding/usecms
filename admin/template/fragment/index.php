@@ -1,10 +1,10 @@
 <div class="page_function">
     <div class="info">
-        <h3>自定义变量管理</h3>
+        <h3>页面片段管理</h3>
 
     </div>
     <div class="exercise">
-        <a href="javascript:menuload('__URL__/add')">添加自定义变量</a>
+        <a href="javascript:menuload('__URL__/add')">添加页面片段</a>
     </div>
 </div>
 <div class="page_main">
@@ -40,11 +40,11 @@
     <div class="page"></div>
 </div>
 <script>
-    //自定义变量
+    //页面片段
     function del(id, obj) {
         var obj;
         ajaxpost(
-            '删除此自定义变量？',
+            '删除此页面片段？',
             "__URL__/del",
             {id: id},
             1,

@@ -1,6 +1,6 @@
 <div class="page_function">
     <div class="info">
-        <h3>自定义变量管理</h3>
+        <h3>页面片段管理</h3>
 
     </div>
 </div>
