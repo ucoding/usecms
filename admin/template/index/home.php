@@ -30,31 +30,6 @@
                 </td>
             </tr>
             <tr>
-                <td width="120">缓存状态:</td>
-                <td width="250">
-                    <?php if ($config_array['TPL_CACHE_ON']) {
-                        echo '<font title="已开启" color=green>模板</font>';
-                    } else {
-                        echo
-                        '<font title="未开启" color=red>模板</font>';
-                    } ?>
-                    &nbsp;&nbsp;
-                    <?php if ($config_array['DB_CACHE_ON']) {
-                        echo '<font title="已开启" color=green>数据</font>';
-                    } else {
-                        echo '<font
-                        title="未开启" color=red>数据</font>';
-                    } ?>
-                    &nbsp;&nbsp;
-                    <?php if ($config_array['HTML_CACHE_ON']) {
-                        echo '<font title="已开启" color=green>静态</font>';
-                    } else {
-                        echo
-                        '<font title="未开启" color=red>静态</font>';
-                    } ?>
-                </td>
-            </tr>
-            <tr>
                 <td width="120">栏目数:</td>
                 <td width="250">{$category_count}</td>
                 <td width="120">内容数:</td>

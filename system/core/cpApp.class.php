@@ -72,11 +72,7 @@ class cpApp
                 throw new Exception(self::$module . "模块不存在", 404); //指定模块和空模块都不存在，则显示出错信息，并退出程序。
             }
 
-            //如果开启静态页面缓存，则尝试读取静态缓存
-            if (false == $this->_readHtmlCache($module, self::$action)) {
-                //静态缓存读取失败，执行模块操作
                 $this->_execute($module);
-            }
 
             //如果存在回调函数cp_app_end，则在即将结束前调用
             if (function_exists('cp_app_end')) {
@@ -206,7 +202,7 @@ class cpApp
             $action = $this->appConfig['ACTION_EMPTY'];
             //解决空操作的静态页面缓存读取
             if ($this->_readHtmlCache($module, $action)) {
-                return true;
+                return false;
             }
         } else {
             throw new Exception(self::$action . "操作方法在" . $module . "模块中不存在", 404);
@@ -214,13 +210,12 @@ class cpApp
         //执行指定模块的指定操作
         $object->$action();
 
-        //如果缓存开启，写入静态缓存，只有符合规则的，才会创建缓存
-        $this->_writeHtmlCache();
     }
 
     //读取静态页面缓存
     private function _readHtmlCache($module = '', $action = '')
     {
+        echo $this->appConfig['HTML_CACHE_ON']== false;
         if (($this->appConfig['HTML_CACHE_ON'] == false) || empty($this->appConfig['HTML_CACHE_RULE'])) {
             $this->appConfig['HTML_CACHE_ON'] = false;
             return false;
@@ -233,17 +228,11 @@ class cpApp
             $this->appConfig['HTML_CACHE_ON'] = false;
             return false;
         }
+        echo 222;
         require_once(CP_CORE_PATH . '/cpHtmlCache.class.php');
         return cpHtmlCache::read($this->appConfig['HTML_CACHE_PATH'], $expire);
     }
 
-    //写入静态页面缓存
-    private function _writeHtmlCache()
-    {
-        if ($this->appConfig['HTML_CACHE_ON']) {
-            cpHtmlCache::write();
-        }
-    }
 
     //实现类的自动加载
     public function autoload($classname)
