@@ -10,7 +10,7 @@
 <div class="page_function">
     <div class="info">
         <h3>{$info.name}模型修改</h3>
-        <small>使用以下功能进行模型修改操作</small>
+
     </div>
 </div>
 <div class="page_form">

@@ -1,7 +1,7 @@
 <div class="page_function">
     <div class="info">
         <h3>角色管理</h3>
-        <small>使用以下功能进行角色添加操作</small>
+
     </div>
     <div class="exercise">
         <a href="javascript:menuload('__URL__/add')">添加角色</a>

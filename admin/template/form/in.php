@@ -10,7 +10,7 @@
 <div class="page_function">
     <div class="info">
         <h3>表单导入</h3>
-        <small>使用以下功能进行表单导入操作</small>
+
     </div>
 </div>
 <div class="page_form">

@@ -9,7 +9,7 @@
     <div class="page_function">
         <div class="info">
             <h3>内容首页</h3>
-            <small>请使用左边菜单对内容进行管理，本功能用于管理条件内容</small>
+
         </div>
         <div class="tip">栏目总数：{$category_count}个，内容总数：{$content_count}条，未审核内容{$audit_count}条</div>
     </div>

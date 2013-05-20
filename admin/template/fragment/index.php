@@ -1,7 +1,7 @@
 <div class="page_function">
     <div class="info">
         <h3>自定义变量管理</h3>
-        <small>使用以下功能进行自定义变量管理操作</small>
+
     </div>
     <div class="exercise">
         <a href="javascript:menuload('__URL__/add')">添加自定义变量</a>

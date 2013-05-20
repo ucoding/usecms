@@ -2,7 +2,6 @@
 <div class="page_function">
     <div class="info">
         <h3>{$class_info.name} - 内容管理</h3>
-        <small>使用以下功能进行内容操作</small>
     </div>
     <div class="exercise">
         <a href="__URL__/add/cid-{$class_info.cid}">添加内容</a>

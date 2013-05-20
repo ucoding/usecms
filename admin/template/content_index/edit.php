@@ -6,7 +6,7 @@
 <div class="page_function">
     <div class="info">
         <h3>快速编辑</h3>
-        <small>快速编辑一些常用内容</small>
+
     </div>
 </div>
 <div class="page_form">

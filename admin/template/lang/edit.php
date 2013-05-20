@@ -1,7 +1,7 @@
 <div class="page_function">
     <div class="info">
         <h3>语言修改</h3>
-        <small>使用以下功能进行语言修改操作</small>
+
     </div>
 </div>
 <div class="tab" id="tab">

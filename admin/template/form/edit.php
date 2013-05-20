@@ -1,7 +1,7 @@
 <div class="page_function">
     <div class="info">
         <h3>表单修改</h3>
-        <small>使用以下功能进行表单修改操作</small>
+
     </div>
 </div>
 <div class="tab" id="tab"><a class="selected" href="#">修改表单</a> <a href="javascript:menuload('__URL__')">返回表单列表</a>

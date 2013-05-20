@@ -1,7 +1,7 @@
 <div class="page_function">
     <div class="info">
         <h3>{$info.name} - 字段管理</h3>
-        <small>使用以下功能进行字段编辑操作</small>
+
     </div>
     <div class="exercise">
         <a href="javascript:;" onclick="add()">添加字段</a>

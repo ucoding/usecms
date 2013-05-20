@@ -1,7 +1,7 @@
 <div class="page_function">
     <div class="info">
         <h3>推荐位修改</h3>
-        <small>使用以下功能进行推荐位添加操作</small>
+
     </div>
 </div>
 <div class="tab" id="tab">

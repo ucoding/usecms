@@ -1,7 +1,7 @@
 <div class="page_function">
     <div class="info">
         <h3>管理员编辑</h3>
-        <small>使用以下功能进行管理员编辑操作</small>
+
     </div>
 </div>
 <div class="tab" id="tab"><a class="selected" href="#">编辑管理员</a>

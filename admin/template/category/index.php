@@ -1,7 +1,6 @@
 <div class="page_function">
     <div class="info">
         <h3>栏目管理</h3>
-        <small>使用以下功能进行栏目添加操作</small>
     </div>
     <div class="exercise">
         <@foreach:{$model_list $vo}>

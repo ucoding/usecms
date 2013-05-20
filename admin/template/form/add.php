@@ -1,7 +1,7 @@
 <div class="page_function">
     <div class="info">
         <h3>表单添加</h3>
-        <small>使用以下功能进行表单添加操作</small>
+
     </div>
 </div>
 <div class="tab" id="tab"><a class="selected" href="#">添加表单</a> <a href="javascript:menuload('__URL__')">返回表单列表</a>

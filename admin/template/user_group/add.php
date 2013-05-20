@@ -35,7 +35,7 @@
 <div class="page_function">
     <div class="info">
         <h3>角色添加</h3>
-        <small>使用以下功能进行角色添加操作</small>
+
     </div>
 </div>
 <div class="tab" id="tab"><a class="selected" href="#">添加角色</a>

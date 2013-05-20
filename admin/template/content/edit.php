@@ -1,7 +1,6 @@
 <div class="page_function">
     <div class="info">
         <h3>{$model_info.name}编辑</h3>
-        <small>使用以下功能进行{$model_info.name}添加操作</small>
     </div>
 </div>
 <div class="tab" id="tab">

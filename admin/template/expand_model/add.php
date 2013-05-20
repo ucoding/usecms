@@ -10,7 +10,7 @@
 <div class="page_function">
     <div class="info">
         <h3>模型添加</h3>
-        <small>使用以下功能进行模型添加操作</small>
+
     </div>
 </div>
 <div class="page_form">

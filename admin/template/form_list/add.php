@@ -1,7 +1,6 @@
 <div class="page_function">
     <div class="info">
         <h3>{$info.name}添加</h3>
-        <small>使用以下功能进行{$info.name}添加操作</small>
     </div>
 </div>
 <div class="tab" id="tab"><a class="selected" href="#">添加{$info.name}</a>

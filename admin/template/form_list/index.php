@@ -1,7 +1,6 @@
 <div class="page_function">
     <div class="info">
         <h3>{$info.name}管理</h3>
-        <small>可以添加或者修改{$info.name}</small>
     </div>
     <div class="exercise">
         <a href="javascript:menuload('__URL__/add/id-{$info.id}')">{$info.name}添加</a>

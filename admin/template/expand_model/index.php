@@ -1,7 +1,7 @@
 <div class="page_function">
     <div class="info">
         <h3>扩展模型管理</h3>
-        <small>将栏目与扩展模型进行绑定来实现附加字段功能</small>
+
     </div>
     <div class="exercise">
         <a href="javascript:;" onclick="add()">添加模型</a>

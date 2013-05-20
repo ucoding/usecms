@@ -1,7 +1,7 @@
 <div class="page_function">
     <div class="info">
         <h3>栏目类型管理</h3>
-        <small>模型包括文章、图片、视频等发布功能</small>
+
     </div>
 <!--    <div class="exercise">-->
 <!--        <a href="javascript:;" onclick="model_in('__URL__/in')">导入模型</a>-->

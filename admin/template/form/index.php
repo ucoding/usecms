@@ -1,7 +1,7 @@
 <div class="page_function">
     <div class="info">
         <h3>表单管理</h3>
-        <small>可以添加或者修改表单功能</small>
+
     </div>
     <div class="exercise">
         <a href="javascript:;" onclick="form_in('__URL__/in')">导入表单</a>

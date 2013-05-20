@@ -1,7 +1,7 @@
 <div class="page_function">
     <div class="info">
         <h3>页面添加</h3>
-        <small>页面主要用于公司简介等单个页面展示</small>
+
     </div>
 </div>
 <div class="tab" id="tab">

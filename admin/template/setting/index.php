@@ -2,7 +2,7 @@
     <form action="__APP__/setting/save/time-time()" id="form" name="form" method="post">
         <div class="info">
             <h3>系统设置</h3>
-            <small>设置站点信息与网站的性能等</small>
+
         </div>
 </div>
 <div class="tab" id="tab">

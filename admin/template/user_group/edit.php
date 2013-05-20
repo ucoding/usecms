@@ -38,7 +38,7 @@
 <div class="page_function">
     <div class="info">
         <h3>角色设置</h3>
-        <small>使用以下功能进行角色设置操作</small>
+
     </div>
 </div>
 <div class="tab" id="tab"><a class="selected" href="#">设置角色</a>

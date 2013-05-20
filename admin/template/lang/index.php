@@ -1,7 +1,7 @@
 <div class="page_function">
     <div class="info">
         <h3>语言管理</h3>
-        <small>用于多国语言的添加与修改和删除</small>
+
     </div>
     <div class="exercise">
         <a href="javascript:menuload('__URL__/add')">添加语言</a>

@@ -1,7 +1,7 @@
 <div class="page_function">
     <div class="info">
         <h3>推荐位管理</h3>
-        <small>管理内容的推荐位置</small>
+
     </div>
     <div class="exercise">
         <a href="javascript:menuload('__URL__/add')">添加推荐位</a>

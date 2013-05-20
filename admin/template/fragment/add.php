@@ -1,7 +1,7 @@
 <div class="page_function">
     <div class="info">
         <h3>自定义变量管理</h3>
-        <small>使用以下功能进行自定义变量管理操作</small>
+
     </div>
 </div>
 <div class="tab" id="tab">

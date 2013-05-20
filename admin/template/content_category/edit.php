@@ -1,7 +1,6 @@
 <div class="page_function">
     <div class="info">
         <h3>编辑栏目</h3>
-        <small>使用以下功能进行栏目编辑操作</small>
     </div>
 </div>
 <div class="tab" id="tab">
