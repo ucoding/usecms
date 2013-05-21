@@ -20,13 +20,6 @@ require CP_PATH . 'core/cpApp.class.php';
 
 $config['URL_REWRITE_ON'] = false;
 $config['TPL_TEMPLATE_PATH'] = 'template/';
-$config['TPL_TEMPLATE_SUFFIX'] = '.php';
-$config['URL_MODULE_DEPR'] = '/'; //模块分隔符，一般不需要修改
-$config['URL_ACTION_DEPR'] = '/'; //操作分隔符，一般不需要修改
-$config['URL_PARAM_DEPR'] = '-'; //参数分隔符，一般不需要修改
-$config['URL_HTML_SUFFIX'] = '.html'; //伪静态后缀设置
-
-$config['LANG_PACK_PATH'] = __ROOTDIR__ . '/lang/'; //语言包目录
 
 define('ROOTAPP', $root);
 

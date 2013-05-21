@@ -6,7 +6,6 @@
         <@foreach:{$model_list $vo}>
         <a href="javascript:menuload('__APP__/{$vo.model}_category/add')">添加{$vo.name}</a>
         <@/foreach>
-        <a href="javascript:menuload('__APP__/model_manage')" style="float: right;">栏目类型管理</a>
     </div>
 </div>
 <div class="page_main">

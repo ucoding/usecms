@@ -10,9 +10,6 @@ require(CP_PATH . 'core/cpApp.class.php');
 $root = $config['URL_HTTP_HOST'] . str_replace(basename($_SERVER["SCRIPT_NAME"]), '', $_SERVER["SCRIPT_NAME"]);
 define('__ROOT__', substr($root, 0, -1));
 define('__ROOTDIR__', strtr(dirname(__FILE__), '\\', '/'));
-define('__UPDIR__', strtr(dirname(__FILE__), '\\', '/upload/'));
-define('__TPL__', __ROOT__ . '/' . $config['TPL_TEMPLATE_PATH']);
-define('__UPL__', __ROOT__ . '/upload/');
 
 //实例化入口
 $app = new cpApp($config);
