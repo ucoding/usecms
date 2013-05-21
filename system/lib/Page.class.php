@@ -312,7 +312,7 @@ class Page
     private function _getUrl($pageNum = 1)
     {
         $url = $this->url;
-        if ($pageNum > 1) {
+        if ($pageNum >0) {
             $url = str_replace('{page}', $pageNum, $this->url);
         } else {
             $url = str_replace($this->pageSeparator . '{page}', '', $this->url);
