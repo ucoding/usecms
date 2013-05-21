@@ -90,16 +90,7 @@ class commonMod
         echo $html;
     }
 
-    //脚本运行时间
-    public function runtime()
-    {
-        $GLOBALS['_endTime'] = microtime(true);
-        $runTime = number_format($GLOBALS['_endTime'] - $GLOBALS['_startTime'], 4);
-        echo $runTime;
-    }
-
-
-    //判断是否是数据提交 
+    //判断是否是数据提交
     protected function isPost()
     {
         return $_SERVER['REQUEST_METHOD'] == 'POST';

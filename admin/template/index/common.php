@@ -11,10 +11,5 @@
 <body>
 <@body>
 <div class="fn_clear"></div>
-<?php if ($config['DEBUG']) { ?>
-    <div id="runtime">
-        当前脚本运行时间：<?php module('common')->runtime(); ?> 秒
-    </div>
-<?php } ?>
 </body>
 </html>

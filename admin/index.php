@@ -1,8 +1,6 @@
 <?php
 // 定义内核目录
 @date_default_timezone_set('PRC');
-//脚本开始时间
-$GLOBALS['_startTime'] = microtime(true);
 define('__ADMINDIR__', strtr(dirname(__FILE__), '\\', '/')); //后台目录
 define('__ROOTDIR__', str_replace("\\", '/', substr(dirname(__FILE__), 0, strrpos(dirname(__FILE__), DIRECTORY_SEPARATOR))));
 $root = str_replace(basename($_SERVER["SCRIPT_NAME"]), '', $_SERVER["SCRIPT_NAME"]);
