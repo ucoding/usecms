@@ -2,9 +2,6 @@
 require(dirname(__file__) . '/db.php'); //载入附加信息
 require(dirname(__file__) . '/siteinfo.php'); //载入附加信息
 
-//全局开关
-$config['LANG_OPEN']=false; //多国语言开关
-
 //模板设置
 $config['TPL_TEMPLATE_PATH'] = 'themes/default/'; //模板目录，一般不需要修改
 $config['TPL_INDEX'] = 'index.php';
@@ -23,7 +20,7 @@ $config['THUMBNAIL_MAXHIGHT']='140'; //最大高度
 $config['DEBUG']=false; //是否开启调试模式，true开启，false关闭
 $config['ERROR_HANDLE']=false; //是否启动CP内置的错误处理，如果开启了xdebug，建议设置为false
 
-//伪静态
+//重写
 $config['URL_REWRITE_ON']=true; //是否开启重写，true开启重写,false关闭重写
 $config['URL_MODULE_DEPR'] = '/'; //模块分隔符
 $config['URL_ACTION_DEPR'] = '/'; //操作分隔符
@@ -32,5 +29,6 @@ $config['URL_HTTP_HOST'] = ''; //设置网址域名
 
 
 //多国语言
+$config['LANG_OPEN']=false; //多国语言开关
 $config['LANG_PACK_PATH'] = './lang/'; //语言包目录
 
