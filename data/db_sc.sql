@@ -1,5 +1,5 @@
 /*
-SQLyog Trial v10.12 
+SQLyog Ultimate v9.10 
 MySQL - 5.5.24-log : Database - duxcms
 *********************************************************************
 */
