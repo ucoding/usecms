@@ -20,16 +20,12 @@
                     <center>栏目显示</center>
                 </th>
                 <th width="15%">
-                    <center>栏目属性</center>
-                </th>
-                <th width="15%">
                     <center>栏目操作</center>
                 </th>
             </tr>
             <@foreach:{$list $vo}>
             <tr>
                 <td>
-                    [{$vo.mname}]
                     <?php ?>
                     <a href="<?php echo ROOTAPP ?>/label/admin_curl.php?cid={$vo['cid']}"
                        target="_blank">{$vo.cname}</a>
@@ -55,19 +51,7 @@
                         <@/if>
                     </center>
                 </td>
-                <td>
-                    <center>
-                        <@if:{$vo['mname']=='内容'}>
-                        <@if:{$vo['type']==0}>
-                        频道
-                        <@else>
-                        列表
-                        <@/if>
-                        <@else>
-                        -
-                        <@/if>
-                    </center>
-                </td>
+
                 <td>
                     <center>
                         <a href="__APP__/{$vo.admin_category}/edit/id-{$vo.cid}">修改</a>
