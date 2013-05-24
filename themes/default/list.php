@@ -20,16 +20,22 @@
                 <h3>{$info.name}</h3>
             </div>
             <div class="boxlist">
-                <ul>
                     <@con:{table="content" cid="<$info.cid>" order="cid desc" limit="20"}>
-                    <li><span class="line">?</span> <span class="title"><a href="{$con.aurl}">{$con.title}</a> </span>
-                        <span class="time">{$con.updatetime time="Y-m-d"}</span>
-                            <div>
-                                {$con.content}
-                            </div>
-                    </li>
+
+                    <div class="boxcontent">
+                        <h1>{$con.title}</h1>
+
+                        <div class="info">作者：{$con.copyfrom}&nbsp;&nbsp;浏览量：{$con.views}&nbsp;&nbsp;发布时间：{$con.updatetime
+                            time="Y-m-d h:i:s"}&nbsp;&nbsp;{$con.keywords tag}
+                        </div>
+                        <div class="content">
+                            <?php $content = model('content')->info_content($con["aid"]);
+                            echo $content["content"];
+                            //                                print_r($content);
+                            ?>
+                        </div>
+                    </div>
                     <@/con>
-                </ul>
             </div>
         </div>
         <div class="pagenum">
