@@ -181,15 +181,15 @@
     <div class="page">{$page}</div>
 </div>
 <script>
-    //快速编辑
-    $('tr').hover(
-        function () {
-            $(this).find('.quickeditor').show();
-        },
-        function () {
-            $(this).find('.quickeditor').hide();
-        }
-    );
+//    //快速编辑
+//    $('tr').hover(
+//        function () {
+//            $(this).find('.quickeditor').show();
+//        },
+//        function () {
+//            $(this).find('.quickeditor').hide();
+//        }
+//    );
     function quickeditor(url) {
         $.dialog({
             title: '快速编辑',

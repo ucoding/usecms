@@ -6,15 +6,15 @@
     <title>{$common.title}</title>
     <meta name="keywords" content="{$common.keywords}"/>
     <meta name="description" content="{$common.description}"/>
-    <@include file="resources.php">
+    <@include file="common/resources.php">
 </head>
 
 <body>
-<@include file="head.php">
+<@include file="common/head.php">
 <div id="central">
     <div id="main" class="fn-left">
         <div id="pagenav">
-            <@include file="bread.php">
+            <@include file="common/bread.php">
         </div>
         <div class="headtitle">
             <h3>栏目推荐</h3>
@@ -81,17 +81,17 @@
             </div>
             <div class="boxlist">
                 <ul>
-                    <@list:{table="category" pid="<$info.cid>" order="cid desc" limit="5"}>
+                    <@list:{table="category" pid="<$info.cid>" order="cid desc"}>
                     <li><span class="title"><a href="{$list.curl}">{$list.name}</a> </span></li>
                     <@/list>
                 </ul>
             </div>
         </div>
-        <@include file="sidebar.php">
+        <@include file="common/sidebar.php">
     </div>
     <div class="fn-clear"></div>
 </div>
-<@include file="foot.php">
+<@include file="common/foot.php">
 
 </body>
 </html>

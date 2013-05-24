@@ -6,11 +6,11 @@
     <title>{$common.title}</title>
     <meta name="keywords" content="{$common.keywords}"/>
     <meta name="description" content="{$common.description}"/>
-    <@include file="resources.php">
+    <@include file="common/resources.php">
 </head>
 
 <body>
-<@include file="head.php">
+<@include file="common/head.php">
 <div id="central">
     <div id="main" class="fn-left">
         <@include file="bread.php">
@@ -30,6 +30,6 @@
     </div>
     <div class="fn-clear"></div>
 </div>
-<@include file="foot.php">
+<@include file="common/foot.php">
 </body>
 </html>

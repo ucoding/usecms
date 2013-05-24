@@ -25,18 +25,18 @@ class categoryMod extends commonMod
         $this->nav = array_reverse(model('category')->nav($this->info['cid']));
 
         //设置分页
-        $size = intval($this->info['page']);
-        if (empty($size)) {
-            $listrows = 10;
-        } else {
-            $listrows = $size;
-        }
-        $model_info = model('category')->model_info($this->info['mid']);
-        $url = model('category')->url_format($model_info['url_category_page'], $cid, $this->info['urlname']);
-        $page = new Page();
-        $cur_page = $page->getCurPage($url);
-        $limit_start = ($cur_page - 1) * $listrows;
-        $limit = $limit_start . ',' . $listrows;
+//        $size = intval($this->info['page']);
+//        if (empty($size)) {
+//            $listrows = 10;
+//        } else {
+//            $listrows = $size;
+//        }
+//        $model_info = model('category')->model_info($this->info['mid']);
+//        $url = model('category')->url_format($model_info['url_category_page'], $cid, $this->info['urlname']);
+//        $page = new Page();
+//        $cur_page = $page->getCurPage($url);
+//        $limit_start = ($cur_page - 1) * $listrows;
+//        $limit = $limit_start . ',' . $listrows;
 
         //设置栏目属性
 
@@ -72,8 +72,8 @@ class categoryMod extends commonMod
         }
 
         //执行查询
-        $this->loop = model('category')->content_list($cid, $where, $limit, $list_sort);
-        $count = model('category')->content_count($cid, $where);
+//        $this->loop = model('category')->content_list($cid, $where, $limit, $list_sort);
+//        $count = model('category')->content_count($cid, $where);
 
         //查询上级栏目信息
         $this->parent_category = model('category')->info($this->info['pid']);
@@ -85,13 +85,13 @@ class categoryMod extends commonMod
                 "name" => "无上级栏目");
         }
         //获取分页
-        $this->page = $this->page($url, $count, $listrows);
+//        $this->page = $this->page($url, $count, $listrows);
         //获取上一页代码
-        $this->prepage = $this->page($url, $count, $listrows, '', 1);
+//        $this->prepage = $this->page($url, $count, $listrows, '', 1);
         //获取下一页代码
-        $this->nextpage = $this->page($url, $count, $listrows, '', 2);
+//        $this->nextpage = $this->page($url, $count, $listrows, '', 2);
 
-        $this->count = $count;
+//        $this->count = $count;
 
         //MEDIA信息
         $this->common = model('pageinfo')->media($this->info['name'], $this->info['keywords'], $this->info['description']);

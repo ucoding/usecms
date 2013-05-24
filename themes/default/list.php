@@ -6,14 +6,14 @@
     <title>{$common.title}</title>
     <meta name="keywords" content="{$common.keywords}"/>
     <meta name="description" content="{$common.description}"/>
-    <@include file="resources.php">
+    <@include file="common/resources.php">
 </head>
 
 <body>
-<@include file="head.php">
+<@include file="common/head.php">
 <div id="central">
     <div id="main" class="fn-left">
-        <@include file="bread.php">
+        <@include file="common/bread.php">
         <div class="sep10"></div>
         <div class="box  pagelist">
             <div class="boxhead">
@@ -21,10 +21,14 @@
             </div>
             <div class="boxlist">
                 <ul>
-                    <@foreach:{$loop $vo}>
-                    <li><span class="line">?</span> <span class="title"><a href="{$vo.aurl}">{$vo.titlex}</a> </span>
-                        <span class="time">{$vo.updatetime time="Y-m-d"}</span></li>
-                    <@/foreach>
+                    <@con:{table="content" cid="<$info.cid>" order="cid desc" limit="20"}>
+                    <li><span class="line">?</span> <span class="title"><a href="{$con.aurl}">{$con.title}</a> </span>
+                        <span class="time">{$con.updatetime time="Y-m-d"}</span>
+                            <div>
+                                {$con.content}
+                            </div>
+                    </li>
+                    <@/con>
                 </ul>
             </div>
         </div>
@@ -40,19 +44,19 @@
             </div>
             <div class="boxlist">
                 <ul>
-                    <@list:{table="category" pid="<$top_category.cid>" order="cid desc" limit="5"}>
+                    <@list:{table="category" pid="<$top_category.cid>" order="cid desc"}>
                     <li><span class="title"><a href="{$list.curl}">{$list.name}</a> </span></li>
                     <@/list>
                 </ul>
             </div>
         </div>
-        <@include file="sidebar.php">
+        <@include file="common/sidebar.php">
 
     </div>
     <div class="fn-clear"></div>
 
 </div>
-<@include file="foot.php">
+<@include file="common/foot.php">
 
 </body>
 </html>
