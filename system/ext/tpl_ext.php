@@ -84,14 +84,6 @@ function template_ext($template, $config = array())
     //TAG标签
     $template = preg_replace("/\{(\\$[a-z0-9_]+)\.([a-z0-9_]+)\s+tag\}/iU", "<?php \$tag=explode(',', $1['$2']); foreach (\$tag as \$value) { \$tags.= '<a href=\"" . __APP__ . "/tags-'.\$value.'/\" title=\"'.\$value.'\">'.\$value.'</a>,'; } echo substr(\$tags, 0,-1); unset(\$tags); ?>", $template);
 
-    //标题样式
-    $template = preg_replace("/\{(\\$[a-z0-9_]+)\.titlex\}/iU", "<?php \$titlex=$1['title']; if(!empty($1['font_color'])){ \$titlex='<font color=\"'.$1['font_color'].'\">'.\$titlex.'</font>'; } if($1['font_bold']==1){ \$titlex='<strong>'.\$titlex.'</strong>'; }  echo \$titlex;  unset(\$titlex); ?>",
-        $template);
-
-    //字数
-    $template = preg_replace("/\{(\\$[a-z0-9_]+)\.titlex\s+len\=\"(.*)\"\}/iU", "<?php \$titlex=msubstr($1['title'],0,$2); echo \$titlex; unset(\$titlex); ?>",
-        $template);
-
     //字符截取
     $template = preg_replace("/\{(\\$[a-z0-9_]+)\.([a-z0-9_]+)\s+len\=\"(.*)\"\}/iU", "<?php echo msubstr($1['$2'],0,$3); ?>", $template);
     $template = preg_replace("/\{(\\$[a-z0-9_]+)\.([a-z0-9_]+)\.([a-z0-9_]+)\s+len\=\"(.*)\"\}/iU", "<?php echo msubstr($1[\'$2\'][\'$3\'],0,$4); ?>", $template);

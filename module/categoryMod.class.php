@@ -1,4 +1,5 @@
 <?php
+//栏目页
 class categoryMod extends commonMod
 {
     public function __construct()

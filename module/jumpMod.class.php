@@ -1,5 +1,5 @@
 <?php
-//单页
+//跳转
 class jumpMod extends commonMod
 {
     public function __construct()

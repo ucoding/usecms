@@ -1,4 +1,5 @@
 <?php
+//首页
 class indexMod extends commonMod
 {
 

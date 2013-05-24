@@ -1,4 +1,5 @@
 <?php
+//文章页
 class contentMod extends commonMod
 {
     public function __construct()

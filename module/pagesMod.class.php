@@ -1,5 +1,5 @@
 <?php
-//单页
+//分页
 class pagesMod extends commonMod
 {
     public function __construct()

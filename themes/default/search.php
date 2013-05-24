@@ -38,7 +38,7 @@
             <div class="boxlist">
                 <ul>
                     <@foreach:{$loop $vo}>
-                    <li><span class="line">•</span> <span class="title"><a target="_blank" href="{$vo.aurl}">{$vo.titlex}</a> </span>
+                    <li><span class="line">•</span> <span class="title"><a target="_blank" href="{$vo.aurl}">{$vo.title len="30"}</a> </span>
                         <span class="time">{$vo.updatetime time="Y-m-d"}</span></li>
                     <@/loop>
                 </ul>
