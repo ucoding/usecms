@@ -90,7 +90,7 @@ class contentMod extends commonMod
 
         //分页信息
         $url = __URL__ . '/index/id-' . $id . '-page-{page}' . $where_url . '.html'; //分页基准网址
-        $listRows = 20;
+        $listRows = 10;
         $page = new Page();
         $cur_page = $page->getCurPage($url);
         $limit_start = ($cur_page - 1) * $listRows;

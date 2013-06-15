@@ -67,7 +67,7 @@
                 <td>
                     <center><input name="id[]" type="checkbox" id="id[]" value="{$vo['aid']}">
                 </td>
-                <td><span>{$vo.title}</span>
+                <td><span><a href="<?php echo ROOTAPP ?>/label/admin_aurl/aid-{$vo['aid']}.php" target="_blank">{$vo.title}</a></span>
                     <?php
                     if (!empty($vo['position'])) {
                         $str_list = model('position')->content_list($vo['position']);

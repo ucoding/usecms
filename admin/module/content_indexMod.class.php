@@ -52,8 +52,8 @@ class content_indexMod extends commonMod
         }
 
         //分页信息
-        $url = __URL__ . '/index/id-' . $id . '-page-{page}' . $positionurl . $search_url . '.html'; //分页基准网址
-        $listRows = 20;
+        $url = __URL__ . '/index/id-' . $id . '-page-{page}' . $positionurl . $search_url; //分页基准网址
+        $listRows = 10;
         $page = new Page();
         $cur_page = $page->getCurPage($url);
         $limit_start = ($cur_page - 1) * $listRows;
